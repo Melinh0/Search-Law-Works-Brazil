@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabalho no Brasil 2026 — Bot de Pesquisa</title>
+<style>
+  :root { --navy:#0b3d62; --line:#ccd9e3; --bg:#f5f8fa; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:'Segoe UI',Arial,sans-serif; background:var(--bg); color:#1a1a1a; }
+  header { background:var(--navy); color:#fff; padding:18px 28px; }
+  header h1 { margin:0; font-size:20px; }
+  header p { margin:4px 0 0; font-size:13px; opacity:.85; }
+  main { display:grid; grid-template-columns: 1fr 340px; gap:20px; padding:22px; max-width:1200px; margin:0 auto; }
+  @media (max-width:900px){ main{ grid-template-columns:1fr; } }
+  .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px; }
+  .card h2 { margin-top:0; font-size:15px; color:var(--navy); }
+  #chat { height:55vh; overflow-y:auto; display:flex; flex-direction:column; gap:10px; padding:6px; }
+  .msg { padding:10px 13px; border-radius:8px; max-width:85%; white-space:pre-wrap; font-size:14px; line-height:1.5; }
+  .user { background:var(--navy); color:#fff; align-self:flex-end; }
+  .bot { background:#eef4f9; border:1px solid var(--line); align-self:flex-start; }
+  form { display:flex; gap:8px; margin-top:12px; }
+  input[type=text] { flex:1; padding:11px 12px; border:1px solid var(--line); border-radius:6px; font-size:14px; }
+  button { background:var(--navy); color:#fff; border:none; border-radius:6px; padding:11px 18px; font-size:14px; cursor:pointer; }
+  button:disabled { opacity:.55; cursor:not-allowed; }
+  button.secondary { background:#fff; color:var(--navy); border:1px solid var(--navy); }
+  .actions { display:flex; gap:8px; flex-wrap:wrap; }
+  #status { font-size:13px; color:#456; margin-top:10px; white-space:pre-wrap; }
+  #log { font-size:12px; color:#567; max-height:180px; overflow-y:auto; white-space:pre-wrap; background:#f7fafc; border:1px solid var(--line); border-radius:6px; padding:8px; margin-top:8px; }
+  .sources { font-size:12px; color:#567; margin-top:6px; }
+  .sources a { color:var(--navy); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Trabalho no Brasil 2026</h1>
+  <p>Bot de pesquisa — CLT, PJ, MEI, informal e reformas em tramitação</p>
+</header>
+<main>
+  <section class="card">
+    <h2>Chat (busca no corpus + LLM)</h2>
+    <div id="chat"></div>
+    <form id="form">
+      <input type="text" id="input" placeholder="Ex.: quais direitos o MEI tem na Previdência?" autocomplete="off">
+      <button type="submit" id="send">Perguntar</button>
+    </form>
+    <div class="sources" id="sources"></div>
+  </section>
+  <aside class="card">
+    <h2>Relatório completo</h2>
+    <div class="actions">
+      <button id="collect">Coletar fontes</button>
+      <button id="report" class="secondary">Gerar relatório</button>
+      <a href="/api/download" download><button class="secondary" type="button">Baixar .md</button></a>
+    </div>
+    <div id="status">Status: ocioso</div>
+    <div id="log"></div>
+  </aside>
+</main>
+<script>
+const chat = document.getElementById('chat');
+const form = document.getElementById('form');
+const input = document.getElementById('input');
+const send = document.getElementById('send');
+const statusEl = document.getElementById('status');
+const logEl = document.getElementById('log');
+const sourcesEl = document.getElementById('sources');
+
+function addMsg(cls, text) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.textContent = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+  return div;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const q = input.value.trim();
+  if (!q) return;
+  input.value = '';
+  addMsg('user', q);
+  send.disabled = true;
+  const botMsg = addMsg('bot', 'Pensando...');
+  let answer = '';
+  const resp = await fetch('/api/chat', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({message: q})
+  });
+  const reader = resp.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  while (true) {
+    const {done, value} = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, {stream: true});
+    const parts = buffer.split('\n\n');
+    buffer = parts.pop();
+    for (const part of parts) {
+      if (!part.startsWith('data: ')) continue;
+      try {
+        const data = JSON.parse(part.slice(6));
+        if (data.text) { answer = data.text; botMsg.textContent = answer; }
+        if (data.sources) {
+          sourcesEl.innerHTML = 'Fontes: ' + data.sources.map(s =>
+            `<a href="${s.url}" target="_blank" rel="noopener">${s.title}</a>`).join(' · ');
+        }
+      } catch (_) {}
+    }
+    chat.scrollTop = chat.scrollHeight;
+  }
+  send.disabled = false;
+});
+
+async function refreshStatus() {
+  try {
+    const r = await fetch('/api/status');
+    const d = await r.json();
+    statusEl.textContent = `Status: ${d.status} | documentos: ${d.documentos} | chaves: ${d.chaves}`;
+    logEl.textContent = (d.log || []).join('\n');
+    logEl.scrollTop = logEl.scrollHeight;
+  } catch (_) {}
+}
+setInterval(refreshStatus, 3000);
+refreshStatus();
+
+document.getElementById('collect').addEventListener('click', async () => {
+  await fetch('/api/coletar', {method:'POST'});
+  refreshStatus();
+});
+document.getElementById('report').addEventListener('click', async () => {
+  await fetch('/api/relatorio', {method:'POST'});
+  refreshStatus();
+});
+</script>
+</body>
+</html>

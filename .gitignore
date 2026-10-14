@@ -179,3 +179,9 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# Search-Law-Works-Brazil
+data/cache/
+data/corpus/
+output/*.html
+__pycache__/
+*.pyc

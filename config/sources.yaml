@@ -1,0 +1,183 @@
+user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+timeout: 45
+cache_dir: data/cache
+corpus_dir: data/corpus
+output_dir: output
+
+sources:
+  - id: clt
+    name: "Consolidacao das Leis do Trabalho (Decreto-Lei 5.452/1943)"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm"
+    encoding: iso-8859-1
+    tags: [clt, legislacao, vinculo, jornada, rescisao, férias, fgts]
+
+  - id: constituicao-trabalho
+    name: "Constituicao Federal 1988 - capitulos dos direitos trabalhistas"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    encoding: iso-8859-1
+    tags: [constituicao, direitos-fundamentais, art-7, art-8, greve, sindicatos]
+
+  - id: fgts
+    name: "Lei 8.036/1990 - FGTS"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm"
+    encoding: iso-8859-1
+    tags: [fgts, garantia, rescisao]
+
+  - id: contrato-temporario
+    name: "Lei 6.019/1974 - trabalho temporario e empresas de trabalho temporario"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l6019.htm"
+    encoding: iso-8859-1
+    tags: [temporario, modalidades]
+
+  - id: trabalhador-autonomo
+    name: "Lei 13.467/2017 - reforma trabalhista (texto original da MP 779)"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm"
+    encoding: iso-8859-1
+    tags: [reforma-2017, autônomo, terceirizacao, intermitente]
+
+  - id: lc123-mei
+    name: "Lei Complementar 123/2006 - Simples Nacional e MEI"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
+    encoding: iso-8859-1
+    tags: [mei, simples-nacional, tributos, formalizacao]
+
+  - id: inss-autonomos
+    name: "Lei 8.212/1991 - organizacao da seguridade social"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm"
+    encoding: iso-8859-1
+    tags: [inss, previdencia, contribuicao, autônomo]
+
+  - id: raca-lei-12288
+    name: "Lei 12.288/2010 - Estatuto da Igualdade Racial"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm"
+    encoding: iso-8859-1
+    tags: [discriminação, raça, trabalho]
+
+  - id: leiol-historica
+    name: "Lei 14.611/2023 - equalizacao salarial entre homens e mulheres"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm"
+    encoding: iso-8859-1
+    tags: [igualdade-salarial, gênero, remuneração]
+
+  - id: estagio
+    name: "Lei 11.788/2008 - estagio de educacao e formacao profissional"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+    encoding: iso-8859-1
+    tags: [estágio, modalidades, estudante, formação]
+
+  - id: aprendiz
+    name: "Lei 10.097/2000 - aprendizado e formacao profissional do jovem"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l10097.htm"
+    encoding: iso-8859-1
+    tags: [aprendiz, modalidades, jovem, contrato especial]
+
+  - id: trabalho-domestico
+    name: "Lei Complementar 150/2015 - regulamenta trabalho domestico (EC 72/2013)"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm"
+    encoding: iso-8859-1
+    tags: [doméstico, modalidades, ec-72, registro]
+
+  - id: trabalho-rural
+    name: "Lei 5.889/1973 - regulamenta o trabalho no campo"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l5889.htm"
+    encoding: iso-8859-1
+    tags: [rural, modalidades, campo]
+
+  - id: portuario-avulso
+    name: "Lei 12.545/2011 - trabalhador portuario avulso e organizacao sindical"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm"
+    encoding: iso-8859-1
+    tags: [avulso, portuário, modalidades, sindicatos]
+
+  - id: cooperativas
+    name: "Lei 12.690/2012 - politica nacional de cooperativismo"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm"
+    encoding: iso-8859-1
+    tags: [cooperativa, cooperado, modalidades]
+
+  - id: trabalho-voluntario
+    name: "Lei 9.608/1998 - trabalho voluntario"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/l9608.htm"
+    encoding: iso-8859-1
+    tags: [voluntário, modalidades]
+
+  - id: mte-fiscalizacao
+    name: "MTE - Inspecao do Trabalho: fiscalizacao e aplicacao da lei"
+    type: html
+    url: "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho"
+    encoding: utf-8
+    tags: [fiscalização, mte, autuação, como-o-estado-age]
+
+  - id: auditoria-fiscal
+    name: "Lei 10.593/2002 - Auditoria-Fiscal do Trabalho e Seguridade Social"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm"
+    encoding: iso-8859-1
+    tags: [auditoria-fiscal, fiscalização, poder-de-fiscalização, como-o-estado-age]
+
+  - id: mte-noticias
+    name: "Ministerio do Trabalho e Emprego - noticias e politicas publicas"
+    type: news_rss
+    queries:
+      - "site:gov.br/trabalho-e-emprego inspeção trabalho"
+      - "Ministério do Trabalho e Emprego fiscalização 2026"
+    tags: [mte, fiscalização, politicas-publicas, 2026]
+
+  - id: camara-proposicoes
+    name: "Camara dos Deputados - proposicoes sobre trabalho"
+    type: camara_api
+    keywords:
+      - "trabalho por aplicativo"
+      - "pejotizacao"
+      - "reforma trabalhista"
+      - "trabalho intermitente"
+      - "jornada de trabalho"
+      - "MEI"
+      - "trabalho remoto"
+    tags: [congresso, tramitação, 2026]
+
+  - id: senado-materias
+    name: "Senado Federal - materias sobre trabalho"
+    type: senado_api
+    keywords:
+      - "reforma trabalhista"
+      - "trabalho plataformas digitais"
+      - "pejotizacao"
+    tags: [congresso, tramitação, 2026]
+
+  - id: noticias-trabalho
+    name: "Imprensa - panorama do trabalho em 2026"
+    type: news_rss
+    queries:
+      - "reforma trabalhista Brasil 2026"
+      - "pejotização CLT 2026"
+      - "MEI mudanças 2026"
+      - "trabalhadores plataformas digitais Brasil"
+      - "trabalho informal Brasil dados"
+      - "CLT direitos trabalhistas 2026"
+      - "estágio regras trabalhistas Brasil"
+      - "trabalhador doméstico direitos 2026"
+      - "trabalho intermitente CLT"
+      - "cooperativa de trabalho Brasil direitos"
+    tags: [noticias, 2026, panorama]
+
+  - id: ibge-pnad
+    name: "IBGE - PNAD Continua indicadores de trabalho"
+    type: ibge_api
+    tags: [dados, pnad, informalidade, desocupacao]
