@@ -16,7 +16,7 @@ from .config import Settings
 from .llm import LLMError, OllamaClient
 from .pdf import export
 from .rag import build_index
-from .report import SYSTEM_PROMPT, generate_report
+from .report import SYSTEM_PROMPT, audit_report, generate_report
 
 TEMPLATE_PATH = Path(__file__).parent / "templates" / "index.html"
 
@@ -121,6 +121,19 @@ def api_download() -> FileResponse:
     if not files:
         return HTMLResponse("Nenhum relatorio gerado ainda.", status_code=404)
     return FileResponse(files[-1], media_type="text/markdown", filename=files[-1].name)
+
+
+@app.get("/api/auditar")
+def api_auditar() -> dict:
+    """Audita o relatorio Markdown mais recente gerado."""
+    settings = get_settings()
+    files = sorted(settings.output_dir.glob("relatorio-trabalho-brasil-*.md"))
+    if not files:
+        return {"erro": "nenhum relatorio gerado ainda"}
+    path = files[-1]
+    stats = audit_report(path.read_text(encoding="utf-8"), settings.outline)
+    stats["arquivo"] = path.name
+    return stats
 
 
 @app.post("/api/chat")

@@ -33,7 +33,13 @@ def tokenize(text: str) -> list[str]:
 
 
 class SearchIndex:
-    """Indice BM25 construido uma unica vez e reutilizado nas consultas."""
+    """Indice BM25 construido uma unica vez e reutilizado nas consultas.
+
+    Fragmentos de fontes oficiais e academicas recebem bonus no re-ranking
+    para que legislacao e doutrina aparecam antes de noticiarios.
+    """
+
+    PRIORITY_BONUS = 0.15
 
     def __init__(self, chunks: list[dict]):
         self.chunks = chunks
@@ -41,11 +47,40 @@ class SearchIndex:
             [tokenize(c["text"] + " " + " ".join(str(t) for t in c["tags"])) for c in chunks]
         )
 
-    def search(self, query: str, top_k: int = 8) -> list[dict]:
-        """Retorna os fragmentos mais relevantes para a consulta informada."""
+    def _rank(self, query: str, top_k: int) -> list[tuple[int, float]]:
         scores = self.bm25.get_scores(tokenize(query))
         ranked = sorted(enumerate(scores), key=lambda x: x[1], reverse=True)
-        return [self.chunks[i] for i, s in ranked[:top_k] if s > 0]
+        boosted: list[tuple[int, float]] = []
+        for idx, score in ranked:
+            if score <= 0:
+                continue
+            bonus = self.PRIORITY_BONUS * int(self.chunks[idx].get("priority", 1))
+            boosted.append((idx, float(score) + bonus))
+        boosted.sort(key=lambda x: x[1], reverse=True)
+        return boosted[:top_k]
+
+    def search(self, query: str, top_k: int = 8) -> list[dict]:
+        """Retorna os fragmentos mais relevantes para a consulta informada."""
+        return [self.chunks[i] for i, _ in self._rank(query, top_k)]
+
+    def search_many(self, queries: list[str], top_k: int = 12) -> list[dict]:
+        """Faz varias consultas, pontua fragmentos por relevancia+prioridade e mescla."""
+        best: dict[tuple[str, int], tuple[float, dict]] = {}
+        for query in queries:
+            if not query.strip():
+                continue
+            scores = self.bm25.get_scores(tokenize(query))
+            for idx, score in enumerate(scores):
+                if score <= 0:
+                    continue
+                chunk = self.chunks[idx]
+                bonus = self.PRIORITY_BONUS * int(chunk.get("priority", 1))
+                key = (chunk["source_id"], chunk.get("chunk_index", 0))
+                total = float(score) + bonus
+                if key not in best or total > best[key][0]:
+                    best[key] = (total, chunk)
+        ordered = sorted(best.values(), key=lambda item: item[0], reverse=True)
+        return [chunk for _, chunk in ordered[:top_k]]
 
 
 def build_index(settings: Settings) -> SearchIndex:

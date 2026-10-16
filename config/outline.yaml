@@ -1,69 +1,91 @@
 title: "Trabalho no Brasil 2026: Legislacao, Modalidades e Tendencias"
 subtitle: "Relatorio objetivo sobre relacoes de trabalho, CLT, PJ, MEI e trabalho informal"
+author: "NOME DO AUTOR (edite em config/outline.yaml)"
+institution: "INSTITUICAO / CURSO (edite em config/outline.yaml)"
+place: "Brasil"
 lang: pt-BR
 
 defaults:
-  min_words: 400
+  min_words: 450
   max_words: 900
+  charts: 1
 
 sections:
   - id: panorama
     number: 1
     title: "Panorama do trabalho no Brasil em 2026"
+    charts: 3
+    must_include: [ibge-pnad]
     brief: >
-      Quadro geral do mercado de trabalho brasileiro em 2026 com base nos dados
-      mais recentes do IBGE/PNAD Continua: taxa de ocupacao e desocupacao,
-      informalidade, rendimento medio, distribuicao entre carteira assinada,
-      autônomos, MEI e trabalho informal. Explicar o tamanho de cada segmento
-      e a importancia de cada um para a economia.
+      Quadro geral do mercado de trabalho brasileiro em 2026. Use OBRIGATORIAMENTE
+      as series reais do IBGE/PNAD Continua presentes no contexto (taxa de
+      desocupacao, pessoas ocupadas, rendimento medio mensal real) para construir
+      pelo menos dois graficos de linha ou barras com a serie historica recente.
+      Complemente com a taxa de informalidade e o volume de informais divulgados
+      pela imprensa (cite a fonte de cada numero). Explique o tamanho e a
+      importancia de cada segmento (carteira assinada, autonomos, MEI, informal).
 
   - id: principios-constitucionais
     number: 2
     title: "Principios constitucionais do trabalho"
+    charts: 1
+    must_include: [constituicao-trabalho, clt]
     brief: >
       Direitos sociais do trabalhador (CF art. 7o), liberdade sindical e
       greve (CF art. 8o e 11), funcao social da propriedade, protecao ao
       trabalho humano. Principio da protecao, da condicao mais benéfica e
-      da norma mais favoravel ao trabalhador. Como a Constituicao enxerga
-      a relacao de trabalho: protecao do trabalhador como parte mais fraca.
+      da norma mais favoravel ao trabalhador. Explique com base textual da
+      Constituicao e da CLT presentes no contexto, sempre citando o artigo.
+      Inclua um diagrama (bloco comparativo) dos principais direitos do art. 7o.
 
   - id: clt
     number: 3
     title: "CLT: estrutura, historia e direitos essenciais"
+    charts: 2
+    must_include: [clt, constituicao-trabalho, reforma-2017]
     brief: >
       Historico (Decreto-Lei 5.452/1943), estrutura da consolidacao, principios
       que a regem. Direitos essenciais: contrato de trabalho, jornada (8h,
       44h semanais, horas extras e adicional de 50%), intervalos, faltas,
-      feriados, férias + 1/3, 13o salario, aviso previo, rescisao e verbas
+      feriados, ferias + 1/3, 13o salario, aviso previo, rescisao e verbas
       rescisorias, FGTS, adicional noturno, periculosidade e insalubridade,
       salario minimo. Reforma trabalhista de 2017 (Lei 13.467/2017): principais
       mudancas (negociacao sobre a lei, terceirizacao, trabalho intermitente,
       home office, banco de horas, acordo de compensacao, justa causa).
       EC 103/2019 e regras previdenciarias aplicadas ao trabalhador.
       Como o Estado aplica a CLT: papel da Auditoria-Fiscal do Trabalho.
+      Use graficos para comparar regras (ex.: jornada e adicional de horas
+      extras; antes e depois da reforma de 2017).
 
   - id: vinculo
     number: 4
     title: "Vinculo de emprego: os 4 requisitos e a subordinacao algoritmica"
+    charts: 1
+    must_include: [clt, codigo-civil, lc123-mei]
     brief: >
       Pessoa fisica, habitualidade, onerosidade, pessoalidade e subordinacao.
       Como a jurisprudencia (TST, STF) analisa cada requisito. Subordinacao
       algoritmica no trabalho por aplicativo. Presuncao de vinculo e
       responsabilidade solidaria. Distincao entre emprego, trabalho autônomo
-      e cooperado. Pejotizacao: o que e, por que e considerada abusiva,
-      consequencias para empresa e trabalhador (pagamento retroativo,
-      multas, responsabilidade em casos de fraude).
+      e cooperado (CC art. 593 e CLT arts. 3o, 442-B e 603). Pejotizacao: o que
+      e, por que e considerada abusiva, consequencias para empresa e trabalhador
+      (pagamento retroativo, multas, responsabilidade em casos de fraude).
+      Use um diagrama de fluxo dos 4 requisitos do vinculo empregaticio.
 
   - id: modalidades-vinculo
     number: 5
     title: "Modalidades de trabalho com vinculo empregaticio"
     structure:
       - "Faca um subcabecalho (###) para CADA modalidade listada no briefing."
-      - "Em cada subcabecalho, use sempre estes tres pontos, com paragrafos separados:"
+      - "Em cada subcabecalho, use sempre estes cinco pontos, com paragrafos separados:"
       - "1) Como funciona na pratica: quem contrata, como e o contrato, jornada, pagamento, duracao."
-      - "2) Como deveria funcionar segundo a lei: base legal exata (lei/artigo), direitos obrigatorios e limites."
-      - "3) Como o Estado enxerga e age: cite obrigatoriamente a fiscalizacao da Secretaria de Inspecao do Trabalho/MTE (Auditoria-Fiscal do Trabalho, cujos poderes estao na Lei 10.593/2002), o registro do contrato em CTPS digital e eSocial, a apuracao por denuncia ou acao fiscal, e as sancoes administrativas previstas no Livro V da CLT (autos de infração e multas). Quando houver orgao especifico para a modalidade (Receita Federal para MEI/Simples, CGSN, entidades de classe), inclua-o. Cite [Fonte: Lei 10.593/2002 - Auditoria-Fiscal do Trabalho e Seguridade Social] e/ou [Fonte: Consolidacao das Leis do Trabalho (Decreto-Lei 5.452/1943)]."
-    words: [900, 1400]
+      - "2) Como deveria funcionar segundo a lei: base legal exata (lei e artigo), direitos obrigatorios e limites."
+      - "3) Direitos e deveres: crie uma tabela com duas colunas ('Direitos do trabalhador' e 'Deveres (trabalhador e contratante)'), com a base legal de cada item; depois liste em texto os deveres do contratante."
+      - "4) Como o Estado enxerga e age: cite obrigatoriamente a fiscalizacao da Secretaria de Inspecao do Trabalho/MTE (Auditoria-Fiscal do Trabalho, cujos poderes estao na Lei 10.593/2002), o registro do contrato em CTPS digital e eSocial, a apuracao por denuncia ou acao fiscal, e as sancoes administrativas previstas no Livro V da CLT (autos de infracao e multas). Quando houver orgao especifico para a modalidade (Receita Federal para MEI/Simples, CGSN, entidades de classe), inclua-o."
+      - "5) Em termos simples: explique em linguagem coloquial, em um paragrafo curto, o que esta modalidade significa na pratica para quem trabalha e para quem contrata."
+    words: [1500, 2200]
+    charts: 2
+    must_include: [clt, auditoria-fiscal, mte-fiscalizacao, esocial]
     brief: >
       Modalidades regidas pela CLT e por leis trabalhistas com vinculo
       empregaticio, detalhadas item a item.
@@ -85,11 +107,15 @@ sections:
     title: "Modalidades de trabalho sem vinculo empregaticio"
     structure:
       - "Faca um subcabecalho (###) para CADA modalidade listada no briefing."
-      - "Em cada subcabecalho, use sempre estes tres pontos, com paragrafos separados:"
+      - "Em cada subcabecalho, use sempre estes cinco pontos, com paragrafos separados:"
       - "1) Como funciona na pratica: quem contrata, como e o contrato, pagamento, obrigacoes do prestador."
-      - "2) Como deveria funcionar segundo a lei: base legal exata (lei/artigo), limites, quando deixa de ser legal."
-      - "3) Como o Estado enxerga e age: cite obrigatoriamente quem fiscaliza e como apura — MTE/Auditoria-Fiscal do Trabalho (Lei 10.593/2002) para characterizacao indevida de vinculo (pejotizacao, com nota em CTPS e eSocial), Receita Federal e Comite Gestor do Simples Nacional para MEI/PJ, e as sancoes previstas (multas do Livro V da CLT, responsabilizacao solidaria, exigencia de verbas retroativas). Cite [Fonte: Lei 10.593/2002 - Auditoria-Fiscal do Trabalho e Seguridade Social] e as leis aplicaveis presentes no contexto."
-    words: [900, 1400]
+      - "2) Como deveria funcionar segundo a lei: base legal exata (lei e artigo), limites, quando deixa de ser legal."
+      - "3) Direitos e deveres: crie uma tabela com duas colunas ('Direitos/garantias do prestador' e 'Deveres (prestador e contratante)'), com a base legal de cada item; depois liste em texto os deveres do contratante."
+      - "4) Como o Estado enxerga e age: cite obrigatoriamente quem fiscaliza e como apura - MTE/Auditoria-Fiscal do Trabalho (Lei 10.593/2002) para caracterizacao indevida de vinculo (pejotizacao, com nota em CTPS e eSocial), Receita Federal e Comite Gestor do Simples Nacional para MEI/PJ, e as sancoes previstas (multas do Livro V da CLT, responsabilizacao solidaria, exigencia de verbas retroativas)."
+      - "5) Em termos simples: explique em linguagem coloquial, em um paragrafo curto, o que esta modalidade significa na pratica para quem presta o servico e para quem contrata."
+    words: [1500, 2200]
+    charts: 2
+    must_include: [clt, codigo-civil, lc123-mei, auditoria-fiscal]
     brief: >
       Modalidades autônomas e empresariais sem vinculo empregaticio,
       detalhadas item a item.
@@ -98,7 +124,7 @@ sections:
       - "PJ: ME, EPP, Simples Nacional, Lucro Presumido (diferencas, obrigatoriedades, nota fiscal, contabilidade)"
       - "MEI (LC 123/2006: limite de faturamento, atividades permitidas e proibidas, DAS, limite de 1 empregado, beneficios)"
       - "Cooperado (Lei 12.690/2012, cooperativas de trabalho, quando configura fraude)"
-      - "Contribuinte individual previdenciario"
+      - "Contribuinte individual previdenciario (Lei 8.212/1991)"
       - "Trabalho voluntario (Lei 9.608/1998)"
       - "Trabalho informal sem qualquer formalizacao"
       - "Servico via aplicativos/plataformas (referencia breve, detalhado na secao de plataformas)"
@@ -106,73 +132,111 @@ sections:
   - id: pj-vs-clt
     number: 7
     title: "PJ versus CLT: comparacao objetiva"
+    charts: 3
+    must_include: [clt, lc123-mei, lc-214-2025, ec-132-2023]
     brief: >
       Tabela e explicacao comparando: custo para a empresa, direitos do
-      trabalhador (FGTS, férias, 13o, INSS, aviso previo, horas extras),
+      trabalhador (FGTS, ferias, 13o, INSS, aviso previo, horas extras),
       carga tributaria, risco trabalhista, quando e legal atuar como PJ,
-      quando configura fraude (pejotizacao). Simulacao de custo empresa CLT
-      vs PJ. Impacto da reforma tributaria (EC 132/2023 e LC 214/2025) no
-      regime de PJ e MEI a partir de 2026-2033.
+      quando configura fraude (pejotizacao). Simulacao conceitual de custo
+      empresa CLT vs PJ com base nas cargas legais citadas no contexto.
+      Impacto da reforma tributaria (EC 132/2023 e LC 214/2025) no
+      regime de PJ e MEI a partir de 2026-2033 (cronograma de transicao).
+      Use graficos comparativos (barras/donut) para direitos e carga.
 
   - id: mei-e-informal
     number: 8
     title: "MEI e trabalho informal"
+    charts: 2
+    must_include: [lc123-mei, inss-8212, lc-214-2025]
     brief: >
       O que e o MEI, limites de faturamento, atividades permitidas, DAS,
-      beneficios (auxilio-doenca, aposentadoria, pensao), obrigatoriedade
-      de empregado, como funciona a formalizacao. Vantagens e riscos.
-      Trabalho informal: caracteristicas, quem e o trabalhador informal,
-      riscos (ausencia de INSS, FGTS, sindicalizacao), como se proteger,
-      programas de formalizacao (Mei+Prev, Seguro Defeso).
+      beneficios (auxilio-doenca, aposentadoria, pensao - Lei 8.213/1991),
+      obrigatoriedade de empregado, como funciona a formalizacao. Vantagens
+      e riscos. Trabalho informal: caracteristicas, quem e o trabalhador
+      informal, riscos (ausencia de INSS, FGTS, sindicalizacao), como se
+      proteger, programas de formalizacao (Mei+Prev, Seguro Defeso).
+      Use graficos para comparar MEI x informal x CLT e o cronograma da
+      reforma tributaria.
 
   - id: previdencia-tributos
     number: 9
     title: "Previdencia e tributos do trabalhador"
+    charts: 2
+    must_include: [inss-8212, inss-8213, ec-103-2019, lc-214-2025, ec-132-2023]
     brief: >
-      Como funciona o INSS para CLT (20% patronal + 7,5% a 14% do
-      trabalhador), para MEI (DAS com INSS embutido), para autônomo e PJ
+      Como funciona o INSS para CLT (contribuicao patronal e do trabalhador,
+      Lei 8.212/1991), para MEI (DAS com INSS embutido), para autônomo e PJ
       (carnê ou nota fiscal), e para informal (contribuicao opcional).
-      Tabela de aliquotas e faixas. Reforma da previdencia (EC 103/2019).
-      Reforma tributaria (EC 132/2023): IBS, CBS, transicao 2026-2033,
-      impacto no MEI e no Simples Nacional.
+      Tabela de aliquotas e faixas com os valores presentes no contexto.
+      Reforma da previdencia (EC 103/2019): regras de transicao aplicaveis
+      ao trabalhador. Reforma tributaria (EC 132/2023 e LC 214/2025): IBS,
+      CBS, cronograma de transicao 2026-2033, impacto no MEI e no Simples
+      Nacional. Use graficos de barras (aliquotas) e de linha/colunas
+      (cronograma de transicao).
 
   - id: plataformas
     number: 10
     title: "Trabalho por plataformas digitais"
+    charts: 2
+    must_include: [clt, auditoria-fiscal]
     brief: >
-      Como funciona (apps de entrega, transporte, servicos). Situacao
-      juridica em 2026: PL 12/2024 em tramitacao, Convencao 193 da OIT
-      (aprovada em 2026), medidas do MTE (transparencia de valores, pontos
-      de apoio, comite interministerial). Direitos em discussao (contribuicao
-      previdenciaria, limites de taxa de cobranca, remuneracao minima).
-      Quem e prejudicado e quem se beneficia com cada proposta.
+      Como funciona (apps de entrega, transporte, servicos). Numero de
+      trabalhadores por aplicativo no Brasil (cite os dados do IBGE e da
+      imprensa coletados). Situacao juridica em 2026: proposicoes em
+      tramitacao (PL 12/2024 e demais PLs do contexto), Convencao 193 da OIT
+      (se houver referencia no contexto), medidas do MTE (transparencia de
+      valores, pontos de apoio, comite interministerial). Direitos em
+      discussao (contribuicao previdenciaria, limites de taxa de cobranca,
+      remuneracao minima). Quem e prejudicado e quem se beneficia com cada
+      proposta. Use graficos de barras (volume de trabalhadores) e fluxo
+      (ciclo de trabalho no aplicativo).
 
   - id: tramitacao-2026
     number: 11
     title: "Mudancas em tramitacao no Congresso em 2026"
+    charts: 1
+    must_include: [camara-proposicoes, senado-materias]
     brief: >
       Coleta atual de proposicoes (Camara e Senado) sobre trabalho:
       reforma trabalhista, plataformas digitais, pejotizacao, MEI,
       tributacao. Para cada proposicao: ementa, situacao, quem apoia,
       quem e prejudicado. Identificar tambem medidas do Executivo
-      (portarias do MTE, decretos).
+      (portarias do MTE, decretos) quando presentes no contexto.
+      Use um diagrama de fluxo ou comparativo com as principais proposicoes.
 
   - id: riscos-e-direitos
     number: 12
     title: "Riscos e como se proteger"
+    charts: 1
+    must_include: [mte-fiscalizacao, auditoria-fiscal, clt, lei-14457]
     brief: >
-      Principais riscos para cada modalidade (trabalhador e empresa).
-      Como comprovar vinculo, como agir em caso de desvio, como funciona
-      a fiscalizacao do MTE, papel do sindicato e da advocacia trabalhista.
-      Checklist pratico para quem quer migrar de CLT para PJ/MEI e
-      vice-versa.
+      Principais riscos para cada modalidade (trabalhador e empresa):
+      saude e seguranca (NRs, EPI - CLT), assedio (Lei 14.457/2022),
+      fraude trabalhista. Como comprovar vinculo, como agir em caso de
+      desvio, como funciona a fiscalizacao do MTE, papel do sindicato e
+      da advocacia trabalhista. Checklist pratico para quem quer migrar
+      de CLT para PJ/MEI e vice-versa. Use um diagrama comparativo de
+      riscos x protecoes por modalidade.
 
   - id: quadro-resumo
     number: 13
     title: "Quadro resumo e conclusoes"
+    charts: 2
+    must_include: [clt, lc123-mei]
     brief: >
       Tabela consolidada comparando todas as modalidades em termos de
-      direitos, custo, risco e indicacao de uso. Cenarios futuros ate 2030
-      (reforma tributaria, plataformas, inteligencia artificial no
+      direitos, deveres, custo, risco e indicacao de uso. Cenarios futuros
+      ate 2030 (reforma tributaria, plataformas, inteligencia artificial no
       trabalho). Conclusoes objetivas: o que esta estabelecido, o que
-      pode mudar, quem e mais afetado pelas mudancas.
+      pode mudar, quem e mais afetado pelas mudancas. Use graficos de
+      barras/pizza para o panorama geral e um comparativo final.
+
+appendix:
+  id: legislacao-explicada
+  title: "Apendice A - Legislacao citada e o que ela muda na pratique"
+  brief: >
+    Tabela em linguagem simples com todas as normas citadas no relatorio
+    (Constituicao, CLT, leis, leis complementares e emendas): o que cada
+    norma regula, para quem protege ou obriga e onde encontrar o texto
+    oficial. Nenhuma linha sem base legal.

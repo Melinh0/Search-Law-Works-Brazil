@@ -59,6 +59,7 @@ def build_chunks(settings: Settings) -> list[dict]:
                         "title": doc["title"],
                         "url": doc["url"],
                         "tags": doc.get("tags", []),
+                        "priority": int(doc.get("priority", 1)),
                         "collected_at": doc.get("collected_at", ""),
                         "chunk_index": idx,
                         "text": piece,

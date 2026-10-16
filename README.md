@@ -11,12 +11,13 @@ Congresso — com indicacao de quem e prejudicado ou beneficiado por cada mudanc
 trabalho_bot/
 ├── cli.py          Interface terminal interativa (chat RAG + comandos)
 ├── web.py          Interface web local (FastAPI) com chat e botao de relatorio
-├── collectors/     Coleta de fontes: Planalto, Camara, Senado, IBGE, noticias
+├── collectors/     Coleta de fontes: Planalto, Camara, Senado, IBGE, artigos, noticias
 ├── chunking.py     Divisao dos documentos em fragmentos indexaveis
-├── rag.py          Busca BM25 sobre o corpus
+├── rag.py          Busca BM25 sobre o corpus (com boost de fonte oficial)
 ├── llm.py          Cliente Ollama (cloud com rotacao de chaves + fallback local)
-├── report.py       Geracao do relatorio Markdown secao a secao
-├── pdf.py          Exportacao MD -> HTML -> PDF (Edge/Chrome headless)
+├── report.py       Relatorio secao a secao com citacao ABNT obrigatoria
+├── charts.py       Graficos matplotlib e diagramas com legenda ABNT
+├── pdf.py          Exportacao MD -> HTML -> PDF ABNT (Edge/Chrome headless)
 └── config.py       Carregamento de YAMLs e .env
 config/
 ├── sources.yaml    Fontes de coleta
@@ -66,6 +67,7 @@ Comandos do chat:
 | `/coletar` | coleta as fontes e reconstroi o corpus |
 | `/relatorio` | gera o relatorio completo em MD e PDF |
 | `/relatorio clt,mei` | gera apenas as secoes indicadas |
+| `/auditar` | audita o ultimo relatorio (citacoes, graficos, frases) |
 | `/buscar <texto>` | busca fragmentos sem usar o LLM |
 | `/status` | estado do corpus e da configuracao |
 | `/ajuda` | lista de comandos |
@@ -87,6 +89,7 @@ python -m trabalho_bot coletar                    # so coleta
 python -m trabalho_bot relatorio                  # relatorio completo
 python -m trabalho_bot relatorio --so-secoes clt,mei
 python -m trabalho_bot relatorio --refresh        # ignora cache
+python -m trabalho_bot auditar                    # audita o ultimo relatorio
 python -m trabalho_bot status
 ```
 
@@ -102,17 +105,32 @@ quadro-resumo comparativo.
 
 Saidas em `output/relatorio-trabalho-brasil-<data>.{md,html,pdf}`.
 
+Padrao do relatorio:
+
+- Cada afirmacao cita uma fonte em formato ABNT hibrido com link clicavel,
+  ex.: `(BRASIL, 1943, art. 58)`; referencias finais na NBR 6023.
+- Bloco "**Em termos simples:**" ao fim de cada secao, em linguagem de leigo.
+- Minimo de 1 grafico por secao (matplotlib com legenda "Figura N - ... Fonte:"),
+  diagramas comparativos/fluxo em HTML para as modalidades.
+- Secoes 5 e 6 detalham Direitos, Deveres, base legal, atuacao do MTE e leitura
+  simplificada de cada modalidade de trabalho, com tabela de direitos x deveres.
+- Geracao com validacao mecanica (retries + reparo) e auditoria final via
+  `auditar` (citacoes linkadas, frases proibidas, graficos, capa/resumo).
+
 ## Fontes coletadas
 
 - Planalto: CLT, Constituicao, FGTS, Lei 6.019, Lei 13.467, LC 123 (MEI),
-  Lei 8.212 (INSS), Lei 12.288, Lei 14.611
+  Lei 8.212 (INSS), Lei 8.213, Lei 12.288, Lei 14.611
+- Legislacao complementar: EC 103/2019, EC 132/2023, LC 214/2025, Codigo Civil
+- Artigos academicos (SciELO/OpenAlex/Crossref)
 - API de proposicoes da Camara (palavras-chave de trabalho)
 - API de materias do Senado
-- IBGE (PNAD Continua)
-- Google News RSS (panorama de 2026)
+- IBGE (PNAD Continua via API de agregados: desocupacao, ocupados, rendimento)
+- Google News RSS (URLs reais resolvidas, sem redirecionadores)
 
 Cache em `data/cache` (use `--refresh` para forcar recoleta); corpus em
-`data/corpus/*.jsonl`.
+`data/corpus/*.jsonl`. As pastas `data/` e `output/` sao gerados localmente
+(cache de coleta e relatorios) e ficam fora do versionamento via `.gitignore`.
 
 ## Aviso
 

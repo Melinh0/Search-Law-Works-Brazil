@@ -17,7 +17,7 @@ from .config import Settings
 from .llm import LLMError, OllamaClient
 from .pdf import export
 from .rag import SearchIndex, build_index
-from .report import SYSTEM_PROMPT, generate_report
+from .report import SYSTEM_PROMPT, audit_report, generate_report
 
 console = Console()
 
@@ -25,11 +25,35 @@ HELP = """Comandos disponiveis:
   /coletar          coleta as fontes configuradas e reconstroi o corpus
   /relatorio        gera o relatorio completo em Markdown e PDF
   /relatorio <s>    gera apenas as secoes indicadas (ex.: /relatorio clt,mei)
+  /auditar          audita o ultimo relatorio gerado (citacoes, graficos, frases)
   /buscar <texto>   busca fragmentos no corpus sem usar o LLM
   /status           mostra estado do corpus e configuracao atual
   /ajuda            mostra esta ajuda
   /sair             encerra o programa
 """
+
+
+def cmd_audit(settings: Settings) -> None:
+    """Audita o relatorio Markdown mais recente gerado."""
+    files = sorted(settings.output_dir.glob("relatorio-trabalho-brasil-*.md"))
+    if not files:
+        console.print("[yellow]Nenhum relatorio encontrado em output/.[/yellow]")
+        return
+    path = files[-1]
+    stats = audit_report(path.read_text(encoding="utf-8"), settings.outline)
+    linhas = [
+        f"Arquivo: {path.name}",
+        f"Citacoes linkadas: {stats['citacoes']}",
+        f"Graficos: {stats['graficos']} (minimo esperado: {stats['graficos_minimos_esperados']})",
+        f"Tabelas com legenda: {stats['tabelas_legenda']}",
+        f"Frases proibidas: {stats['frases_proibidas']}",
+        f"Paragrafos sem citacao: {stats['paragrafos_sem_citacao']}",
+        f"Capa: {'sim' if stats['tem_capa'] else 'NAO'} | "
+        f"Resumo: {'sim' if stats['tem_resumo'] else 'NAO'} | "
+        f"Referencias: {'sim' if stats['tem_referencias'] else 'NAO'}",
+    ]
+    estilo = "green" if not stats["frases_proibidas"] and not stats["paragrafos_sem_citacao"] else "yellow"
+    console.print(Panel("\n".join(linhas), title="Auditoria do relatorio", border_style=estilo))
 
 
 def cmd_collect(settings: Settings, refresh: bool = False) -> Settings:
@@ -131,6 +155,8 @@ def chat_loop(settings: Settings) -> None:
                 index = None
             elif cmd == "/status":
                 cmd_status(settings)
+            elif cmd == "/auditar":
+                cmd_audit(settings)
             elif cmd == "/buscar":
                 if arg:
                     cmd_search(settings, arg)
@@ -174,7 +200,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument(
         "command",
         nargs="?",
-        choices=["chat", "coletar", "relatorio", "status"],
+        choices=["chat", "coletar", "relatorio", "auditar", "status"],
         default="chat",
         help="execucao imediata (padrao: chat interativo)",
     )
@@ -192,6 +218,8 @@ def main(argv: list[str] | None = None) -> None:
     elif args.command == "relatorio":
         only = [s.strip() for s in args.so_secoes.split(",")] if args.so_secoes else None
         cmd_report(settings, OllamaClient(settings), only)
+    elif args.command == "auditar":
+        cmd_audit(settings)
     else:
         chat_loop(settings)
 

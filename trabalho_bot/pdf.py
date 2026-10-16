@@ -1,4 +1,4 @@
-"""Exportacao do relatorio Markdown para PDF via HTML e Edge headless."""
+"""Exportacao do relatorio Markdown para PDF via HTML e Edge headless (padrao ABNT)."""
 
 from __future__ import annotations
 
@@ -17,27 +17,184 @@ EDGE_PATHS = [
 ]
 
 CSS = """
-@page { size: A4; margin: 20mm 18mm; }
-body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; line-height: 1.55; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 24px; }
-h1 { font-size: 22pt; color: #0b3d62; border-bottom: 3px solid #0b3d62; padding-bottom: 8px; }
-h2 { font-size: 15pt; color: #0b3d62; margin-top: 28px; border-bottom: 1px solid #ccd9e3; padding-bottom: 4px; page-break-after: avoid; }
-h3 { font-size: 12.5pt; color: #14507a; page-break-after: avoid; }
-table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 10pt; page-break-inside: avoid; }
-th, td { border: 1px solid #b9c9d6; padding: 7px 9px; text-align: left; vertical-align: top; }
-th { background: #e8f0f6; color: #0b3d62; }
-tr:nth-child(even) td { background: #f7fafc; }
-ul, ol { margin: 8px 0 8px 20px; }
-li { margin-bottom: 4px; }
-blockquote { border-left: 4px solid #0b3d62; margin: 12px 0; padding: 6px 14px; background: #f2f7fb; color: #33475a; }
-code { background: #f0f3f5; padding: 1px 4px; border-radius: 3px; font-size: 9.5pt; }
-a { color: #0b3d62; text-decoration: none; }
-hr { border: none; border-top: 1px solid #ccd9e3; margin: 22px 0; }
+@page { size: A4; margin: 20mm 20mm 20mm 30mm; }
+
+html { -webkit-print-color-adjust: exact; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+  padding-top: 10mm;
+}
+
+.cabecalho-corrido {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  color: #333;
+  z-index: 1;
+}
+
+.numero-pagina {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  z-index: 1;
+}
+
+.numero-pagina::after { content: counter(page); }
+
+p {
+  margin: 0;
+  text-indent: 1.25cm;
+  text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  page-break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+h2 { font-size: 14pt; margin: 22px 0 8px; }
+h3 { font-size: 13pt; margin: 18px 0 6px; }
+h4 { font-size: 12pt; margin: 14px 0 4px; }
+h5, h6 { font-size: 12pt; margin: 12px 0 4px; }
+
+strong, b { font-weight: bold; }
+
+ul, ol { margin: 8px 0 8px 1.25cm; padding-left: 0; }
+li { margin-bottom: 4px; text-align: justify; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 4px 0 16px;
+  font-size: 10pt;
+  line-height: 1.3;
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #888;
+  padding: 5px 7px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #e6e6e6; font-weight: bold; }
+tr:nth-child(even) td { background: #f6f6f6; }
+
+.tabela-legenda {
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  margin-top: 16px;
+  text-align: left;
+  page-break-after: avoid;
+}
+
+figure.figura {
+  margin: 14px auto;
+  text-align: center;
+  page-break-inside: avoid;
+  width: 92%;
+}
+figure.figura img { max-width: 100%; max-height: 95mm; height: auto; }
+figure.figura figcaption {
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.diagrama {
+  margin: 14px 0;
+  page-break-inside: avoid;
+  font-family: Arial, sans-serif;
+  font-size: 10.5pt;
+}
+.diagrama.comparativo { display: flex; gap: 10px; align-items: stretch; }
+.diag-coluna {
+  flex: 1;
+  border: 1px solid #888;
+  padding: 7px 10px;
+  background: #f4f4f4;
+}
+.diag-coluna h4 { margin: 0 0 6px; font-size: 11pt; text-align: center; }
+.diag-coluna ul { margin: 0 0 0 14px; }
+.diagrama.fluxo { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.diag-etapa {
+  border: 1px solid #888;
+  background: #f4f4f4;
+  padding: 5px 9px;
+}
+.diag-num {
+  display: inline-block;
+  min-width: 17px;
+  text-align: center;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.diag-seta { font-size: 11pt; color: #777; padding: 0 1px; }
+
+blockquote {
+  border-left: 3px solid #666;
+  margin: 12px 0;
+  padding: 4px 14px;
+  color: #222;
+  background: none;
+}
+
+code { background: #f0f0f0; padding: 1px 4px; font-size: 10pt; }
+
+a { color: #000; text-decoration: none; word-break: break-all; }
+
+hr { border: none; border-top: 1px solid #999; margin: 18px 0; }
+
+.capa {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  margin-top: -10mm;
+  height: 257mm;
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.capa p, .capa h1 { text-indent: 0; }
+.capa-instituicao { font-size: 12pt; margin-top: 12mm; font-weight: bold; }
+.capa-autor { font-size: 12pt; margin-top: 10mm; font-weight: bold; }
+.capa-titulo {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #000;
+  border: none;
+  margin: auto 8mm;
+  line-height: 1.4;
+}
+.capa-subtitulo { font-size: 12pt; margin: 0 10mm 40mm; }
+.capa-espaco { display: none; }
+.capa-local { font-size: 12pt; margin-bottom: 28mm; }
+.capa-data { font-size: 12pt; margin-bottom: 12mm; }
 """
 
 
-def markdown_to_html(md_text: str, title: str) -> str:
-    """Converte Markdown em pagina HTML estilizada para impressao."""
+def markdown_to_html(md_text: str, title: str, author: str = "") -> str:
+    """Converte Markdown em pagina HTML estilizada para impressao ABNT."""
     body = markdown.markdown(md_text, extensions=["tables", "toc", "sane_lists"])
+    surname = re.split(r"\s+", author.strip())[-1].upper() if author.strip() else ""
+    cabecalho = f'<div class="cabecalho-corrido">{surname}</div>' if surname else ""
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -46,6 +203,8 @@ def markdown_to_html(md_text: str, title: str) -> str:
 <style>{CSS}</style>
 </head>
 <body>
+{cabecalho}
+<div class="numero-pagina"></div>
 {body}
 </body>
 </html>"""
@@ -81,10 +240,14 @@ def export(settings: Settings, md_text: str, base_name: str) -> tuple[Path, Path
     html_path = settings.output_dir / f"{base_name}.html"
     pdf_path = settings.output_dir / f"{base_name}.pdf"
     title = re.search(r"^# (.+)$", md_text, flags=re.MULTILINE)
-    doc_title = title.group(1) if title else base_name
+    outline_title = settings.outline.get("title", "")
+    doc_title = title.group(1) if title else (outline_title or base_name)
+    author = str(settings.outline.get("author", ""))
 
     md_path.write_text(md_text, encoding="utf-8")
-    html_path.write_text(markdown_to_html(md_text, doc_title), encoding="utf-8")
+    html_path.write_text(
+        markdown_to_html(md_text, doc_title, author=author), encoding="utf-8"
+    )
 
     browser = find_browser()
     if browser is None:
