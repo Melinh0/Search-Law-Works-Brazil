@@ -136,7 +136,7 @@ def _replace_fig_img(match: re.Match) -> str:
     src = match.group("src")
     legend = _fig_caption_html_to_latex(match.group("cap"))
     return (
-        "\\par\\vspace{16pt}\n"
+        "\\par\\vspace{8pt}\n"
         "\\begin{figure}[H]\n\\centering\n"
         "\\includegraphics[width=0.9\\linewidth]{assets/figura-"
         + src.split("figura-")[1].replace(".png", "")
@@ -144,7 +144,7 @@ def _replace_fig_img(match: re.Match) -> str:
         "\\par\\smallskip\n"
         f"\\begin{{flushleft}}\\small\\noindent {legend}\\par\\end{{flushleft}}\n"
         "\\end{figure}\n"
-        "\\par\\vspace{18pt}\n"
+        "\\par\\vspace{5pt}\n"
     )
 
 
@@ -164,7 +164,7 @@ def _replace_fig_comparativo(match: re.Match) -> str:
     header = " & ".join(rf"\bfseries {t}" for t, _ in colunas) + r" \\"
     colspec = f">{{\\raggedright\\arraybackslash}}p{{{width:.3f}\\textwidth}}"
     lines = [
-        "\\par\\vspace{16pt}",
+        "\\par\\vspace{8pt}",
         "\\begin{center}",
         "\\begin{tabular}{|" + "|".join([colspec] * n) + "|}",
         "\\hline",
@@ -178,11 +178,11 @@ def _replace_fig_comparativo(match: re.Match) -> str:
             cells.append(itens[row] if row < len(itens) else "")
         lines.append(" & ".join(cells) + r" \\")
         lines.append("\\hline")
-    lines += ["\\end{tabular}", "\\end{center}", "\\par\\vspace{10pt}", ""]
+    lines += ["\\end{tabular}", "\\end{center}", "\\par\\vspace{4pt}", ""]
     legend = _fig_caption_html_to_latex(match.group("cap"))
     lines += [
         f"\\begin{{flushleft}}\\small\\noindent {legend}\\par\\end{{flushleft}}",
-        "\\par\\vspace{18pt}",
+        "\\par\\vspace{5pt}",
         "",
     ]
     return "\n".join(lines)
@@ -196,13 +196,13 @@ def _replace_fig_fluxo(match: re.Match) -> str:
     items = "\n".join(f"\\item {e}" for e in etapas)
     legend = _fig_caption_html_to_latex(match.group("cap"))
     return (
-        "\\par\\vspace{16pt}\n"
+        "\\par\\vspace{8pt}\n"
         "\\begin{center}\n\\begin{minipage}{0.95\\textwidth}\n\\small\n"
         "\\begin{enumerate}\n" + items + "\\end{enumerate}\n"
         "\\end{minipage}\n\\end{center}\n"
         "\\par\\smallskip\n"
         f"\\begin{{flushleft}}\\small\\noindent {legend}\\par\\end{{flushleft}}\n"
-        "\\par\\vspace{18pt}\n"
+        "\\par\\vspace{5pt}\n"
     )
 
 
