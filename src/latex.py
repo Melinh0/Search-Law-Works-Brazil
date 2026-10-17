@@ -1,5 +1,3 @@
-"""Exportacao do relatorio Markdown para PDF via Pandoc + Tectonic (LaTeX)."""
-
 from __future__ import annotations
 
 import re
@@ -65,7 +63,6 @@ def _latex_escape(text: str) -> str:
 
 
 def _md_links_to_href(text: str) -> str:
-    """Converte links Markdown em \\href com texto escapado."""
 
     def replace(match: re.Match) -> str:
         label = _latex_escape(match.group(1))
@@ -78,7 +75,6 @@ def _md_links_to_href(text: str) -> str:
 
 
 def _fig_caption_html_to_latex(caption_html: str) -> str:
-    """Converte o HTML da figcaption em trecho LaTeX com negrito/itálico."""
     strong = re.search(r"<strong>(.*?)</strong>", caption_html, re.S)
     em = re.search(r"<em>(.*?)</em>", caption_html, re.S)
     rest = caption_html
@@ -124,7 +120,6 @@ CAPA_RE = re.compile(
 
 
 def _latex_path(path: str, base_dir: str = "output") -> str:
-    """Normaliza caminho para LaTeX (barra invertida para /, relativo para absoluto)."""
     import os
     p = path.replace("\\", "/")
     if not os.path.isabs(p):
@@ -220,7 +215,6 @@ def _replace_tabela_legend(match: re.Match) -> str:
 
 
 def _allowbreak_slashes(text: str) -> str:
-    """Insere \\allowbreak apos / entre \\w\\w fora de argumentos de \\href/\\url."""
     urls: list[str] = []
 
     def _hide(match: re.Match) -> str:
@@ -240,7 +234,6 @@ def _table_cell_to_latex(cell: str) -> str:
 
 
 def _md_tables_to_latex(text: str) -> str:
-    """Converte tabelas Markdown em tabular LaTeX com bordas laterais fechadas."""
     lines = text.split("\n")
     out: list[str] = []
     i = 0
@@ -295,7 +288,6 @@ def _md_tables_to_latex(text: str) -> str:
 
 
 def md_to_latex_body(md_text: str) -> str:
-    """Remove HTML de apresentacao e converte figuras/diagramas para LaTeX cru."""
     text = CAPA_RE.sub("", md_text)
     text = re.sub(r"^\s*(-{3,}|\*{3,}|_{3,})\s*$", "", text, flags=re.MULTILINE)
     text = FIG_COMPARATIVO_RE.sub(_replace_fig_comparativo, text)
@@ -390,13 +382,6 @@ def latex_available() -> bool:
 
 
 def _postprocess_tex(tex: str) -> str:
-    """Corrige pos-pandoc: URLs nuas -> \\url{} e citacoes orfas -> ~\\href.
-
-    - URLs nuas (nao dentro de \\href/\\url) sao embrulhadas em \\url{} apos
-      desfazer escapes do pandoc (\\_, \\%, \\#, \\&) e remover pontuacao final.
-    - Citacoes que comecam com '(' ganham ~ antes de \\href para nao ficarem
-      sozinhas na ultima linha do paragrafo.
-    """
 
     def _wrap_bare_url(match: re.Match) -> str:
         url = match.group(1)
@@ -408,7 +393,6 @@ def _postprocess_tex(tex: str) -> str:
             url = url[:-1]
         return rf"\url{{{url}}}{trailing}"
 
-    # esconde argumentos de \href/\url existentes para nao reprocessa-los
     hidden: list[str] = []
 
     def _hide(match: re.Match) -> str:
@@ -420,9 +404,7 @@ def _postprocess_tex(tex: str) -> str:
     tex = re.sub(
         r"\x00(\d+)\x00", lambda m: hidden[int(m.group(1))], tex
     )
-    # ~ antes de citacoes iniciadas com '(' para evitar linha so com a citacao
     tex = re.sub(r"(?<=\S) +(\\href\{[^{}]*\}\{\()", r"~\1", tex)
-    # 'Fontes consultadas' em \small para reduzir paginas sparse no fim das secoes
     tex = re.sub(
         r"(?m)^((?:\\textbf\{)?Fontes consultadas:?\}?)( [^\n]*)$",
         r"{\\small \1\2\\par}",
@@ -432,7 +414,6 @@ def _postprocess_tex(tex: str) -> str:
 
 
 def export_latex(settings: Settings, md_text: str, base_name: str) -> tuple[Path, Path] | None:
-    """Gera o PDF via Pandoc+Tectonic. Retorna None se ferramentas faltarem ou falharem."""
     pandoc = find_pandoc()
     tectonic = find_tectonic()
     if not pandoc or not tectonic:
@@ -467,7 +448,6 @@ def export_latex(settings: Settings, md_text: str, base_name: str) -> tuple[Path
 
     pdf_path = output_dir / f"{base_name}.pdf"
     tex_path = build_dir / "corpo_completo.tex"
-    # 1) pandoc -> .tex completo
     cmd_tex = [
         str(pandoc),
         str(body_path),
@@ -496,7 +476,6 @@ def export_latex(settings: Settings, md_text: str, base_name: str) -> tuple[Path
     tex = tex.replace("º", r"\textordmasculine{}").replace("ª", r"\textordfeminine{}")
     tex = _postprocess_tex(tex)
     tex_path.write_text(tex, encoding="utf-8")
-    # 2) tectonic -> pdf
     cmd = [str(tectonic), str(tex_path), "--outdir", str(build_dir)]
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=900, cwd=str(build_dir))
     built_pdf = build_dir / "corpo_completo.pdf"

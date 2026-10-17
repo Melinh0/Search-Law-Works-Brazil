@@ -1,5 +1,3 @@
-"""Execucao como modulo: python -m src [chat|coletar|relatorio|status|web]."""
-
 from __future__ import annotations
 
 import sys

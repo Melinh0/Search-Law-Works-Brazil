@@ -1,5 +1,3 @@
-"""Renderizacao de graficos do relatorio: matplotlib (quantitativo) e HTML (diagramas)."""
-
 from __future__ import annotations
 
 import json
@@ -16,17 +14,16 @@ from matplotlib.ticker import FuncFormatter
 GRAFICO_RE = re.compile(r"```grafico\s*\n(.*?)\n```", re.DOTALL)
 
 PALETTE = ["#0b3d62", "#c45d2b", "#3d8b57", "#7c5cbf", "#b8860b", "#b03a2e", "#2b7a9b"]
-MATH_TYPES = {"barra", "barras", "pizza", "donut", "linha", "barra_empilhada", "hbar"}
+MATH_TYPES = {"barra", "barras", "pizza", "donut", "linha", "barra_empilhada", "barra_agrupada", "hbar"}
 DIAGRAM_TYPES = {"comparativo"}
 ALLOWED_TYPES = MATH_TYPES | DIAGRAM_TYPES
 
 
 class ChartError(ValueError):
-    """Estrutura de grafico invalida ou dados nao numericos."""
+    pass
 
 
 def parse_spec(raw: str) -> dict:
-    """Converte o conteudo de um bloco ```grafico em dicionario validado."""
     try:
         spec = json.loads(raw.strip())
     except ValueError as exc:
@@ -89,12 +86,10 @@ def parse_spec(raw: str) -> dict:
 
 
 def count_graficos(text: str) -> int:
-    """Conta blocos ```grafico``` validos em um texto Markdown."""
     return len(GRAFICO_RE.findall(text))
 
 
 def _wrap_labels(labels: list[str], width: int = 14) -> list[str]:
-    """Quebra rotulos longos em varias linhas para nao sobrescrever o eixo."""
     out = []
     for label in labels:
         text = str(label)
@@ -106,7 +101,6 @@ def _wrap_labels(labels: list[str], width: int = 14) -> list[str]:
 
 
 def _ylabel(unidade: str) -> str:
-    """Monta o rotulo do eixo Y evitando parênes duplicados."""
     text = str(unidade or "").strip()
     if not text:
         return "valor"
@@ -115,11 +109,11 @@ def _ylabel(unidade: str) -> str:
     return f"({text})"
 
 
-def _br_number(value: float, _pos=None) -> str:
-    """Formata valores no padrao brasileiro, com escala legivel.
+def _pct_br(pct: float) -> str:
+    return f"{pct:.1f}".replace(".", ",") + "%"
 
-    1.200.000 vira "1,2 mi"; 780.000 vira "780 mil"; 1.234 vira "1.234".
-    """
+
+def _br_number(value: float, _pos=None) -> str:
     av = abs(value)
     if av >= 1_000_000_000:
         escala, div = " bi", 1_000_000_000
@@ -144,7 +138,6 @@ def _br_number(value: float, _pos=None) -> str:
 
 
 def _fmt_item(item: str) -> str:
-    """Formata itens puramente numericos dos diagramas no padrao brasileiro."""
     text = str(item).strip()
     if re.fullmatch(r"\d{4,}", text):
         return _br_number(float(text))
@@ -152,7 +145,6 @@ def _fmt_item(item: str) -> str:
 
 
 class ChartRenderer:
-    """Atribui numeracao ABNT a figuras e renderiza cada especificacao."""
 
     def __init__(self, assets_dir: Path, wipe: bool = True):
         self.assets_dir = assets_dir
@@ -164,7 +156,6 @@ class ChartRenderer:
         self.table_counter = 0
 
     def render(self, spec: dict) -> str:
-        """Renderiza uma especificacao e devolve o bloco HTML com legenda ABNT."""
         self.fig_counter += 1
         number = self.fig_counter
         tipo = spec["tipo"]
@@ -218,7 +209,7 @@ class ChartRenderer:
             wedges, _, auto = ax.pie(
                 valores,
                 labels=None,
-                autopct="%1.1f%%",
+                autopct=_pct_br,
                 startangle=90,
                 colors=PALETTE[: len(valores)],
                 wedgeprops={"width": 0.45} if tipo == "donut" else None,
@@ -298,6 +289,28 @@ class ChartRenderer:
                 if len(rotulos) > 4 or any(len(str(r)) > 10 for r in rotulos):
                     ax.set_xticks(range(len(rotulos)))
                     ax.set_xticklabels(_wrap_labels(rotulos), fontsize=8.5)
+            elif tipo == "barra_agrupada":
+                fig, ax = plt.subplots(figsize=(7.0, 3.8))
+                series = spec.get("series") or []
+                eixo_x = list(range(len(rotulos)))
+                largura = 0.8 / max(len(series), 1)
+                topo = max(
+                    [max(s["valores"]) for s in series if s["valores"]] or valores or [1.0]
+                )
+                for i, s in enumerate(series):
+                    centros = [x + (i - (len(series) - 1) / 2) * largura for x in eixo_x]
+                    barras = ax.bar(centros, s["valores"], largura * 0.92,
+                                    color=PALETTE[i % len(PALETTE)], label=s["nome"])
+                    for rect, v in zip(barras, s["valores"]):
+                        ax.text(rect.get_x() + rect.get_width() / 2, v + topo * 0.015,
+                                _br_number(v), ha="center", fontsize=8.5)
+                ax.set_xticks(eixo_x)
+                ax.set_xticklabels(_wrap_labels(rotulos, width=12), fontsize=9)
+                ax.set_ylabel(ylabel)
+                ax.yaxis.set_major_formatter(FuncFormatter(_br_number))
+                ax.set_ylim(0, topo * 1.18)
+                if len(series) > 1:
+                    ax.legend(fontsize=9, frameon=False)
             else:
                 fig, ax = plt.subplots(figsize=(7.0, 3.8))
                 ax.bar(range(len(valores)), valores, color=PALETTE[0], width=0.58)

@@ -1,5 +1,3 @@
-"""Interface web local (FastAPI) com chat RAG e geracao de relatorio."""
-
 from __future__ import annotations
 
 import asyncio
@@ -47,13 +45,11 @@ def _append_log(line: str) -> None:
 
 @app.get("/", response_class=HTMLResponse)
 def home() -> str:
-    """Serve a pagina unica da interface web."""
     return TEMPLATE_PATH.read_text(encoding="utf-8")
 
 
 @app.post("/api/coletar")
 def api_coletar() -> dict:
-    """Dispara a coleta de fontes em segundo plano e retorna o estado."""
     settings = get_settings()
 
     def run() -> None:
@@ -74,7 +70,6 @@ def api_coletar() -> dict:
 
 @app.get("/api/status")
 def api_status() -> dict:
-    """Retorna estado da coleta/relatorio e contagem do corpus."""
     settings = get_settings()
     docs = load_corpus(settings)
     return {
@@ -87,7 +82,6 @@ def api_status() -> dict:
 
 @app.post("/api/relatorio")
 def api_relatorio() -> dict:
-    """Dispara a geracao do relatorio completo em background."""
     if _report_state["status"] in ("coletando", "gerando relatorio"):
         return {"status": _report_state["status"]}
 
@@ -115,7 +109,6 @@ def api_relatorio() -> dict:
 
 @app.get("/api/download")
 def api_download() -> FileResponse:
-    """Baixa o relatorio Markdown mais recente gerado."""
     settings = get_settings()
     files = sorted(settings.output_dir.glob("relatorio-trabalho-brasil-*.md"))
     if not files:
@@ -125,7 +118,6 @@ def api_download() -> FileResponse:
 
 @app.get("/api/auditar")
 def api_auditar() -> dict:
-    """Audita o relatorio Markdown mais recente gerado."""
     settings = get_settings()
     files = sorted(settings.output_dir.glob("relatorio-trabalho-brasil-*.md"))
     if not files:
@@ -138,7 +130,6 @@ def api_auditar() -> dict:
 
 @app.post("/api/chat")
 async def api_chat(payload: dict) -> StreamingResponse:
-    """Responde a pergunta do usuario com busca RAG, em streaming SSE."""
     question = (payload.get("message") or "").strip()
     settings = get_settings()
 
@@ -178,7 +169,6 @@ async def api_chat(payload: dict) -> StreamingResponse:
 
 
 def main() -> None:
-    """Sobe o servidor web local na porta 8000."""
     import uvicorn
 
     uvicorn.run(app, host="127.0.0.1", port=8000)

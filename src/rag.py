@@ -1,5 +1,3 @@
-"""Busca semantica simples por relevancia (BM25) sobre o corpus fragmentado."""
-
 from __future__ import annotations
 
 import re
@@ -21,23 +19,16 @@ STOPWORDS = {
 
 
 def normalize(text: str) -> str:
-    """Remove acentos e converte para minusculas para indexacao uniforme."""
     stripped = unicodedata.normalize("NFKD", text.lower())
     return "".join(ch for ch in stripped if not unicodedata.combining(ch))
 
 
 def tokenize(text: str) -> list[str]:
-    """Tokeniza texto normalizado removendo stopwords e tokens curtos."""
     tokens = _TOKEN_RE.findall(normalize(text))
     return [t for t in tokens if len(t) > 2 and t not in STOPWORDS]
 
 
 class SearchIndex:
-    """Indice BM25 construido uma unica vez e reutilizado nas consultas.
-
-    Fragmentos de fontes oficiais e academicas recebem bonus no re-ranking
-    para que legislacao e doutrina aparecam antes de noticiarios.
-    """
 
     PRIORITY_BONUS = 0.15
 
@@ -60,11 +51,9 @@ class SearchIndex:
         return boosted[:top_k]
 
     def search(self, query: str, top_k: int = 8) -> list[dict]:
-        """Retorna os fragmentos mais relevantes para a consulta informada."""
         return [self.chunks[i] for i, _ in self._rank(query, top_k)]
 
     def search_many(self, queries: list[str], top_k: int = 12) -> list[dict]:
-        """Faz varias consultas, pontua fragmentos por relevancia+prioridade e mescla."""
         best: dict[tuple[str, int], tuple[float, dict]] = {}
         for query in queries:
             if not query.strip():
@@ -84,5 +73,4 @@ class SearchIndex:
 
 
 def build_index(settings: Settings) -> SearchIndex:
-    """Carrega os fragmentos do disco e constroi o indice BM25."""
     return SearchIndex(load_chunks(settings))

@@ -1,5 +1,3 @@
-"""Interface de terminal interativa para coleta, chat e geracao de relatorio."""
-
 from __future__ import annotations
 
 import argparse
@@ -34,7 +32,6 @@ HELP = """Comandos disponiveis:
 
 
 def cmd_audit(settings: Settings) -> None:
-    """Audita o relatorio Markdown mais recente gerado."""
     files = sorted(settings.output_dir.glob("relatorio-trabalho-brasil-*.md"))
     if not files:
         console.print("[yellow]Nenhum relatorio encontrado em output/.[/yellow]")
@@ -57,7 +54,6 @@ def cmd_audit(settings: Settings) -> None:
 
 
 def cmd_collect(settings: Settings, refresh: bool = False) -> Settings:
-    """Executa a coleta de todas as fontes e reindexa o corpus."""
     console.print("[bold]Coletando fontes...[/bold]")
     docs = collect_all(settings)
     if not docs:
@@ -72,7 +68,6 @@ def cmd_collect(settings: Settings, refresh: bool = False) -> Settings:
 
 
 def cmd_report(settings: Settings, client: OllamaClient, only: list[str] | None) -> None:
-    """Gera o relatorio completo (ou secoes especificas) e exporta em MD/PDF."""
     if not load_corpus(settings):
         console.print("[yellow]Corpus vazio; executando coleta automatica...[/yellow]")
         cmd_collect(settings)
@@ -84,7 +79,6 @@ def cmd_report(settings: Settings, client: OllamaClient, only: list[str] | None)
 
 
 def cmd_search(settings: Settings, query: str) -> None:
-    """Lista os fragmentos mais relevantes para uma consulta livre."""
     index = build_index(settings)
     results = index.search(query, top_k=6)
     if not results:
@@ -101,7 +95,6 @@ def cmd_search(settings: Settings, query: str) -> None:
 
 
 def cmd_status(settings: Settings) -> None:
-    """Exibe contagem de documentos, fragmentos e chaves configuradas."""
     docs = load_corpus(settings)
     chunks_path = settings.corpus_dir / "chunks.jsonl"
     chunk_count = (
@@ -122,7 +115,6 @@ def cmd_status(settings: Settings) -> None:
 
 
 def chat_loop(settings: Settings) -> None:
-    """Inicia o atendimento interativo com busca RAG e resposta do LLM."""
     console.print(
         Panel(
             "[bold]Bot de Pesquisa - Trabalho no Brasil 2026[/bold]\n"
@@ -193,7 +185,6 @@ def chat_loop(settings: Settings) -> None:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Ponto de entrada da CLI com subcomandos para execucao nao interativa."""
     parser = argparse.ArgumentParser(
         prog="src", description="Bot de pesquisa sobre trabalho no Brasil"
     )

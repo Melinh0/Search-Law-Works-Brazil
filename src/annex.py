@@ -1,12 +1,10 @@
-"""Anexo B: graficos complementares com series coletadas do IBGE (SIDRA) e do Ipea."""
-
 from __future__ import annotations
 
 import json
 import re
 
 from .charts import ChartRenderer, parse_spec
-from .collectors import fetch_ipea_series
+from .collectors import annual_average, fetch_ipea_series
 from .config import Settings
 
 ANEXO_HEADING_RE = re.compile(r"^##\s+Anexo\s+B", re.MULTILINE)
@@ -14,22 +12,9 @@ ANEXO_HEADING_RE = re.compile(r"^##\s+Anexo\s+B", re.MULTILINE)
 FONTE_IPEA = "IPEA, Series Temporais/Ipeadata (IBGE/PNAD Continua)"
 
 
-def _annual_average(items: list[tuple[str, object]]) -> list[tuple[str, float]]:
-    """Reduce uma serie mensal/trimestral a (ano, media)."""
-    by_year: dict[str, list[float]] = {}
-    for periodo, valor in items:
-        try:
-            num = float(valor)  # type: ignore[arg-type]
-        except (TypeError, ValueError):
-            continue
-        by_year.setdefault(str(periodo)[:4], []).append(num)
-    return [(ano, sum(v) / len(v)) for ano, v in sorted(by_year.items()) if v]
-
-
 def _common_years(
     a: list[tuple[str, float]], b: list[tuple[str, float]]
 ) -> tuple[list[str], list[float], list[float]]:
-    """Intersecao de anos entre duas medias anuais, alinhando as tres saidas."""
     da, db = dict(a), dict(b)
     years = [y for y in sorted(set(da) & set(db)) if y >= "2012"]
     return years, [da[y] for y in years], [db[y] for y in years]
@@ -46,12 +31,6 @@ def _try_series(settings: Settings, code: str, log) -> list[tuple[str, float]]:
 def build_charts_annex(
     settings: Settings, md_text: str, log=print
 ) -> tuple[str, int]:
-    """Gera (ou reaproveita) o Anexo B ao final do relatorio.
-
-    Idempotente: se o Anexo B ja existir no texto, devolve o texto inalterado.
-    Renderiza PNGs numerados a partir da ultima figura existente, sem apagar as
-    atuais. Retorna (texto, numero_de_graficos_novos).
-    """
     if ANEXO_HEADING_RE.search(md_text):
         return md_text, 0
     existing = len(re.findall(r'<figure class="figura">', md_text))
@@ -67,8 +46,8 @@ def build_charts_annex(
 
     specs: list[dict] = []
 
-    com = _annual_average(_try_series(settings, "PNADC12_ESPCC12", log))
-    sem = _annual_average(_try_series(settings, "PNADC12_ESPSC12", log))
+    com = annual_average(_try_series(settings, "PNADC12_ESPCC12", log))
+    sem = annual_average(_try_series(settings, "PNADC12_ESPSC12", log))
     anos, v_com, v_sem = _common_years(com, sem)
     if anos:
         specs.append(
@@ -92,7 +71,7 @@ def build_charts_annex(
 
     taxa = [
         (a, v)
-        for a, v in _annual_average(_try_series(settings, "PNADCT_TXINFORMUF_BRA", log))
+        for a, v in annual_average(_try_series(settings, "PNADCT_TXINFORMUF", log))
         if a >= "2015"
     ]
     if taxa:
@@ -108,12 +87,12 @@ def build_charts_annex(
                 ],
                 "unidade": "%",
                 "fonte": FONTE_IPEA,
-                "nota": " Media anual da serie PNADCT_TXINFORMUF_BRA, territorio Brasil.",
+                "nota": " Media anual da serie PNADCT_TXINFORMUF, territorio Brasil.",
             }
         )
 
-    rend_com = _annual_average(_try_series(settings, "PNADC12_RRPHESPCC12", log))
-    rend_sem = _annual_average(_try_series(settings, "PNADC12_RRPHESPSC12", log))
+    rend_com = annual_average(_try_series(settings, "PNADC12_RRPHESPCC12", log))
+    rend_sem = annual_average(_try_series(settings, "PNADC12_RRPHESPSC12", log))
     anos, v_com, v_sem = _common_years(rend_com, rend_sem)
     if anos:
         specs.append(
@@ -140,7 +119,7 @@ def build_charts_annex(
 
     salario = [
         (a, v)
-        for a, v in _annual_average(_try_series(settings, "GAC12_SALMINRE12", log))
+        for a, v in annual_average(_try_series(settings, "GAC12_SALMINRE12", log))
         if a >= "2012"
     ]
     if salario:

@@ -26,7 +26,7 @@ sections:
   - id: panorama
     number: 1
     title: "Panorama do trabalho no Brasil em 2026"
-    charts: 3
+    charts: 11
     must_include: [ibge-pnad]
     brief: >
       Quadro geral do mercado de trabalho brasileiro em 2026. Use OBRIGATORIAMENTE
@@ -44,7 +44,7 @@ sections:
   - id: principios-constitucionais
     number: 2
     title: "Princípios constitucionais do trabalho"
-    charts: 1
+    charts: 2
     must_include: [constituicao-trabalho, clt]
     brief: >
       Direitos sociais do trabalhador (CF art. 7o), liberdade sindical e
@@ -162,7 +162,7 @@ sections:
   - id: pj-vs-clt
     number: 7
     title: "PJ versus CLT: comparação objetiva"
-    charts: 3
+    charts: 4
     must_include: [clt, lc123-mei, lc-214-2025, ec-132-2023, ibge-pnad, ipea-carta-mercado]
     extra_queries:
       - "rendimento médio com carteira assinada sem carteira PNAD"
@@ -321,4 +321,4 @@ appendix:
 annex:
   id: anexo-b
   title: "Anexo B - Séries históricas complementares do mercado de trabalho"
-  charts: 4
+  charts: 2

@@ -1,5 +1,3 @@
-"""Geracao do relatorio Markdown por secoes com citacoes ABNT obrigatorias e graficos."""
-
 from __future__ import annotations
 
 import datetime
@@ -104,7 +102,6 @@ def _access_date(date_str: str) -> str:
 
 
 def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text: str = "") -> str:
-    """Deriva o codigo de citacao ABNT (autor-ano) de um documento."""
     if "ibge" in url.lower() or title.upper().startswith("IBGE"):
         return f"IBGE, {year}"
     if "ipea.gov.br" in url.lower() or re.match(r"^IPEA\b", title, re.IGNORECASE):
@@ -144,19 +141,12 @@ IBGE_PUBLIC_URL = (
 
 
 def _public_url(url: str) -> str:
-    """Converte URLs de API internas em paginas publicas citaveis."""
     if "servicodados.ibge.gov.br/api/" in url:
         return IBGE_PUBLIC_URL
     return url
 
 
 def build_citation_registry(chunks: list[dict]) -> dict[str, dict]:
-    """Mapeia URL -> codigo de citacao unico (padrao ABNT: 2026a, 2026b...).
-
-    Documentos que dividiriam o mesmo codigo (mesmo autor-ano) recebem
-    sufixos alfabeticos, com a fonte de maior prioridade levando a letra
-    'a'. Assim cada citacao linka para o documento exato.
-    """
     by_code: dict[str, list[dict]] = {}
     seen_urls: set[str] = set()
     for c in chunks:
@@ -193,7 +183,6 @@ def build_citation_registry(chunks: list[dict]) -> dict[str, dict]:
 
 
 def format_sources_block(urls: list[str], registry: dict[str, dict]) -> str:
-    """Lista as fontes disponiveis no contexto com o codigo exato de citacao."""
     lines = ["Fontes disponiveis (cite exatamente pelo codigo):"]
     seen: set[str] = set()
     for url in urls:
@@ -206,7 +195,6 @@ def format_sources_block(urls: list[str], registry: dict[str, dict]) -> str:
 
 
 def link_citations(text: str, registry: dict[str, dict]) -> str:
-    """Converte (CODIGO...) em links Markdown clicaveis quando o codigo e conhecido."""
     by_norm: dict[str, str] = {}
     for entry in sorted(registry.values(), key=lambda e: -int(e.get("priority", 1))):
         by_norm.setdefault(_norm(entry["code"]), entry["url"])
@@ -223,7 +211,6 @@ def link_citations(text: str, registry: dict[str, dict]) -> str:
 
 
 def collect_used_sources(text: str) -> list[tuple[str, str]]:
-    """Extrai pares (rotulo, url) das citacoes linkadas e listas de fontes."""
     sources: list[tuple[str, str]] = []
     for match in re.finditer(r"\[\(([^)]+)\)\((https?://[^)]+)\)", text):
         sources.append((match.group(1).strip(), match.group(2).strip()))
@@ -235,7 +222,6 @@ def collect_used_sources(text: str) -> list[tuple[str, str]]:
 
 
 def normalize_source_list(text: str) -> str:
-    """Converte linhas soltas 'titulo: url' no bloco Fontes consultadas para links."""
     lines = text.split("\n")
     out: list[str] = []
     in_sources = False
@@ -264,7 +250,6 @@ def _modality_queries(section: dict) -> list[str]:
 
 
 def retrieve_for_section(section: dict, index: SearchIndex, settings: Settings) -> list[dict]:
-    """Monta o contexto da secao: busca multi-query + fontes oficiais garantidas."""
     defaults = settings.outline.get("defaults", {})
     top_k = 16 if section.get("structure") else 14
     queries = [section["title"], str(section.get("brief", ""))[:400]]
@@ -393,7 +378,6 @@ def _clean_section(text: str, section: dict) -> str:
 
 
 def _renumber_headings(text: str, number: int) -> str:
-    """Renumbera subcabecalhos da secao no padrao ABNT (1.1, 1.1.1)."""
     counters = {3: 0, 4: 0, 5: 0}
     lines = text.split("\n")
     out: list[str] = []
@@ -423,7 +407,6 @@ def _renumber_headings(text: str, number: int) -> str:
 
 
 def _iter_blocks(text: str) -> list[tuple[int, int, str]]:
-    """Divide o corpo da secao em blocos (inicio, fim, texto) separados por linha em branco."""
     blocks: list[tuple[int, int, str]] = []
     lines = text.split("\n")
     start = None
@@ -460,7 +443,6 @@ def _has_citation(block: str, registry: dict[str, dict]) -> bool:
 def validate_section(
     text: str, section: dict, registry: dict[str, dict], min_charts: int
 ) -> list[str]:
-    """Retorna a lista de violacoes das regras de citacao, linguagem e graficos."""
     violations: list[str] = []
     body = re.sub(r"^##\s.*$", "", text, flags=re.MULTILINE)
 
@@ -522,7 +504,7 @@ def validate_section(
                             f"item numerico sem formatacao no comparativo {spec['titulo']!r}: "
                             f"{item!r} (escreva '1,2 milhao', '102,5 milhoes' etc.)"
                         )
-        if spec["tipo"] in ("barra", "hbar", "barra_empilhada") and len(spec.get("valores", [])) < 2:
+        if spec["tipo"] in ("barra", "hbar", "barra_empilhada", "barra_agrupada") and len(spec.get("valores", [])) < 2:
             violations.append(
                 f"grafico {spec['tipo']} com menos de 2 valores: {spec['titulo']!r} "
                 "(use comparativo, tabela ou texto para unico valor)"
@@ -623,7 +605,6 @@ def validate_section(
 def repair_section(
     text: str, registry: dict[str, dict], fallback_code: str
 ) -> tuple[str, int]:
-    """Reparacao mecanica final: remove frases proibidas e anexa citacao faltante."""
     removed = 0
     lines = text.split("\n")
     cleaned: list[str] = []
@@ -684,7 +665,6 @@ def repair_section(
 
 
 def _render_charts(text: str, renderer: ChartRenderer) -> str:
-    """Substitui blocos ```grafico``` por figuras renderizadas com legenda ABNT."""
 
     def replace(match: re.Match) -> str:
         try:
@@ -697,7 +677,6 @@ def _render_charts(text: str, renderer: ChartRenderer) -> str:
 
 
 def _render_table_captions(text: str, renderer: ChartRenderer) -> str:
-    """Converte diretrizes 'TABELA: titulo | fonte: CODE' em legendas ABNT."""
     lines = text.split("\n")
     out: list[str] = []
     i = 0
@@ -723,7 +702,6 @@ def _render_table_captions(text: str, renderer: ChartRenderer) -> str:
 
 
 def _tidy_markdown(text: str) -> str:
-    """Normaliza o Markdown final: parenteses duplos, reguas com citacao e espacos."""
     text = re.sub(
         r"\(\((\[[^\]]+\]\([^)]+\)|[^\n()]{3,80})\)\)", r"(\1)", text
     )
@@ -764,7 +742,6 @@ def generate_section(
     client: OllamaClient,
     full_registry: dict[str, dict] | None = None,
 ) -> tuple[str, list[dict]]:
-    """Recupera contexto, redige a secao, valida citacoes/graficos e repara."""
     chunks = retrieve_for_section(section, index, settings)
     context = _format_context(chunks) if chunks else "Nenhum documento encontrado."
     registry = full_registry or build_citation_registry(chunks)
@@ -864,7 +841,6 @@ def _cover_html(outline: dict) -> str:
 
 
 def _generate_resumo(client: OllamaClient, sections: list[dict]) -> str:
-    """Gera o Resumo e as palavras-chave a partir do sumario do relatorio."""
     listing = "\n".join(f"- {s['number']}. {s['title']}: {str(s.get('brief',''))[:120]}" for s in sections)
     prompt = (
         "Gere o Resumo do relatorio abaixo em portugues do Brasil, entre 180 e 250 palavras, "
@@ -882,7 +858,6 @@ def _generate_resumo(client: OllamaClient, sections: list[dict]) -> str:
 
 
 def generate_appendix(client: OllamaClient, registry: dict[str, dict]) -> str:
-    """Gera o Apêndice A: tabela da legislacao citada em linguagem simples."""
     norms = [
         e for e in registry.values()
         if e["priority"] >= 3 and e["source_id"] not in ("camara-proposicoes", "senado-materias")
@@ -909,7 +884,6 @@ def generate_appendix(client: OllamaClient, registry: dict[str, dict]) -> str:
 
 
 def audit_report(md_text: str, outline: dict) -> dict:
-    """Auditoria mecanica do relatorio final: citacoes, frases proibidas e graficos."""
     stats = {
         "paragrafos_sem_citacao": 0,
         "frases_proibidas": len(BANNED_RE.findall(md_text)),
@@ -961,7 +935,6 @@ def generate_report(
     log=print,
     sections_filter: list[str] | None = None,
 ) -> str:
-    """Gera o relatorio completo em Markdown no padrao ABNT com graficos."""
     index = build_index(settings)
     outline = settings.outline
     today = datetime.date.today()

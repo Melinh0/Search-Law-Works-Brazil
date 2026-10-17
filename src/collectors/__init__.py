@@ -1,5 +1,3 @@
-"""Coletores de fontes oficiais, academicas e imprensa com cache em disco."""
-
 from __future__ import annotations
 
 import hashlib
@@ -23,7 +21,6 @@ warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
 @dataclass
 class Document:
-    """Documento coletado de uma fonte, pronto para indexacao no corpus."""
 
     source_id: str
     title: str
@@ -38,7 +35,6 @@ class Document:
 
 
 def _get(url: str, settings: Settings, **kwargs) -> requests.Response:
-    """GET com User-Agent e fallback de verificacao SSL para redes corporativas."""
     headers = {"User-Agent": settings.user_agent}
     try:
         return requests.get(url, headers=headers, timeout=settings.timeout, **kwargs)
@@ -49,7 +45,6 @@ def _get(url: str, settings: Settings, **kwargs) -> requests.Response:
 
 
 def fetch(settings: Settings, url: str, encoding: str = "utf-8", retries: int = 3) -> str:
-    """Baixa uma URL com cache em disco e novas tentativas antes de falhar."""
     cache_path = settings.cache_dir / (hashlib.sha1(url.encode()).hexdigest() + ".html")
     if cache_path.exists():
         return cache_path.read_text(encoding="utf-8", errors="replace")
@@ -74,7 +69,6 @@ def fetch(settings: Settings, url: str, encoding: str = "utf-8", retries: int = 
 
 
 def html_to_text(html: str) -> str:
-    """Extrai texto legivel de HTML, removendo scripts, estilos e espacos extras."""
     soup = BeautifulSoup(html, "lxml")
     for tag in soup(["script", "style", "nav", "footer", "header"]):
         tag.decompose()
@@ -85,7 +79,6 @@ def html_to_text(html: str) -> str:
 
 
 def collect_planalto_like(settings: Settings, source: dict) -> list[Document]:
-    """Coleta paginas de leis do Planalto convertendo-as em documentos de texto."""
     html = fetch(settings, source["url"], source.get("encoding", "iso-8859-1"))
     text = html_to_text(html)
     if not text.strip():
@@ -104,7 +97,6 @@ def collect_planalto_like(settings: Settings, source: dict) -> list[Document]:
 
 
 def collect_camara(settings: Settings, source: dict) -> list[Document]:
-    """Consulta a API de proposicoes da Camara por palavras-chave de trabalho."""
     docs: list[Document] = []
     seen: set[int] = set()
     for kw in source.get("keywords", []):
@@ -150,7 +142,6 @@ def collect_camara(settings: Settings, source: dict) -> list[Document]:
 
 
 def _camara_detail(uri: str, settings: Settings) -> dict:
-    """Busca situacao e ultimas tramitacoes de uma proposicao da Camara."""
     try:
         resp = _get(uri, settings)
         if resp.status_code != 200:
@@ -166,7 +157,6 @@ def _camara_detail(uri: str, settings: Settings) -> dict:
 
 
 def collect_senado(settings: Settings, source: dict) -> list[Document]:
-    """Consulta a API de materias do Senado por palavras-chave de trabalho."""
     docs: list[Document] = []
     for kw in source.get("keywords", []):
         try:
@@ -210,7 +200,6 @@ def collect_senado(settings: Settings, source: dict) -> list[Document]:
 
 
 def _clean_rss_description(html: str) -> str:
-    """Remove tags HTML e entidades das descricoes de feeds RSS."""
     text = re.sub(r"<[^>]+>", " ", html)
     text = html_module.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
@@ -237,7 +226,6 @@ def _save_gnews_cache(settings: Settings, cache: dict[str, str]) -> None:
 
 
 def resolve_google_news_url(settings: Settings, article_id: str) -> str | None:
-    """Resolve o ID de um artigo do Google News para a URL real do veiculo."""
     cache = _load_gnews_cache(settings)
     if article_id in cache:
         return cache[article_id]
@@ -278,7 +266,6 @@ def _gnews_id_from_link(link: str) -> str | None:
 
 
 def collect_news_rss(settings: Settings, source: dict) -> list[Document]:
-    """Coleta noticias via Google News RSS e resolve as URLs reais do veiculo."""
     docs: list[Document] = []
     for query in source.get("queries", []):
         url = (
@@ -324,7 +311,6 @@ def collect_news_rss(settings: Settings, source: dict) -> list[Document]:
 
 
 def _abstract_from_openalex(work: dict) -> str:
-    """Reconstroi um trecho do resumo do OpenAlex a partir do indice invertido."""
     inverted = work.get("abstract_inverted_index")
     if not isinstance(inverted, dict) or not inverted:
         return ""
@@ -337,7 +323,6 @@ def _abstract_from_openalex(work: dict) -> str:
 
 
 def collect_academic(settings: Settings, source: dict) -> list[Document]:
-    """Coleta artigos academicos em pt-BR via OpenAlex com fallback no Crossref."""
     docs: list[Document] = []
     seen: set[str] = set()
     for query in source.get("queries", []):
@@ -469,7 +454,7 @@ IPEA_PUBLIC_URL = "https://www.ipeadata.gov.br/"
 IPEA_SERIES = [
     ("PNADC12_ESPCC12", "Empregados no setor privado com carteira assinada (mil)"),
     ("PNADC12_ESPSC12", "Empregados no setor privado sem carteira assinada (mil)"),
-    ("PNADCT_TXINFORMUF_BRA", "Taxa de informalidade - Brasil (%)"),
+    ("PNADCT_TXINFORMUF", "Taxa de informalidade - Brasil (%)"),
     ("PNADC12_RRPHESPCC12", "Rendimento real medio habitual - empregado com carteira (R$)"),
     ("PNADC12_RRPHESPSC12", "Rendimento real medio habitual - empregado sem carteira (R$)"),
     ("GAC12_SALMINRE12", "Salario minimo real (R$)"),
@@ -477,7 +462,6 @@ IPEA_SERIES = [
 
 
 def _get_json_cached(settings: Settings, url: str, retries: int = 3):
-    """Baixa JSON com cache em disco (.json) e novas tentativas antes de falhar."""
     cache_path = settings.cache_dir / (
         hashlib.sha1(url.encode()).hexdigest() + ".json"
     )
@@ -506,7 +490,6 @@ def _get_json_cached(settings: Settings, url: str, retries: int = 3):
 def fetch_ibge_series(
     settings: Settings, agregado: int, periodos: str = "201201-202602"
 ) -> list[tuple[str, str]]:
-    """Retorna a serie PNAD Continua do SIDRA como pares (periodo, valor)."""
     url = (
         f"https://servicodados.ibge.gov.br/api/v3/agregados/{agregado}"
         f"/periodos/{periodos}/variaveis?localidades=N1[all]"
@@ -516,11 +499,54 @@ def fetch_ibge_series(
     return [(k, v) for k, v in serie.items() if v not in (None, "...", "-")]
 
 
-def fetch_ipea_series(settings: Settings, code: str) -> list[tuple[str, float]]:
-    """Retorna a serie do Ipeadata (OData v4) como pares (periodo 'AAAA-MM', valor).
+def fetch_sidra_table(
+    settings: Settings,
+    agregado: int,
+    periodos: str,
+    variavel: int,
+    classificacao: str | None = None,
+) -> dict[str, dict[str, str]]:
+    query = "?localidades=N1[all]"
+    if classificacao:
+        query += f"&classificacao={classificacao}[all]"
+    data = _get_json_cached(
+        settings,
+        f"https://servicodados.ibge.gov.br/api/v3/agregados/{agregado}"
+        f"/periodos/{periodos}/variaveis/{variavel}{query}",
+    )
+    out: dict[str, dict[str, str]] = {}
+    for resultado in (data[0].get("resultados") or []) if data else []:
+        categoria = "Total"
+        for classe in resultado.get("classificacoes") or []:
+            if classificacao and str(classe.get("id")) != str(classificacao):
+                continue
+            nomes = list((classe.get("categoria") or {}).values())
+            if nomes:
+                categoria = str(nomes[0])
+            if classificacao:
+                break
+        valores: dict[str, str] = {}
+        for serie in resultado.get("series") or []:
+            for periodo, valor in (serie.get("serie") or {}).items():
+                if valor not in (None, "", "...", "-"):
+                    valores[str(periodo)] = str(valor)
+        if valores:
+            out[categoria] = valores
+    return out
 
-    Para series com desagregacao territorial, mantem apenas o total Brasil.
-    """
+
+def annual_average(items: list[tuple[str, object]]) -> list[tuple[str, float]]:
+    by_year: dict[str, list[float]] = {}
+    for periodo, valor in items:
+        try:
+            num = float(valor)
+        except (TypeError, ValueError):
+            continue
+        by_year.setdefault(str(periodo)[:4], []).append(num)
+    return [(ano, sum(v) / len(v)) for ano, v in sorted(by_year.items()) if v]
+
+
+def fetch_ipea_series(settings: Settings, code: str) -> list[tuple[str, float]]:
     data = _get_json_cached(
         settings, f"{IPEA_API}/ValoresSerie(SERCODIGO='{code}')"
     )
@@ -539,10 +565,6 @@ def fetch_ipea_series(settings: Settings, code: str) -> list[tuple[str, float]]:
 
 
 def _fmt_periodo(periodo: str) -> str:
-    """Converte periodos IBGE para rotulo legivel.
-
-    Anual '2012' -> '2012'; trimestral '202401' -> 'T1 2024'; mensal '202601' -> 'jan 2026'.
-    """
     p = str(periodo)
     if len(p) == 4 and p.isdigit():
         return p
@@ -556,7 +578,6 @@ def _fmt_periodo(periodo: str) -> str:
 
 
 def _sample_annual(items: list) -> list:
-    """Reduce uma serie trimestral/mensal a uma media por ano (rotulo = 'AAAA')."""
     by_year: dict[str, list] = {}
     for periodo, valor in items:
         try:
@@ -568,7 +589,6 @@ def _sample_annual(items: list) -> list:
 
 
 def collect_ibge(settings: Settings, source: dict) -> list[Document]:
-    """Coleta series reais da PNAD Continua (2012-2026) para uso em graficos."""
     lines = [
         "IBGE - PNAD Continua: series nacionais do mercado de trabalho, 2012 a 2026.",
         "Periodos trimestrais no formato 'T1 2012'; medias anuais no formato '2012'.",
@@ -605,7 +625,6 @@ def collect_ibge(settings: Settings, source: dict) -> list[Document]:
 
 
 def collect_ipea(settings: Settings, source: dict) -> list[Document]:
-    """Coleta series do Ipeadata (formalidade, informalidade e rendimentos)."""
     lines = [
         "Ipea - SERIES (Ipeadata): series do mercado de trabalho replicadas da PNAD Continua.",
         "Periodos mensais no formato 'AAAA-MM'; medias anuais no formato 'AAAA'.",
@@ -657,7 +676,6 @@ COLLECTORS = {
 
 
 def collect_all(settings: Settings) -> list[Document]:
-    """Executa todos os coletores configurados e retorna a lista de documentos."""
     documents: list[Document] = []
     for source in settings.sources:
         collector = COLLECTORS.get(source.get("type"))
@@ -673,7 +691,6 @@ def collect_all(settings: Settings) -> list[Document]:
 
 
 def save_corpus(settings: Settings, documents: list[Document]) -> Path:
-    """Persiste os documentos coletados como JSONL no diretorio do corpus."""
     path = settings.corpus_dir / "documents.jsonl"
     with open(path, "w", encoding="utf-8") as fh:
         for doc in documents:
@@ -682,7 +699,6 @@ def save_corpus(settings: Settings, documents: list[Document]) -> Path:
 
 
 def load_corpus(settings: Settings) -> list[dict]:
-    """Le os documentos do corpus JSONL, retornando lista de dicionarios."""
     path = settings.corpus_dir / "documents.jsonl"
     if not path.exists():
         return []

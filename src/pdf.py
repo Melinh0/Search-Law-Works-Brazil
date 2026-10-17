@@ -1,5 +1,3 @@
-"""Exportacao do relatorio Markdown para PDF via HTML e Edge headless (padrao ABNT)."""
-
 from __future__ import annotations
 
 import re
@@ -191,7 +189,6 @@ hr { border: none; border-top: 1px solid #999; margin: 18px 0; }
 
 
 def markdown_to_html(md_text: str, title: str, author: str = "") -> str:
-    """Converte Markdown em pagina HTML estilizada para impressao ABNT."""
     body = markdown.markdown(md_text, extensions=["tables", "toc", "sane_lists"])
     surname = re.split(r"\s+", author.strip())[-1].upper() if author.strip() else ""
     cabecalho = f'<div class="cabecalho-corrido">{surname}</div>' if surname else ""
@@ -211,7 +208,6 @@ def markdown_to_html(md_text: str, title: str, author: str = "") -> str:
 
 
 def find_browser() -> Path | None:
-    """Localiza Edge ou Chrome instalados para uso como renderizador de PDF."""
     for path in EDGE_PATHS:
         if Path(path).exists():
             return Path(path)
@@ -219,7 +215,6 @@ def find_browser() -> Path | None:
 
 
 def html_to_pdf(html_path: Path, pdf_path: Path, browser: Path) -> None:
-    """Imprime a pagina HTML em PDF usando o browser em modo headless."""
     cmd = [
         str(browser),
         "--headless",
@@ -235,7 +230,6 @@ def html_to_pdf(html_path: Path, pdf_path: Path, browser: Path) -> None:
 
 
 def export(settings: Settings, md_text: str, base_name: str) -> tuple[Path, Path]:
-    """Gera .md e .pdf do relatorio no diretorio de saida, retornando os caminhos."""
     from .latex import export_latex, latex_available
 
     md_path = settings.output_dir / f"{base_name}.md"

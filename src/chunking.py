@@ -1,5 +1,3 @@
-"""Divisao dos documentos coletados em fragmentos indexaveis para busca."""
-
 from __future__ import annotations
 
 import json
@@ -13,7 +11,6 @@ CHUNK_OVERLAP = 200
 
 
 def chunk_text(text: str, size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> list[str]:
-    """Quebra um texto longo em fragmentos sobrepostos respeitando paragrafos."""
     paragraphs = [p for p in re.split(r"\n{2,}", text) if p.strip()]
     chunks: list[str] = []
     current = ""
@@ -39,7 +36,6 @@ def chunk_text(text: str, size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) 
 
 
 def build_chunks(settings: Settings) -> list[dict]:
-    """Transforma os documentos do corpus em fragmentos com metadados de origem."""
     path = settings.corpus_dir / "documents.jsonl"
     if not path.exists():
         raise FileNotFoundError(
@@ -73,7 +69,6 @@ def build_chunks(settings: Settings) -> list[dict]:
 
 
 def load_chunks(settings: Settings) -> list[dict]:
-    """Le os fragmentos indexados do corpus, ou os reconstru se inexistentes."""
     path = settings.corpus_dir / "chunks.jsonl"
     if not path.exists():
         return build_chunks(settings)

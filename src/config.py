@@ -1,5 +1,3 @@
-"""Carregamento de configuracao do bot: YAMLs, .env e caminhos."""
-
 from __future__ import annotations
 
 import os
@@ -15,7 +13,6 @@ CONFIG_DIR = ROOT / "config"
 
 @dataclass
 class Settings:
-    """Configuracao operacional do bot com caminhos, fontes e chaves LLM."""
 
     user_agent: str
     timeout: int
@@ -32,7 +29,6 @@ class Settings:
 
     @classmethod
     def load(cls, refresh: bool = False) -> "Settings":
-        """Le sources.yaml, outline.yaml e o .env, criando diretorios necessarios."""
         load_dotenv(ROOT / ".env")
         with open(CONFIG_DIR / "sources.yaml", encoding="utf-8") as fh:
             sources_raw = yaml.safe_load(fh)

@@ -1,5 +1,3 @@
-"""Cliente LLM com provedor Ollama (cloud com rotacao de chaves e fallback local)."""
-
 from __future__ import annotations
 
 import itertools
@@ -12,11 +10,10 @@ from .config import Settings
 
 
 class LLMError(RuntimeError):
-    """Erro de chamada ao provedor LLM apos esgotar todas as alternativas."""
+    pass
 
 
 class OllamaClient:
-    """Chama o Ollama cloud girando as chaves disponiveis e caindo para o local."""
 
     def __init__(self, settings: Settings):
         self.settings = settings
@@ -47,7 +44,6 @@ class OllamaClient:
         temperature: float = 0.3,
         timeout: int = 300,
     ) -> str:
-        """Envia uma mensagem e retorna a resposta final do modelo, sem streaming."""
         messages = []
         if system:
             messages.append({"role": "system", "content": system})
@@ -132,7 +128,6 @@ class OllamaClient:
         return content
 
     def chat_with_retry(self, *args, retries: int = 2, **kwargs) -> str:
-        """Tenta a chamada varias vezes com espera crescente antes de propagar erro."""
         last: Exception | None = None
         for attempt in range(retries):
             try:
