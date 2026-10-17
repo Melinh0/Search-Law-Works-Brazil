@@ -1,14 +1,26 @@
-title: "Trabalho no Brasil 2026: Legislacao, Modalidades e Tendencias"
-subtitle: "Relatorio objetivo sobre relacoes de trabalho, CLT, PJ, MEI e trabalho informal"
-author: "NOME DO AUTOR (edite em config/outline.yaml)"
-institution: "INSTITUICAO / CURSO (edite em config/outline.yaml)"
-place: "Brasil"
+title: "Trabalho no Brasil 2026: Legislação, Modalidades e Tendências"
+subtitle: "Relatório objetivo sobre relações de trabalho, CLT, PJ, MEI e trabalho informal"
+author: "Yago Melo da Costa"
+institution: "Universidade Estadual do Ceará - Graduando em Ciência da Computação"
+place: "Fortaleza, Ceará"
 lang: pt-BR
 
 defaults:
   min_words: 450
   max_words: 900
   charts: 1
+  chart_rules: >
+    TODO grafico deve trazer o campo 'nota' com UMA frase de interpretacao
+    (tendencia, comparacao ou regra). PROIBIDO grafico com apenas UM valor ou
+    UMA categoria - nesse caso use comparativo ou tabela (para etapas e
+    sequencias use tabela Markdown com passos numerados; NAO use diagramas
+    de fluxo). Graficos de
+    linha de series temporais devem usar a serie historica LONGA completa
+    (medias anuais 2012-2026), nunca um recorte curto de anos recentes. Nos
+    itens de comparativo e nas tabelas, escreva numeros formatados em portugues com
+    unidade ('1,2 milhao', '102,5 milhoes', 'R$ 3.777,50'); NUNCA numeros crus
+    como '1200000'. NAO repita series que ja foram graficadas em outra secao
+    (taxa de desocupacao, pessoas ocupadas e rendimento medio sao da secao 1).
 
 sections:
   - id: panorama
@@ -19,15 +31,19 @@ sections:
     brief: >
       Quadro geral do mercado de trabalho brasileiro em 2026. Use OBRIGATORIAMENTE
       as series reais do IBGE/PNAD Continua presentes no contexto (taxa de
-      desocupacao, pessoas ocupadas, rendimento medio mensal real) para construir
-      pelo menos dois graficos de linha ou barras com a serie historica recente.
-      Complemente com a taxa de informalidade e o volume de informais divulgados
-      pela imprensa (cite a fonte de cada numero). Explique o tamanho e a
-      importancia de cada segmento (carteira assinada, autonomos, MEI, informal).
+      desocupacao, pessoas ocupadas, rendimento medio mensal real), que cobrem de
+      2012 a 2026. Construa NO MINIMO DOIS graficos de linha com a SERIE HISTORICA
+      LONGA de 2012 a 2026 (use as medias anuais do contexto) - NAO use apenas
+      2025-2026. Cada grafico deve exibir todos os anos de 2012 ate 2026 no eixo X,
+      de forma que o leitor possa analisar a trajetoria completa. Complemente com a
+      taxa de informalidade e o volume de informais divulgados pela imprensa (cite a
+      fonte de cada numero). Explique o tamanho e a importancia de cada segmento
+      (carteira assinada, autonomos, MEI, informal) e compare o patamar de 2026 com
+      anos anteriores (pico de 2020, queda ate 2026).
 
   - id: principios-constitucionais
     number: 2
-    title: "Principios constitucionais do trabalho"
+    title: "Princípios constitucionais do trabalho"
     charts: 1
     must_include: [constituicao-trabalho, clt]
     brief: >
@@ -40,7 +56,7 @@ sections:
 
   - id: clt
     number: 3
-    title: "CLT: estrutura, historia e direitos essenciais"
+    title: "CLT: estrutura, história e direitos essenciais"
     charts: 2
     must_include: [clt, constituicao-trabalho, reforma-2017]
     brief: >
@@ -54,13 +70,21 @@ sections:
       home office, banco de horas, acordo de compensacao, justa causa).
       EC 103/2019 e regras previdenciarias aplicadas ao trabalhador.
       Como o Estado aplica a CLT: papel da Auditoria-Fiscal do Trabalho.
+      JORNADA: explique com base legal a jornada normal de 8h diarias e 44h
+      semanais E TAMBEM a regra da jornada EXCEPCIONAL: quando e como o
+      trabalhador pode ultrapassar 8h diarias (horas extras previso no art.
+      59 da CLT), o adicional de 50%, o limite legal de 10h diarias, o
+      intervalo intrajornada obrigatorio e as consequencias do descumprimento.
+      NAO represente '8h por dia' e '44h por semana' no mesmo grafico de
+      barras (unidades/escalas diferentes) - use texto, tabela ou graficos
+      separados para cada um.
       Use graficos para comparar regras (ex.: jornada e adicional de horas
       extras; antes e depois da reforma de 2017).
 
   - id: vinculo
     number: 4
-    title: "Vinculo de emprego: os 4 requisitos e a subordinacao algoritmica"
-    charts: 1
+    title: "Vínculo de emprego: os 4 requisitos e a subordinação algorítmica"
+    charts: 0
     must_include: [clt, codigo-civil, lc123-mei]
     brief: >
       Pessoa fisica, habitualidade, onerosidade, pessoalidade e subordinacao.
@@ -70,11 +94,12 @@ sections:
       e cooperado (CC art. 593 e CLT arts. 3o, 442-B e 603). Pejotizacao: o que
       e, por que e considerada abusiva, consequencias para empresa e trabalhador
       (pagamento retroativo, multas, responsabilidade em casos de fraude).
-      Use um diagrama de fluxo dos 4 requisitos do vinculo empregaticio.
+      Use uma tabela Markdown com os requisitos do vinculo empregaticio
+      (passo, requisito e base legal).
 
   - id: modalidades-vinculo
     number: 5
-    title: "Modalidades de trabalho com vinculo empregaticio"
+    title: "Modalidades de trabalho com vínculo empregatício"
     structure:
       - "Faca um subcabecalho (###) para CADA modalidade listada no briefing."
       - "Em cada subcabecalho, use sempre estes cinco pontos, com paragrafos separados:"
@@ -88,7 +113,10 @@ sections:
     must_include: [clt, auditoria-fiscal, mte-fiscalizacao, esocial]
     brief: >
       Modalidades regidas pela CLT e por leis trabalhistas com vinculo
-      empregaticio, detalhadas item a item.
+      empregaticio, detalhadas item a item. Use um grafico hbar com os
+      limites legais de prazo em DIAS (experiencia 90 dias, trabalho
+      temporario 180 dias, resposta do trabalhador intermitente em ate
+      3 dias) e um grafico sobre a cota de aprendiz (5% a 15% do quadro).
     modalities:
       - "CLT tempo indeterminado (padrao)"
       - "CLT tempo determinado e contrato de experiencia (limites legais)"
@@ -104,7 +132,7 @@ sections:
 
   - id: modalidades-nao-vinculo
     number: 6
-    title: "Modalidades de trabalho sem vinculo empregaticio"
+    title: "Modalidades de trabalho sem vínculo empregatício"
     structure:
       - "Faca um subcabecalho (###) para CADA modalidade listada no briefing."
       - "Em cada subcabecalho, use sempre estes cinco pontos, com paragrafos separados:"
@@ -117,8 +145,10 @@ sections:
     charts: 2
     must_include: [clt, codigo-civil, lc123-mei, auditoria-fiscal]
     brief: >
-      Modalidades autônomas e empresariais sem vinculo empregaticio,
-      detalhadas item a item.
+      Modalidades autônomas e empresariais sem vínculo empregatício,
+      detalhadas item a item. Use um diagrama comparativo entre trabalho
+      autonomo legitimo e vinculo encoberto (pejotizacao): caracteristicas
+      de cada um, como o Estado distingue e consequencias do encobrimento.
     modalities:
       - "Trabalhador autônomo (pessoa fisica, contrato de prestacao de servico, CC art. 593 e ss. e CLT art. 603)"
       - "PJ: ME, EPP, Simples Nacional, Lucro Presumido (diferencas, obrigatoriedades, nota fiscal, contabilidade)"
@@ -131,9 +161,15 @@ sections:
 
   - id: pj-vs-clt
     number: 7
-    title: "PJ versus CLT: comparacao objetiva"
+    title: "PJ versus CLT: comparação objetiva"
     charts: 3
-    must_include: [clt, lc123-mei, lc-214-2025, ec-132-2023]
+    must_include: [clt, lc123-mei, lc-214-2025, ec-132-2023, ibge-pnad, ipea-carta-mercado]
+    extra_queries:
+      - "rendimento médio com carteira assinada sem carteira PNAD"
+      - "rendimento médio trabalhadores formais informais IBGE"
+      - "Ipea rendimento formal informal comparativo"
+      - "jornada semanal média horas trabalhadores com carteira sem carteira"
+      - "salário hora trabalhador formal informal Brasil"
     brief: >
       Tabela e explicacao comparando: custo para a empresa, direitos do
       trabalhador (FGTS, ferias, 13o, INSS, aviso previo, horas extras),
@@ -143,6 +179,20 @@ sections:
       Impacto da reforma tributaria (EC 132/2023 e LC 214/2025) no
       regime de PJ e MEI a partir de 2026-2033 (cronograma de transicao).
       Use graficos comparativos (barras/donut) para direitos e carga.
+      COMPARATIVO DE RENDIMENTO E JORNADA (obrigatorio, com fontes IBGE/Ipea):
+      faca ao menos um grafico comparando o rendimento medio mensal e a
+      jornada semanal media de trabalhadores COM vinculo empregaticio
+      (com carteira assinada/CLT) versus SEM vinculo (sem carteira, conta
+      propria, informais), citando os numeros exatos do contexto (PNAD/Ipea).
+      Inclua uma analise detalhada explicando por que a diferenca existe
+      (direitos, estabilidade, encargos, informalidade) e o que ela significa
+      na pratica para quem escolhe entre os regimes.
+      Inclua tambem um grafico de barras com o crescimento real da renda no
+      T1 2026 por categoria (conta propria +6%, sem carteira +9,9%, privados
+      com carteira +2,8%, se presentes no contexto Ipea) e um grafico com a
+      expansao de ocupados em 12 meses (formal +3,6% vs informal +1,5%).
+      Feche com um diagrama comparativo 'CLT x PJ' cobrindo direitos,
+      custo para a empresa e risco trabalhista.
 
   - id: mei-e-informal
     number: 8
@@ -157,11 +207,13 @@ sections:
       informal, riscos (ausencia de INSS, FGTS, sindicalizacao), como se
       proteger, programas de formalizacao (Mei+Prev, Seguro Defeso).
       Use graficos para comparar MEI x informal x CLT e o cronograma da
-      reforma tributaria.
+      reforma tributaria. Use tambem um diagrama comparativo 'MEI
+      formalizado x trabalho informal' (direitos, contribuicao previdenciaria
+      e riscos de cada um).
 
   - id: previdencia-tributos
     number: 9
-    title: "Previdencia e tributos do trabalhador"
+    title: "Previdência e tributos do trabalhador"
     charts: 2
     must_include: [inss-8212, inss-8213, ec-103-2019, lc-214-2025, ec-132-2023]
     brief: >
@@ -172,13 +224,16 @@ sections:
       Reforma da previdencia (EC 103/2019): regras de transicao aplicaveis
       ao trabalhador. Reforma tributaria (EC 132/2023 e LC 214/2025): IBS,
       CBS, cronograma de transicao 2026-2033, impacto no MEI e no Simples
-      Nacional. Use graficos de barras (aliquotas) e de linha/colunas
-      (cronograma de transicao).
+       Nacional. Use graficos de barras (aliquotas) e de linha/colunas
+       (cronograma de transicao). SE o contexto trazer a serie historica de
+       meses de carencia do INSS (1991-2026), faca um grafico de linha com
+       TODOS os anos da serie e explique que o patamar de 180 meses vale
+       desde 2012.
 
   - id: plataformas
     number: 10
     title: "Trabalho por plataformas digitais"
-    charts: 2
+    charts: 1
     must_include: [clt, auditoria-fiscal]
     brief: >
       Como funciona (apps de entrega, transporte, servicos). Numero de
@@ -189,21 +244,40 @@ sections:
       valores, pontos de apoio, comite interministerial). Direitos em
       discussao (contribuicao previdenciaria, limites de taxa de cobranca,
       remuneracao minima). Quem e prejudicado e quem se beneficia com cada
-      proposta. Use graficos de barras (volume de trabalhadores) e fluxo
-      (ciclo de trabalho no aplicativo).
+      proposta. Use um grafico de barras (volume de trabalhadores) e uma
+      tabela Markdown com as etapas do ciclo de trabalho no aplicativo.
+      Escreva os volumes de trabalhadores
+      formatados em portugues (ex.: '1,2 milhao de trabalhadores', cerca de
+      1,2% dos ocupados); NAO use numeros crus.
 
   - id: tramitacao-2026
     number: 11
-    title: "Mudancas em tramitacao no Congresso em 2026"
-    charts: 1
-    must_include: [camara-proposicoes, senado-materias]
+    title: "Mudanças em tramitação no Congresso em 2026"
+    charts: 0
+    must_include: [camara-proposicoes, senado-materias, noticias-trabalho]
+    extra_queries:
+      - "fim da escala 6x1 como vai funcionar"
+      - "PEC 6x1 escala jornada Senado aprovação"
+      - "jornada 40 horas semanais projeto de lei"
+      - "redução 44 horas para 40 horas trabalho"
     brief: >
       Coleta atual de proposicoes (Camara e Senado) sobre trabalho:
       reforma trabalhista, plataformas digitais, pejotizacao, MEI,
       tributacao. Para cada proposicao: ementa, situacao, quem apoia,
       quem e prejudicado. Identificar tambem medidas do Executivo
       (portarias do MTE, decretos) quando presentes no contexto.
-      Use um diagrama de fluxo ou comparativo com as principais proposicoes.
+       Use uma tabela Markdown com as principais proposicoes e uma tabela
+       com as etapas da tramitacao da PEC do fim da escala 6x1, intitulada
+       'Tramitacao da PEC do Fim da Escala 6x1'.
+       OBRIATORIO: dedique um subtopico explicito ao cenario POS-APROVACAO
+      NO SENADO de (a) FIM DA ESCALA 6x1 e (b) REDUCAO DA JORNADA DE
+      44 HORAS SEMANAIS PARA 40 HORAS: explique COMO VAI FUNCIONAR a
+      jornada, os intervalos e a compensacao de dias, a vigencia/prazo de
+      entrada em vigor, a proporcionalidade salarial, quem passa a ter
+      direito e o que muda na pratica para trabalhador e empregador,
+      citando sempre as fontes do contexto (proposicoes, imprensa).
+      Se o contexto nao trouxer detalhe de algum ponto, use os detalhes
+      efetivamente presentes e aprofunde o que ha.
 
   - id: riscos-e-direitos
     number: 12
@@ -221,7 +295,7 @@ sections:
 
   - id: quadro-resumo
     number: 13
-    title: "Quadro resumo e conclusoes"
+    title: "Quadro resumo e conclusões"
     charts: 2
     must_include: [clt, lc123-mei]
     brief: >
@@ -229,14 +303,22 @@ sections:
       direitos, deveres, custo, risco e indicacao de uso. Cenarios futuros
       ate 2030 (reforma tributaria, plataformas, inteligencia artificial no
       trabalho). Conclusoes objetivas: o que esta estabelecido, o que
-      pode mudar, quem e mais afetado pelas mudancas. Use graficos de
-      barras/pizza para o panorama geral e um comparativo final.
+      pode mudar, quem e mais afetado pelas mudancas. Para o panorama
+      final, use barras da taxa de desocupacao em perspectiva (2012, 2020
+      e 2026) e barras do rendimento medio mensal real (2012 vs 2026, com
+      a variacao percentual), em vez de repetir as series completas da
+      secao 1. Feche com um comparativo final das modalidades.
 
 appendix:
   id: legislacao-explicada
-  title: "Apendice A - Legislacao citada e o que ela muda na pratique"
+  title: "Apêndice A - Legislação citada e o que ela muda na prática"
   brief: >
     Tabela em linguagem simples com todas as normas citadas no relatorio
     (Constituicao, CLT, leis, leis complementares e emendas): o que cada
     norma regula, para quem protege ou obriga e onde encontrar o texto
     oficial. Nenhuma linha sem base legal.
+
+annex:
+  id: anexo-b
+  title: "Anexo B - Séries históricas complementares do mercado de trabalho"
+  charts: 4

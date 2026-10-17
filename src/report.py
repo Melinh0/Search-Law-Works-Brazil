@@ -7,7 +7,8 @@ import json
 import re
 import unicodedata
 
-from .charts import GRAFICO_RE, ChartError, ChartRenderer, count_graficos, parse_spec
+from .annex import build_charts_annex
+from .charts import GRAFICO_RE, MATH_TYPES, ChartError, ChartRenderer, count_graficos, parse_spec
 from .config import Settings
 from .llm import OllamaClient
 from .rag import SearchIndex, build_index
@@ -30,7 +31,27 @@ SYSTEM_PROMPT = (
     "para um leigo, em linguagem coloquial e correta, com citacao ao final.\n"
     "5. Quando pedir grafico, use o bloco JSON ```grafico``` exatamente no formato "
     "solicitado; os valores devem vir APENAS dos numeros presentes no contexto e o "
-    "campo 'fonte' deve ser o codigo exato de uma fonte do contexto."
+    "campo 'fonte' deve ser o codigo exato de uma fonte do contexto. O campo "
+    "'unidade' e OBRIGATORIO e deve descrever a escala de forma clara para o leigo "
+    "(ex.: 'pessoas', 'pessoas (milhoes)', 'R$ (media mensal)', 'percentual (%)').\n"
+    "   REGRA DAS UNIDADES: todos os valores de UM grafico devem estar na MESMA unidade "
+    "e na MESMA ordem de grandeza. Proibido misturar escalas no mesmo grafico de barras "
+    "(ex.: NAO juntar '8 horas por dia' e '44 horas por semana' na mesma serie). Se os "
+    "numeros forem de unidades ou escalas diferentes, use tabelas ou graficos separados.\n"
+    "   REGRA DA INTERPRETACAO: TODO grafico deve trazer o campo 'nota' com UMA frase "
+    "que interprete o que o grafico mostra (tendencia, comparacao ou regra). PROIBIDO "
+    "grafico com apenas UM valor ou UMA categoria - use comparativo ou tabela.\n"
+    "   REGRA DAS SERIES TEMPORAIS: graficos de linha de series temporais devem usar a "
+    "serie historica LONGA completa do contexto (ex.: medias anuais de 2012 a 2026), "
+    "nunca apenas os periodos recentes ou uma recorte curto. Se um grafico usar um "
+    "recorte de pontos selecionados, justifique a escolha na nota da figura e remeta "
+    "o leitor a figura com a serie completa.\n"
+    "   REGRA DOS NUMEROS EM DIAGRAMAS: nos itens de comparativo e nas tabelas, escreva "
+    "numeros formatados em portugues com unidade (ex.: '1,2 milhao', 'R$ 3.777,50', "
+    "'180 meses'); NAO escreva numeros crus como '1200000'.\n"
+    "6. Escreva TODO o texto com a acentuacao, ortografia e gramatica corretas do "
+    "portugues do Brasil (secao, nao, direito, previdencia com acentos corretos). "
+    "NUNCA entregue texto sem os acentos corretos."
 )
 
 BANNED_PHRASES = [
@@ -86,6 +107,8 @@ def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text
     """Deriva o codigo de citacao ABNT (autor-ano) de um documento."""
     if "ibge" in url.lower() or title.upper().startswith("IBGE"):
         return f"IBGE, {year}"
+    if "ipea.gov.br" in url.lower() or re.match(r"^IPEA\b", title, re.IGNORECASE):
+        return f"IPEA, {year}"
     if "planalto.gov.br" in url or "gov.br" in url or "camara.leg.br" in url or "senado.leg.br" in url:
         for pattern, template in LAW_PATTERNS:
             match = pattern.search(title)
@@ -115,16 +138,36 @@ def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text
     return f"IMPRENSA, {year}"
 
 
+IBGE_PUBLIC_URL = (
+    "https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html"
+)
+
+
+def _public_url(url: str) -> str:
+    """Converte URLs de API internas em paginas publicas citaveis."""
+    if "servicodados.ibge.gov.br/api/" in url:
+        return IBGE_PUBLIC_URL
+    return url
+
+
 def build_citation_registry(chunks: list[dict]) -> dict[str, dict]:
-    """Mapeia URL de documento -> codigo de citacao, titulo e coleta."""
-    registry: dict[str, dict] = {}
+    """Mapeia URL -> codigo de citacao unico (padrao ABNT: 2026a, 2026b...).
+
+    Documentos que dividiriam o mesmo codigo (mesmo autor-ano) recebem
+    sufixos alfabeticos, com a fonte de maior prioridade levando a letra
+    'a'. Assim cada citacao linka para o documento exato.
+    """
+    by_code: dict[str, list[dict]] = {}
+    seen_urls: set[str] = set()
     for c in chunks:
-        url = c["url"]
-        if url in registry:
+        raw_url = c["url"]
+        url = _public_url(raw_url)
+        if url in seen_urls:
             continue
+        seen_urls.add(url)
         year = (c.get("collected_at") or "")[:4] or str(datetime.date.today().year)
         code = _code_from_title(c["title"], c["source_id"], url, year, c.get("text", ""))
-        registry[url] = {
+        entry = {
             "code": code,
             "title": c["title"],
             "url": url,
@@ -132,6 +175,20 @@ def build_citation_registry(chunks: list[dict]) -> dict[str, dict]:
             "source_id": c["source_id"],
             "priority": int(c.get("priority", 1)),
         }
+        by_code.setdefault(code, []).append(entry)
+
+    registry: dict[str, dict] = {}
+    for code, entries in by_code.items():
+        entries.sort(
+            key=lambda e: (-e["priority"], e.get("date", ""), e["url"])
+        )
+        if len(entries) == 1:
+            entries[0]["code"] = code
+            registry[entries[0]["url"]] = entries[0]
+            continue
+        for i, entry in enumerate(entries):
+            entry["code"] = f"{code}{chr(ord('a') + i)}"
+            registry[entry["url"]] = entry
     return registry
 
 
@@ -212,6 +269,9 @@ def retrieve_for_section(section: dict, index: SearchIndex, settings: Settings) 
     top_k = 16 if section.get("structure") else 14
     queries = [section["title"], str(section.get("brief", ""))[:400]]
     queries.extend(_modality_queries(section))
+    queries.extend(
+        str(q).strip() for q in section.get("extra_queries", []) if str(q).strip()
+    )
     chunks = index.search_many(queries, top_k=top_k)
 
     selected: list[dict] = [c for c in chunks]
@@ -275,6 +335,10 @@ def _section_prompt(
             "SUA VERSAO ANTERIOR VIOLOU REGRAS. Corrija tudo nesta versao:\n"
             f"{feedback}\n\n"
         )
+    chart_rules = str(defaults.get("chart_rules", "")).strip()
+    chart_rules_block = ""
+    if chart_rules:
+        chart_rules_block = f"Regras obrigatorias de graficos desta secao:\n{chart_rules}\n\n"
     return (
         feedback_block
         + f"Secao {section['number']}: {section['title']}\n\n"
@@ -291,17 +355,27 @@ def _section_prompt(
         "4. Use apenas informacoes presentes no contexto. NUNCA escreva que falta dado "
         "ou fonte; se faltar algo do briefing, aprofunde o que existe e cite tudo.\n"
         "5. Cite CADA frase afirmativa, CADA item de lista e CADA linha de tabela com o "
-        "codigo da fonte entre parenteses, por exemplo (BRASIL, 1943, art. 3o).\n"
+        "codigo da fonte entre parenteses, por exemplo (BRASIL, 1943, art. 3o). "
+        "Copie o codigo EXATAMENTE como aparece no contexto, incluindo a letra final "
+        "quando houver (ex.: IBGE, 2026a e nao IBGE, 2026).\n"
         "6. Inclua exatamente NO MINIMO "
         f"{min_charts} bloco(s) grafico(s) ```grafico``` com dados reais do contexto. "
+        "SE o contexto contiver 'Media anual (serie historica longa 2012-2026)', use "
+        "OBRIGATORIAMENTE esses valores (todos os anos de 2012 ate 2026) nos graficos "
+        "de linha, e NAO use apenas os meses recentes. "
+        "TODO grafico deve trazer o campo 'nota' com UMA frase de interpretacao; "
+        "PROIBIDO grafico com apenas UM valor (use comparativo ou tabela). "
         "Varie os tipos ao longo do relatorio (barra, hbar, pizza, donut, linha, "
-        "barra_empilhada, comparativo, fluxo). No bloco use JSON com chaves: tipo, "
+        "barra_empilhada, comparativo). Para sequencias e etapas use tabela Markdown, "
+        "NAO diagramas de fluxo. No bloco use JSON com chaves: tipo, "
         "titulo, rotulos, valores, unidade, fonte, nota. Para comparativo use colunas: "
-        "[{titulo, itens:[]}]; para fluxo use etapas: [].\n"
+        "[{titulo, itens:[]}].\n"
+        + chart_rules_block
         + structure_block
         + "7. Termine com '**Em termos simples:**' e depois com a lista 'Fontes consultadas:' "
-        "em Markdown no formato '* [titulo](url)' para cada fonte do contexto usada. "
-        "Use titulos e URLs exatamente como no contexto.\n"
+        "em Markdown no formato '* (CODIGO, ano)' usando APENAS os codigos exatos das "
+        "fontes do contexto que voce citou; NAO escreva URLs nem titulos - o sistema "
+        "insere o link correto automaticamente.\n"
         "8. Nao repita o cabecalho de nenhuma outra secao."
     )
 
@@ -410,6 +484,58 @@ def validate_section(
                 violations.append(f"grafico com fonte desconhecida: {fonte!r}")
         else:
             violations.append(f"grafico sem fonte: {spec['titulo']!r}")
+        if spec["tipo"] in MATH_TYPES and not spec.get("unidade"):
+            violations.append(
+                f"grafico {spec['tipo']} sem a unidade obrigatoria: {spec['titulo']!r}"
+            )
+        if spec["tipo"] in MATH_TYPES and not spec.get("nota"):
+            violations.append(
+                f"grafico {spec['tipo']} sem a nota de interpretacao (campo 'nota'): "
+                f"{spec['titulo']!r}"
+            )
+        if spec["tipo"] == "linha":
+            rotulos_linha = [str(r) for r in spec.get("rotulos", [])]
+            pontos = len(spec.get("series", [{}])[0].get("valores", spec.get("valores", []))) \
+                if spec.get("series") else len(spec.get("valores", []))
+            eh_anual = len(rotulos_linha) >= 4 and all(
+                re.fullmatch(r"(19|20)\d{2}", r) for r in rotulos_linha
+            )
+            if eh_anual and pontos < 8:
+                violations.append(
+                    f"grafico de linha com serie temporal curta ({pontos} anos): "
+                    f"{spec['titulo']!r} (use a serie historica longa completa do contexto)"
+                )
+            elif pontos < 4:
+                violations.append(
+                    f"grafico de linha com menos de 4 pontos: {spec['titulo']!r}"
+                )
+        if spec["tipo"] in ("pizza", "donut") and len(spec.get("valores", [])) < 2:
+            violations.append(
+                f"grafico {spec['tipo']} com menos de 2 valores: {spec['titulo']!r} "
+                "(use comparativo, tabela ou texto para unico valor)"
+            )
+        if spec["tipo"] == "comparativo":
+            for col in spec.get("colunas", []):
+                for item in col.get("itens", []):
+                    if re.fullmatch(r"\d{4,}", str(item).strip()):
+                        violations.append(
+                            f"item numerico sem formatacao no comparativo {spec['titulo']!r}: "
+                            f"{item!r} (escreva '1,2 milhao', '102,5 milhoes' etc.)"
+                        )
+        if spec["tipo"] in ("barra", "hbar", "barra_empilhada") and len(spec.get("valores", [])) < 2:
+            violations.append(
+                f"grafico {spec['tipo']} com menos de 2 valores: {spec['titulo']!r} "
+                "(use comparativo, tabela ou texto para unico valor)"
+            )
+        if spec["tipo"] in MATH_TYPES:
+            rotulos = [str(r).lower() for r in spec.get("rotulos", [])]
+            dia = any(re.search(r"\b(diari|/ dia|\bpor dia\b|\bdia\b)", r) for r in rotulos)
+            semana = any(re.search(r"\b(seman|/ semana|\bpor semana\b)", r) for r in rotulos)
+            if dia and semana:
+                violations.append(
+                    f"grafico {spec['titulo']!r} mistura unidade diaria e semanal "
+                    "(proibido pela regra das unidades)"
+                )
 
     if "Em termos simples" not in text:
         violations.append("bloco '**Em termos simples:**' ausente")
@@ -582,6 +708,9 @@ def _render_table_captions(text: str, renderer: ChartRenderer) -> str:
             i += 1
             continue
         titulo, fonte = match.group(1), match.group(2)
+        m_parens = re.fullmatch(r"\((.+)\)", fonte.strip())
+        if m_parens:
+            fonte = m_parens.group(1).strip()
         number = renderer.next_table_number()
         while i + 1 < len(lines) and not lines[i + 1].strip().startswith("|"):
             i += 1
@@ -593,16 +722,57 @@ def _render_table_captions(text: str, renderer: ChartRenderer) -> str:
     return "\n".join(out)
 
 
+def _tidy_markdown(text: str) -> str:
+    """Normaliza o Markdown final: parenteses duplos, reguas com citacao e espacos."""
+    text = re.sub(
+        r"\(\((\[[^\]]+\]\([^)]+\)|[^\n()]{3,80})\)\)", r"(\1)", text
+    )
+    _link = r"\[[^\]]+\]\(https?://[^)]+\)"
+    _chain = rf"{_link}(?:\s*[e,]\s*{_link})*"
+    text = re.sub(rf"Fonte: \(({_chain})\)\.", r"Fonte: \1.", text)
+    lines = text.split("\n")
+    out: list[str] = []
+    in_fence = False
+    for line in lines:
+        if line.strip().startswith("```"):
+            in_fence = not in_fence
+        if not in_fence and re.match(r"^---\s*([\[(].*)?$", line):
+            continue
+        out.append(line)
+    text = "\n".join(out)
+    lines = text.split("\n")
+    out = []
+    in_fence = False
+    for i, line in enumerate(lines):
+        if line.strip().startswith("```"):
+            in_fence = not in_fence
+        if (
+            not in_fence
+            and re.match(r"^#{1,6}\s", line)
+            and out
+            and out[-1].strip()
+        ):
+            out.append("")
+        out.append(line)
+    return "\n".join(out)
+
+
 def generate_section(
     settings: Settings,
     section: dict,
     index: SearchIndex,
     client: OllamaClient,
+    full_registry: dict[str, dict] | None = None,
 ) -> tuple[str, list[dict]]:
     """Recupera contexto, redige a secao, valida citacoes/graficos e repara."""
     chunks = retrieve_for_section(section, index, settings)
     context = _format_context(chunks) if chunks else "Nenhum documento encontrado."
-    registry = build_citation_registry(chunks)
+    registry = full_registry or build_citation_registry(chunks)
+    prompt_registry = {
+        _public_url(c["url"]): registry[_public_url(c["url"])]
+        for c in chunks
+        if _public_url(c["url"]) in registry
+    }
     defaults = settings.outline.get("defaults", {})
     min_charts = section.get("charts", defaults.get("charts", 1))
     max_words = section.get("words", (0, defaults.get("max_words", 900)))[1]
@@ -613,7 +783,7 @@ def generate_section(
     violations: list[str] = []
     for attempt in range(3):
         prompt = _section_prompt(
-            section, context, defaults, registry, feedback=_format_feedback(violations)
+            section, context, defaults, prompt_registry, feedback=_format_feedback(violations)
         )
         text = client.chat_with_retry(
             prompt,
@@ -666,9 +836,9 @@ def _nbr_reference(entry: dict) -> str:
 
 def _references_section(sources: dict[str, dict]) -> str:
     lines = [
-        "## Referencias",
+        "## Referências",
         "",
-        "Todas as fontes citadas neste relatorio, em formato ABNT (NBR 6023):",
+        "Todas as fontes citadas neste relatório, em formato ABNT (NBR 6023):",
         "",
     ]
     ordered = sorted(sources.values(), key=lambda s: _norm(_nbr_reference(s)))
@@ -701,7 +871,7 @@ def _generate_resumo(client: OllamaClient, sections: list[dict]) -> str:
         "em um unico paragrafo, tom objetivo, terminando com a linha "
         "'Palavras-chave: ' seguida de 5 palavras-chave separadas por ponto e virgula. "
         "Nao escreva frases como 'nao ha dados suficientes'. Nao use citacoes.\n\n"
-        f"Titulo: Trabalho no Brasil 2026\nSumario com os temas:\n{listing}"
+        f"Titulo: Trabalho no Brasil 2026\nSumário com os temas:\n{listing}"
     )
     try:
         text = client.chat_with_retry(prompt, system=SYSTEM_PROMPT, max_tokens=900, temperature=0.2)
@@ -712,7 +882,7 @@ def _generate_resumo(client: OllamaClient, sections: list[dict]) -> str:
 
 
 def generate_appendix(client: OllamaClient, registry: dict[str, dict]) -> str:
-    """Gera o Apendice A: tabela da legislacao citada em linguagem simples."""
+    """Gera o Apêndice A: tabela da legislacao citada em linguagem simples."""
     norms = [
         e for e in registry.values()
         if e["priority"] >= 3 and e["source_id"] not in ("camara-proposicoes", "senado-materias")
@@ -721,8 +891,8 @@ def generate_appendix(client: OllamaClient, registry: dict[str, dict]) -> str:
         return ""
     listing = "\n".join(f"- ({e['code']}) {e['title']} | {e['url']}" for e in sorted(norms, key=lambda x: x["code"]))
     prompt = (
-        "Escreva o Apendice A do relatorio em Markdown, com cabecalho em nivel 2 exatamente assim: "
-        "'## Apendice A - Legislacao citada e o que ela muda na pratica'.\n"
+        "Escreva o Apêndice A do relatório em Markdown, com cabecalho em nivel 2 exatamente assim: "
+        "'## Apêndice A - Legislação citada e o que ela muda na prática'.\n"
         "Crie UMA tabela comparativa com colunas: Norma | O que regula | Quem protege ou obriga | "
         "Onde encontrar. ANTES da tabela, escreva uma linha no formato exato: "
         "TABELA: Legislacao consultada e efeitos praticos | fonte: BRASIL, 1988\n"
@@ -748,11 +918,11 @@ def audit_report(md_text: str, outline: dict) -> dict:
         "tabelas_legenda": len(re.findall(r"Tabela \d+ \u2013", md_text)),
         "tem_capa": '<div class="capa">' in md_text,
         "tem_resumo": bool(re.search(r"^##\s+Resumo", md_text, re.MULTILINE)),
-        "tem_referencias": bool(re.search(r"^##\s+Referencias", md_text, re.MULTILINE)),
+        "tem_referencias": bool(re.search(r"^##\s+Refer[eê]ncias", md_text, re.MULTILINE)),
         "citacoes": len(re.findall(r"\[\([^]]{3,80}\)\]\(https?://", md_text)),
     }
     stats["graficos"] = stats["graficos_bloco"] + stats["graficos_figuras"]
-    sumario = re.search(r"^##\s+Sumario", md_text, re.MULTILINE)
+    sumario = re.search(r"^##\s+Sum[aá]rio", md_text, re.MULTILINE)
     scan_from = sumario.end() if sumario else 0
     body = re.sub(r"^##\s.*$", "", md_text[scan_from:], flags=re.MULTILINE)
     in_fence = False
@@ -780,6 +950,7 @@ def audit_report(md_text: str, outline: dict) -> dict:
         if not re.search(r"\([\wÀ-ÿ][^()]{2,80}\)", block[2]) and "Disponível em" not in block[2]:
             stats["paragrafos_sem_citacao"] += 1
     min_charts = sum(int(s.get("charts", 1)) for s in outline.get("sections", []))
+    min_charts += int((outline.get("annex") or {}).get("charts", 0))
     stats["graficos_minimos_esperados"] = min_charts
     return stats
 
@@ -806,7 +977,7 @@ def generate_report(
         "",
         "---",
         "",
-        "## Sumario",
+        "## Sumário",
         "",
     ]
     body: list[str] = []
@@ -833,7 +1004,7 @@ def generate_report(
             continue
         log(f"[relatorio] secao {section['number']}: {section['title']}")
         try:
-            text, chunks = generate_section(settings, section, index, client)
+            text, chunks = generate_section(settings, section, index, client, full_registry)
         except Exception as exc:
             log(f"[relatorio] ERRO na secao {section['number']}: {exc}")
             text = (
@@ -863,7 +1034,7 @@ def generate_report(
                 appendix = link_citations(appendix, full_registry)
                 register([], appendix)
                 body.append(appendix)
-                header.append(f"A. [{appendix_conf.get('title', 'Apendice A')}]")
+                header.append(f"A. [{appendix_conf.get('title', 'Apêndice A')}]")
         except Exception as exc:
             log(f"[relatorio] ERRO no apendice: {exc}")
 
@@ -877,12 +1048,18 @@ def generate_report(
                     break
 
     if used_sources:
-        header.append(f"R. [Referencias](#{_anchor(0, 'referencias')})")
-    footer = ["", "---", ""]
+        header.append(f"R. [Referências](#{_anchor(0, 'referências')})")
+    footer = [""]
     if used_sources:
         footer.append(_references_section(used_sources))
-    footer += ["*Fim do relatorio.*", ""]
+    footer.append("")
     report = "\n".join(header + [""] + body + footer)
+    if not sections_filter:
+        try:
+            report, _n_anexo = build_charts_annex(settings, report, log)
+        except Exception as exc:
+            log(f"[relatorio] ERRO no anexo: {exc}")
+    report = _tidy_markdown(report)
     stats = audit_report(report, outline)
     log(
         "[relatorio] auditoria: "
@@ -895,5 +1072,9 @@ def generate_report(
 
 
 def _anchor(number: int, title: str) -> str:
-    slug = re.sub(r"[^a-z0-9]+", "-", f"{number} {title}".lower()).strip("-")
+    text = title.lower() if number == 0 else f"{number} {title}".lower()
+    keep = "".join(
+        ch for ch in text if unicodedata.category(ch)[0] not in ("P", "S") or ch == "-"
+    )
+    slug = re.sub(r"\s+", "-", keep).strip("-")
     return slug

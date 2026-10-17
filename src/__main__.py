@@ -1,4 +1,4 @@
-"""Execucao como modulo: python -m trabalho_bot [chat|coletar|relatorio|status|web]."""
+"""Execucao como modulo: python -m src [chat|coletar|relatorio|status|web]."""
 
 from __future__ import annotations
 

@@ -248,6 +248,8 @@ sources:
       - "jornada de trabalho"
       - "MEI"
       - "trabalho remoto"
+      - "escala 6x1"
+      - "jornada 40 horas"
     tags: [congresso, tramitação, 2026]
 
   - id: senado-materias
@@ -258,6 +260,8 @@ sources:
       - "reforma trabalhista"
       - "trabalho plataformas digitais"
       - "pejotizacao"
+      - "escala 6x1"
+      - "jornada 40 horas"
     tags: [congresso, tramitação, 2026]
 
   - id: noticias-trabalho
@@ -275,6 +279,9 @@ sources:
       - "trabalhador doméstico direitos 2026"
       - "trabalho intermitente CLT"
       - "cooperativa de trabalho Brasil direitos"
+      - "fim da escala 6x1 Senado PEC"
+      - "jornada 40 horas semanais projeto de lei Brasil"
+      - "redução jornada 44 horas para 40 horas trabalho"
     tags: [noticias, 2026, panorama]
 
   - id: ibge-pnad
@@ -282,3 +289,22 @@ sources:
     type: ibge_api
     priority: 3
     tags: [dados, pnad, informalidade, desocupacao, rendimento]
+
+  - id: ipea-carta-mercado
+    name: "Ipea - Carta de Conjuntura, tema Mercado de Trabalho (rendimentos, formal e informal)"
+    type: html
+    url: "https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/"
+    priority: 3
+    keywords:
+      - "rendimento médio trabalhadores com carteira sem carteira"
+      - "informalidade rendimentos trabalho Ipea"
+      - "assalariados sem carteira rendimento PNAD"
+      - "comparação rendimento formal informal Brasil"
+      - "massa salarial trabalho Ipea"
+    tags: [ipea, rendimento, informalidade, formal, pnad, comparativo]
+
+  - id: ipea-series-mercado
+    name: "Ipea - SERIES: formalidade, informalidade e salarios (PNAD Continua)"
+    type: ipea_api
+    priority: 3
+    tags: [ipea, pnad, informalidade, carteira, rendimento, salario-minimo]

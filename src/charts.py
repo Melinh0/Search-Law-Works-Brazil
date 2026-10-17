@@ -4,18 +4,20 @@ from __future__ import annotations
 
 import json
 import re
+import textwrap
 from pathlib import Path
 
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
 GRAFICO_RE = re.compile(r"```grafico\s*\n(.*?)\n```", re.DOTALL)
 
 PALETTE = ["#0b3d62", "#c45d2b", "#3d8b57", "#7c5cbf", "#b8860b", "#b03a2e", "#2b7a9b"]
 MATH_TYPES = {"barra", "barras", "pizza", "donut", "linha", "barra_empilhada", "hbar"}
-DIAGRAM_TYPES = {"comparativo", "fluxo"}
+DIAGRAM_TYPES = {"comparativo"}
 ALLOWED_TYPES = MATH_TYPES | DIAGRAM_TYPES
 
 
@@ -71,14 +73,16 @@ def parse_spec(raw: str) -> dict:
             if not isinstance(col, dict) or not col.get("titulo") or not col.get("itens"):
                 raise ChartError("coluna do comparativo invalida")
             col["itens"] = [str(i) for i in col["itens"]]
-    elif tipo == "fluxo":
-        etapas = spec.get("etapas")
-        if not isinstance(etapas, list) or len(etapas) < 2:
-            raise ChartError("fluxo precisa de pelo menos 2 etapas")
-        spec["etapas"] = [str(e) for e in etapas]
     spec["tipo"] = tipo
     spec["titulo"] = titulo
-    spec["fonte"] = str(spec.get("fonte", "")).strip()
+    fonte = str(spec.get("fonte", "")).strip()
+    m_fonte = re.fullmatch(r"\[\((.+?)\)\]\(https?://[^)]+\)", fonte)
+    if m_fonte:
+        fonte = m_fonte.group(1).strip()
+    m_parens = re.fullmatch(r"\((.+)\)", fonte)
+    if m_parens:
+        fonte = m_parens.group(1).strip()
+    spec["fonte"] = fonte
     spec["nota"] = str(spec.get("nota", "")).strip()
     spec["unidade"] = str(spec.get("unidade", "")).strip()
     return spec
@@ -89,12 +93,73 @@ def count_graficos(text: str) -> int:
     return len(GRAFICO_RE.findall(text))
 
 
+def _wrap_labels(labels: list[str], width: int = 14) -> list[str]:
+    """Quebra rotulos longos em varias linhas para nao sobrescrever o eixo."""
+    out = []
+    for label in labels:
+        text = str(label)
+        if len(text) <= width:
+            out.append(text)
+        else:
+            out.append("\n".join(textwrap.wrap(text, width=width)))
+    return out
+
+
+def _ylabel(unidade: str) -> str:
+    """Monta o rotulo do eixo Y evitando parênes duplicados."""
+    text = str(unidade or "").strip()
+    if not text:
+        return "valor"
+    if text.startswith("(") and text.endswith(")"):
+        return text
+    return f"({text})"
+
+
+def _br_number(value: float, _pos=None) -> str:
+    """Formata valores no padrao brasileiro, com escala legivel.
+
+    1.200.000 vira "1,2 mi"; 780.000 vira "780 mil"; 1.234 vira "1.234".
+    """
+    av = abs(value)
+    if av >= 1_000_000_000:
+        escala, div = " bi", 1_000_000_000
+    elif av >= 1_000_000:
+        escala, div = " mi", 1_000_000
+    elif av >= 10_000:
+        escala, div = " mil", 1_000
+    else:
+        escala, div = "", 1.0
+    if not escala:
+        if value == int(value):
+            return f"{int(value):,}".replace(",", ".")
+        inteiro, _, decimal = f"{value:,.1f}".partition(".")
+        return f"{inteiro.replace(',', '.')},{decimal.rstrip('0').rstrip('.')}"
+    scaled = value / div
+    if abs(scaled - round(scaled)) < 0.05 and div > 1:
+        scaled_txt = f"{abs(round(scaled))}"
+    else:
+        scaled_txt = f"{abs(scaled):.1f}".rstrip("0").rstrip(".").replace(".", ",")
+    signal = "-" if value < 0 else ""
+    return f"{signal}{scaled_txt}{escala}"
+
+
+def _fmt_item(item: str) -> str:
+    """Formata itens puramente numericos dos diagramas no padrao brasileiro."""
+    text = str(item).strip()
+    if re.fullmatch(r"\d{4,}", text):
+        return _br_number(float(text))
+    return text
+
+
 class ChartRenderer:
     """Atribui numeracao ABNT a figuras e renderiza cada especificacao."""
 
-    def __init__(self, assets_dir: Path):
+    def __init__(self, assets_dir: Path, wipe: bool = True):
         self.assets_dir = assets_dir
         self.assets_dir.mkdir(parents=True, exist_ok=True)
+        if wipe:
+            for stale in self.assets_dir.glob("figura-*.png"):
+                stale.unlink(missing_ok=True)
         self.fig_counter = 0
         self.table_counter = 0
 
@@ -109,8 +174,8 @@ class ChartRenderer:
             png = self.assets_dir / f"figura-{number:02d}.png"
             self._render_math(spec, png)
             body = f'<img src="assets/{png.name}" alt="Figura {number} - {spec["titulo"]}">'
-        fonte = f"Fonte: ({spec['fonte']})." if spec["fonte"] else "Fonte: elaboracao propria."
-        nota = f" {spec['nota']}" if spec["nota"] else ""
+        fonte = f"Fonte: ({spec['fonte']})." if spec.get("fonte") else "Fonte: elaboracao propria."
+        nota = f" {spec['nota']}" if spec.get("nota") else ""
         return (
             f'<figure class="figura">{body}'
             f"<figcaption><strong>Figura {number} \u2013 {spec['titulo']}.</strong> "
@@ -147,7 +212,7 @@ class ChartRenderer:
         tipo = spec["tipo"]
         valores = spec["valores"]
         rotulos = spec.get("rotulos", [])
-        unidade = f" ({spec['unidade']})" if spec["unidade"] else ""
+        ylabel = _ylabel(spec.get("unidade", ""))
         if tipo in ("pizza", "donut"):
             fig, ax = plt.subplots(figsize=(7.0, 3.8))
             wedges, _, auto = ax.pie(
@@ -176,29 +241,49 @@ class ChartRenderer:
             fig, ax = plt.subplots(figsize=(7.0, 3.8))
             series = spec.get("series") or [{"nome": spec["titulo"], "valores": valores}]
             eixos = rotulos if rotulos else [str(i + 1) for i in range(len(series[0]["valores"]))]
+            n = len(eixos)
             for i, s in enumerate(series):
-                ax.plot(eixos, s["valores"], marker="o", linewidth=2,
+                ax.plot(range(n), s["valores"], marker="o", linewidth=2,
                         color=PALETTE[i % len(PALETTE)], label=s["nome"])
-            ax.set_ylabel(unidade.strip() or "valor")
+                finite = [(xi, v) for xi, v in enumerate(s["valores"]) if v == v]
+                if len(finite) <= 12:
+                    pontos = finite
+                else:
+                    idxs = {finite[0][0], finite[-1][0]}
+                    idxs.add(max(finite, key=lambda t: t[1])[0])
+                    idxs.add(min(finite, key=lambda t: t[1])[0])
+                    pontos = [(xi, v) for xi, v in finite if xi in idxs]
+                for xi, v in pontos:
+                    ax.annotate(_br_number(v), (xi, v), textcoords="offset points",
+                                xytext=(0, 7), ha="center", fontsize=8.5)
+            ax.set_xticks(range(n))
+            kept = list(range(n))
+            if n > 16:
+                step = max(1, n // 8)
+                keep = set(range(0, n, step)) | {n - 1}
+                kept = [xi for xi in range(n) if xi in keep]
+                ax.set_xticks(kept)
+            ax.set_xticklabels([str(eixos[xi]) for xi in kept], fontsize=9)
+            ax.set_ylabel(ylabel)
+            ax.yaxis.set_major_formatter(FuncFormatter(_br_number))
             ax.margins(y=0.12)
             if len(series) > 1:
                 ax.legend(fontsize=9, frameon=False)
-            if len(eixos) > 8:
-                ax.tick_params(axis="x", rotation=30, labelsize=9)
         else:
             if tipo == "hbar":
                 fig, ax = plt.subplots(figsize=(7.0, max(3.0, 0.42 * len(valores) + 1.0)))
                 ypos = range(len(valores))
                 ax.barh(list(ypos), valores, color=PALETTE[0], height=0.6)
                 ax.set_yticks(list(ypos))
-                ax.set_yticklabels(rotulos, fontsize=10)
+                ax.set_yticklabels(_wrap_labels(rotulos, width=18), fontsize=9)
                 ax.invert_yaxis()
                 ax.grid(axis="x", alpha=0.5)
                 ax.grid(axis="y", visible=False)
                 span = max(valores) if valores else 1
                 for i, v in enumerate(valores):
-                    ax.text(v + span * 0.015, i, f"{v:g}", va="center", fontsize=9.5)
-                ax.set_xlim(0, span * 1.12)
+                    ax.text(v + span * 0.015, i, _br_number(v), va="center", fontsize=9.5)
+                ax.set_xlim(0, span * 1.14)
+                ax.xaxis.set_major_formatter(FuncFormatter(_br_number))
             elif tipo == "barra_empilhada":
                 fig, ax = plt.subplots(figsize=(7.0, 3.8))
                 series = spec.get("series") or []
@@ -207,39 +292,34 @@ class ChartRenderer:
                     ax.bar(rotulos, s["valores"], bottom=bottom,
                            color=PALETTE[i % len(PALETTE)], label=s["nome"], width=0.6)
                     bottom = [b + v for b, v in zip(bottom, s["valores"])]
-                ax.set_ylabel(unidade.strip() or "valor")
+                ax.set_ylabel(ylabel)
+                ax.yaxis.set_major_formatter(FuncFormatter(_br_number))
                 ax.legend(fontsize=9, frameon=False)
-                if len(rotulos) > 5:
-                    ax.tick_params(axis="x", rotation=20, labelsize=9)
+                if len(rotulos) > 4 or any(len(str(r)) > 10 for r in rotulos):
+                    ax.set_xticks(range(len(rotulos)))
+                    ax.set_xticklabels(_wrap_labels(rotulos), fontsize=8.5)
             else:
                 fig, ax = plt.subplots(figsize=(7.0, 3.8))
-                ax.bar(rotulos, valores, color=PALETTE[0], width=0.58)
-                ax.set_ylabel(unidade.strip() or "valor")
-                if len(rotulos) > 5:
-                    ax.tick_params(axis="x", rotation=20, labelsize=9)
+                ax.bar(range(len(valores)), valores, color=PALETTE[0], width=0.58)
+                ax.set_ylabel(ylabel)
+                ax.yaxis.set_major_formatter(FuncFormatter(_br_number))
+                if rotulos:
+                    ax.set_xticks(range(len(rotulos)))
+                    ax.set_xticklabels(_wrap_labels(rotulos, width=16), fontsize=9)
                 top = max(valores) if valores else 1
                 ax.set_ylim(0, top * 1.15)
                 for i, v in enumerate(valores):
-                    ax.text(i, v + top * 0.02, f"{v:g}", ha="center", fontsize=9.5)
+                    ax.text(i, v + top * 0.02, _br_number(v), ha="center", fontsize=9.5)
         fig.tight_layout()
         fig.savefig(png, bbox_inches="tight", facecolor="white")
         plt.close(fig)
 
     def _render_diagram(self, spec: dict) -> str:
-        if spec["tipo"] == "comparativo":
-            cols = "".join(
-                '<div class="diag-coluna"><h4>{}</h4><ul>{}</ul></div>'.format(
-                    col["titulo"],
-                    "".join(f"<li>{item}</li>" for item in col["itens"]),
-                )
-                for col in spec["colunas"]
+        cols = "".join(
+            '<div class="diag-coluna"><h4>{}</h4><ul>{}</ul></div>'.format(
+                col["titulo"],
+                "".join(f"<li>{_fmt_item(item)}</li>" for item in col["itens"]),
             )
-            return f'<div class="diagrama comparativo">{cols}</div>'
-        etapas = spec["etapas"]
-        boxes = []
-        for i, etapa in enumerate(etapas, 1):
-            arrow = '<span class="diag-seta">&#9654;</span>' if i < len(etapas) else ""
-            boxes.append(
-                f'<div class="diag-etapa"><span class="diag-num">{i}</span>{etapa}</div>{arrow}'
-            )
-        return f'<div class="diagrama fluxo">{"".join(boxes)}</div>'
+            for col in spec["colunas"]
+        )
+        return f'<div class="diagrama comparativo">{cols}</div>'

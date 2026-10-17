@@ -8,7 +8,7 @@ Congresso — com indicacao de quem e prejudicado ou beneficiado por cada mudanc
 ## Arquitetura
 
 ```
-trabalho_bot/
+src/
 ├── cli.py          Interface terminal interativa (chat RAG + comandos)
 ├── web.py          Interface web local (FastAPI) com chat e botao de relatorio
 ├── collectors/     Coleta de fontes: Planalto, Camara, Senado, IBGE, artigos, noticias
@@ -17,7 +17,8 @@ trabalho_bot/
 ├── llm.py          Cliente Ollama (cloud com rotacao de chaves + fallback local)
 ├── report.py       Relatorio secao a secao com citacao ABNT obrigatoria
 ├── charts.py       Graficos matplotlib e diagramas com legenda ABNT
-├── pdf.py          Exportacao MD -> HTML -> PDF ABNT (Edge/Chrome headless)
+├── latex.py        Exportacao MD -> PDF via Pandoc + Tectonic (padrao)
+├── pdf.py          Fallback MD -> HTML -> PDF (Edge/Chrome headless)
 └── config.py       Carregamento de YAMLs e .env
 config/
 ├── sources.yaml    Fontes de coleta
@@ -30,7 +31,8 @@ output/             Relatorios .md, .html e .pdf
 
 - Python 3.12+
 - Ollama instalado (modelo local `llama3.1:8b` opcional como fallback)
-- Edge ou Chrome para gerar o PDF
+- [Pandoc](https://pandoc.org/installing.html) + [Tectonic](https://tectonic-typesetting.github.io)
+  para o PDF via LaTeX (recomendado); sem eles o bot usa Edge/Chrome como fallback
 
 ## Instalacao
 
@@ -57,7 +59,7 @@ limite de uso; se todas falharem, o bot usa o modelo local.
 ### Terminal (interativo)
 
 ```bash
-python -m trabalho_bot            # chat interativo (padrao)
+python -m src            # chat interativo (padrao)
 ```
 
 Comandos do chat:
@@ -76,7 +78,7 @@ Comandos do chat:
 ### Web local
 
 ```bash
-python -m trabalho_bot web        # sobe em http://127.0.0.1:8000
+python -m src web        # sobe em http://127.0.0.1:8000
 ```
 
 A pagina oferece chat com busca no corpus e botoes para coletar fontes,
@@ -85,12 +87,12 @@ gerar o relatorio e baixar o `.md`.
 ### Execucao direta
 
 ```bash
-python -m trabalho_bot coletar                    # so coleta
-python -m trabalho_bot relatorio                  # relatorio completo
-python -m trabalho_bot relatorio --so-secoes clt,mei
-python -m trabalho_bot relatorio --refresh        # ignora cache
-python -m trabalho_bot auditar                    # audita o ultimo relatorio
-python -m trabalho_bot status
+python -m src coletar                    # so coleta
+python -m src relatorio                  # relatorio completo
+python -m src relatorio --so-secoes clt,mei
+python -m src relatorio --refresh        # ignora cache
+python -m src auditar                    # audita o ultimo relatorio
+python -m src status
 ```
 
 ## Relatorio

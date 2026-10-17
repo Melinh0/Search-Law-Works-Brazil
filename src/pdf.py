@@ -236,18 +236,32 @@ def html_to_pdf(html_path: Path, pdf_path: Path, browser: Path) -> None:
 
 def export(settings: Settings, md_text: str, base_name: str) -> tuple[Path, Path]:
     """Gera .md e .pdf do relatorio no diretorio de saida, retornando os caminhos."""
+    from .latex import export_latex, latex_available
+
     md_path = settings.output_dir / f"{base_name}.md"
-    html_path = settings.output_dir / f"{base_name}.html"
-    pdf_path = settings.output_dir / f"{base_name}.pdf"
     title = re.search(r"^# (.+)$", md_text, flags=re.MULTILINE)
     outline_title = settings.outline.get("title", "")
     doc_title = title.group(1) if title else (outline_title or base_name)
     author = str(settings.outline.get("author", ""))
 
     md_path.write_text(md_text, encoding="utf-8")
+    html_path = settings.output_dir / f"{base_name}.html"
     html_path.write_text(
         markdown_to_html(md_text, doc_title, author=author), encoding="utf-8"
     )
+
+    if latex_available():
+        try:
+            result = export_latex(settings, md_text, base_name)
+        except Exception as exc:
+            print(f"[pdf/latex] erro inesperado: {exc}; usando navegador como fallback")
+            result = None
+        if result:
+            print(f"[pdf] gerado via LaTeX (Pandoc+Tectonic): {result[1]}")
+            return md_path, result[1]
+        print("[pdf] LaTeX indisponivel ou falhou; usando navegador como fallback")
+
+    pdf_path = settings.output_dir / f"{base_name}.pdf"
 
     browser = find_browser()
     if browser is None:

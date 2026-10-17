@@ -459,36 +459,184 @@ IBGE_SERIES = [
     (6390, "Rendimento medio mensal real do trabalho principal (R$)"),
 ]
 
+IBGE_PUBLIC_URL = (
+    "https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html"
+)
 
-def collect_ibge(settings: Settings, source: dict) -> list[Document]:
-    """Coleta series reais da PNAD Continua via API do IBGE para uso em graficos."""
-    lines = [
-        "IBGE - PNAD Continua: series nacionais para o panorama do mercado de trabalho.",
-        "Formato dos periodos: AAAAMM (ex.: 202602 = fevereiro de 2026).",
-    ]
-    for agregado, label in IBGE_SERIES:
-        url = (
-            f"https://servicodados.ibge.gov.br/api/v3/agregados/{agregado}"
-            "/variaveis?localidades=N1[all]"
-        )
+IPEA_API = "http://www.ipeadata.gov.br/api/odata4"
+IPEA_PUBLIC_URL = "https://www.ipeadata.gov.br/"
+
+IPEA_SERIES = [
+    ("PNADC12_ESPCC12", "Empregados no setor privado com carteira assinada (mil)"),
+    ("PNADC12_ESPSC12", "Empregados no setor privado sem carteira assinada (mil)"),
+    ("PNADCT_TXINFORMUF_BRA", "Taxa de informalidade - Brasil (%)"),
+    ("PNADC12_RRPHESPCC12", "Rendimento real medio habitual - empregado com carteira (R$)"),
+    ("PNADC12_RRPHESPSC12", "Rendimento real medio habitual - empregado sem carteira (R$)"),
+    ("GAC12_SALMINRE12", "Salario minimo real (R$)"),
+]
+
+
+def _get_json_cached(settings: Settings, url: str, retries: int = 3):
+    """Baixa JSON com cache em disco (.json) e novas tentativas antes de falhar."""
+    cache_path = settings.cache_dir / (
+        hashlib.sha1(url.encode()).hexdigest() + ".json"
+    )
+    if cache_path.exists():
+        try:
+            return json.loads(cache_path.read_text(encoding="utf-8"))
+        except ValueError:
+            cache_path.unlink(missing_ok=True)
+    last_error: Exception | None = None
+    for attempt in range(retries):
         try:
             resp = _get(url, settings)
-            if resp.status_code != 200:
-                continue
+            resp.raise_for_status()
             data = resp.json()
-            serie = data[0]["resultados"][0]["series"][0]["serie"]
-            samples = [(k, v) for k, v in serie.items() if v not in (None, "...", "-")][-12:]
-            lines.append(f"Indicador: {label} [agregado IBGE {agregado}]")
-            lines.extend(f"  {periodo}: {valor}" for periodo, valor in samples)
-        except (requests.RequestException, ConnectionError, ValueError, KeyError, IndexError):
+            cache_path.write_text(
+                json.dumps(data, ensure_ascii=False), encoding="utf-8"
+            )
+            time.sleep(0.4)
+            return data
+        except (requests.RequestException, ConnectionError, ValueError) as exc:
+            last_error = exc
+            time.sleep(1.5 * (attempt + 1))
+    raise ConnectionError(f"falha apos {retries} tentativas: {url}") from last_error
+
+
+def fetch_ibge_series(
+    settings: Settings, agregado: int, periodos: str = "201201-202602"
+) -> list[tuple[str, str]]:
+    """Retorna a serie PNAD Continua do SIDRA como pares (periodo, valor)."""
+    url = (
+        f"https://servicodados.ibge.gov.br/api/v3/agregados/{agregado}"
+        f"/periodos/{periodos}/variaveis?localidades=N1[all]"
+    )
+    data = _get_json_cached(settings, url)
+    serie = data[0]["resultados"][0]["series"][0]["serie"]
+    return [(k, v) for k, v in serie.items() if v not in (None, "...", "-")]
+
+
+def fetch_ipea_series(settings: Settings, code: str) -> list[tuple[str, float]]:
+    """Retorna a serie do Ipeadata (OData v4) como pares (periodo 'AAAA-MM', valor).
+
+    Para series com desagregacao territorial, mantem apenas o total Brasil.
+    """
+    data = _get_json_cached(
+        settings, f"{IPEA_API}/ValoresSerie(SERCODIGO='{code}')"
+    )
+    out: list[tuple[str, float]] = []
+    for item in data.get("value", []):
+        nivnome = str(item.get("NIVNOME") or "")
+        if nivnome and nivnome != "Brasil":
             continue
+        valor = item.get("VALVALOR")
+        if valor is None:
+            continue
+        periodo = str(item.get("VALDATA") or "")[:7]
+        if len(periodo) == 7:
+            out.append((periodo, float(valor)))
+    return out
+
+
+def _fmt_periodo(periodo: str) -> str:
+    """Converte periodos IBGE para rotulo legivel.
+
+    Anual '2012' -> '2012'; trimestral '202401' -> 'T1 2024'; mensal '202601' -> 'jan 2026'.
+    """
+    p = str(periodo)
+    if len(p) == 4 and p.isdigit():
+        return p
+    if len(p) == 6 and p.isdigit():
+        ano, mes = p[:4], int(p[4:])
+        if mes in (1, 2, 3):
+            tri = (mes - 1) // 3 + 1
+            return f"T{tri} {ano}"
+        return f"{ano}-{p[4:]}"
+    return p
+
+
+def _sample_annual(items: list) -> list:
+    """Reduce uma serie trimestral/mensal a uma media por ano (rotulo = 'AAAA')."""
+    by_year: dict[str, list] = {}
+    for periodo, valor in items:
+        try:
+            num = float(valor)
+        except (TypeError, ValueError):
+            continue
+        by_year.setdefault(str(periodo)[:4], []).append(num)
+    return [(ano, f"{sum(v) / len(v):.1f}") for ano, v in sorted(by_year.items()) if v]
+
+
+def collect_ibge(settings: Settings, source: dict) -> list[Document]:
+    """Coleta series reais da PNAD Continua (2012-2026) para uso em graficos."""
+    lines = [
+        "IBGE - PNAD Continua: series nacionais do mercado de trabalho, 2012 a 2026.",
+        "Periodos trimestrais no formato 'T1 2012'; medias anuais no formato '2012'.",
+        "Use as medias anuais para graficos de serie historica longa (2012-2026).",
+    ]
+    for agregado, label in IBGE_SERIES:
+        try:
+            valid = fetch_ibge_series(settings, agregado)
+        except (ConnectionError, ValueError, KeyError, IndexError):
+            continue
+        lines.append(f"Indicador: {label} [agregado IBGE {agregado}]")
+        lines.append("  Media anual (serie historica longa 2012-2026):")
+        lines.extend(
+            f"    {ano}: {valor}" for ano, valor in _sample_annual(valid)
+        )
+        lines.append("  Detalhe trimestral recente:")
+        lines.extend(
+            f"    {_fmt_periodo(periodo)}: {valor}"
+            for periodo, valor in valid[-24:]
+        )
     if len(lines) <= 2:
         return []
     return [
         Document(
             source_id=source["id"],
             title=source["name"],
-            url="https://servicodados.ibge.gov.br/api/v3/agregados/4099",
+            url=IBGE_PUBLIC_URL,
+            text="\n".join(lines),
+            tags=source.get("tags", []),
+            collected_at=time.strftime("%Y-%m-%d"),
+            priority=int(source.get("priority", 3)),
+        )
+    ]
+
+
+def collect_ipea(settings: Settings, source: dict) -> list[Document]:
+    """Coleta series do Ipeadata (formalidade, informalidade e rendimentos)."""
+    lines = [
+        "Ipea - SERIES (Ipeadata): series do mercado de trabalho replicadas da PNAD Continua.",
+        "Periodos mensais no formato 'AAAA-MM'; medias anuais no formato 'AAAA'.",
+        "Formalidade: empregados com carteira vs sem carteira; taxa de informalidade; rendimentos reais.",
+    ]
+    for code, label in IPEA_SERIES:
+        try:
+            valid = fetch_ipea_series(settings, code)
+        except (ConnectionError, ValueError):
+            continue
+        if not valid:
+            continue
+        lines.append(f"Indicador: {label} [serie Ipea {code}]")
+        lines.append("  Media anual (2012 em diante):")
+        lines.extend(
+            f"    {ano}: {valor:.1f}"
+            for ano, valor in _sample_annual(
+                [(p, str(v)) for p, v in valid if p >= "2012-01"]
+            )
+        )
+        lines.append("  Detalhe mensal recente:")
+        lines.extend(
+            f"    {periodo}: {valor:.1f}" for periodo, valor in valid[-12:]
+        )
+    if len(lines) <= 3:
+        return []
+    return [
+        Document(
+            source_id=source["id"],
+            title=source["name"],
+            url=IPEA_PUBLIC_URL,
             text="\n".join(lines),
             tags=source.get("tags", []),
             collected_at=time.strftime("%Y-%m-%d"),
@@ -503,6 +651,7 @@ COLLECTORS = {
     "senado_api": collect_senado,
     "news_rss": collect_news_rss,
     "ibge_api": collect_ibge,
+    "ipea_api": collect_ipea,
     "academic": collect_academic,
 }
 

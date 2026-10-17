@@ -195,7 +195,7 @@ def chat_loop(settings: Settings) -> None:
 def main(argv: list[str] | None = None) -> None:
     """Ponto de entrada da CLI com subcomandos para execucao nao interativa."""
     parser = argparse.ArgumentParser(
-        prog="trabalho_bot", description="Bot de pesquisa sobre trabalho no Brasil"
+        prog="src", description="Bot de pesquisa sobre trabalho no Brasil"
     )
     parser.add_argument(
         "command",
