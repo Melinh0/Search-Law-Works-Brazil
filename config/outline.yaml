@@ -37,14 +37,17 @@ sections:
   - id: panorama
     number: 1
     title: "Panorama do trabalho no Brasil em 2026"
-    charts: 11
-    words: [800, 1100]
-    must_include: [ibge-pnad, ibge-pns, ipea-series-mercado, senado-sm-2026-orcamento, senado-arcabouco-2023]
+    charts: 9
+    words: [1150, 1500]
+    must_include: [ibge-pnad, ibge-pns, ipea-series-mercado, senado-sm-2026-orcamento, senado-arcabouco-2023, dieese-salario-minimo-necessario, dieese-cesta-basica-set-2026]
     extra_queries:
       - "salário mínimo 2026 valor R$ 1.621 reajuste"
       - "arcabouço fiscal limite salário mínimo 0,6% 2,5%"
       - "volume de informais taxa de informalidade Brasil"
       - "poder de compra rendimento médio inflação IPCA"
+      - "salário mínimo necessário Dieese família quatro pessoas"
+      - "cesta básica nacional custo setembro 2026 Dieese"
+      - "salário mínimo nominal e necessário série histórica Dieese"
     brief: >
       Quadro geral do mercado de trabalho brasileiro em 2026. Use OBRIGATORIAMENTE
       as series reais do IBGE/PNAD Continua presentes no contexto (taxa de
@@ -73,18 +76,64 @@ sections:
       vigor: Lei 14.663/2023 (INPC mais crescimento do PIB), LC 200/2023 e a
       EC 126/2022 (novo regime fiscal e teto de gastos). Cite que o salario
       minimo de 2026 e de R$ 1.621 e que, sem o limite do arcabouco fiscal,
-      o aumento teria sido R$ 10 maior (Senado). Monte a serie de valores
-      nominais APENAS com os valores de salario minimo presentes no contexto
-      (ex.: R$ 1.045 em 2020, R$ 1.100 em 2021, R$ 1.212 em 2022, R$ 1.320
-      em 2023 e R$ 1.621 em 2026) e NAO invente valores de outros anos. FACa UM
+       o aumento teria sido R$ 10 maior (Senado). A serie mensal COMPLETA de
+       salario minimo nominal (1994-2026) e a serie do salario minimo
+       NECESSARIO do DIEESE estao na fonte dieese-salario-minimo-necessario:
+       monte as series ANUAIS usando dezembro de cada ano (2012-2026) e, para
+       2026, o mes mais recente da serie (setembro); NAO invente valores
+       fora do contexto. FACa UM
       GRAFICO EM REAIS (R$) comparando salario minimo real e rendimento medio
       mensal real com e sem carteira (series Ipea do contexto, todas em R$);
       NAO misture reais e indice no mesmo grafico e NAO transforme em indice
       2012=100 sem explicar a base na unidade e na nota.
       PODER DE COMPRA (obrigatorio): nesse mesmo periodo, compare o
       crescimento do rendimento medio e do salario minimo com a inflacao
-      (IPCA) presente no contexto e explique o que isso significa para o poder
-      de compra do trabalhador ate 2026.
+       (IPCA) presente no contexto e explique o que isso significa para o poder
+       de compra do trabalhador ate 2026.
+       SALARIO MINIMO E SALARIO MEDIO x CUSTO DE VIDA (obrigatorio): responda
+       a pergunta CENTRAL desta secao - o salario minimo e o salario medio do
+       brasileiro bastam para cobrir os elementos basicos da vida? Monte a
+       resposta em SERIE TEMPORAL (2012-2026) com DOIS graficos de linha em
+       R$ nominais: (1) salario minimo nominal (fonte DIEESE) versus salario
+       minimo NECESSARIO do DIEESE no mesmo periodo; (2) rendimento medio
+       mensal nominal (PNAD, do contexto) versus o salario minimo NECESSARIO.
+       Explique a metodologia do salario minimo necessario do DIEESE com a
+       fonte dieese-metodologia-smn: custo da cesta basica de maior valor
+       entre as capitais, multiplicado por 3 (familia de quatro pessoas) e
+       dividido pela participacao orçamentaria da alimentacao de 35,71%
+       (Pesquisa de Orcamento Familiar); a cesta constitucional supre
+       alimentacao, moradia, saude, educacao, vestuario, higiene, transporte,
+       LAZER e previdencia (CF art. 7o, IV) - destaque que o LAZER faz parte
+       desse calculo. Use os valores atuais presentes no contexto: salario
+       minimo de R$ 1.621,00 em 2026 e salario minimo necessario de
+       R$ 7.750,01 em setembro de 2026 (4,78 vezes o minimo pago), e
+       conclua explicitamente qual seria o salario que satisfaria a cesta
+       constitucional (o necessario DIEESE) e quanto falta para o salario
+        minimo e para o rendimento medio alcancar esse patamar. Inclua tambem
+        o dado de custo da cesta basica de alimentos da fonte
+        dieese-cesta-basica-set-2026: valor da cesta mais cara no mes mais
+        recente, o PERCENTUAL do salario minimo apontado pela propria fonte e
+        as HORAS de trabalho necessarias para compra-la - esses tres dados
+        constam da fonte e devem aparecer COM OS NUMEROS: em Sao Paulo a cesta
+        custou R$ 922,51 e o trabalhador do salario minimo precisou de
+        125 horas e 12 minutos de trabalho (ou 61,52% da renda liquida apos o
+        desconto de 7,5% da Previdencia); NAO use frases qualitativas como
+        'diversas horas' no lugar desses numeros. Feche a analise com CONCLUSAO
+        NUMERICA explicita: quanto falta em R$ para o salario minimo de
+        R$ 1.621,00 e para o rendimento medio nominal atual alcancarem o
+        salario minimo necessario de R$ 7.750,01, e que salario efetivamente
+        satisfaria a cesta constitucional (o necessario DIEESE).
+        GRAFICOS OBRIGATORIOS DESTA SECAO (todos devem constar; cada serie em
+        UM UNICO grafico): (1) taxa de desocupacao em linha 2012-2026;
+        (2) pessoas ocupadas em linha 2012-2026; (3) rendimento medio mensal
+        real em linha 2012-2026; (4) taxa de informalidade; (5) saude
+        autoavaliada boa ou muito boa 2013 vs 2019 por situacao ocupacional;
+        (6) saude autoavaliada por cor ou raca ou faixa de renda;
+        (7) salario minimo real vs rendimento medio real em R$ com e sem
+        carteira; (8) salario minimo NOMINAL vs NECESSARIO do DIEESE em serie
+        2012-2026; (9) rendimento medio NOMINAL vs salario NECESSARIO do
+        DIEESE em serie 2012-2026. NAO crie outros graficos nem repita series
+        ja graficadas.
 
   - id: principios-constitucionais
     number: 2
@@ -312,7 +361,12 @@ sections:
       rescisoria, estabilidade). Use graficos para comparar MEI x informal x CLT
       e o cronograma da reforma tributaria. Use tambem um diagrama
       comparativo 'MEI formalizado x trabalho informal' (direitos,
-      contribuicao previdenciaria e riscos de cada um).
+      contribuicao previdenciaria e riscos de cada um). Se graficar a
+      evolucao do teto de faturamento do MEI, use TODOS os pontos do contexto
+      no eixo X (minimo 4): patamar de R$ 81.000 de 2016 ate 2026,
+      R$ 110.000 em 2027 e R$ 140.000 em 2028 (PLP 186/2026 aprovado no
+      Senado) - se nao houver pontos suficientes, apresente em tabela
+      Markdown, nunca grafico de linha com menos de 4 pontos.
 
   - id: previdencia-tributos
     number: 9
@@ -368,8 +422,8 @@ sections:
     number: 11
     title: "Mudanças em tramitação no Congresso em 2026"
     charts: 0
-    words: [550, 950]
-    must_include: [camara-proposicoes, senado-materias, noticias-trabalho, stf-pejotizacao-2026, stf-pauta-outubro-2026]
+    words: [950, 1350]
+    must_include: [camara-proposicoes, senado-materias, noticias-trabalho, stf-pejotizacao-2026, stf-pauta-outubro-2026, camara-proposicoes-flex, noticias-flexibilizacao]
     extra_queries:
       - "fim da escala 6x1 como vai funcionar"
       - "PEC 6x1 escala jornada Senado aprovação"
@@ -377,6 +431,12 @@ sections:
       - "redução 44 horas para 40 horas trabalho"
       - "STF pejotização suspensão processos TRTs"
       - "STF pauta outubro 2026 aplicativo fretamento"
+      - "flexibilização trabalhista projeto de lei Congresso 2026"
+      - "STF anotação CTPS autônomo intermitente ficha azul"
+      - "Convenção 193 OIT plataformas digitais ratificação Brasil"
+      - "TST decisão jurisprudência trabalhista 2026"
+      - "Estatuto do Autônomo projeto de lei"
+      - "reforma trabalhista 2.0 propostas Congresso"
     brief: >
       Coleta atual de proposicoes (Camara e Senado) sobre trabalho:
       reforma trabalhista, plataformas digitais, pejotizacao, MEI,
@@ -398,10 +458,36 @@ sections:
       nos TRTs - o que isso muda na pratica para denuncias, acoes
       trabalhistas e para empresas que usam PJ; e (b) os destaques da pauta
       do Plenario em outubro de 2026 que envolvem trabalho por aplicativo
-      (fretamento de onibus por aplicativo) - o que esta em jogo, quem e
-      afetado e qual o desfecho ou andamento indicado nas fontes.
-      Se o contexto nao trouxer detalhe de algum ponto, use os detalhes
-      efetivamente presentes e aprofunde o que ha.
+       (fretamento de onibus por aplicativo) - o que esta em jogo, quem e
+       afetado e qual o desfecho ou andamento indicado nas fontes.
+       FLEXIBILIZACAO DO TRABALHO NO LEGISLATIVO E NO JUDICIARIO
+       (obrigatorio): dedique um subtopico explicito as medicoes e
+       discussoes sobre flexibilizacao das regras trabalhistas em 2026,
+       separando os DOIS CAMPOS:
+       (a) LEGISLATIVO: classifique as proposicoes do contexto (Camara,
+       Senado, fontes camara-proposicoes, camara-proposicoes-flex,
+       senado-materias e imprensa) em dois eixos - medicoes de
+       FLEXIBILIZACAO (ex.: propostas que autorizam ou ampliam o trabalho
+       como PJ/pejotizacao, Estatuto do Autonomo, flexibilizacao de
+       intervalos, jornada ou encargos, modelos de contratacao por
+       aplicativo com menos obrigacoes, o que houver no contexto) e
+       medicoes de REFORCO ou REGULACAO (ex.: fim da escala 6x1 e reducao
+       para 40 horas, Convencao 193 da OIT sobre plataformas digitais e seu
+       PL de ratificacao, PL de plataformas com direitos minimos, o que
+       houver no contexto). Para cada proposicao relevante: numero
+       (PL/PEC/MP/Conv), ementa resumida, situacao na tramitacao, quem
+       apoia e quem e prejudicado.
+       (b) JUDICIARIO: cubra o que as fontes do contexto trouxerem de
+       decisoes e pautas que AFETAM a flexibilizacao em 2026 - STF (pejotizacao
+       e suspensao dos processos nos TRTs; pauta do Plenario sobre aplicativos
+       e fretamento) e TST (jurisprudencia sobre trabalho intermitente,
+       teletrabalho, banco de horas, pejotizacao, prescricao, greve e
+       caracterizacao de vinculo, quando presente no contexto). Explique a
+       TENSAO entre o que o Judiciario formaliza ou restringe e o que o
+       Legislativo propoe flexibilizar, com consequencias praticas para
+       trabalhador e empresa.
+       Se o contexto nao trouxer detalhe de algum ponto, use os detalhes
+       efetivamente presentes e aprofunde o que ha.
 
   - id: riscos-e-direitos
     number: 12

@@ -484,3 +484,55 @@ sources:
     url: "https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf"
     priority: 4
     tags: [ibge, aplicativos, plataformas, perfil, sexo, idade, instrucao, raca, rendimento]
+
+  - id: dieese-salario-minimo-necessario
+    name: "DIEESE - Salario minimo nominal e necessario: serie mensal 1994-2026 (cesta basica, custo familiar e preceito constitucional)"
+    type: html
+    url: "https://www.dieese.org.br/analisecestabasica/salarioMinimo.html"
+    encoding: utf-8
+    priority: 4
+    tags: [dieese, salario-minimo, salario-necessario, cesta-basica, poder-de-compra, custo-de-vida, lazer, serie-historica]
+
+  - id: dieese-cesta-basica-set-2026
+    name: "DIEESE/Conab - Pesquisa Nacional da Cesta Basica de Alimentos: resultados de setembro de 2026 (custo nas 27 capitais, % do salario minimo e tempo de trabalho)"
+    type: pdf
+    url: "https://www.dieese.org.br/analisecestabasica/2026/202609cestabasica.pdf"
+    priority: 3
+    tags: [dieese, cesta-basica, salario-minimo, poder-de-compra, tempo-de-trabalho, 2026]
+
+  - id: dieese-metodologia-smn
+    name: "DIEESE - Metodologia do calculo do Salario Minimo Necessario (cesta mais cara x 3 / 35,71% - POF; inclui moradia, saude, educacao, transporte, lazer e previdencia)"
+    type: html
+    url: "https://www.dieese.org.br/metodologia/metodologiaCestaBasica2025/10.html"
+    encoding: utf-8
+    priority: 3
+    tags: [dieese, metodologia, salario-necessario, cesta-basica, pouf, lazer, constitucional]
+
+  - id: camara-proposicoes-flex
+    name: "Camara dos Deputados - proposicoes sobre flexibilizacao e regulamentacao do trabalho (estatuto do autonomo, convencao 193, terceirizacao, intervalos)"
+    type: camara_api
+    priority: 3
+    keywords:
+      - "flexibilizacao trabalhista"
+      - "estatuto do autonomo"
+      - "convencao 193"
+      - "plataformas digitais"
+      - "trabalhador autonomo"
+      - "terceirizacao"
+      - "intervalo intrajornada"
+      - "insalubridade"
+      - "trabalho domestico"
+      - "seguro desemprego"
+    tags: [congresso, tramitacao, flexibilizacao, legislacao, 2026]
+
+  - id: noticias-flexibilizacao
+    name: "Imprensa - flexibilizacao do trabalho, judiciario trabalhista (STF/TST) e regulamentacao de plataformas em 2026"
+    type: news_rss
+    priority: 1
+    queries:
+      - "flexibilização trabalhista Congresso 2026"
+      - "Convenção 193 OIT plataformas digitais ratificação Brasil"
+      - "TST decisão trabalhista 2026"
+      - "reforma trabalhista 2.0 proposta Congresso"
+      - "Estatuto do Autônomo projeto de lei"
+    tags: [judiciario, stf, tst, flexibilizacao, oit-193, 2026]

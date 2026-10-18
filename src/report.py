@@ -122,6 +122,14 @@ def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text
         return f"IPEA, {year}"
     if "ebc.com.br" in url.lower():
         return f"AGENCIA BRASIL, {year}"
+    if "dieese.org.br" in url.lower():
+        return f"DIEESE, {year}"
+    if "stf.jus.br" in url.lower():
+        return f"STF, {year}"
+    if "tst.jus.br" in url.lower():
+        return f"TST, {year}"
+    if "g1.globo.com" in url.lower():
+        return f"G1, {year}"
     if "planalto.gov.br" in url or "gov.br" in url or "camara.leg.br" in url or "senado.leg.br" in url:
         for pattern, template in LAW_PATTERNS:
             match = pattern.search(title)
@@ -129,13 +137,22 @@ def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text
                 if "{0}" in template:
                     return f"BRASIL, {template.format(*match.groups())}"
                 return template
+        bill = re.match(r"^(P[A-Z]{1,3})\s*(\d{1,5})\s*/\s*(\d{4})", title)
+        bill_code = (
+            f"{bill.group(1)} {bill.group(2)}/{bill.group(3)}" if bill else None
+        )
         if source_id == "senado-materias" or "senado.leg.br" in url:
+            if bill_code:
+                return f"SENADO FEDERAL, {bill_code}"
             return f"SENADO FEDERAL, {year}"
         if (
             source_id == "camara-proposicoes"
+            or source_id == "camara-proposicoes-flex"
             or "camara.leg.br" in url
             or re.match(r"^(PL|PLP|PEC|PDL|PRS|REQ)\b", title)
         ):
+            if bill_code:
+                return f"CAMARA DOS DEPUTADOS, {bill_code}"
             return f"CAMARA DOS DEPUTADOS, {year}"
         if "esocial" in url.lower() or "esocial" in title.lower():
             return f"ESOCIAL, {year}"
@@ -197,7 +214,13 @@ def build_citation_registry(chunks: list[dict]) -> dict[str, dict]:
             registry[entries[0]["url"]] = entries[0]
             continue
         for i, entry in enumerate(entries):
-            entry["code"] = f"{code}{chr(ord('a') + i)}"
+            if i < 26:
+                suffix = chr(ord("a") + i)
+            else:
+                suffix = (
+                    chr(ord("a") + (i // 26) - 1) + chr(ord("a") + (i % 26))
+                )
+            entry["code"] = f"{code}{suffix}"
             registry[entry["url"]] = entry
     return registry
 
@@ -415,7 +438,10 @@ def _section_prompt(
         "Varie os tipos ao longo do relatorio (barra, hbar, pizza, donut, linha, "
         "barra_empilhada, comparativo). Para sequencias e etapas use tabela Markdown, "
         "NAO diagramas de fluxo. No bloco use JSON com chaves: tipo, "
-        "titulo, rotulos, valores, unidade, fonte, nota. Para comparativo use colunas: "
+        "titulo, rotulos, valores, unidade, fonte, nota. O campo 'fonte' e "
+        "OBRIGATORIO em TODOS os tipos de grafico, inclusive 'comparativo' "
+        "(coloque o codigo da fonte no nivel superior do JSON, ao lado de 'titulo'). "
+        "Para comparativo use colunas: "
         "[{titulo, itens:[]}] com NO MINIMO 2 colunas. Os campos 'valores' e "
         "'series[].valores' devem conter APENAS numeros puros de JSON (ex.: 63.4, "
         "1621, 3500.7) - NUNCA textos: converta qualquer numero formatado em "
@@ -548,7 +574,7 @@ def validate_section(
             eh_anual = len(rotulos_linha) >= 4 and all(
                 re.fullmatch(r"(19|20)\d{2}", r) for r in rotulos_linha
             )
-            if eh_anual and pontos < 8:
+            if eh_anual and pontos < 8 and min_charts >= 8:
                 violations.append(
                     f"grafico de linha com serie temporal curta ({pontos} anos): "
                     f"{spec['titulo']!r} (use a serie historica longa completa do contexto)"
@@ -872,7 +898,7 @@ def generate_section(
         text = client.chat_with_retry(
             prompt,
             system=SYSTEM_PROMPT,
-            max_tokens=max(4800, int(max_words * factor)),
+            max_tokens=min(8000, max(5600, int(max_words * factor) + 400 * min_charts + 600)),
             temperature=0.2,
         )
         text = _clean_section(text, section)
@@ -915,7 +941,16 @@ def _format_feedback(violations: list[str]) -> str:
 
 def _nbr_reference(entry: dict) -> str:
     author = re.split(r",\s*", entry["code"], maxsplit=1)[0]
-    return f"{author}. {entry['title']}. Disponível em: {entry['url']}. Acesso em: {_access_date(entry['date'])}."
+    title = str(entry["title"])
+    m = re.match(
+        rf"^{re.escape(author)}(?:\s*/\s*[\w ]+)?\s*[-–—:]\s*(.+)$",
+        title,
+        re.IGNORECASE,
+    )
+    if m and m.group(1).strip():
+        title = m.group(1).strip()
+        title = title[0].upper() + title[1:]
+    return f"{author}. {title}. Disponível em: {entry['url']}. Acesso em: {_access_date(entry['date'])}."
 
 
 def _references_section(sources: dict[str, dict]) -> str:

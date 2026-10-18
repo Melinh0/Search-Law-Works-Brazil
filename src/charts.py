@@ -71,17 +71,31 @@ def parse_spec(raw: str) -> dict:
     if not titulo:
         raise ChartError("grafico sem titulo")
     if tipo in MATH_TYPES:
-        valores = spec.get("valores")
         series = spec.get("series")
+        if isinstance(series, list) and series:
+            clean = []
+            for i, s in enumerate(series):
+                if isinstance(s, list):
+                    s = {"valores": s}
+                if not isinstance(s, dict):
+                    raise ChartError("serie invalida")
+                nome = str(s.get("nome") or "").strip() or (
+                    titulo if len(series) == 1 else f"Serie {i + 1}"
+                )
+                try:
+                    vals = [_to_float(v) for v in s.get("valores", [])]
+                except (TypeError, ValueError) as exc:
+                    raise ChartError("valores devem ser numericos") from exc
+                if not vals:
+                    raise ChartError("serie sem valores")
+                clean.append({"nome": nome, "valores": vals})
+            spec["series"] = clean
+        valores = spec.get("valores")
         if (
-            (not isinstance(valores, list) or not valores)
-            and tipo == "linha"
-            and isinstance(series, list)
-            and series
-            and isinstance(series[0], dict)
-            and series[0].get("valores")
-        ):
-            valores = series[0]["valores"]
+            not isinstance(valores, list)
+            or not valores
+        ) and isinstance(spec.get("series"), list) and spec["series"]:
+            valores = spec["series"][0]["valores"]
         if not isinstance(valores, list) or not valores:
             raise ChartError("grafico quantitativo sem valores")
         try:
@@ -95,20 +109,6 @@ def parse_spec(raw: str) -> dict:
             if len(rotulos) != len(spec["valores"]):
                 raise ChartError("rotulos e valores com tamanhos diferentes")
             spec["rotulos"] = [str(r) for r in rotulos]
-        series = spec.get("series")
-        if isinstance(series, list):
-            clean = []
-            for s in series:
-                if not isinstance(s, dict) or not s.get("nome"):
-                    raise ChartError("serie invalida")
-                try:
-                    vals = [_to_float(v) for v in s.get("valores", [])]
-                except (TypeError, ValueError) as exc:
-                    raise ChartError("valores devem ser numericos") from exc
-                if not vals:
-                    raise ChartError("serie sem valores")
-                clean.append({"nome": str(s["nome"]), "valores": vals})
-            spec["series"] = clean
     elif tipo == "comparativo":
         colunas = spec.get("colunas")
         if not isinstance(colunas, list) or len(colunas) < 2:
