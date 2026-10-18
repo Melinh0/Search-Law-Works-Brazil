@@ -2,8 +2,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import date
-
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.panel import Panel
@@ -15,7 +13,7 @@ from .config import Settings
 from .llm import LLMError, OllamaClient
 from .pdf import export
 from .rag import SearchIndex, build_index
-from .report import SYSTEM_PROMPT, audit_report, generate_report
+from .report import SYSTEM_PROMPT, audit_report, generate_report, report_base_name
 
 console = Console()
 
@@ -73,7 +71,7 @@ def cmd_report(settings: Settings, client: OllamaClient, only: list[str] | None)
         cmd_collect(settings)
     with console.status("Gerando relatorio (pode levar varios minutos)..."):
         md = generate_report(settings, client, log=lambda m: console.print(m), sections_filter=only)
-    name = f"relatorio-trabalho-brasil-{date.today().isoformat()}"
+    name = report_base_name(settings.output_dir)
     md_path, extra_path = export(settings, md, name)
     console.print(Panel(f"[green]Relatorio gerado:[/green]\n{md_path}\n{extra_path}"))
 

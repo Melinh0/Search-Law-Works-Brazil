@@ -1,10 +1,11 @@
-<div class="capa"><p class="capa-instituicao">Universidade Estadual do Ceará - Graduando em Ciência da Computação</p><p class="capa-autor">Yago Melo da Costa</p><h1 class="capa-titulo">Trabalho no Brasil 2026: Legislação, Modalidades e Tendências</h1><p class="capa-subtitulo">Relatório objetivo sobre relações de trabalho, CLT, PJ, MEI e trabalho informal</p><div class="capa-espaco"></div><p class="capa-local">Fortaleza, Ceará</p><p class="capa-data">2026</p></div>
+<div class="capa"><p class="capa-genero">RELATÓRIO</p><p class="capa-autor">Yago Melo da Costa</p><h1 class="capa-titulo">Trabalho no Brasil 2026: Legislação, Modalidades e Tendências</h1><p class="capa-subtitulo">Relações de trabalho, CLT, PJ, MEI e trabalho informal</p><div class="capa-espaco"></div><p class="capa-local">Fortaleza, Ceará</p><p class="capa-data">2026</p></div>
 
 ## Resumo
 
-O relatório "Trabalho no Brasil 2026" apresenta uma análise abrangente do mercado laboral brasileiro, integrando dados estatísticos do IBGE/PNAD Contínua e a fundamentação jurídica vigente. A obra examina os princípios constitucionais dos direitos sociais, a liberdade sindical e a estrutura da CLT, detalhando a evolução do Decreto-Lei 5.452/1943. O estudo aprofunda a caracterização do vínculo de emprego através de seus quatro requisitos essenciais, discutindo a subordinação algorítmica sob a ótica da jurisprudência do TST e STF. São comparadas detalhadamente as modalidades de trabalho com e sem vínculo, com foco na distinção entre a contratação via CLT e a "pejotização", avaliando custos empresariais e garantias trabalhistas como FGTS e 13º salário. O documento aborda a figura do MEI, os limites de faturamento e a sistemática de tributação previdenciária da Lei 8.212/1991. Adicionalmente, analisa o crescimento do trabalho por plataformas digitais, as proposições legislativas em tramitação no Congresso Nacional para 2026 e a gestão de riscos ocupacionais, incluindo normas de saúde, segurança e combate ao assédio conforme a Lei 14.457/2022. O relatório encerra-se com um quadro comparativo consolidado sobre direitos, deveres e riscos de cada modelo de contratação.
+O relatório Trabalho no Brasil 2026 apresenta uma análise abrangente do mercado laboral brasileiro, integrando dados estatísticos do IBGE/PNAD Contínua aos fundamentos jurídicos vigentes. A obra examina os princípios constitucionais dos direitos sociais, a liberdade sindical e a estrutura da CLT, detalhando a evolução do Decreto-Lei 5.452/1943. Um ponto central é a discussão sobre o vínculo de emprego, analisando os requisitos de pessoa física, habitualidade, onerosidade, pessoalidade e subordinação, com foco especial na subordinação algorítmica e na jurisprudência do TST e STF. O documento estabelece distinções claras entre modalidades com e sem vínculo empregatício, comparando a contratação via CLT e a pejotização, além de detalhar o funcionamento do MEI, seus limites de faturamento e a cobertura previdenciária via DAS conforme a Lei 8.212/1991. A análise estende-se ao trabalho por plataformas digitais, quantificando a força de trabalho em aplicativos de transporte e entrega. Por fim, o relatório mapeia as proposições legislativas em tramitação no Congresso Nacional em 2026, abordando reformas trabalhistas e a regulação da pejotização, encerrando com a gestão de riscos ocupacionais, normas de saúde e segurança e o combate ao assédio conforme a Lei 14.457/2022.
 
 Palavras-chave: CLT; Vínculo Empregatício; MEI; Plataformas Digitais; Direito do Trabalho.
+
 
 ## Sumário
 
@@ -26,153 +27,156 @@ R. [Referências](#referências)
 
 ## 1. Panorama do trabalho no Brasil em 2026
 
-**Nota metodológica.** As séries deste relatório vão de 2012 a 2026 porque a PNAD Contínua, pesquisa domiciliar do IBGE que substituiu a antiga PNAD, iniciou a coleta em dezembro de 2012 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html), formando a partir daí uma série contínua e comparável. Os valores anuais são médias dos meses de cada ano, não leituras pontuais, e os de rendimento estão em reais, já descontados da inflação. As fontes são as tabelas da PNAD Contínua do IBGE (SIDRA) e as séries do Ipeadata/IPEA, que replicam os mesmos dados [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html); [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+O mercado de trabalho brasileiro em 2026 apresenta um cenário de resiliência, marcado pela expansão da população ocupada e a redução da taxa de desocupação [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). A taxa de desocupação atingiu seu menor patamar histórico em abril de 2026, registrando 6,1% [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). Esse movimento é impulsionado pelo crescimento contínuo do número de pessoas ocupadas, que chegou a 102,5 milhões em 2026 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-O mercado de trabalho brasileiro em 2026 apresenta-se em trajetória favorável, com a taxa de desocupação atingindo patamares historicamente baixos [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). A média anual da desocupação em 2026 fechou em 5,8%, consolidando uma queda consistente desde o pico de 13,8% registrado em 2020 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Esse movimento é impulsionado principalmente pela expansão da população ocupada, que atingiu a média anual de 102,5 milhões de pessoas em 2026 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+<figure class="figura"><img src="assets/figura-01.png" alt="Figura 1 - Taxa de Desocupação Anual (2012-2026)"><figcaption><strong>Figura 1 – Taxa de Desocupação Anual (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> A taxa de desocupação atingiu seu pico em 2020 e apresenta queda consistente até 2026.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-01.png" alt="Figura 1 - Taxa de Desocupação Anual (2012-2026)"><figcaption><strong>Figura 1 – Taxa de Desocupação Anual (2012-2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Série histórica de médias anuais da PNAD Contínua.</figcaption></figure>
+A trajetória da população ocupada mostra recuperação após a crise sanitária, com a série anual subindo de 91,5 milhões em 2020 para 102,5 milhões em 2026 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). O crescimento recente é sustentado principalmente pelo emprego formal, que expandiu 3,6%, ritmo superior ao setor informal, que cresceu 1,5% [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
 
-O volume de pessoas ocupadas demonstra crescimento sustentado, saindo de 89,2 milhões em 2012 para 102,5 milhões em 2026 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). No entanto, observa-se que a força de trabalho apresenta menor dinamismo, com a taxa de participação em 62,1% no trimestre encerrado em abril de 2026, valor inferior aos 63,2% registrados na média pré-pandemia [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+<figure class="figura"><img src="assets/figura-02.png" alt="Figura 2 - População Ocupada Anual (2012-2026)"><figcaption><strong>Figura 2 – População Ocupada Anual (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> O volume de pessoas ocupadas em 2026 supera significativamente os níveis pré-pandemia.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-02.png" alt="Figura 2 - População Ocupada Anual (2012-2026)"><figcaption><strong>Figura 2 – População Ocupada Anual (2012-2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Série histórica de médias anuais da PNAD Contínua.</figcaption></figure>
+O rendimento médio mensal real do trabalho principal também apresenta tendência de alta, saindo de R$ 3.191,30 em 2012 para R$ 3.777,50 em 2026 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-A taxa de desocupação, por si só, mede apenas quem está sem trabalho e procurando vaga. Para enxergar o conjunto, é preciso situar toda a população de 14 anos ou mais em três estados: ocupada, subocupada ou não ocupada. Em 2026, 56,2% da população estava ocupada com jornada suficiente, 2,4% era subocupada, 3,5% estava desocupada e 37,9% estava fora da força de trabalho [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+<figure class="figura"><img src="assets/figura-03.png" alt="Figura 3 - Rendimento Médio Mensal Real (2012-2026)"><figcaption><strong>Figura 3 – Rendimento Médio Mensal Real (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> O rendimento médio real atingiu seu pico histórico em 2026.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-36.png" alt="Figura 3 - Composição da População de 14 Anos ou Mais por Situação de Ocupação (2026)"><figcaption><strong>Figura 3 – Composição da População de 14 Anos ou Mais por Situação de Ocupação (2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Média anual da PNAD Contínua: 58,6% da população está ocupada (dos quais 2,4 pontos percentuais são subocupados) e 41,4% não está ocupado, concentrado fora da força de trabalho.</figcaption></figure>
+### 1.1 Segmentação e Informalidade
 
-Ocupado é quem trabalhou pelo menos uma hora na semana de referência, por conta própria ou para outrem, com ou sem remuneração. Juntos, ocupados e desocupados formam a força de trabalho, que em 2026 correspondia a 62,1% da população de 14 anos ou mais [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Desocupado é quem não tinha trabalho, estava disponível e procurava emprego — são exatamente os 3,5% do gráfico. Já fora da força de trabalho estão os 37,9% que não trabalham e também não procuram.
+O mercado divide-se entre trabalhadores com carteira assinada, sem carteira, autônomos e MEI [(IPEA, 2026a)](https://www.ipeadata.gov.br/). Em 2026, o número de empregados com carteira assinada foi de 39,3 milhões [(IPEA, 2026a)](https://www.ipeadata.gov.br/). Já os empregados sem carteira somaram 13,4 milhões [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
 
-Os 41,4% da população que não estão ocupados se dividem em duas situações. Os 3,5% desocupados querem trabalhar e buscam vaga ativamente, por isso integram a força de trabalho. Os 37,9% fora da força não procuram trabalho: estudantes em tempo integral, pessoas dedicadas aos afazeres domésticos e ao cuidado da família, aposentados e pensionistas com renda própria, e quem desistiu de procurar por acreditar que não há vaga [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+A taxa de informalidade, que chegou a 40,8% em 2019, apresentou queda gradual até atingir 37,3% em 2026 [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
 
-Subocupado é quem trabalhou na semana de referência, mas com menos horas do que desejava e estava disponível para trabalhar, a chamada insuficiência de horas. Esses trabalhadores têm emprego, porém jornada abaixo do pretendido, e por isso se distinguem dos desocupados: somam 2,4% da população, o equivalente a 4,2% dos ocupados [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). A subutilização da força de trabalho reúne essas três frentes: desocupados, subocupados e potencialmente desocupados, que reduziram a busca por vaga — estes últimos estão dentro dos 37,9% fora da força e somam 2,9% da população [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+<figure class="figura"><img src="assets/figura-04.png" alt="Figura 4 - Taxa de Informalidade (2015-2026)"><figcaption><strong>Figura 4 – Taxa de Informalidade (2015-2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> A informalidade recuou consistentemente a partir de 2021, atingindo o menor nível da série em 2026.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-37.png" alt="Figura 4 - Taxas de Desocupação, Subocupação e Subutilização da Força de Trabalho (2012-2026)"><figcaption><strong>Figura 4 – Taxas de Desocupação, Subocupação e Subutilização da Força de Trabalho (2012-2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> A subutilização (desocupados + potencialmente desocupados + subocupados) segue bem acima da taxa de desocupação isolada, revelando o desemprego oculto dentro da ocupação.</figcaption></figure>
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Com Carteira</h4><ul><li>Quantidade: 39328.6</li></ul></div><div class="diag-coluna"><h4>Sem Carteira</h4><ul><li>Quantidade: 13464.5</li></ul></div></div><figcaption><strong>Figura 5 – Volume de Empregos por Vínculo (2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> O emprego formal é predominante em relação ao emprego sem carteira no setor privado.</figcaption></figure>
 
-Em perspectiva histórica, a subutilização caiu de 18,2% em 2012 para 13,5% em 2026, acompanhando a queda da desocupação, de 7,4% para 5,6%, e da subocupação, de 6,7% para 4,2% [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Ainda assim, em 2026 a taxa de subutilização (13,5%) permanece mais que o dobro da desocupação isolada (5,6%), o que mostra que olhar apenas para o desemprego subestima a pressão real sobre o mercado de trabalho.
+### 1.2 Saúde e Situação Ocupacional
 
-**Composição demográfica.** Em 2026, as mulheres formavam 51,8% da população de 14 anos ou mais, mas respondiam por 43,9% da força de trabalho, enquanto os homens somavam 48,2% da população e 56,1% da força [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). A população em idade de trabalhar é, portanto, majoritariamente feminina, e a força de trabalho, majoritariamente masculina.
+A Pesquisa Nacional de Saúde (PNS) é realizada quinquenalmente, com edições disponíveis de 2013 e 2019, enquanto a terceira edição (PNS 2026) encontra-se em fase de coleta [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). A saúde autoavaliada como "boa ou muito boa" é significativamente maior entre pessoas ocupadas (73,8% em 2019) do que entre pessoas fora da força de trabalho (51,3% em 2019) [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
 
-<figure class="figura"><img src="assets/figura-38.png" alt="Figura 5 - Composição da População de 14 Anos ou Mais e da Força de Trabalho por Sexo (2026)"><figcaption><strong>Figura 5 – Composição da População de 14 Anos ou Mais e da Força de Trabalho por Sexo (2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> As mulheres são maioria na população de 14 anos ou mais, mas minoria na força de trabalho, reflexo da menor participação feminina.</figcaption></figure>
 
-**Subutilização por sexo.** A assimetria aparece com clareza na subutilização da força de trabalho: em 2026, a taxa foi de 16,6% entre as mulheres e de 11,2% entre os homens, e a desvantagem feminina se repetiu em todos os anos da série desde 2012 [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). Mesmo ocupando menor parcela da força de trabalho, as mulheres concentram maior proporção de pessoas ociosas, entre desocupadas, subocupadas e potencialmente desocupadas.
 
-<figure class="figura"><img src="assets/figura-39.png" alt="Figura 6 - Taxa de Subutilização da Força de Trabalho por Sexo (2012-2026)"><figcaption><strong>Figura 6 – Taxa de Subutilização da Força de Trabalho por Sexo (2012-2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> A taxa de subutilização das mulheres supera a dos homens em todos os anos da série histórica.</figcaption></figure>
+A desigualdade na percepção de saúde persiste por renda e cor. Em 2019, pessoas com renda superior a 5 salários mínimos reportaram 86,4% de saúde boa/muito boa, contra 55,5% para quem ganha até 1/4 do salário mínimo [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). Por cor ou raça, em 2019, a percepção positiva foi de 71,0% para brancos, 62,9% para pretos e 62,1% para pardos [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
 
-**Rendimento por sexo.** No rendimento médio real do trabalho principal, a diferença de nível persiste: em 2026, os homens recebiam em média R$ 3.999,50 e as mulheres R$ 3.191,50, cerca de 20% menos [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). Entre 2012 e 2026, o rendimento real cresceu para os dois sexos, mas a diferença em reais mudou pouco, de R$ 833 para R$ 808 [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+<figure class="figura"><img src="assets/figura-06.png" alt="Figura 6 - Saúde Boa/Muito Boa por Cor ou Raça (2019)"><figcaption><strong>Figura 6 – Saúde Boa/Muito Boa por Cor ou Raça (2019).</strong> <em>Fonte: [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).</em> A população branca apresenta maior índice de saúde autoavaliada como boa ou muito boa.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-40.png" alt="Figura 7 - Rendimento Médio Real Mensal do Trabalho Principal por Sexo (2012-2026)"><figcaption><strong>Figura 7 – Rendimento Médio Real Mensal do Trabalho Principal por Sexo (2012-2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> O rendimento médio real das mulheres permanece abaixo do dos homens em toda a série, com ausência de dados em 2021.</figcaption></figure>
+### 1.3 Salário Mínimo e Arcabouço Fiscal
 
-**Saúde percebida.** A Pesquisa Nacional de Saúde (PNS), do IBGE, mostra que a autoavaliação de saúde acompanha a posição no mercado de trabalho: em 2019, 73,8% dos ocupados de 18 anos ou mais avaliavam a própria saúde como boa ou muito boa, contra 70,3% dos desocupados e 51,3% dos que estavam fora da força [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). A diferença entre ocupados e pessoas fora da força passou de 20,4 pontos percentuais em 2013 para 22,5 em 2019 [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
+A política de reajuste do salário mínimo é regida pela Lei 14.663/2023, que prevê a reposição do INPC somada ao crescimento do PIB [(SENADO FEDERAL, 2026d)](https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro). O regime fiscal é orientado pela Lei Complementar 200/2023 (Novo Arcabouço Fiscal) e pela EC 126/2022, que substituíram o teto de gastos para garantir a sustentabilidade da dívida pública [(SENADO FEDERAL, 2026b)](https://www12.senado.leg.br/noticias/materias/2023/08/31/novo-arcabouco-fiscal-entra-em-vigencia-no-brasil).
 
-<figure class="figura"><img src="assets/figura-41.png" alt="Figura 8 - Autoavaliação de Saúde Boa ou Muito Boa por Situação Ocupacional (2013 e 2019)"><figcaption><strong>Figura 8 – Autoavaliação de Saúde Boa ou Muito Boa por Situação Ocupacional (2013 e 2019).</strong> <em>Fonte: [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). PNS.</em> Quem estava fora da força de trabalho avaliava a própria saúde como boa ou muito boa 22,5 pontos percentuais menos do que os ocupados em 2019.</figcaption></figure>
+O valor do salário mínimo em 2026 foi fixado em R$ 1.621 [(SENADO FEDERAL, 2026d)](https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro). Sem a limitação imposta pelo arcabouço fiscal, o valor teria sido R$ 10 superior [(SENADO FEDERAL, 2026d)](https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro).
 
-**Renda e saúde.** A renda domiciliar per capita separa ainda mais a autoavaliação de saúde: em 2019, 55,5% dos adultos na menor faixa de renda, de até 1/4 do salário mínimo, avaliavam bem a própria saúde, contra 86,4% na maior, acima de 5 salários mínimos [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). O gradiente já aparecia em 2013, de 56,6% a 84,3%, e se manteve entre as duas edições [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
-
-<figure class="figura"><img src="assets/figura-42.png" alt="Figura 9 - Autoavaliação de Saúde Boa ou Muito Boa por Faixa de Renda Domiciliar per capita (2013 e 2019)"><figcaption><strong>Figura 9 – Autoavaliação de Saúde Boa ou Muito Boa por Faixa de Renda Domiciliar per capita (2013 e 2019).</strong> <em>Fonte: [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). PNS.</em> A avaliação positiva da saúde sobe de 55,5% na menor renda para 86,4% na maior em 2019.</figcaption></figure>
-
-**Cor ou raça e saúde.** A desigualdade racial também aparece na percepção da saúde: em 2019, 71,0% das pessoas brancas avaliavam a própria saúde como boa ou muito boa, contra 62,9% das pretas e 62,1% das pardas [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). O mesmo padrão valia em 2013, com 70,3% entre as brancas, 61,9% entre as pretas e 62,4% entre as pardas [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
-
-<figure class="figura"><img src="assets/figura-43.png" alt="Figura 10 - Autoavaliação de Saúde Boa ou Muito Boa por Cor ou Raça (2013 e 2019)"><figcaption><strong>Figura 10 – Autoavaliação de Saúde Boa ou Muito Boa por Cor ou Raça (2013 e 2019).</strong> <em>Fonte: [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). PNS.</em> Em 2019, 71,0% das pessoas brancas avaliaram a saúde como boa ou muito boa, contra 62,9% das pretas e 62,1% das pardas.</figcaption></figure>
-
-Quanto aos rendimentos, o rendimento médio mensal real do trabalho principal atingiu R$ 3.777,50 em 2026 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Este valor representa a renovação do pico da série histórica iniciada em 2012, que partiu de R$ 3.191,3 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
-
-<figure class="figura"><img src="assets/figura-03.png" alt="Figura 11 - Rendimento Médio Mensal Real (2012-2026)"><figcaption><strong>Figura 11 – Rendimento Médio Mensal Real (2012-2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Série histórica de médias anuais da PNAD Contínua.</figcaption></figure>
-
-A composição do mercado divide-se entre vínculos formais e informais. O setor formal tem demonstrado maior vigor, com taxa média de expansão de 3,6% nos últimos doze meses até abril, superando a expansão de 1,5% do setor informal [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). O crescimento da ocupação formal foi de 3,7% em doze meses, enquanto a informal cresceu 1,3% [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
-
-<div class="tabela-legenda"><strong>Tabela 1 – Comparativo de Crescimento por Vínculo.</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em></div>
-| Tipo de Vínculo | Taxa de Expansão (12 meses) | Desempenho Relativo |
+<div class="tabela-legenda"><strong>Tabela 1 – Trajetória do Salário Mínimo Nominal.</strong> <em>Fonte: [(SENADO FEDERAL, 2026d)](https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro), [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em></div>
+| Ano | Valor Nominal | Fonte |
 | :--- | :--- | :--- |
-| Emprego Formal | 3,6% [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/) | Superior [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/) |
-| Setor Informal | 1,5% [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/) | Inferior [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/) |
+| 2020 | R$ 1.045,00 | [(IPEA, 2026a)](https://www.ipeadata.gov.br/) |
+| 2021 | R$ 1.100,00 | [(IPEA, 2026a)](https://www.ipeadata.gov.br/) |
+| 2022 | R$ 1.212,00 | [(IPEA, 2026a)](https://www.ipeadata.gov.br/) |
+| 2023 | R$ 1.320,00 | [(IPEA, 2026a)](https://www.ipeadata.gov.br/) |
+| 2026 | R$ 1.621,00 | [(SENADO FEDERAL, 2026d)](https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro) |
 
-No detalhamento dos rendimentos por vínculo, trabalhadores por conta própria e empregados sem carteira apresentaram os maiores crescimentos interanuais de renda, com altas de 9,1% e 7%, respectivamente [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+<figure class="figura"><img src="assets/figura-07.png" alt="Figura 7 - Salário Mínimo Real Anual (2012-2026)"><figcaption><strong>Figura 7 – Salário Mínimo Real Anual (2012-2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> O salário mínimo real apresenta crescimento gradual, com aceleração a partir de 2023.</figcaption></figure>
 
-**Em termos simples:** O mercado de trabalho em 2026 está com o desemprego em níveis muito baixos, bem menores do que no auge da pandemia em 2020 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Mais pessoas estão trabalhando e os salários médios atingiram o valor mais alto desde 2012 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). O emprego com carteira assinada está crescendo mais rápido do que os bicos e trabalhos informais [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). O retrato, porém, não é uniforme: as mulheres são maioria na população, mas minoria na força de trabalho e recebem menos, e a saúde autoavaliada é pior nas menores rendas e entre pretos e pardos [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/); [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
+### 1.4 Poder de Compra e Rendimentos
+
+A comparação entre rendimentos reais e o salário mínimo revela disparidades conforme o vínculo empregatício. Em 2026, o rendimento médio habitual do empregado com carteira foi de R$ 3.395,90, enquanto o do empregado sem carteira foi de R$ 2.670,50 [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
+
+<figure class="figura"><img src="assets/figura-08.png" alt="Figura 8 - Rendimentos Reais vs Salário Mínimo (2026)"><figcaption><strong>Figura 8 – Rendimentos Reais vs Salário Mínimo (2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> O rendimento de quem possui carteira assinada é mais que o dobro do salário mínimo real.</figcaption></figure>
+
+O poder de compra é impactado pela inflação (IPCA). A série do IPCA mostra crescimento nominal contínuo, de 3.500,7 em 2012 para 7.592,0 em 2026 [(IPEA, 2026a)](https://www.ipeadata.gov.br/). O fato de os rendimentos médios e o salário mínimo estarem em valores reais (deflacionados) indica que houve ganho de poder de compra acima da inflação no período recente [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
+
+<figure class="figura"><img src="assets/figura-09.png" alt="Figura 9 - Evolução do IPCA (2012-2026)"><figcaption><strong>Figura 9 – Evolução do IPCA (2012-2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> O índice de preços apresenta subida constante, exigindo reajustes reais para manutenção do poder de compra.</figcaption></figure>
+
+<figure class="figura"><img src="assets/figura-10.png" alt="Figura 10 - Distribuição de Rendimento Real (2026)"><figcaption><strong>Figura 10 – Distribuição de Rendimento Real (2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> O trabalhador formal detém a maior fatia de rendimento médio habitual.</figcaption></figure>
+
+<figure class="figura"><img src="assets/figura-11.png" alt="Figura 11 - Comparativo de Rendimento Real (2012 vs 2026)"><figcaption><strong>Figura 11 – Comparativo de Rendimento Real (2012 vs 2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Houve aumento real do rendimento médio mensal entre o início e o fim da série.</figcaption></figure>
+
+**Em termos simples:** O mercado de trabalho em 2026 está melhor do que nos últimos anos, com menos gente desempregada e mais pessoas trabalhando, principalmente com carteira assinada [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Os salários subiram acima da inflação, o que significa que o dinheiro está rendendo um pouco mais para comprar as coisas [(IPEA, 2026a)](https://www.ipeadata.gov.br/). No entanto, quem ganha menos ou pertence a grupos minoritários ainda sente mais a diferença na saúde e na renda [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
 
 Fontes consultadas:
+* [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)
+* [(IPEA, 2026a)](https://www.ipeadata.gov.br/)
+* [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/)
 * [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html)
-* [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)
-* [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/)
+* [(SENADO FEDERAL, 2026d)](https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro)
+* [(SENADO FEDERAL, 2026b)](https://www12.senado.leg.br/noticias/materias/2023/08/31/novo-arcabouco-fiscal-entra-em-vigencia-no-brasil)
 
 ## 2. Princípios constitucionais do trabalho
 
-O trabalho é classificado como um direito social fundamental no ordenamento jurídico brasileiro [(BRASIL, 1988, art. 6º)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). A dignidade da pessoa humana e os valores sociais do trabalho, aliados à livre iniciativa, constituem fundamentos da República Federativa do Brasil [(BRASIL, 1988, art. 1º)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+A República Federativa do Brasil estabelece, como um de seus fundamentos, os valores sociais do trabalho e da livre iniciativa [(BRASIL, 1988, art. 1º, IV)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). O trabalho é classificado como um direito social, integrando um conjunto de garantias que inclui a educação, a saúde, a alimentação, a moradia, o lazer, a segurança e a previdência social [(BRASIL, 1988, art. 6º)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
-A proteção ao trabalho humano manifesta-se na proibição de trabalho noturno, perigoso ou insalubre a menores de dezoito anos, e de qualquer trabalho a menores de dezesseis anos, exceto na condição de aprendiz a partir dos quatorze anos [(BRASIL, 1988, art. 7º, XXXIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+O ordenamento jurídico brasileiro visa a proteção do trabalhador por meio de princípios que equilibram a relação entre empregador e empregado (CHAGAS, 2018). A Consolidação das Leis do Trabalho (CLT) reforça essa proteção ao exigir que os registros de empregados contenham todos os dados relativos à admissão, duração, efetividade do trabalho, férias e acidentes, visando a proteção do trabalhador [(BRASIL, 1943, art. 41, parágrafo único)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-O Princípio da Proteção é central na relação entre empregador e empregado, visando mitigar a fragilidade das relações trabalhistas, especialmente diante de fenômenos como a "pejotização" [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)
+No âmbito das liberdades coletivas, a Constituição Federal e a legislação trabalhista asseguram a liberdade de associação profissional ou sindical [(BRASIL, LEI 13.467/2017, inciso XXVI)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). É garantido ao trabalhador o direito de não sofrer descontos salariais estabelecidos em convenção ou acordo coletivo sem sua prévia e expressa anuência [(BRASIL, LEI 13.467/2017, inciso XXVI)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-A liberdade sindical e o direito de greve são garantias asseguradas ao trabalhador [(BRASIL, 1943, art. 7º, XXVI e XXVII)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A liberdade de associação profissional ou sindical inclui o direito de não sofrer descontos salariais estabelecidos em convenção ou acordo coletivo sem prévia e expressa anuência [(BRASIL, 1943, art. 7º, XXVI)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Compete aos trabalhadores decidir sobre a oportunidade e os interesses da deflagração de greve [(BRASIL, 1943, art. 7º, XXVII)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-
-No âmbito da propriedade, a Constituição estabelece que a propriedade deve atender a sua função social [(BRASIL, 1988, art. 5º, XXIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+O direito de greve é assegurado, cabendo aos trabalhadores a decisão sobre a oportunidade de seu exercício e os interesses a serem defendidos [(BRASIL, LEI 13.467/2017, inciso XXVII)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). Para garantir a continuidade de serviços essenciais, a lei deve definir as atividades indispensáveis e as disposições para o atendimento de necessidades inadiáveis da comunidade durante greves [(BRASIL, LEI 13.467/2017, inciso XXVIII)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 <div class="tabela-legenda"><strong>Tabela 2 – Direitos Sociais e Garantias do Trabalhador.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em></div>
-| Direito/Garantia | Descrição Legal | Base Legal [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Direito | Descrição da Garantia | Base Legal |
 | :--- | :--- | :--- |
-| Jornada de Trabalho | Normal não superior a 8h diárias e 44h semanais | [(BRASIL, 1988, art. 7º, XIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
-| Salário Mínimo | Garantia de salário nunca inferior ao mínimo para remuneração variável | [(BRASIL, 1988, art. 7º, VII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
-| Irredutibilidade | Salário irredutível, salvo disposição em convenção ou acordo coletivo | [(BRASIL, 1988, art. 7º, VI)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Jornada de Trabalho | Normal não superior a 8 horas diárias e 44 semanais | [(BRASIL, 1988, art. 7º, XIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Salário Mínimo | Garantia de remuneração nunca inferior ao mínimo | [(BRASIL, 1988, art. 7º, VII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Irredutibilidade | Salário irredutível, salvo convenção ou acordo coletivo | [(BRASIL, 1988, art. 7º, VI)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 | Trabalho Noturno | Remuneração superior à do trabalho diurno | [(BRASIL, 1988, art. 7º, IX)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
-| Décimo Terceiro | Base na remuneração integral ou valor da aposentadoria | [(BRASIL, 1988, art. 7º, VIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Proteção ao Menor | Proibição de trabalho a menores de 16 anos, salvo aprendiz a partir de 14 | [(BRASIL, 1988, art. 7º, XXXIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 
-A igualdade de direitos é estendida ao trabalhador avulso, equiparando-o ao trabalhador com vínculo empregatício permanente [(BRASIL, 1943, art. 7º, XXV)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Aos trabalhadores domésticos, são assegurados diversos direitos previstos no art. 7º, incluindo a integração à previdência social [(BRASIL, 1988, art. 7º, parágrafo único)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+A proteção ao trabalho humano estende-se à igualdade de direitos entre o trabalhador com vínculo empregatício permanente e o trabalhador avulso [(BRASIL, LEI 13.467/2017, inciso XXV)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). Além disso, assegura-se a proteção legal de crianças e adolescentes no ambiente de trabalho [(BRASIL, LEI 13.467/2017, inciso XXIV)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-**Em termos simples:** A lei brasileira trata o trabalho como um direito básico e protege o empregado, que é a parte mais fraca da relação, garantindo limites de horas, salário mínimo e a liberdade de se organizar em sindicatos ou fazer greve [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Garantias Econômicas</h4><ul><li>Salário mínimo e pagamento pontual [(BRASIL, 1988, art. 7º, VII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Décimo terceiro salário [(BRASIL, 1988, art. 7º, VIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Férias anuais remuneradas com 1/3 [(BRASIL, 1988, art. 7º, XVII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div><div class="diag-coluna"><h4>Jornada e Proteção</h4><ul><li>Jornada de até 8h diárias e 44h semanais [(BRASIL, 1988, art. 7º, XIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Proteção contra despedida arbitrária [(BRASIL, 1988, art. 7º, I)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Liberdade sindical e direito de greve [(BRASIL, 1988, art. 8º e 9º)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div></div><figcaption><strong>Figura 12 – Principais Direitos Sociais do Trabalhador (CF, art. 7º).</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> Seleção dos direitos mais relevantes previstos no art. 7º da Constituição Federal.</figcaption></figure>
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Direitos Individuais</h4><ul><li>Salário Mínimo [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>13º Salário [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Jornada 44h semanais [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div><div class="diag-coluna"><h4>Direitos Coletivos</h4><ul><li>Liberdade Sindical [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)</li><li>Direito de Greve [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)</li><li>Acordos Coletivos [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)</li></ul></div></div><figcaption><strong>Figura 12 – Garantias Constitucionais de Trabalho e Associação.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> O sistema jurídico brasileiro divide as proteções entre garantias individuais do trabalhador e a liberdade de organização coletiva.</figcaption></figure>
 
-Em termos reais, o piso constitucional acompanhou de perto a renda média no período: entre 2012 e 2026, o salário mínimo real cresceu cerca de 21%, contra aproximadamente 18% do rendimento médio do trabalho principal, o que reduziu de forma moderada a distância entre o piso garantido em lei e a renda média [(IBGE, 2026a); (IPEA, 2026)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-<figure class="figura"><img src="assets/figura-35.png" alt="Figura 13 - Rendimento Médio x Salário Mínimo Real (índice 2012 = 100)"><figcaption><strong>Figura 13 – Rendimento Médio x Salário Mínimo Real (índice 2012 = 100).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html); [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Índices com base 2012 = 100; rendimento médio real (IBGE) e salário mínimo real (Ipeadata).</figcaption></figure>
+
+<figure class="figura"><img src="assets/figura-13.png" alt="Figura 13 - Limites de Jornada de Trabalho"><figcaption><strong>Figura 13 – Limites de Jornada de Trabalho.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> A Constituição Federal limita a jornada normal de trabalho para evitar a exploração excessiva do trabalhador.</figcaption></figure>
+
+
+**Em termos simples:** A lei brasileira protege o trabalhador para que ele não seja explorado, garantindo coisas básicas como salário mínimo, limite de horas por dia e o direito de se unir em sindicatos ou fazer greve para pedir melhorias [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
 Fontes consultadas:
 * [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)
+* [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+* (CHAGAS, 2018)
 
 ## 3. CLT: estrutura, história e direitos essenciais
 
-A Consolidação das Leis do Trabalho (CLT) foi aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943 [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Esta norma estatui as regras que regulam as relações individuais e coletivas de trabalho [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A estrutura define o empregador como a empresa que assume os riscos da atividade econômica, admite, assalaria e dirige a prestação pessoal de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A Consolidação das Leis do Trabalho (CLT) foi aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943 [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Sua estrutura estatui as normas que regulam as relações individuais e coletivas de trabalho [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O sistema define o empregador como a empresa que assume os riscos da atividade econômica, admite, assalaria e dirige a prestação pessoal de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-### 3.1 Direitos Essenciais e Garantias
+### 3.1 Direitos Essenciais e Jornada de Trabalho
 
-O ordenamento jurídico brasileiro assegura um conjunto de direitos fundamentais ao trabalhador, reforçados pela Constituição Federal e pela CLT: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+A Constituição Federal e a CLT estabelecem garantias fundamentais ao trabalhador. A jornada normal de trabalho não deve superar 8 horas diárias e 44 horas semanais [(BRASIL, 1988, art. 7º, XIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). 
 
-*   **Remuneração e Benefícios:** Garantia de salário mínimo, 13º salário e remuneração do trabalho noturno superior à do diurno [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
-*   **Descanso e Férias:** Repouso semanal remunerado, preferencialmente aos domingos, e gozo de férias anuais remuneradas com acréscimo de, no mínimo, um terço do salário normal [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
-*   **Proteções Específicas:** Licença-maternidade de 120 dias, licença-paternidade nos termos da lei e proteção ao mercado de trabalho da mulher [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
-*   **Segurança e Saúde:** Adicional de remuneração para atividades penosas, insalubres ou perigosas, além de normas de higiene e segurança [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
-*   **Rescisão:** Aviso prévio proporcional ao tempo de serviço, com mínimo de 30 dias [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+Para casos excepcionais, o trabalhador pode ultrapassar a jornada normal mediante a prestação de horas extraordinárias [(BRASIL, 1943, art. 59)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A remuneração do serviço extraordinário deve ser, no mínimo, 50% superior à do normal [(BRASIL, 1988, art. 7º, XVI)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
-### 3.2 Jornada de Trabalho e Regras Excepcionais
+<div class="tabela-legenda"><strong>Tabela 3 – Direitos Essenciais do Trabalhador.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) e [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+| Direito | Regra Geral | Fonte |
+| :--- | :--- | :--- |
+| Férias | Anuais remuneradas com + 1/3 do salário normal | [(BRASIL, 1988, art. 7º, XVII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Aviso Prévio | Proporcional ao tempo de serviço, mínimo de 30 dias | [(BRASIL, 1988, art. 7º, XXI)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Licença-Gestante | 120 dias, sem prejuízo do emprego e salário | [(BRASIL, 1988, art. 7º, XVIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| Adicionais | Remuneração para atividades penosas, insalubres ou perigosas | [(BRASIL, 1943, art. 60)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Salário Mínimo | Garantia de valor nominal mínimo | [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
 
-A duração normal do trabalho é de até oito horas diárias e quarenta e quatro semanais [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). A lei permite a compensação de horários e a redução da jornada mediante acordo ou convenção coletiva [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
-Para casos excepcionais, o trabalhador pode ultrapassar a jornada normal:
-1.  **Horas Extras:** A remuneração do serviço extraordinário deve ser, no mínimo, 50% superior à do normal [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
-2.  **Limites e Compensação:** A prestação de horas extras habituais não descaracteriza o banco de horas ou o acordo de compensação de jornada [(BRASIL, 1943, art. 59-B)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-3.  **Jornada 12x36:** É facultado estabelecer horário de 12 horas de trabalho seguidas por 36 horas de descanso ininterruptas, via convenção ou acordo coletivo [(BRASIL, 1943, art. 59-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Tipo de Hora</h4><ul><li>Hora Normal</li><li>Hora Extraordinária</li></ul></div><div class="diag-coluna"><h4>Percentual de Remuneração</h4><ul><li>100%</li><li>150%</li></ul></div></div><figcaption><strong>Figura 14 – Remuneração da Hora de Trabalho.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> O serviço extraordinário deve ser remunerado com um adicional mínimo de 50% sobre o valor da hora normal.</figcaption></figure>
 
-<div class="tabela-legenda"><strong>Tabela 3 – Comparativo de Jornadas e Adicionais.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em></div>
-| Tipo de Jornada/Hora | Limite/Regra | Adicional Mínimo | Fonte |
-| :--- | :--- | :--- | :--- |
-| Normal Diária | 8 horas [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | N/A [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
-| Normal Semanal | 44 horas [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | N/A [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
-| Extraordinária | Conforme acordo [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | 50% [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 
-<figure class="figura"><img src="assets/figura-05.png" alt="Figura 14 - Adicional de Remuneração do Serviço Extraordinário"><figcaption><strong>Figura 14 – Adicional de Remuneração do Serviço Extraordinário.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> Valor base da hora normal considerado como 100%</figcaption></figure>
+### 3.2 Reforma Trabalhista de 2017 (Lei 13.467/2017)
 
-### 3.3 Reforma Trabalhista de 2017 e Mudanças Recentes
+A Lei 13.467/2017 alterou a CLT para adequar a legislação às novas relações de trabalho [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). Entre as principais mudanças práticas, destacam-se:
 
-A Lei 13.467/2017 introduziu alterações significativas na CLT, priorizando a negociação sobre a lei em diversos pontos [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). Entre as principais mudanças estão:
+*   **Negociação sobre a Lei:** Introdução de prevalência do acordado sobre o legislado em pontos específicos [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+*   **Trabalho Intermitente:** Possibilidade de contrato com prestação de serviços não contínua, com verbas rescisórias e aviso prévio calculados pela média dos valores recebidos [(BRASIL, 1943, art. 452-F)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+*   **Teletrabalho:** Regulamentação de regimes de trabalho fora das dependências do empregador [(BRASIL, 1943, arts. 75-A a 75-F)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+*   **Jornada e Compensação:** A prestação de horas extras habituais não descaracteriza mais o acordo de compensação de jornada ou o banco de horas [(BRASIL, 1943, art. 59-B, parágrafo único)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+*   **Intervalo Intrajornada:** Possibilidade de indenização dos intervalos para repouso e alimentação [(BRASIL, 1943, art. 59-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-*   **Trabalho Intermitente:** Modalidade onde a prestação de serviços não é contínua, com verbas rescisórias calculadas pela média dos valores recebidos [(BRASIL, 1943, art. 452-F)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-*   **Compensação de Jornada:** O não atendimento de exigências legais para compensação não implica repetição de pagamento de horas excedentes se não ultrapassada a jornada semanal, sendo devido apenas o adicional [(BRASIL, 1943, art. 59-B)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-*   **Banco de Horas:** Reforço à validade de acordos de compensação mesmo com a prestação de horas extras habituais [(BRASIL, 1943, art. 59-B)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A flexibilização trazida pela reforma, especialmente a redução de custos e a complexidade do vínculo empregatício tradicional, contribui para a migração de trabalhadores para modalidades como PJ e MEI, onde o custo tributário é simplificado por valores fechados [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Regra Geral</h4><ul><li>Jornada 8h/dia [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Adicional 50% [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div><div class="diag-coluna"><h4>Pós-Reforma 2017</h4><ul><li>Banco de Horas mantido com extras habituais [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Validade de acordo tácito para adicional [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li></ul></div></div><figcaption><strong>Figura 15 – Impacto da Reforma Trabalhista na Compensação de Jornada.</strong> <em>Fonte: [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).</em> Comparativo entre a base constitucional e as flexibilizações da Lei 13.467/2017</figcaption></figure>
 
-**Em termos simples:** A CLT é o livro de regras do trabalho no Brasil. Ela garante que ninguém trabalhe mais de 8 horas por dia (ou 44 por semana) sem receber um extra de pelo menos 50% por hora a mais [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). A Reforma de 2017 trouxe novas formas de contrato, como o intermitente, e facilitou acordos entre patrão e empregado para compensar horas [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Regra</h4><ul><li>Horas Extras Habituais</li></ul></div><div class="diag-coluna"><h4>Efeito no Banco de Horas</h4><ul><li>Não descaracteriza o acordo</li></ul></div></div><figcaption><strong>Figura 15 – Impacto da Reforma na Compensação de Jornada.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> Após a reforma de 2017, a habitualidade de horas extras não anula mais a validade do banco de horas.</figcaption></figure>
+
+
+**Em termos simples:** A CLT é o livro de regras do trabalho no Brasil. Ela garante que ninguém trabalhe mais de 8 horas por dia (ou 44 por semana) sem receber extra (pelo menos 50% a mais) e assegura férias com um terço a mais de dinheiro [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). A Reforma de 2017 deixou as regras mais flexíveis, permitindo que patrão e empregado combinem coisas diferentes da lei e criando o trabalho intermitente, o que acaba incentivando muita gente a trabalhar como MEI para fugir da burocracia da carteira assinada [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 Fontes consultadas:
 * [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)
@@ -181,326 +185,311 @@ Fontes consultadas:
 
 ## 4. Vínculo de emprego: os 4 requisitos e a subordinação algorítmica
 
-A caracterização do vínculo empregatício no Brasil exige a presença cumulativa de requisitos específicos para que o trabalhador seja considerado empregado [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A ausência de qualquer um desses elementos descaracteriza a relação de emprego, podendo configurar trabalho autônomo ou outras modalidades contratuais [(BRASIL, LEI 13.467/2017, art. 442-B)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+A caracterização da relação de emprego no Brasil depende da coexistência de pressupostos específicos [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O empregador é definido como a empresa que assume os riscos da atividade econômica, admite, assalaria e dirige a prestação pessoal de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-Os pressupostos fundamentais são: a prestação de serviços por pessoa física, a natureza não eventual (habitualidade), a dependência do empregador (subordinação) e a contraprestação financeira (salário) [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A lei estabelece que não há distinção entre o trabalho realizado no estabelecimento da empresa, no domicílio do empregado ou a distância, desde que esses pressupostos estejam presentes [(BRASIL, 1943, art. 6º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-
-<div class="tabela-legenda"><strong>Tabela 4 – Caracterização do vínculo empregatício.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> A presença de todos os requisitos é necessária para a configuração do vínculo.</div>
-
-| Etapa | Requisito | Base legal |
+<div class="tabela-legenda"><strong>Tabela 4 – Requisitos do vínculo empregatício.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+| Passo | Requisito | Base Legal |
 | :--- | :--- | :--- |
-| 1 | Pessoa física | [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| 2 | Habitualidade (não eventualidade) | [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| 3 | Subordinação | [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| 4 | Onerosidade (salário) | [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| 5 | Vínculo de emprego reconhecido | [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| 1 | Pessoa Física | [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| 2 | Pessoalidade | [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| 3 | Onerosidade (Salário) | [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| 4 | Habitualidade | [(BRASIL, LC 123/2006, § 4º, XI)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| 5 | Subordinação | [(BRASIL, 1943, art. 6º, parágrafo único)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-A subordinação jurídica é o ponto central para a distinção entre o emprego e o trabalho autônomo [(FONSECA, 2026)](https://doi.org/10.21527/2176-6622.2022.57.12136). No contexto do trabalho por aplicativos, discute-se a subordinação algorítmica, onde o controle é exercido por sistemas digitais [(FONSECA, 2026)](https://doi.org/10.21527/2176-6622.2022.57.12136). A legislação brasileira equipara os meios telemáticos e informatizados de comando, controle e supervisão aos meios pessoais e diretos de subordinação jurídica [(BRASIL, 1943, art. 6º, parágrafo único)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A subordinação jurídica é o ponto central para a caracterização do vínculo [(FONSECA, 2026)](https://doi.org/10.21527/2176-6622.2022.57.12136). Atualmente, a lei equipara os meios telemáticos e informatizados de comando, controle e supervisão aos meios pessoais e diretos de supervisão do trabalho [(BRASIL, 1943, art. 6º, parágrafo único)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Essa definição fundamenta a análise da subordinação algorítmica, especialmente no trabalho intermediado por aplicativos digitais [(FONSECA, 2026)](https://doi.org/10.21527/2176-6622.2022.57.12136).
 
-<div class="tabela-legenda"><strong>Tabela 5 – Distinção entre Modalidades de Trabalho.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).</em></div>
-| Modalidade | Subordinação | Natureza do Vínculo | Base Legal |
-| :--- | :--- | :--- | :--- |
-| Empregado | Presente [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Vínculo Empregatício [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Autônomo | Ausente [(BRASIL, LEI 13.467/2017, art. 442-B)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Prestação de Serviços [(BRASIL, LEI 13.467/2017, art. 442-B)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | [(BRASIL, LEI 13.467/2017, art. 442-B)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
-| Intermitente | Presente, mas não contínua [(BRASIL, LEI 13.467/2017, art. 443, § 3º)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Vínculo Empregatício [(BRASIL, LEI 13.467/2017, art. 443, § 3º)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | [(BRASIL, LEI 13.467/2017, art. 443, § 3º)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
+A legislação distingue o emprego do trabalho autônomo. A contratação de autônomo, desde que cumpridas as formalidades legais, afasta a qualidade de empregado, independentemente de haver exclusividade ou continuidade na prestação [(BRASIL, LEI 13.467/2017, art. 442-B)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). O Código Civil também regula a prestação de serviços em seus artigos 593 e seguintes [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
-A "pejotização" ocorre quando se contrata um trabalhador como pessoa jurídica para mascarar uma relação de emprego [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/). Essa prática é considerada abusiva quando os sócios da empresa contratada mantêm com o contratante relação de pessoalidade, subordinação e habitualidade [(BRASIL, LC 123/2006, art. 4º, § 4º, XI)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). O Projeto de Lei 3406/2026 visa justamente proteger o trabalhador contra a contratação fraudulenta e a pejotização abusiva [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2636199).
+A "pejotização" ocorre quando um trabalhador é contratado por meio de uma pessoa jurídica constituída para a prestação de serviços [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts). Esse modelo é frequente em setores como tecnologia da informação, saúde, advocacia associada e serviços de entrega [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts). A prática é considerada abusiva quando a pessoa jurídica é utilizada para mascarar a relação de emprego, especialmente quando os sócios mantêm com o contratante relação de pessoalidade, subordinação e habitualidade [(BRASIL, LC 123/2006, § 4º, XI)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-Quanto à responsabilidade, empresas que integram grupo econômico respondem solidariamente pelas obrigações decorrentes da relação de emprego [(BRASIL, 1943, art. 2º, § 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Para a configuração de grupo econômico, é necessária a demonstração de interesse integrado, comunhão de interesses e atuação conjunta, não bastando a mera identidade de sócios [(BRASIL, 1943, art. 2º, § 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). No âmbito da Seguridade Social, empresas de grupo econômico também respondem solidariamente [(BRASIL, LEI 8.212/1991, art. 31, IX)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
+O Supremo Tribunal Federal (STF) tem analisado a licitude desses contratos [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/). Recentemente, o Ministro Gilmar Mendes retirou a suspensão de processos sobre pejotização na primeira instância e nos Tribunais Regionais do Trabalho (TRTs) para evitar o represamento de ações em fase de instrução [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts). No entanto, após o julgamento pelos TRTs, os processos devem permanecer suspensos até a fixação da tese vinculante pelo STF [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts).
 
-**Em termos simples:** Para ser considerado empregado, a pessoa precisa trabalhar com frequência, receber salário, ser pessoa física e obedecer às ordens do patrão [(BRASIL, 1943, art. 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Se o patrão usa um aplicativo para dar ordens, isso ainda conta como subordinação [(BRASIL, 1943, art. 6º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A "pejotização" é quando a empresa obriga o trabalhador a abrir um CNPJ para evitar pagar direitos trabalhistas, o que pode ser considerado fraude se a pessoa continuar trabalhando como se fosse empregada [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+Quanto à responsabilidade, empresas que integram grupo econômico respondem solidariamente pelas obrigações decorrentes da lei [(BRASIL, LEI 8.212/1991, IX)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). Da mesma forma, a CLT estabelece que empresas sob a direção, controle ou administração de outra, constituindo grupo econômico, são solidariamente responsáveis pela relação de emprego [(BRASIL, 1943, art. 2º, § 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+
+**Em termos simples:** Para ser considerado empregado, o trabalhador precisa ser pessoa física, trabalhar com frequência, receber salário, não poder ser substituído por outra pessoa e obedecer às ordens do patrão [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A "pejotização" é quando a empresa obriga o trabalhador a abrir um CNPJ para evitar pagar direitos trabalhistas, o que pode ser anulado na justiça se ficar provado que ele trabalhava como se fosse um empregado comum [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts).
 
 Fontes consultadas:
-* [(FONSECA, 2026)](https://doi.org/10.21527/2176-6622.2022.57.12136)
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 * [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
 * [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)
-* [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/)
-* [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2636199)
+* [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)
 * [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm)
+* [(FONSECA, 2026)](https://doi.org/10.21527/2176-6622.2022.57.12136)
+* [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts)
+* [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/)
 
 ## 5. Modalidades de trabalho com vínculo empregatício
 
 ### 5.1 CLT tempo indeterminado (padrão)
 
 **Como funciona na prática:**
-O empregador admite o trabalhador para prestar serviços de forma pessoal, sob dependência de ordens e mediante pagamento de salário [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O contrato não possui data de término fixada, permanecendo vigente enquanto houver interesse de ambas as partes [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Nesta modalidade, o empregador admite o trabalhador sem a definição de uma data para o término do vínculo [(BRASIL, 1943, art. 442)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O contrato pode ser tácito ou expresso, estabelecendo-se a relação de emprego onde o empregador assume os riscos da atividade econômica [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A jornada e o pagamento são definidos no ato da contratação, prevalecendo a continuidade da prestação de serviço [(BRASIL, 1943, art. 442)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Como deveria funcionar segundo a lei:**
-A relação é regida pela Consolidação das Leis do Trabalho [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O empregador assume os riscos da atividade econômica, sendo responsável por dirigir a prestação do serviço e efetuar o pagamento do salário [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A base legal é a Consolidação das Leis do Trabalho [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O contrato individual de trabalho é o acordo que corresponde à relação de emprego [(BRASIL, 1943, art. 442)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O empregador é aquele que admite, assalaria e dirige a prestação pessoal de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 6 – Direitos e Deveres CLT Indeterminado.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 5 – Direitos e Deveres - CLT Indeterminado.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Recebimento de salário [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Prestação pessoal do serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Direção da atividade pelo empregador [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Assunção dos riscos econômicos pelo patrão [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Remuneração pelo serviço prestado [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Prestação pessoal do serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Direitos previstos na CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Direção e subordinação ao empregador [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-O contratante deve admitir, assalariar e dirigir a prestação de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante deve assumir integralmente os riscos da atividade econômica desenvolvida [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização é realizada pela Secretaria de Inspeção do Trabalho do MTE [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). O Auditor-Fiscal do Trabalho atua na verificação do cumprimento das normas [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O registro deve ser feito via CTPS digital e eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/). Infrações resultam em autos de infração e multas administrativas [(BRASIL, 1943, Livro V)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A fiscalização é realizada pela Secretaria de Inspeção do Trabalho do Ministério do Trabalho e Emprego [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A Auditoria-Fiscal do Trabalho, estruturada pela Lei 10.593/2002, atua na verificação do cumprimento das normas [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O registro deve ser efetuado via CTPS digital e as informações enviadas ao eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/). Irregularidades apuradas por denúncia ou ação fiscal resultam em autos de infração e multas administrativas conforme o Livro V da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É a carteira assinada comum, onde você trabalha sem data para sair e recebe seu salário mensalmente [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É o emprego comum, aquele "com carteira assinada" onde não se sabe quando o contrato acaba, dando mais estabilidade para quem trabalha e controle para quem contrata [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+
 
 ### 5.2 CLT tempo determinado e contrato de experiência
 
 **Como funciona na prática:**
-O contrato possui um prazo de validade pré-estabelecido, podendo ser utilizado para atividades transitórias ou como teste inicial (experiência) para verificar a aptidão do empregado [(BRASIL, 1943, art. 445)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contrato tem data de início e término previamente acordadas [(BRASIL, LC 150/2015, art. 4º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). No caso da experiência, serve para testar a aptidão do empregado por um período curto [(BRASIL, LC 150/2015, art. 5º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). Se o prazo expira e o trabalhador continua na empresa, o vínculo torna-se por tempo indeterminado [(BRASIL, LC 150/2015, art. 5º, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
 **Como deveria funcionar segundo a lei:**
-Regido pela CLT, o contrato por tempo determinado deve respeitar os limites legais de duração [(BRASIL, 1943, art. 445)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O contrato de experiência é uma modalidade específica de tempo determinado [(BRASIL, 1943, art. 445)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contrato de experiência é limitado a 90 dias [(BRASIL, LC 150/2015, art. 5º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). Ele pode ser prorrogado uma única vez, desde que a soma dos períodos não ultrapasse esses 90 dias [(BRASIL, LC 150/2015, art. 5º, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). Para domésticos, contratos determinados podem atender necessidades transitórias por até 2 anos [(BRASIL, LC 150/2015, art. 4º, parágrafo único)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 7 – Direitos e Deveres Tempo Determinado.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 6 – Direitos e Deveres - Tempo Determinado.</strong> <em>Fonte: [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Salário proporcional ao período [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Cumprimento do prazo estipulado [(BRASIL, 1943, art. 445)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Registro em CTPS [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Pagamento de verbas ao término [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Pagamento de verbas rescisórias [(BRASIL, LC 150/2015, art. 6º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Cumprimento do prazo estipulado [(BRASIL, LC 150/2015, art. 5º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
+| Salário proporcional ao tempo trabalhado [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Registro do prazo de término [(BRASIL, LC 150/2015, art. 4º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
 
-O contratante deve definir claramente o prazo de término no ato da contratação [(BRASIL, 1943, art. 445)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante é obrigado a pagar indenização se despedir o empregado sem justa causa antes do término do prazo [(BRASIL, LC 150/2015, art. 6º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
 **Como o Estado enxerga e age:**
-O MTE fiscaliza a duração dos contratos para evitar fraudes na contratação indeterminada [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A Auditoria-Fiscal do Trabalho verifica a anotação correta na CTPS digital [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O envio dos eventos de admissão e desligamento ocorre via eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
+A Auditoria-Fiscal do Trabalho fiscaliza se o prazo de 90 dias da experiência foi respeitado para evitar fraudes [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O controle de datas é rigoroso no eSocial para a conversão automática em contrato indeterminado [(ESOCIAL, 2026)](https://www.esocial.gov.br/). Sanções administrativas são aplicadas via autos de infração em caso de extrapolação de prazos sem a devida alteração contratual [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É aquele contrato com data para acabar ou o "período de teste" para ver se o funcionário serve para a vaga [(BRASIL, 1943, art. 445)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É o contrato com "data de validade", como o período de experiência de 3 meses, usado para ver se o funcionário serve para a vaga antes de efetivá-lo [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
+
 
 ### 5.3 Trabalho intermitente
 
 **Como funciona na prática:**
-O trabalhador é contratado, mas não trabalha continuamente, sendo chamado pelo empregador apenas quando há demanda, com pagamento proporcional às horas trabalhadas [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O trabalhador é contratado, mas a prestação de serviços não é contínua, ocorrendo com alternância de períodos de prestação de serviços e de inatividade [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). O empregador convoca o trabalhador para trabalhar, e este decide se aceita ou não a chamada [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 **Como deveria funcionar segundo a lei:**
-Conforme o art. 452-A da CLT, o empregador deve convocar o trabalhador com antecedência, e este tem o prazo de 3 dias para responder se aceita ou não a chamada [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Regido pela Lei 13.467/2017, o contrato deve ser escrito [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). O trabalhador tem o prazo de 3 dias para responder ao chamado do empregador [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). O pagamento ocorre ao final de cada ciclo de prestação de serviço [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 8 – Direitos e Deveres Intermitente.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 7 – Direitos e Deveres - Intermitente.</strong> <em>Fonte: [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Pagamento imediato ao fim do ciclo [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Resposta à convocação em 3 dias [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Direito de recusa da chamada [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Formalização do contrato escrito [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Receber remuneração proporcional ao período [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Responder à convocação em até 3 dias [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
+| Direito a férias e 13º proporcionais [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Convocar o trabalhador com antecedência [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
 
-O contratante deve realizar a convocação formal e pagar as verbas proporcionais ao final de cada período de prestação de serviço [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante deve formalizar a convocação e o pagamento imediato das verbas ao fim do período trabalhado [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização do MTE monitora se o intermitente não está sendo usado para mascarar vínculo fixo sem direitos [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). O controle de chamadas e pagamentos é auditado via eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/). Sanções administrativas são aplicadas conforme o Livro V da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A fiscalização do MTE foca na natureza da convocação e no pagamento correto das verbas proporcionais [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). O eSocial monitora os períodos de atividade para evitar a descaracterização do vínculo [(ESOCIAL, 2026)](https://www.esocial.gov.br/). A Auditoria-Fiscal do Trabalho aplica multas se a modalidade for usada para mascarar trabalho fixo sem direitos [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Em termos simples:**
-Você tem vínculo, mas só trabalha e ganha quando a empresa te chama e você aceita [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É o trabalho "por chamada": você tem o vínculo, mas só trabalha e ganha quando a empresa te chama e você aceita [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+
 
 ### 5.4 Trabalho em tempo parcial
 
 **Como funciona na prática:**
-A jornada de trabalho é reduzida em comparação à jornada integral, com salário proporcionalmente menor [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A jornada de trabalho é reduzida em comparação à jornada integral [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). O pagamento é proporcional às horas trabalhadas [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). No caso de domésticos, as férias são proporcionais à carga horária semanal [(BRASIL, LC 150/2015, art. 3º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
 **Como deveria funcionar segundo a lei:**
-Regido pelo art. 58-A da CLT, o regime de tempo parcial deve observar os limites de horas semanais definidos na legislação [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Para domésticos, o regime de tempo parcial prevê férias escalonadas: de 8 dias para jornadas até 5 horas semanais, até 18 dias para jornadas entre 22 e 25 horas semanais [(BRASIL, LC 150/2015, art. 3º, § 3º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). É permitida 1 hora suplementar diária mediante acordo escrito, respeitando o limite de 6 horas diárias [(BRASIL, LC 150/2015, art. 3º, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 9 – Direitos e Deveres Tempo Parcial.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 8 – Direitos e Deveres - Tempo Parcial.</strong> <em>Fonte: [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Salário proporcional à jornada [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Cumprimento da carga horária reduzida [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Registro de jornada [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Pagamento de salário mínimo hora [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Férias proporcionais à jornada [(BRASIL, LC 150/2015, art. 3º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Cumprimento da jornada reduzida [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
+| Salário proporcional às horas [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Acordo escrito para horas extras [(BRASIL, LC 150/2015, art. 3º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
 
-O contratante deve respeitar o limite de horas acordado, não podendo exigir jornada integral sem a devida alteração contratual [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante deve respeitar os limites de horas diárias e semanais para não descaracterizar o regime parcial [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
 **Como o Estado enxerga e age:**
-O Auditor-Fiscal do Trabalho verifica se a jornada reduzida é real ou se há horas extras não pagas [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O registro da jornada é controlado via eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
+A Auditoria-Fiscal do Trabalho verifica se a jornada real condiz com a contratada [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O controle de ponto é essencial e fiscalizado via eSocial para evitar a extrapolação do limite de horas [(ESOCIAL, 2026)](https://www.esocial.gov.br/). Multas são aplicadas se o empregador exigir jornada integral pagando como parcial [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É o emprego de "meio período", onde você trabalha menos horas e ganha proporcionalmente a isso [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É o emprego de "meio período", onde se trabalha menos horas por semana e recebe um salário proporcional a esse tempo [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
+
 
 ### 5.5 Trabalho temporário
 
 **Como funciona na prática:**
-Uma pessoa física é contratada por uma empresa de trabalho temporário para prestar serviços a uma empresa tomadora, visando substituir pessoal regular ou atender acréscimo extraordinário de serviços [(BRASIL, LEI 6.019/1974, art. 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+O trabalhador é contratado por uma empresa de trabalho temporário (ETT) e colocado à disposição de uma empresa tomadora [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). Não há vínculo de emprego entre a tomadora e o trabalhador [(BRASIL, LEI 6.019/1974, art. 10)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). A contratação ocorre para substituição de pessoal ou acréscimo extraordinário de serviços [(BRASIL, LEI 6.019/1974, art. 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
 
 **Como deveria funcionar segundo a lei:**
-Regido pela Lei 6.019/1974, o contrato deve ser obrigatoriamente escrito e conter o motivo justificador da demanda [(BRASIL, LEI 6.019/1974, art. 9º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). A contratante é subsidiariamente responsável pelas obrigações trabalhistas [(BRASIL, LEI 6.019/1974, art. 2º, § 7º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+O contrato não pode exceder 180 dias, consecutivos ou não [(BRASIL, LEI 6.019/1974, art. 10, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). Pode ser prorrogado por mais 90 dias se comprovada a manutenção das condições [(BRASIL, LEI 6.019/1974, art. 10, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). A ETT deve possuir capital social mínimo de R$ 100.000,00 [(BRASIL, LEI 6.019/1974, art. 6º, III)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 10 – Direitos e Deveres Temporário.</strong> <em>Fonte: [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 9 – Direitos e Deveres - Temporário.</strong> <em>Fonte: [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Atendimento médico e refeição da tomadora [(BRASIL, LEI 6.019/1974, art. 2º, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) | Garantia de segurança e higiene [(BRASIL, LEI 6.019/1974, art. 2º, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) |
-| Condições de alimentação da tomadora [(BRASIL, LEI 13.467/2017, art. 4º-C)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Registro do contrato escrito [(BRASIL, LEI 6.019/1974, art. 9º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) |
+| Mesmas condições de alimentação e saúde da tomadora [(BRASIL, LEI 6.019/1974, art. 12, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) | Registro obrigatório do contrato por escrito [(BRASIL, LEI 6.019/1974, art. 9º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) |
+| Segurança e higiene no local de trabalho [(BRASIL, LEI 6.019/1974, art. 12, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) | Responsabilidade subsidiária da tomadora [(BRASIL, LEI 6.019/1974, art. 10, § 7º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) |
 
-O contratante deve garantir as condições de segurança, higiene e salubridade no local de trabalho [(BRASIL, LEI 6.019/1974, art. 2º, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+A tomadora deve garantir as condições de segurança e higiene nas suas dependências [(BRASIL, LEI 6.019/1974, art. 12, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
 
 **Como o Estado enxerga e age:**
-O MTE fiscaliza a regularidade da empresa de trabalho temporário, que deve ter registro no Departamento Nacional de Mão-de-Obra [(BRASIL, LEI 6.019/1974, art. 5º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). A Auditoria-Fiscal do Trabalho verifica se houve a caracterização de vínculo direto com a tomadora por excesso de prazo [(BRASIL, LEI 6.019/1974, art. 2º, § 6º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+A Auditoria-Fiscal do Trabalho fiscaliza a regularidade da ETT e o motivo justificador da demanda [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Se o trabalhador for recontratado antes de 90 dias do término do contrato anterior, caracteriza-se vínculo com a tomadora [(BRASIL, LEI 6.019/1974, art. 10, § 6º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm). O eSocial controla a rotatividade para evitar a perpetuação do contrato temporário [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
 
 **Em termos simples:**
-Você é contratado por uma agência para trabalhar em outra empresa por um tempo curto, para cobrir férias ou um pico de serviço [(BRASIL, LEI 6.019/1974, art. 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+É quando você é contratado por uma agência para trabalhar em outra empresa por um tempo curto, geralmente para cobrir férias ou um pico de vendas [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
 
-### 5.6 Teletrabalho/trabalho remoto e híbrido
+
+### 5.6 Teletrabalho, trabalho remoto e híbrido
 
 **Como funciona na prática:**
-A prestação de serviços ocorre preponderantemente fora das dependências do empregador, com a utilização de tecnologias de informação e comunicação [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A prestação de serviços ocorre predominantemente fora das dependências do empregador, com a utilização de tecnologias de informação e comunicação [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O regime híbrido alterna dias de trabalho remoto e presenciais.
 
 **Como deveria funcionar segundo a lei:**
-Regido pelos artigos 75-A a 75-F da CLT, o regime deve estar expressamente previsto no contrato individual de trabalho [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A base legal está nos artigos 75-A a 75-F da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O contrato deve especificar a modalidade de teletrabalho e a responsabilidade pela aquisição e manutenção dos equipamentos tecnológicos [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A alteração do regime presencial para o remoto pode ser feita por acordo ou unilateralmente pelo empregador, com prazo de transição [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 11 – Direitos e Deveres Teletrabalho.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 10 – Direitos e Deveres - Teletrabalho.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Acordo sobre infraestrutura [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Responsabilidade por equipamentos [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Respeito à jornada acordada [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Manutenção de canais de comunicação [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Respeito à jornada acordada [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Manutenção dos equipamentos (conforme contrato) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Direito à desconexão [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Cumprimento das metas e prazos [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-O contratante deve formalizar a transição para o regime de teletrabalho mediante aditivo contratual [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante deve definir claramente as regras de reembolso de despesas com internet e energia, se aplicável [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização do MTE foca na saúde e segurança do trabalhador remoto [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). O registro da modalidade de trabalho é obrigatório no eSocial para fins de controle previdenciário e trabalhista [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
+A fiscalização do MTE foca na saúde e segurança do trabalho, mesmo em ambiente remoto [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A Auditoria-Fiscal do Trabalho verifica se o teletrabalho não é usado para impor jornadas exaustivas sem controle [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O registro da modalidade no eSocial é obrigatório para a correta gestão previdenciária e trabalhista [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
 
 **Em termos simples:**
-É o famoso "home office", onde você trabalha de casa usando internet e computador, mas continua sendo empregado da empresa [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É o famoso "home office", onde você trabalha de casa usando computador e internet, podendo ou não ir à empresa alguns dias da semana [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+
 
 ### 5.7 Trabalhador avulso
 
 **Como funciona na prática:**
-O trabalhador presta serviços a diversas empresas, sem vínculo empregatício permanente, mas com intermediação de órgão gestor de mão de obra ou sindicato [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm).
+O trabalhador presta serviços a diversas empresas, sem vínculo empregatício permanente com nenhuma delas, mas com a intermediação de um órgão gestor de mão de obra (OGMO) ou sindicato [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). É comum no setor portuário [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm).
 
 **Como deveria funcionar segundo a lei:**
-Regido pela Lei 12.545/2011, o trabalhador avulso (especialmente o portuário) possui direitos previdenciários equiparados aos do segurado empregado [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+A Lei 13.467/2017 assegura a igualdade de direitos entre o trabalhador com vínculo permanente e o trabalhador avulso [(BRASIL, LEI 13.467/2017, art. 25)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). O cálculo de benefícios previdenciários computa os salários de contribuição devidos, mesmo que não recolhidos [(BRASIL, LEI 8.213/1991, art. 34, I)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 12 – Direitos e Deveres Avulso.</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 11 – Direitos e Deveres - Avulso.</strong> <em>Fonte: [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Computo de salários para benefícios [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Prestação do serviço solicitado [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm) |
-| Auxílio-acidente [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Recolhimento previdenciário [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) |
+| Igualdade de direitos com o empregado permanente [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Disponibilidade para a escala do OGMO [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm) |
+| Acesso a benefícios previdenciários [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Recolhimento de contribuições pelo órgão gestor [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) |
 
-O contratante deve garantir o pagamento da remuneração através do órgão gestor responsável [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm).
+O contratante (tomador) deve garantir a segurança do trabalho no local da prestação [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização ocorre via MTE e Receita Federal para garantir o recolhimento das contribuições previdenciárias [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). O controle de escalação é monitorado pelos órgãos gestores [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm).
+A fiscalização é rigorosa nos portos para evitar a precarização do trabalho [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A Auditoria-Fiscal do Trabalho verifica a regularidade dos repasses financeiros feitos pelo OGMO ao trabalhador [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O controle de contribuições é monitorado via eSocial e Receita Federal [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
 
 **Em termos simples:**
-É o trabalhador (como o do porto) que não tem um único patrão, mas trabalha para vários através de um sindicato ou órgão [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm).
+É o trabalhador que não tem um único patrão, mas é escalado por um órgão para trabalhar em diferentes navios ou empresas no porto [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+
 
 ### 5.8 Trabalhador doméstico
 
 **Como funciona na prática:**
-Pessoa que presta serviços de natureza não lucrativa à pessoa ou família, no âmbito residencial destas [(BRASIL, LEI 10.593/2002, art. 11-A)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
+Pessoa que presta serviços de natureza não lucrativa à pessoa ou família, no âmbito residencial [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). Inclui cozinheiros, faxineiros e cuidadores.
 
 **Como deveria funcionar segundo a lei:**
-Regido pela Emenda Constitucional 72/2013 e pela Lei Complementar 150/2015, o doméstico possui direitos previdenciários e trabalhistas assegurados [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+Regido pela Lei Complementar 150/2015. O contrato pode ser por tempo indeterminado ou determinado (experiência ou transitório) [(BRASIL, LC 150/2015, art. 4º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). O contrato de experiência é limitado a 90 dias [(BRASIL, LC 150/2015, art. 5º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 13 – Direitos e Deveres Doméstico.</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 12 – Direitos e Deveres - Doméstico.</strong> <em>Fonte: [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Salários de contribuição para benefícios [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Anotação na CTPS [(BRASIL, LEI 10.593/2002, art. 11-A)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) |
-| Auxílio-acidente [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Recolhimento de encargos [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) |
+| Férias proporcionais ao regime parcial [(BRASIL, LC 150/2015, art. 3º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Prestação de serviço no âmbito residencial [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
+| Salário mínimo ou piso da categoria [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Recolhimento de FGTS e INSS via eSocial [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
 
-O empregador doméstico deve manter a regularidade dos recolhimentos previdenciários para evitar penalidades [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+O contratante deve formalizar o contrato e registrar a jornada de trabalho [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização do Auditor-Fiscal do Trabalho no domicílio depende de autorização do empregador ou do trabalhador [(BRASIL, LEI 10.593/2002, art. 11-A)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). A fiscalização tem natureza prioritariamente orientadora, utilizando o critério de dupla visita [(BRASIL, LEI 10.593/2002, art. 11-A, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O controle é feito obrigatoriamente via eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
+O Estado utiliza o eSocial Doméstico como ferramenta principal de fiscalização e arrecadação [(ESOCIAL, 2026)](https://www.esocial.gov.br/). A Auditoria-Fiscal do Trabalho atua em denúncias de análogas à escravidão ou falta de registro [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O descumprimento gera multas administrativas e a obrigatoriedade de regularização retroativa [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É quem trabalha na casa das pessoas (como faxineira ou babá) com carteira assinada e direitos garantidos por lei [(BRASIL, LEI 10.593/2002, art. 11-A)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
+É quem trabalha na casa de alguém sem que a família ganhe dinheiro com esse serviço, como a empregada doméstica ou o jardineiro [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
+
 
 ### 5.9 Trabalhador rural
 
 **Como funciona na prática:**
-Prestação de serviços em propriedades rurais, envolvendo atividades agrícolas, pecuárias ou extrativistas [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).
+Prestação de serviços em propriedade rural, com atividades ligadas à agricultura, pecuária ou extrativismo [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm). Pode ser permanente ou sazonal (safra).
 
 **Como deveria funcionar segundo a lei:**
-Regido pela Lei 5.889/1973, o trabalhador rural possui normas específicas de jornada e remuneração adaptadas à atividade do campo [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).
+Regido pela Lei 5.889/1973. Possui direitos similares ao trabalhador urbano, mas com especificidades quanto à jornada e alojamento [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm). A prescrição de créditos trabalhistas é de cinco anos, limitada a dois anos após a extinção do contrato [(BRASIL, LEI 13.467/2017, art. 21)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 14 – Direitos e Deveres Rural.</strong> <em>Fonte: [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 13 – Direitos e Deveres - Rural.</strong> <em>Fonte: [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).</em></div>
 | Direitos do trabalhador | Deveres (trabalhador e contratante) |
 | :--- | :--- |
-| Salário mínimo rural [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) | Fornecimento de condições de trabalho [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) |
-| Registro em CTPS [(BRASIL, 1943, art. 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Pagamento de encargos sociais [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) |
+| Salário mínimo rural [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) | Cumprimento das normas de segurança no campo [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) |
+| Alojamento digno (se fornecido) [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) | Registro em CTPS [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-O contratante rural deve observar as normas de saúde e segurança do trabalho rural [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).
+O contratante deve observar as normas de saúde e higiene específicas para o trabalho rural [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 **Como o Estado enxerga e age:**
-O MTE realiza fiscalizações em propriedades rurais para combater o trabalho análogo ao escravo e verificar o registro em CTPS [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A Auditoria-Fiscal do Trabalho aplica multas administrativas em caso de irregularidades [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
+A Auditoria-Fiscal do Trabalho realiza operações intensas no campo para combater o trabalho infantil e forçado [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O registro no eSocial é a forma de comprovar o vínculo e garantir a previdência [(ESOCIAL, 2026)](https://www.esocial.gov.br/). Sanções graves são aplicadas em casos de descumprimento de normas de segurança [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É o trabalhador do campo, com regras próprias para a lida rural, mas que também tem direito a carteira assinada [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).
+É o trabalhador do campo, da fazenda ou do sítio, que planta ou cuida de animais [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).
+
 
 ### 5.10 Estágio
 
 **Como funciona na prática:**
-Ato educativo escolar supervisionado, desenvolvido no ambiente de trabalho, que visa a preparação para o trabalho produtivo [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
+Ato educativo escolar supervisionado, desenvolvido no ambiente de trabalho [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm). Não gera vínculo empregatício, desde que cumpridos os requisitos legais. O estagiário recebe uma bolsa-auxílio e tem seguro contra acidentes.
 
 **Como deveria funcionar segundo a lei:**
-Regido pela Lei 11.788/2008, o estágio não cria vínculo empregatício desde que cumpridos os requisitos legais: matrícula escolar, termo de compromisso e acompanhamento [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
+Regido pela Lei 11.788/2008. Exige a celebração de um Termo de Compromisso entre estudante, instituição de ensino e empresa [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm). A jornada deve ser compatível com as atividades escolares.
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 15 – Direitos e Deveres Estágio.</strong> <em>Fonte: [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 14 – Direitos e Deveres - Estágio.</strong> <em>Fonte: [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).</em></div>
 | Direitos do estagiário | Deveres (estagiário e empresa) |
 | :--- | :--- |
-| Bolsa-auxílio (estágio não obrigatório) [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) | Frequência escolar obrigatória [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) |
-| Recesso remunerado [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) | Supervisão por profissional da área [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) |
+| Recesso remunerado (férias) [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) | Frequência escolar comprovada [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) |
+| Seguro contra acidentes pessoais [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) | Supervisão por profissional da área [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) |
 
-A empresa concedente deve oferecer atividades compatíveis com o projeto pedagógico do curso do estudante [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
+A empresa deve oferecer atividades compatíveis com o projeto pedagógico do curso [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
 
 **Como o Estado enxerga e age:**
-O MTE fiscaliza se o estágio não está sendo usado para substituir mão de obra regular (fraude ao vínculo) [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A ausência de termo de compromisso ou a extrapolação da jornada legal caracteriza vínculo de emprego [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
+A Auditoria-Fiscal do Trabalho verifica se o estágio não é "fraude" para substituir empregados [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Se não houver termo de compromisso ou supervisão, o vínculo de emprego é reconhecido [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A fiscalização ocorre via denúncias e auditorias documentais [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho).
 
 **Em termos simples:**
-É um aprendizado prático para quem estuda; não é um emprego comum, por isso não tem carteira assinada, mas tem regras rígidas [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
+É um aprendizado prático para quem está estudando; você trabalha para aprender a profissão, mas não é um funcionário comum [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
+
 
 ### 5.11 Aprendiz
 
 **Como funciona na prática:**
-Contrato de trabalho especial, ajustado por escrito e por tempo determinado, para a formação técnico-profissional metódica de jovens [(BRASIL, 1943, art. 428)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Contrato de trabalho especial, ajustado por escrito e por prazo determinado, para a formação profissional do jovem [(BRASIL, 1943, art. 428)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Combina formação teórica em entidade qualificada e prática na empresa.
 
 **Como deveria funcionar segundo a lei:**
-Regido pela CLT e Lei 10.097/2000, o contrato de aprendizagem pressupõe anotação na CTPS, matrícula e frequência escolar [(BRASIL, 1943, art. 428, § 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A duração máxima é de 2 anos, exceto para pessoas com deficiência [(BRASIL, 1943, art. 428, § 3º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Regido pela Lei 10.097/2000 e CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O contrato extingue-se no termo, quando o aprendiz completa 24 anos (salvo deficiência) ou por desempenho insuficiente [(BRASIL, 1943, art. 433)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A idade mínima é 14 anos [(BRASIL, LEI 13.467/2017, art. 23)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-**Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-
-<div class="tabela-legenda"><strong>Tabela 16 – Direitos e Deveres Aprendiz.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 15 – Direitos e Deveres - Aprendiz.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
 | Direitos do aprendiz | Deveres (aprendiz e empresa) |
 | :--- | :--- |
-| Salário mínimo hora [(BRASIL, 1943, art. 428, § 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Frequência ao curso de aprendizagem [(BRASIL, 1943, art. 432)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Formação profissional [(BRASIL, 1943, art. 428)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Cota de contratação (5% a 15%) [(BRASIL, 1943, art. 429)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Salário mínimo hora [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Frequência escolar e no curso técnico [(BRASIL, 1943, art. 433)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| FGTS reduzido [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Formação profissional progressiva [(BRASIL, 1943, art. 428)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-O aprendiz deve executar as tarefas com zelo e diligência, enquanto a empresa deve garantir a formação metódica [(BRASIL, 1943, art. 428)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A empresa deve garantir que o aprendiz não seja exposto a atividades perigosas ou insalubres [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 **Como o Estado enxerga e age:**
-O MTE fiscaliza o cumprimento da cota obrigatória de aprendizes nos estabelecimentos [(BRASIL, 1943, art. 429)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A Auditoria-Fiscal do Trabalho verifica a frequência escolar e a validade do contrato [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O descumprimento gera multas administrativas [(BRASIL, 1943, art. 434)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O MTE fiscaliza a cota obrigatória de aprendizes nas empresas [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). A Auditoria-Fiscal do Trabalho verifica se a formação teórica está ocorrendo paralelamente à prática [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O registro no eSocial é fundamental para a validação do contrato especial [(ESOCIAL, 2026)](https://www.esocial.gov.br/).
 
 **Em termos simples:**
-É um emprego para jovens que mistura trabalho com curso profissionalizante, com a empresa sendo obrigada a contratar uma porcentagem de aprendizes [(BRASIL, 1943, art. 429)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É um emprego para jovens, onde a empresa ensina uma profissão enquanto o rapaz ou moça trabalha e estuda [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-<figure class="figura"><img src="assets/figura-08.png" alt="Figura 16 - Cota Obrigatória de Aprendizes por Estabelecimento"><figcaption><strong>Figura 16 – Cota Obrigatória de Aprendizes por Estabelecimento.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> Percentual de aprendizes em relação aos trabalhadores cujas funções demandem formação profissional (art. 429).</figcaption></figure>
+
+<figure class="figura"><img src="assets/figura-16.png" alt="Figura 16 - Limites Legais de Prazo em Dias"><figcaption><strong>Figura 16 – Limites Legais de Prazo em Dias.</strong> <em>Fonte: [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm), [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm), [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).</em> O gráfico compara os prazos máximos de experiência, a duração base do temporário e o tempo de resposta do intermitente.</figcaption></figure>
+
+
+
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Limite Mínimo</h4><ul><li>5% do quadro</li></ul></div><div class="diag-coluna"><h4>Limite Máximo</h4><ul><li>15% do quadro</li></ul></div></div><figcaption><strong>Figura 17 – Cota de Aprendizagem.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> A cota de aprendizes deve variar entre 5% e 15% do total de funcionários da empresa.</figcaption></figure>
+
 
 **Em termos simples:**
-Existem várias formas de ser contratado: desde a carteira assinada comum, passando por contratos temporários, home office, até programas de aprendizado para jovens e estudantes, cada um com suas regras de pagamento e tempo de duração [(BRASIL, 1943; BRASIL, LEI 6.019/1974; BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-
-Os contratos com vínculo empregatício têm limites legais de prazo que variam conforme a modalidade [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) e [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
-
-<figure class="figura"><img src="assets/figura-09.png" alt="Figura 17 - Limites Legais de Prazo Contratual"><figcaption><strong>Figura 17 – Limites Legais de Prazo Contratual.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) e [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).</em> Cada modalidade tem teto legal de duração; no intermitente, o trabalhador tem até 3 dias para responder à chamada.</figcaption></figure>
+Existem várias formas de contratar alguém: desde o emprego fixo (indeterminado), passando por testes (experiência), contratos curtos (temporário), trabalho por chamada (intermitente), até modelos educativos (estágio e aprendiz). Cada um tem suas regras de tempo e direitos, e o governo fiscaliza tudo via eSocial e auditores do trabalho para garantir que ninguém seja enganado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm); [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
 **Fontes consultadas:**
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 * [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm)
-* [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
 * [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)
+* [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm)
+* [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
 * [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm)
-* [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm)
 * [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho)
 * [(ESOCIAL, 2026)](https://www.esocial.gov.br/)
 
@@ -509,606 +498,709 @@ Os contratos com vínculo empregatício têm limites legais de prazo que variam 
 ### 6.1 Trabalhador autônomo
 
 **Como funciona na prática:**
-O trabalhador autônomo é a pessoa física que presta serviços de forma independente [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm). A contratação ocorre geralmente via contrato de prestação de serviço, onde o profissional assume os riscos de sua própria atividade [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm). O pagamento é acordado por serviço ou período, sem a subordinação característica do emprego [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O trabalhador autônomo é aquele que presta serviços de forma independente, sem subordinação jurídica ao contratante [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm). A contratação ocorre geralmente por meio de um contrato de prestação de serviços, onde o pagamento é feito por tarefa ou período acordado, e o prestador assume os riscos de sua própria atividade [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
 **Como deveria funcionar segundo a lei:**
-A base legal encontra-se nos artigos 593 e seguintes do Código Civil [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) e no artigo 603 da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A modalidade deixa de ser legal quando presentes a habitualidade, a onerosidade, a pessoalidade e, principalmente, a subordinação jurídica, configurando vínculo empregatício [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A base legal encontra-se no Código Civil, especificamente nos artigos 593 e seguintes [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm). A modalidade deixa de ser legal quando a relação passa a apresentar os elementos do vínculo empregatício, como a subordinação direta e a dependência econômica, podendo ser reenquadrada conforme a CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 17 – Direitos e Deveres do Autônomo.</strong> <em>Fonte: [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 16 – Direitos e deveres do trabalhador autônomo.</strong> <em>Fonte: [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Recebimento do valor acordado [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Execução do serviço conforme especificado [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
-| Autonomia na condução do trabalho [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Pagamento pontual pelo contratante [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
+| Recebimento do preço ajustado pelo serviço [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Execução do serviço conforme o acordado [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
+| Autonomia na condução técnica do trabalho [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Pagamento pontual da remuneração [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
 
-O contratante deve respeitar a autonomia do profissional, não podendo impor ordens disciplinares ou controle de jornada rigoroso [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante tem o dever de fornecer as informações necessárias para a execução do serviço e efetuar o pagamento nos prazos estipulados no contrato [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização é realizada pela Auditoria-Fiscal do Trabalho [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O Estado apura a "pejotização" ou a falsa autonomia para caracterizar vínculo indevido [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Caso comprovado o vínculo, a empresa sofre sanções do Livro V da CLT, com a exigência de anotação na CTPS, recolhimentos ao eSocial e pagamento de verbas retroativas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A fiscalização é realizada pela Auditoria-Fiscal do Trabalho, vinculada ao Ministério do Trabalho e Emprego, com base na Lei 10.593/2002 [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O Estado apura a "pejotização" ou o uso indevido do autônomo para mascarar vínculo, exigindo a anotação na CTPS e a regularização no eSocial [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). As sanções incluem multas previstas no Livro V da CLT e a condenação ao pagamento de verbas retroativas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É o profissional "por conta própria" que vende seu serviço para quem precisa, sem ser empregado da empresa e sem ter carteira assinada [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
+É o profissional "por conta própria" que não tem patrão, manda no seu horário e cobra pelo serviço feito, mas não tem as garantias da carteira assinada [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
-### 6.2 PJ: ME, EPP, Simples Nacional, Lucro Presumido
+
+### 6.2 PJ (ME, EPP, Simples Nacional, Lucro Presumido e Lucro Real)
 
 **Como funciona na prática:**
-A contratação ocorre entre duas pessoas jurídicas (B2B), onde a empresa contratada emite nota fiscal para receber pelos serviços [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A ME (Microempresa) e a EPP (Empresa de Pequeno Porte) utilizam frequentemente o Simples Nacional para unificar tributos [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Empresas maiores ou com faturamento elevado podem optar pelo Lucro Presumido [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
+A contratação ocorre entre duas pessoas jurídicas (B2B), onde a empresa contratada emite nota fiscal para receber pelos serviços [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A empresa prestadora deve manter contabilidade regular e recolher seus próprios tributos conforme o regime escolhido [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm).
 
 **Como deveria funcionar segundo a lei:**
-Regulada pela Lei Complementar 123/2006 [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) e atualizações da reforma tributária na LC 214/2025 [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). É proibido que a PJ seja utilizada para mascarar vínculo empregatício; por exemplo, sócios que foram empregados da contratante não podem prestar serviços como PJ antes de 18 meses da demissão, salvo se aposentados [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+As Microempresas (ME) e Empresas de Pequeno Porte (EPP) são regidas pela Lei Complementar 123/2006 [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). O Lucro Presumido e o Lucro Real seguem a Lei 9.249/1995, onde a tributação do Lucro Presumido incide sobre uma base estimada de renda para serviços [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm). A modalidade é ilegal quando a PJ é usada apenas para evitar encargos trabalhistas de um único indivíduo subordinado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 18 – Direitos e Deveres da PJ.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 17 – Direitos e deveres da Pessoa Jurídica prestadora.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) e [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Tratamento tributário favorecido (Simples) [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Emissão obrigatória de nota fiscal [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
-| Acesso a crédito e mercado [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Manutenção de contabilidade regular [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) |
+| Recebimento de valores via nota fiscal [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Emissão regular de documentos fiscais [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Opção por regimes tributários favorecidos [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Recolhimento de IRPJ e CSLL [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm) |
 
-O contratante deve efetuar o pagamento mediante a apresentação da nota fiscal e observar o prazo de quarentena de 18 meses para ex-empregados [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+O contratante deve efetuar o pagamento à empresa prestadora e observar a regularidade fiscal da contratada para evitar responsabilidades solidárias [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
 **Como o Estado enxerga e age:**
-A Receita Federal e o Comitê Gestor do Simples Nacional fiscalizam a regularidade tributária e o enquadramento do faturamento [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A Auditoria-Fiscal do Trabalho atua na identificação de fraudes trabalhistas [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Sanções incluem multas administrativas e a responsabilização solidária da empresa tomadora [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
+A Receita Federal e o Comitê Gestor do Simples Nacional fiscalizam o enquadramento tributário e a emissão de notas [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) atua quando a PJ é usada para encobrir vínculo empregatício, resultando em multas do Livro V da CLT e reconhecimento de vínculo [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Em termos simples:**
-É quando o trabalhador abre uma empresa para prestar serviços para outra empresa, emitindo nota fiscal em vez de receber salário [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+É quando o trabalhador abre uma empresa para prestar serviços para outra empresa, emitindo nota fiscal em vez de receber holerite [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+
 
 ### 6.3 MEI (Microempreendedor Individual)
 
 **Como funciona na prática:**
-O MEI é a forma mais simplificada de formalização para quem trabalha sozinho [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). O profissional paga mensalmente o DAS (Documento de Arrecadação do Simples Nacional), que inclui a contribuição previdenciária [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Pode contratar no máximo um empregado [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+O MEI é um regime simplificado onde o profissional formaliza seu negócio com um CNPJ, paga um valor fixo mensal via DAS (Documento de Arrecadação do Simples Nacional) e pode ter no máximo um empregado [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
 **Como deveria funcionar segundo a lei:**
-Regido pela LC 123/2006 [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Deve respeitar o limite de faturamento anual e exercer apenas atividades permitidas na lista oficial [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Há propostas legislativas (PLP 265/2026) para elevar o limite de receita e permitir a contratação de até dois empregados [(CAMARA DOS DEPUTADOS, 2026u)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2647294).
+Regido pela Lei Complementar 123/2006, o MEI possui limite de faturamento anual específico e pode exercer apenas atividades permitidas na lista oficial [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). O descumprimento do limite de faturamento ou a contratação de mais de um empregado descaracteriza o regime [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 19 – Direitos e Deveres do MEI.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 18 – Direitos e deveres do MEI.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Aposentadoria por idade e auxílios [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Pagamento mensal do DAS [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
-| CNPJ e emissão de nota fiscal [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Respeito ao limite de faturamento [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Acesso a benefícios previdenciários [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Pagamento mensal do DAS [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Formalização simplificada com CNPJ [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Respeito ao limite de faturamento [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
 
-O contratante deve exigir a regularidade do MEI e evitar a subordinação direta para não descaracterizar a natureza do negócio [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante deve assegurar que a relação com o MEI não possua subordinação, para não configurar fraude à legislação trabalhista [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Como o Estado enxerga e age:**
-A fiscalização é feita pela Receita Federal e Auditoria-Fiscal do Trabalho [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O Estado monitora se o MEI está sendo usado para "camuflar" um empregado comum [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). A sanção envolve o desenquadramento do regime e a cobrança de todas as verbas trabalhistas retroativas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A fiscalização é feita pela Receita Federal e pelo Comitê Gestor do Simples Nacional [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Caso o MEI seja utilizado para mascarar emprego, a Auditoria-Fiscal do Trabalho (Lei 10.593/2002) atua para reconhecer o vínculo e aplicar as multas da CLT [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Em termos simples:**
-É o "empresário de um homem só" que paga um valor fixo por mês para ter CNPJ e direitos básicos da previdência [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+É a forma mais fácil de ter um CNPJ, pagando um boleto único por mês para ter direito a aposentadoria e poder emitir nota [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+
 
 ### 6.4 Cooperado
 
 **Como funciona na prática:**
-O cooperado é um sócio de uma cooperativa de trabalho [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm). Ele não é empregado da cooperativa, mas presta serviços para terceiros através dela, recebendo a "retirada" ou "prolabore" [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
+O trabalhador associa-se a uma cooperativa, que intermedia a prestação de serviços para terceiros. O cooperado não é empregado da cooperativa, mas um sócio que divide os resultados (Lei 12.690/2012). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
 **Como deveria funcionar segundo a lei:**
-Regulado pela Lei 12.690/2012 [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm). A cooperativa deve ser democrática e sem fins lucrativos. Configura fraude quando a cooperativa é usada apenas para intermediar mão de obra e reduzir custos trabalhistas, sem a real natureza cooperativista [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
+A base legal é a Lei 12.690/2012, que define a cooperativa de trabalho como uma sociedade civil sem fins lucrativos (Lei 12.690/2012). Configura fraude quando a cooperativa é usada apenas para intermediar mão de obra barata, mantendo a subordinação do trabalhador ao tomador do serviço [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 20 – Direitos e Deveres do Cooperado.</strong> <em>Fonte: [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 19 – Direitos e deveres do Cooperado.</strong> <em>Fonte: (Lei 12.690/2012).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Participação nos resultados da cooperativa [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) | Contribuição para o capital social [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) |
-| Gestão democrática da entidade [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) | Cumprimento das normas da cooperativa [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) |
+| Participação nas sobras da cooperativa (Lei 12.690/2012) | Contribuição para o capital social (Lei 12.690/2012) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Gestão democrática da sociedade (Lei 12.690/2012) | Observância do estatuto social (Lei 12.690/2012) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-O contratante da cooperativa deve observar a regularidade da entidade e não exercer poder diretivo direto sobre o cooperado [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
+O tomador do serviço deve tratar o cooperado com autonomia, evitando dar ordens diretas que caracterizem subordinação [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Como o Estado enxerga e age:**
-A Auditoria-Fiscal do Trabalho fiscaliza se a cooperativa é real ou se é uma "cooperativa de fachada" para fraudar a CLT [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Se a fraude for comprovada, o vínculo de emprego é reconhecido entre o cooperado e a empresa tomadora [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) fiscaliza se a cooperativa é real ou se é uma "cooperativa de fachada" para fraudar a CLT [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Se comprovada a fraude, há a responsabilização solidária da cooperativa e do tomador, com pagamento de todas as verbas trabalhistas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É quando profissionais se unem em uma associação (cooperativa) para conseguir clientes e organizar o trabalho juntos, dividindo os lucros [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
+O trabalhador vira "dono" de uma cooperativa junto com outros colegas, e essa cooperativa consegue os serviços para o grupo (Lei 12.690/2012). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+
 
 ### 6.5 Contribuinte individual previdenciário
 
 **Como funciona na prática:**
-É a pessoa física que trabalha por conta própria e recolhe a previdência social para garantir aposentadoria e auxílios [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). Inclui autônomos e profissionais liberais [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+É a pessoa física que trabalha por conta própria e recolhe a contribuição previdenciária para garantir aposentadoria e auxílios, independentemente de ter CNPJ [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Como deveria funcionar segundo a lei:**
-Baseado na Lei 8.212/1991 [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). O segurado contribuinte individual que trabalha por conta própria, sem relação com empresa, pode ter restrições quanto à aposentadoria por tempo de contribuição, dependendo da forma de recolhimento [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+A base legal é a Lei 8.212/1991, que obriga o trabalhador autônomo a contribuir para a Seguridade Social [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). A falta de recolhimento não gera vínculo empregatício, mas retira a proteção previdenciária do trabalhador.
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 21 – Direitos e Deveres do Contribuinte Individual.</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 20 – Direitos e deveres do Contribuinte Individual.</strong> <em>Fonte: [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Acesso a benefícios previdenciários [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Recolhimento mensal da contribuição [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
-| Proteção em caso de incapacidade [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Declaração de rendimentos [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
+| Aposentadoria e auxílio-doença [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) | Recolhimento mensal da guia da previdência [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) |
+| Salário-maternidade [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) | Declaração de rendimentos ao fisco [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) |
 
-O contratante, em certos casos, pode ser sub-rogado na obrigação de recolher a contribuição da pessoa física [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
+O contratante, em certos casos, deve reter a contribuição previdenciária do autônomo e repassá-la ao INSS [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Como o Estado enxerga e age:**
-A Receita Federal fiscaliza o recolhimento das contribuições previdenciárias [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). A falta de pagamento gera dívida ativa e perda de qualidade de segurado [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+A Receita Federal fiscaliza a arrecadação das contribuições previdenciárias [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). A Auditoria-Fiscal do Trabalho verifica se a condição de contribuinte individual não está sendo usada para esconder um emprego real [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Em termos simples:**
-É a pessoa que paga o INSS por conta própria para não ficar desamparada na velhice ou em caso de doença [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
+É quem paga o INSS por conta própria para não ficar desamparado na velhice ou na doença [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
+
 
 ### 6.6 Trabalho voluntário
 
 **Como funciona na prática:**
-É a atividade não remunerada prestada por pessoa física a entidades públicas ou instituições privadas sem fins lucrativos [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm). O voluntário atua em áreas cívicas, culturais, educacionais ou de assistência social [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).
+É a prestação de serviço não remunerada, realizada por vontade própria para fins cívicos, culturais, educacionais, científicos, recreativos ou assistenciais (Lei 9.608/1998). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
 **Como deveria funcionar segundo a lei:**
-Regulado pela Lei 9.608/1998 [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm). É obrigatória a celebração de um termo de adesão [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm). A lei é clara: o serviço voluntário não gera vínculo empregatício nem obrigações trabalhistas ou previdenciárias [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).
+Regido pela Lei 9.608/1998, exige-se a assinatura de um Termo de Adesão (Lei 9.608/1998). O trabalho deixa de ser voluntário se houver pagamento de salário ou se a atividade for essencial e remunerada para outros funcionários na mesma função [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 22 – Direitos e Deveres do Voluntário.</strong> <em>Fonte: [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 21 – Direitos e deveres do Voluntário.</strong> <em>Fonte: (Lei 9.608/1998).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Ressarcimento de despesas autorizadas [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) | Cumprimento do termo de adesão [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) |
-| Certificado de atuação [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) | Atuação sem expectativa de salário [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) |
+| Reembolso de despesas autorizadas (Lei 9.608/1998) | Cumprimento do Termo de Adesão (Lei 9.608/1998) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Certificado de trabalho voluntário (Lei 9.608/1998) | Atuação sem expectativa de remuneração (Lei 9.608/1998) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 
-A entidade contratante deve fornecer as condições básicas para a execução do serviço e não pode remunerar o voluntário, sob pena de descaracterizar a modalidade [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).
+A entidade beneficiária deve fornecer as condições básicas de segurança e higiene para o voluntário (Lei 9.608/1998). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
 **Como o Estado enxerga e age:**
-A Auditoria-Fiscal do Trabalho verifica se a entidade está usando "voluntários" para substituir empregados remunerados [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Se houver pagamento habitual ou subordinação típica de emprego, o vínculo é reconhecido [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) verifica se o "voluntariado" não é usado para substituir mão de obra remunerada, o que configuraria fraude trabalhista [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). A sanção é o reconhecimento do vínculo empregatício com pagamento de todas as verbas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É trabalhar de graça para ajudar uma causa ou instituição, com um papel assinado dizendo que você não quer salário [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).
+É trabalhar de graça para ajudar uma causa ou instituição, desde que assine um papel concordando com isso (Lei 9.608/1998). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-### 6.7 Trabalho informal sem qualquer formalização
+
+### 6.7 Trabalho informal
 
 **Como funciona na prática:**
-Ocorre quando a prestação de serviço não possui contrato escrito, registro em CTPS ou CNPJ [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O pagamento é feito de forma esporádica ou informal, sem qualquer garantia legal [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Engloba trabalhadores sem qualquer registro ou formalização, como "bicos", ajuda familiar e conta própria sem contribuição previdenciária [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). O pagamento é imediato e instável, sem qualquer garantia legal.
 
 **Como deveria funcionar segundo a lei:**
-Não possui base legal de "permissão", sendo a regra geral a formalização do trabalho [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Quando a informalidade esconde os requisitos de emprego (subordinação, habitualidade, onerosidade e pessoalidade), a lei protege o trabalhador através do reconhecimento do vínculo [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O trabalho informal é, por definição, a ausência de cumprimento das normas legais de contratação [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A lei prevê que toda relação de emprego deve ser formalizada via CTPS [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 23 – Direitos e Deveres na Informalidade.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 22 – Situação do trabalhador informal.</strong> <em>Fonte: [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf) e [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Direito ao reconhecimento do vínculo [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Execução do serviço acordado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Recebimento de verbas retroativas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Pagamento do valor combinado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Direito ao salário mínimo (se provado vínculo) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Execução do serviço acordado [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf) |
+| Proteção contra acidentes (se provado vínculo) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Pagamento do valor combinado [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf) |
 
-O contratante tem o dever legal de formalizar a relação de emprego assim que constatados os requisitos da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+O contratante informal assume o risco jurídico de ter o vínculo reconhecido judicialmente, com a obrigação de pagar FGTS e INSS retroativos [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Como o Estado enxerga e age:**
-A Auditoria-Fiscal do Trabalho atua intensamente na formalização desses trabalhadores [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). A empresa é multada e obrigada a assinar a carteira com data retroativa, pagando FGTS e INSS [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) combate a informalidade através de fiscalizações in loco, aplicando multas administrativas pesadas ao empregador [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O Estado busca a formalização para garantir a arrecadação previdenciária e a proteção social [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
 **Em termos simples:**
-É o famoso "bico", onde não tem contrato nem papel assinado, ficando o trabalhador totalmente desprotegido [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+É o trabalho "sem carteira", onde a pessoa faz o que consegue para sobreviver, mas não tem direito a nada se for demitida ou ficar doente [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+
 
 ### 6.8 Serviço via aplicativos/plataformas
 
 **Como funciona na prática:**
-O trabalhador utiliza uma plataforma digital para conectar-se a clientes (KALIL, 2026). A remuneração é feita por tarefa ou corrida, e a gestão do trabalho é feita por algoritmos (KALIL, 2026). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+O trabalhador utiliza uma plataforma digital para conectar-se a clientes, recebendo a remuneração por tarefa executada, com a plataforma definindo preços e regras de acesso [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
 **Como deveria funcionar segundo a lei:**
-Atualmente, há um intenso debate jurídico e legislativo sobre a regulação [(CAMARA DOS DEPUTADOS, 2026x)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042). A discussão gira em torno da segurança dos trabalhadores e a definição de diretrizes para regulação [(CAMARA DOS DEPUTADOS, 2026x)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042).
+Atualmente, a maioria é tratada como autônoma [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm). No entanto, a discussão jurídica gira em torno da subordinação algorítmica, que pode caracterizar vínculo empregatício se a plataforma exercer controle rigoroso sobre o trabalhador [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Direitos e deveres:** [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 
-<div class="tabela-legenda"><strong>Tabela 24 – Direitos e Deveres em Plataformas.</strong> <em>Fonte: [KALIL, 2026](https://doi.org/10.5151/9786555500295-03).</em></div>
-| Direitos/garantias do prestador | Deveres (prestador e contratante) |
+<div class="tabela-legenda"><strong>Tabela 23 – Direitos e deveres no trabalho por plataforma.</strong> <em>Fonte: [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).</em></div>
+| Direitos/garantias do prestador | Deveres (prestador e contratante) [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
 | :--- | :--- |
-| Liberdade de conexão/desconexão (KALIL, 2026) | Manutenção do veículo/equipamento (KALIL, 2026) |
-| Recebimento por serviço prestado (KALIL, 2026) | Cumprimento dos termos de uso (KALIL, 2026) |
+| Recebimento por corrida/entrega [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Manutenção de veículo/equipamento [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
+| Liberdade de conexão/desconexão [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Cumprimento dos termos de uso da app [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
 
-A plataforma deve garantir a transparência nos pagamentos e a segurança básica do usuário e do prestador [(CAMARA DOS DEPUTADOS, 2026x)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042).
+A plataforma deve garantir a transparência nos cálculos de remuneração e a segurança básica dos dados do usuário [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
 **Como o Estado enxerga e age:**
-O Estado, via Auditoria-Fiscal do Trabalho, analisa a dependência econômica e a subordinação algorítmica [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Existem discussões no Senado para criar regramentos específicos de segurança e previdência [(CAMARA DOS DEPUTADOS, 2026x)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042).
+A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) monitora a relação para evitar a precarização extrema [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O Estado analisa se a "autonomia" é real ou se o algoritmo impõe ordens que equivalem à subordinação da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:**
-É o trabalho feito por apps (como motoristas e entregadores), onde o "chefe" é um algoritmo e não há vínculo fixo (KALIL, 2026). [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+É trabalhar para um app, onde o celular manda a tarefa e você decide se aceita ou não, mas não tem salário fixo [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Situação de Saída</h4><ul><li>Encerramento do contrato de trabalho anterior</li><li>Ex-funcionário passa a prestar serviços como pessoa jurídica (PJ)</li></ul></div><div class="diag-coluna"><h4>Quarentena de 18 Meses</h4><ul><li>Intervalo mínimo recomendado entre o fim do contrato e a nova contratação</li><li>Contratação antes do prazo gera risco de fraude e reconhecimento do vínculo [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm)</li></ul></div></div><figcaption><strong>Figura 18 – Quarentena para Contratação de Ex-Empregado como PJ.</strong> <em>Fonte: [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).</em> Período de 18 meses para evitar a caracterização de fraude na contratação de PJ.</figcaption></figure>
+
+### 6.9 Análise Detalhada da Informalidade e Subutilização
+
+A informalidade no Brasil é um fenômeno estrutural. Em 2024, a proporção de trabalhadores em ocupações informais manteve-se acima de 40% [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). Esta categoria inclui empregados e domésticos sem carteira, trabalhadores por conta própria e empregadores que não contribuem para a previdência, além de familiares auxiliares [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+
+A distribuição da informalidade é desigual geograficamente. As regiões Norte (58,9%) e Nordeste (56,6%) apresentam os maiores índices, enquanto o Sul (27,4%) e Sudeste (34,7%) possuem os menores [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). No nível estadual, o Maranhão (64,2%) lidera a informalidade, enquanto Santa Catarina (22,9%) registra o menor percentual [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+
+**Recortes da Informalidade (2024):**
+*   **Idade:** Pessoas idosas (60+) possuem menor taxa de formalização (44,3%) do que a média geral (59,4%), com 55,7% atuando na informalidade [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+*   **Cor/Raça:** Entre idosos pretos ou pardos, a informalidade atinge 61,2%, enquanto entre idosos brancos a divisão é quase igualitária entre formalidade e informalidade [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+*   **Rendimento:** O rendimento-hora dos ocupados (14 anos ou mais) foi de R$ 19,20 em 2024, sendo significativamente menor para jovens (R$ 13,30) do que para idosos (R$ 25,60) [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+
+**Subutilização da Força de Trabalho:**
+O IBGE define a força de trabalho subutilizada como a soma de pessoas desocupadas, subocupadas por insuficiência de horas e a força de trabalho potencial [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). A força de trabalho potencial compreende quem procurou trabalho mas não estava disponível, ou quem estava disponível e gostaria de trabalhar, mas não procurou [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+
+A população na força de trabalho potencial é composta majoritariamente por mulheres pretas ou pardas (43,4%), seguidas por homens pretos ou pardos (25,8%) [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+
+<figure class="figura"><img src="assets/figura-18.png" alt="Figura 18 - Distribuição da População na Força de Trabalho Potencial por Sexo e Cor/Raça - 2024"><figcaption><strong>Figura 18 – Distribuição da População na Força de Trabalho Potencial por Sexo e Cor/Raça - 2024.</strong> <em>Fonte: [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).</em> Mulheres pretas ou pardas representam a maior parcela da força de trabalho potencial no Brasil.</figcaption></figure>
+
+**Saúde Mental e Informalidade:**
+Diferente do MEI, que é formalizado com CNAE e DAS, o trabalhador informal (conta própria sem registro) carece de rede de proteção. Estudos indicam que a precariedade do trabalho informal eleva o risco de transtornos mentais [(OLIVEIRA, 2026b)](https://doi.org/10.5216/ree.v12i2.10354). A OMS aponta que transtornos mentais menores acometem cerca de 30% dos trabalhadores ocupados [(OLIVEIRA, 2026b)](https://doi.org/10.5216/ree.v12i2.10354). O trabalhador informal recorre menos a planos de saúde e cuidados psiquiátricos devido à ausência de renda estável e cobertura assistencial, expondo-se a riscos de depressão e ansiedade [(OLIVEIRA, 2026b)](https://doi.org/10.5216/ree.v12i2.10354).
+
+<figure class="figura"><img src="assets/figura-19.png" alt="Figura 19 - Taxa Composta de Subutilização - Brasil (Série Histórica)"><figcaption><strong>Figura 19 – Taxa Composta de Subutilização - Brasil (Série Histórica).</strong> <em>Fonte: [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).</em> A subutilização atingiu seu pico em 2021, apresentando queda gradual até 2024.</figcaption></figure>
 
 **Em termos simples:**
-Existem várias formas de trabalhar sem ter a carteira assinada: desde abrir a própria empresa (PJ ou MEI), unir-se a colegas em cooperativas, fazer voluntariado ou trabalhar por aplicativos. O ponto principal é que, se o trabalhador tiver que obedecer ordens como um empregado, cumprir horário fixo e for essencial para a empresa, a lei pode entender que ele é, na verdade, um empregado comum e exigir todos os direitos da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+Trabalhar sem registro (informal) é muito mais comum no Norte e Nordeste e atinge principalmente mulheres negras e idosos, que acabam ficando sem proteção do governo e com mais problemas de saúde mental por causa da insegurança financeira [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf); [(OLIVEIRA, 2026b)](https://doi.org/10.5216/ree.v12i2.10354).
 
-A fronteira entre o trabalho autônomo legítimo e o vínculo encoberto (pejotização) define consequências práticas muito diferentes:
-
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Trabalho Autônomo Legítimo</h4><ul><li>Sem subordinação: o prestador define horários e métodos [(BRASIL, LEI 10.406/2002, art. 593)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)</li><li>Preços e organização do serviço por conta própria</li><li>Contrato de prestação de serviços com prazo ou entrega definidos</li></ul></div><div class="diag-coluna"><h4>Vínculo Encoberto (Pejotização)</h4><ul><li>Ordens e horários impostos por algoritmo ou gestor direto</li><li>Exclusividade e rotina de empregado disfarçadas de PJ</li><li>Risco de reconhecimento retroativo do vínculo e das verbas [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li></ul></div></div><figcaption><strong>Figura 19 – Autonomia Legítima x Vínculo Encoberto.</strong> <em>Fonte: [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) e [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> A subordinação é o critério que separa o autônomo do empregado encoberto.</figcaption></figure>
-
-Fontes consultadas:
-* [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm)
-* [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm)
-* [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)
-* [(IBGE, 2026d)](https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/brasil-tem-2-milhoes-de-trabalhadores-por-aplicativos-diz-ibge)
-* [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm)
+**Fontes consultadas:**
+* [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf)
+* [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm)
+* [(OLIVEIRA, 2026b)](https://doi.org/10.5216/ree.v12i2.10354)
 * [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
-* [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm)
-* [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)
-* [(CAMARA DOS DEPUTADOS, 2026u)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2647294)
-* [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+* [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)
 * [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm)
-* [(KALIL, 2026)](https://doi.org/10.5151/9786555500295-03)
-* [(CAMARA DOS DEPUTADOS, 2026x)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042)
 
 ## 7. PJ versus CLT: comparação objetiva
 
-A distinção entre o regime de Consolidação das Leis do Trabalho (CLT) e a prestação de serviços via Pessoa Jurídica (PJ) reside na natureza do vínculo e nos encargos associados. No regime CLT, o empregador assume os riscos da atividade econômica e dirige a prestação pessoal de serviço [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Já a atuação como PJ é lícita quando há autonomia, como observado em casos de profissionais médicos onde a ausência de subordinação afasta a configuração de fraude [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/).
+A contratação via CLT (Consolidação das Leis do Trabalho) caracteriza-se pela admissão, assalariamento e direção da prestação pessoal de serviço, com a empresa assumindo os riscos da atividade econômica [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Já a atuação como Pessoa Jurídica (PJ) é legal quando há autonomia técnica e ausência de subordinação, como observado em casos de médicos com autonomia, onde a pejotização não configura fraude [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/).
 
-A "pejotização" configura fraude quando a estrutura de empresa é utilizada para mascarar uma relação de emprego real, visando a redução de custos tributários e trabalhistas [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm).
+A fraude, ou "pejotização", ocorre quando a empresa utiliza a estrutura de PJ para mascarar uma relação de emprego real, visando a redução de custos e a supressão de direitos trabalhistas [(BRASIL, LEI 8.036/1990, § 3º)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm).
 
-<div class="tabela-legenda"><strong>Tabela 25 – Comparativo de Direitos e Encargos.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm), [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm).</em></div>
-| Item | Regime CLT | Regime PJ [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+<div class="tabela-legenda"><strong>Tabela 24 – Comparativo de Direitos e Custos CLT vs PJ.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm), [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).</em></div>
+| Item | Regime CLT | Regime PJ |
 | :--- | :--- | :--- |
-| FGTS | Obrigatório [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) | Não aplicável [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) |
-| Aviso Prévio | Mínimo de 30 dias para mensais [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Definido em contrato [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/) |
-| Horas Extras | Integram aviso prévio indenizado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Não aplicável [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/) |
-| Verbas Salariais | Fixas, gratificações e comissões [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Valor bruto da nota fiscal [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/) |
-| Ajuda de Custo | Não integra remuneração se habitual [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Composição de preço do serviço [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/) |
+| FGTS | Depósito obrigatório mensal [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) | Não possui [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Férias e 13º | Direitos garantidos por lei [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Negociados em contrato [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| INSS | Recolhimento patronal e empregado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Recolhimento via DAS ou pró-labore [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Aviso Prévio | Mínimo de 30 dias para contratos mensais [(BRASIL, 1943, art. 487, II)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Conforme cláusula contratual [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Horas Extras | Pagas acima da jornada legal [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Não aplicável (prestação de serviço) [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Risco Empresa | Alto (risco de reconhecimento de vínculo) [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) | Baixo, se houver real autonomia [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/) |
 
-A carga tributária para a empresa no regime CLT envolve encargos previdenciários sobre a folha, enquanto no regime PJ a tributação é simplificada via Simples Nacional ou MEI [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A reforma tributária, através da LC 214/2025, estabelece novas regras para a apuração de receitas omitidas e a base de cálculo da CBS e do IBS, impactando a fiscalização de prestadores de serviço [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
+**Em termos simples:** A CLT oferece proteção e benefícios automáticos, mas custa mais caro para a empresa. O PJ ganha mais "na mão", mas não tem garantias como FGTS ou aviso prévio, sendo legal apenas se o profissional tiver independência total [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/).
 
-No aspecto de rendimentos, observa-se que categorias informais (conta própria e sem carteira) apresentaram crescimentos interanuais de renda superiores aos trabalhadores com carteira assinada [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). No primeiro trimestre de 2026, trabalhadores por conta própria e sem carteira cresceram 6% e 9,9%, respectivamente, enquanto os privados com carteira cresceram 2,8% [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+### 7.1 Impacto da Reforma Tributária e Custos Operacionais
 
-A diferença de rendimento entre os regimes reflete a ausência de encargos patronais no informal e a maior flexibilidade de precificação de quem atua por conta própria. Na série anual de 2012 a 2026, as categorias informais avançaram mais em termos relativos: a renda de quem trabalha por conta própria subiu cerca de 26% e a dos empregados sem carteira cerca de 43%, enquanto o rendimento com carteira cresceu apenas cerca de 11% em termos reais [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). O trabalhador CLT, ainda com menor crescimento relativo, mantém maior estabilidade e acesso a direitos como o aviso prévio proporcional ao tempo de serviço [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
+A transição tributária estabelecida pela EC 132/2023 e LC 214/2025 introduz o IBS (Imposto sobre Bens e Serviços) e a CBS (Contribuição Social sobre Bens e Serviços) [(BRASIL, EC 132/2023)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm); [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). O princípio da neutralidade busca evitar que esses tributos distorçam a organização da atividade econômica [(BRASIL, LC 214/2025, art. 2º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
 
-<figure class="figura"><img src="assets/figura-29.png" alt="Figura 20 - Rendimento Real Médio por Categoria de Ocupação (2012-2026)"><figcaption><strong>Figura 20 – Rendimento Real Médio por Categoria de Ocupação (2012-2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Médias anuais do rendimento real do trabalho principal (Ipeadata/PNAD Contínua); em termos relativos, as categorias informais avançaram mais.</figcaption></figure>
+Para a empresa CLT, a redução da jornada de 44 para 40 horas semanais, sem redução salarial, eleva o custo da hora trabalhada em aproximadamente 10% [(IMPRENSA, 2026l)](https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/14/quando-comeca-a-valer-o-fim-da-escala-6x1.ghtml).
 
-Ao mesmo tempo, o prêmio de rendimento do vínculo formal estreitou-se ao longo das duas décadas: a razão entre o rendimento médio com carteira e o sem carteira caiu de 1,63 vez em 2012 para 1,27 vez em 2026, aproximando a renda dos dois regimes [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+### 7.2 Rendimento e Jornada: Formal vs Informal
 
-<figure class="figura"><img src="assets/figura-34.png" alt="Figura 21 - Gap de Rendimento: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 21 – Gap de Rendimento: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Razão entre o rendimento médio com carteira e o rendimento médio sem carteira; valores reais, médias anuais.</figcaption></figure>
+A categoria "sem carteira" é heterogênea e não se confunde apenas com MEI ou conta própria [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). Ela engloba:
+1. Empregados e domésticos sem registro [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+2. Trabalhadores por conta própria informais [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+3. Empregadores que não contribuem para a previdência [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
+4. Trabalhadores familiares auxiliares [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
-No volume de ocupados, a série de 2012 a 2026 mostra que o emprego com carteira no setor privado passou de 35,1 milhões para 39,3 milhões de pessoas, enquanto o sem carteira subiu de 11,2 milhões para 13,5 milhões [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). O segmento informal cresceu proporcionalmente mais no período, embora o formal continue sendo o maior em volume absoluto.
+Essa confusão distorce a leitura da informalidade, pois mistura quem empreende (MEI/Conta Própria) com quem é explorado sem registro [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
-<figure class="figura"><img src="assets/figura-30.png" alt="Figura 22 - Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 22 – Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Médias anuais do número de ocupados no setor privado (Ipeadata/PNAD Contínua).</figcaption></figure>
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Regime CLT</h4><ul><li>Vínculo empregatício com direitos da Constituição e da CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>FGTS, férias com 1/3, 13º e aviso prévio [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm)</li><li>Encargos e riscos do negócio a cargo do empregador</li></ul></div><div class="diag-coluna"><h4>Regime PJ</h4><ul><li>Contrato entre empresas, sem direitos trabalhistas [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)</li><li>Nota fiscal e tributação via Simples Nacional ou MEI [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)</li><li>Autonomia exigida: subordinação configura fraude (pejotização)</li></ul></div></div><figcaption><strong>Figura 23 – Comparativo CLT x PJ.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) e [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em> O regime CLT concentra direitos e garantias; o PJ exige autonomia real para ser lícito.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-20.png" alt="Figura 20 - Crescimento Real da Renda no T1 2026 por Categoria"><figcaption><strong>Figura 20 – Crescimento Real da Renda no T1 2026 por Categoria.</strong> <em>Fonte: [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Trabalhadores sem vínculo apresentaram crescimento de renda superior aos formais no período.</figcaption></figure>
 
-**Em termos simples:**
-A CLT é como um "pacote completo" com salário e garantias (FGTS, aviso prévio), mas custa mais caro para a empresa [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O PJ é um contrato entre empresas: o profissional ganha mais no bruto e a empresa economiza impostos, mas ele não tem as proteções da lei trabalhista [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/). Se o PJ tiver que obedecer ordens e horários como um empregado, a justiça pode considerar que houve fraude [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm).
+
+
+<figure class="figura"><img src="assets/figura-21.png" alt="Figura 21 - Expansão de Ocupados em 12 Meses"><figcaption><strong>Figura 21 – Expansão de Ocupados em 12 Meses.</strong> <em>Fonte: [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> O crescimento de vagas formais superou a expansão da informalidade.</figcaption></figure>
+
+
+A diferença de rendimentos reflete a estrutura do mercado: enquanto o formal possui estabilidade e encargos, o informal enfrenta maior volatilidade, embora possa apresentar crescimentos pontuais mais agressivos em crises ou transições [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+
+
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Com Vínculo (CLT)</h4><ul><li>Rendimento Médio: R$ 3.777,50</li><li>Jornada Máxima: 44 horas</li></ul></div><div class="diag-coluna"><h4>Sem Vínculo (Informal)</h4><ul><li>Rendimento Médio: R$ 15,00/hora</li><li>Jornada: Variável</li></ul></div></div><figcaption><strong>Figura 22 – Perfil de Rendimento e Jornada.</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html); [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).</em> Comparativo entre a média anual de rendimento CLT e o rendimento-hora da população preta/parda informal.</figcaption></figure>
+
+
+
+<figure class="figura"><img src="assets/figura-23.png" alt="Figura 23 - Distribuição de Teletrabalho por Vínculo"><figcaption><strong>Figura 23 – Distribuição de Teletrabalho por Vínculo.</strong> <em>Fonte: [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em> A taxa de teletrabalho é ligeiramente superior entre trabalhadores formais do setor privado.</figcaption></figure>
+
+
+**Em termos simples:** Quem trabalha sem carteira não é necessariamente um "empresário"; muitos são apenas empregados sem registro. Embora a renda de quem é informal tenha crescido mais rápido recentemente, a estabilidade e a rede de proteção (como o FGTS) continuam sendo exclusivas de quem tem a carteira assinada [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf); [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
 
 Fontes consultadas:
 * [(CONSULTOR JURÍDICO, 2026a)](https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/)
+* [(IMPRENSA, 2026l)](https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/14/quando-comeca-a-valer-o-fim-da-escala-6x1.ghtml)
+* [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm)
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
 * [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)
-* [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm)
-* [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/)
-* [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)
-* [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm)
+* [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf)
+* [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf)
 * [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
+* [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)
+* [(BRASIL, EC 132/2023)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm)
+* [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)
+* [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/)
 
 ## 8. MEI e trabalho informal
 
-O Microempreendedor Individual (MEI) é regido por normas que estabelecem um tratamento diferenciado e favorecido para microempresas e empresas de pequeno porte [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Este regime visa simplificar a apuração e o recolhimento de impostos e contribuições da União, Estados, Distrito Federal e Municípios por meio de um regime único de arrecadação [(BRASIL, LC 123/2006, art. 1º, I)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+O Microempreendedor Individual (MEI) é um regime simplificado de formalização para trabalhadores autônomos [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A formalização permite a emissão de notas fiscais via portal e oferece autonomia de horário [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). O MEI está dispensado de apresentar a Relação Anual de Informações Sociais (Rais) e de declarar ausência de fato gerador para a Caixa Econômica Federal para emissão de Certidão de Regularidade Fiscal perante o FGTS [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-A formalização como MEI oferece a dispensa de diversas obrigações acessórias, como a apresentação da Relação Anual de Informações Sociais (Rais) e a declaração de ausência de fato gerador para a Caixa Econômica Federal para emissão da Certidão de Regularidade Fiscal perante o FGTS [(BRASIL, LC 123/2006, § 13, II e III)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+A tributação do MEI ocorre por meio do Documento de Arrecadação do Simples Nacional (DAS), com custo mensal fixo e baixo [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Em janeiro de 2026, a composição do DAS para o MEI geral é de R$ 81,05 de INSS, R$ 5,00 de ISS e R$ 1,00 de ICMS [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3). Para o transportador autônomo de cargas, o valor do INSS é de R$ 194,52 [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3).
 
-No âmbito previdenciário, o MEI está integrado ao Regime Geral de Previdência Social (RGPS), que assegura a manutenção do beneficiário em casos de incapacidade, idade avançada, tempo de serviço, encargos familiares e morte [(BRASIL, LEI 8.213/1991, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). O RGPS garante a cobertura de quase todas as situações previstas na lei, com exceção do desemprego involuntário e da aposentadoria por tempo de contribuição para o trabalhador do MEI, a menos que haja complementação da contribuição previdenciária [(BRASIL, LC 123/2006, art. 82, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
-
-O inadimplemento do recolhimento das contribuições previstas para o MEI resulta na não contagem da competência em atraso para fins de carência na obtenção de benefícios [(BRASIL, LC 123/2006, § 15)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
-
-O trabalho informal caracteriza-se pela ausência de vínculo empregatício e de formalização previdenciária. O trabalhador autônomo, por exemplo, é a pessoa física que exerce atividade econômica por conta própria, com fins lucrativos ou não [(BRASIL, LEI 8.213/1991, art. 11, IV, b)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Outra categoria é o trabalhador avulso, que presta serviços a diversas empresas sem vínculo empregatício [(BRASIL, LEI 8.213/1991, art. 11, VI)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
-
-Em termos de composição do emprego, a participação do vínculo com carteira sobre o total de ocupados no setor privado recuou de 75,8% em 2012 para 74,5% em 2026, sinalizando leve avanço da informalidade ao longo do período [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
-
-<figure class="figura"><img src="assets/figura-33.png" alt="Figura 24 - Taxa de Formalização do Emprego (2012-2026)"><figcaption><strong>Figura 24 – Taxa de Formalização do Emprego (2012-2026).</strong> <em>Fonte: [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Participação do emprego com carteira sobre o total (com + sem carteira), em médias anuais (Ipeadata/PNAD Contínua).</figcaption></figure>
-
-Os riscos da informalidade incluem a falta de cobertura previdenciária automática. Enquanto o segurado empregado tem a empresa responsável por medidas de proteção e segurança da saúde [(BRASIL, LEI 8.213/1991, art. 19, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm), o informal assume integralmente os riscos de sua atividade.
-
-<div class="tabela-legenda"><strong>Tabela 26 – Comparativo de Cobertura Previdenciária.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em></div>
-| Situação | Cobertura RGPS | Observação [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+<div class="tabela-legenda"><strong>Tabela 25 – Composição do DAS MEI 2026.</strong> <em>Fonte: [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3).</em></div>
+| Componente | Valor Mensal (Geral) | Valor Mensal (Transportador) |
 | :--- | :--- | :--- |
-| MEI | Sim [(BRASIL, LC 123/2006, art. 82)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Exceto desemprego involuntário [(BRASIL, LC 123/2006, art. 82, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
-| Informal | Não [(BRASIL, LEI 8.213/1991, art. 11)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Depende de contribuição facultativa ou autônoma [(BRASIL, LEI 8.213/1991, art. 11)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) |
-| CLT | Sim [(BRASIL, LEI 8.213/1991, art. 11)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Cobertura integral via empregador [(BRASIL, LEI 8.213/1991, art. 11)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) |
+| INSS | R$ 81,05 | R$ 194,52 |
+| ISS | R$ 5,00 | R$ 5,00 |
+| ICMS | R$ 1,00 | R$ 1,00 |
 
-Existem categorias específicas, como o segurado especial, que engloba o pescador artesanal e o produtor rural em regime de economia familiar [(BRASIL, LEI 8.213/1991, art. 11, VII)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Estes podem exercer atividade remunerada em períodos de entressafra ou defeso por até 120 dias no ano civil sem perder a condição de segurado especial [(BRASIL, LEI 8.213/1991, art. 11, § 9º, III)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+O limite de faturamento anual atual é de R$ 81 mil [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas). No entanto, o PLP 186/2026, aprovado pelo Senado, prevê a elevação do teto para R$ 110 mil em 2027 e R$ 140 mil em 2028 [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas). O projeto também amplia a contratação de empregados de um para até dois e permite o perdão de débitos com a União [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas).
 
-<figure class="figura"><img src="assets/figura-15.png" alt="Figura 25 - Limite de Dias de Atividade Remunerada do Segurado Especial"><figcaption><strong>Figura 25 – Limite de Dias de Atividade Remunerada do Segurado Especial.</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> Divisão do ano civil: até 120 dias de atividade remunerada mantêm a condição de segurado especial; nos demais 245 dias, a atividade não pode ser remunerada.</figcaption></figure>
+A formalização garante a cobertura da Previdência Social para situações de incapacidade, idade avançada, encargos familiares e morte [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). O MEI tem acesso a benefícios como auxílio-doença e aposentadoria, exceto a aposentadoria por tempo de contribuição, a menos que realize a complementação da contribuição previdenciária [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). A inadimplência do DAS resulta na não contagem da competência para fins de carência de benefícios [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>MEI Formalizado</h4><ul><li>CNPJ ativo e DAS mensal com INSS embutido [(BRASIL, LC 123/2006, art. 18 a 20)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)</li><li>Acesso a aposentadoria, auxílio-doença e pensão [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Pode ter até 1 empregado, dentro do limite de faturamento</li></ul></div><div class="diag-coluna"><h4>Trabalho Informal</h4><ul><li>Sem CNPJ, sem registro e sem FGTS [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Previdência apenas com contribuição facultativa ou autônoma</li><li>Sem direitos trabalhistas e com risco de penalidades</li></ul></div></div><figcaption><strong>Figura 26 – MEI Formalizado x Trabalho Informal.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) e [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> A formalização como MEI abre acesso a benefícios previdenciários que o trabalho informal não garante.</figcaption></figure>
+O trabalho informal caracteriza-se pela ausência de registro e de contribuições previdenciárias [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). O trabalhador informal assume riscos elevados, como a falta de acesso ao FGTS e a ausência de proteção contra desemprego involuntário [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Programas como o Seguro Defeso protegem trabalhadores em períodos de entressafra ou defeso por até 120 dias no ano civil [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
-**Em termos simples:** O MEI é um jeito fácil de tirar o CNPJ e pagar o INSS para ter direito a aposentadoria e auxílio-doença, mas ele não dá direito ao seguro-desemprego [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). Já quem trabalha na informalidade (sem registro ou CNPJ) corre o risco de ficar sem nenhum amparo do governo se ficar doente ou envelhecer, a menos que pague o INSS por conta própria [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+Ao optar pelo MEI em vez do vínculo CLT, o trabalhador ganha menor burocracia e custo tributário reduzido, mas perde direitos como FGTS, aviso prévio, horas extras, adicional noturno, multa rescisória e estabilidade [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
+
+
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>MEI</h4><ul><li>Custo fixo baixo (DAS)</li><li>Aposentadoria e Auxílio-doença</li><li>Sem FGTS</li><li>Sem Seguro-Desemprego</li></ul></div><div class="diag-coluna"><h4>Informal</h4><ul><li>Custo zero imediato</li><li>Sem proteção previdenciária</li><li>Sem FGTS</li><li>Sem Seguro-Desemprego</li></ul></div><div class="diag-coluna"><h4>CLT</h4><ul><li>Custo alto para empregador</li><li>Aposentadoria e Auxílio-doença</li><li>Possui FGTS</li><li>Possui Seguro-Desemprego</li></ul></div></div><figcaption><strong>Figura 24 – Comparativo de Direitos e Custos: MEI x Informal x CLT.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em> O MEI oferece um meio termo entre a precariedade do informal e o custo da CLT.</figcaption></figure>
+
+
+A reforma tributária, instituída pela LC 214/2025, cria o Imposto sobre Bens e Serviços (IBS) e a Contribuição Social sobre Bens e Serviços (CBS) [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). Esses tributos são regidos pelo princípio da neutralidade para evitar distorções na organização da atividade econômica [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
+
+
+<figure class="figura"><img src="assets/figura-25.png" alt="Figura 25 - Evolução do Teto de Faturamento MEI (Proposta PLP 186/2026)"><figcaption><strong>Figura 25 – Evolução do Teto de Faturamento MEI (Proposta PLP 186/2026).</strong> <em>Fonte: [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas).</em> A proposta prevê um aumento gradual do limite de receita bruta anual até 2028.</figcaption></figure>
+
+
+<div class="tabela-legenda"><strong>Tabela 26 – Comparativo MEI Formalizado x Trabalho Informal.</strong> <em>Fonte: [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em></div>
+| Critério | MEI Formalizado | Trabalho Informal |
+| :--- | :--- | :--- |
+| Contribuição | Mensal via DAS (R$ 87,05 a R$ 196,52) | Inexistente |
+| Previdência | Acesso a auxílio-doença e aposentadoria | Sem cobertura (salvo facultativo) |
+| Emissão de Nota | Permitida via portal | Não permitida |
+| Risco Principal | Inadimplência do DAS | Ausência total de amparo social |
+
+**Em termos simples:** O MEI é um jeito barato e fácil de sair da informalidade, pagando um valor fixo por mês para ter direito a aposentadoria e auxílio-doença, mas sem ter as garantias da carteira assinada, como o FGTS [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3).
 
 Fontes consultadas:
-* [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
-* [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
-* [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm)
+* [(BRASIL, LC 123/2006, 2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
+* [(BRASIL, LEI 8.213/1991, 1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
+* [(BRASIL, LEI 8.212/1991, 1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm)
+* [(BRASIL, LC 214/2025, 2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)
+* [(BRASIL, 2026a, 2026)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3)
+* [(SENADO FEDERAL, 2026c, 2026)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas)
 
 ## 9. Previdência e tributos do trabalhador
 
-O custeio da previdência social é organizado para assegurar a manutenção do beneficiário em casos de incapacidade, idade avançada, tempo de serviço, encargos familiares, prisão ou morte [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). A Seguridade Social fundamenta-se nos princípios de universalidade de cobertura, uniformidade de benefícios entre populações urbanas e rurais, e equidade na participação do custeio [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
+A Seguridade Social brasileira é composta por um conjunto integrado de ações destinadas a assegurar direitos relativos à saúde, previdência e assistência social [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). A Previdência Social, especificamente, opera mediante contribuição para garantir a manutenção do beneficiário em casos de incapacidade, idade avançada, tempo de serviço, desemprego involuntário, encargos familiares, prisão ou morte [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
-Para o trabalhador CLT (empregado), inclusive o doméstico e o trabalhador avulso, a contribuição é calculada aplicando-se alíquotas sobre o salário-de-contribuição mensal [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). No caso do empregado doméstico, o recolhimento ocorre via documento único, abrangendo a contribuição do segurado (8% a 11%), a contribuição patronal (8%), o seguro contra acidentes de trabalho (0,8%) e o FGTS (8%) [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
+### 9.1 Regimes de Contribuição Previdenciária
 
-Para os segurados contribuintes individuais, como o trabalhador autônomo, empresário e facultativos, a alíquota de contribuição é de 20% sobre o salário-de-contribuição mensal [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). Estes profissionais são obrigados a recolher a contribuição por iniciativa própria até o dia quinze do mês seguinte ao da competência [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
+O custeio da previdência varia conforme a categoria do trabalhador. Para empregados, empregados domésticos e trabalhadores avulsos, a contribuição é calculada sobre o salário-de-contribuição mensal [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). No caso do trabalhador doméstico, o recolhimento é feito via documento único, incluindo a parte do segurado (8% a 11%), a contribuição patronal (8%), o seguro contra acidentes de trabalho (0,8%) e o FGTS (8%) [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
 
-O Microempreendedor Individual (MEI) possui regras específicas de contribuição, podendo optar por complementações previdenciárias para fins de aposentadoria por tempo de contribuição [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). O MEI é dispensado de apresentar a Relação Anual de Informações Sociais (Rais) e de declarar ausência de fato gerador para a Caixa Econômica Federal para emissão de Certidão de Regularidade Fiscal perante o FGTS [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+Para contribuintes individuais, como empresários, trabalhadores autônomos e segurados facultativos, a alíquota geral é de 20% sobre o salário-de-contribuição mensal [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). O Microempreendedor Individual (MEI) possui regime diferenciado, podendo a inadimplência do recolhimento resultar na não contagem da competência para fins de carência [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-No setor rural, o trabalhador contratado por pequeno prazo tem sua contribuição fixada em 8% sobre o respectivo salário-de-contribuição [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm).
-
-<div class="tabela-legenda"><strong>Tabela 27 – Alíquotas de Contribuição Previdenciária.</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em></div>
-| Categoria de Segurado | Alíquota (%) | Base de Cálculo |
+<div class="tabela-legenda"><strong>Tabela 27 – Alíquotas de Contribuição para Empregados (Histórico).</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em></div>
+| Faixa de Salário-de-contribuição | Alíquota (%) | Fonte |
 | :--- | :--- | :--- |
-| Empregado (até 249,80) | 8,00% [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Salário-de-contribuição [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
-| Empregado (249,81 a 416,33) | 9,00% [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Salário-de-contribuição [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
-| Empregado (416,34 a 832,66) | 11,00% [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Salário-de-contribuição [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
-| Autônomo/Empresário/Facultativo | 20,00% [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Salário-de-contribuição [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
+| Até R$ 324,45 | 8,00% | [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
+| De R$ 324,46 até R$ 540,75 | 9,00% | [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
+| De R$ 540,76 até R$ 1.081,50 | 11,00% | [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
 
-<figure class="figura"><img src="assets/figura-17.png" alt="Figura 27 - Comparativo de Alíquotas Previdenciárias"><figcaption><strong>Figura 27 – Comparativo de Alíquotas Previdenciárias.</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em> Valores baseados nas faixas de contribuição da Lei 8.212/1991</figcaption></figure>
 
-A carência para aposentadorias por idade, tempo de serviço e especial para segurados urbanos e rurais variou historicamente conforme o ano de entrada do requerimento [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Por exemplo, em 1991 a exigência era de 60 meses, subindo gradualmente até atingir 180 meses em 2011, patamar mantido até hoje [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+<figure class="figura"><img src="assets/figura-26.png" alt="Figura 26 - Alíquotas de Contribuição Previdenciária por Categoria"><figcaption><strong>Figura 26 – Alíquotas de Contribuição Previdenciária por Categoria.</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em> Trabalhadores autônomos e empresários possuem a maior alíquota de contribuição individual.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-18.png" alt="Figura 28 - Evolução da Carência Exigida para Aposentadoria (1991-2026)"><figcaption><strong>Figura 28 – Evolução da Carência Exigida para Aposentadoria (1991-2026).</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> Série anual da tabela do art. 142 da Lei 8.213/1991 (meses de carência exigidos por ano de entrada do requerimento): de 60 meses em 1991 a 180 meses desde 2011, patamar vigente até 2026.</figcaption></figure>
 
-**Em termos simples:** O INSS é como uma poupança obrigatória. Quem trabalha com carteira assinada tem um desconto no salário que varia entre 8% e 11% [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). Quem trabalha por conta própria (autônomo) ou é empresário paga geralmente 20% [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). O MEI tem um valor reduzido e simplificado no boleto mensal [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+### 9.2 Carência e Regras de Transição
+
+A carência para aposentadorias por idade, tempo de serviço e especial evoluiu progressivamente para segurados urbanos e rurais [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). O período de carência iniciou-se em 60 meses em 1991 e aumentou anualmente até atingir o patamar de 180 meses em 2012 [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
+
+
+<figure class="figura"><img src="assets/figura-27.png" alt="Figura 27 - Evolução da Carência para Aposentadorias (1991-2012)"><figcaption><strong>Figura 27 – Evolução da Carência para Aposentadorias (1991-2012).</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> A carência exigida subiu gradualmente até estabilizar em 180 meses a partir de 2012.</figcaption></figure>
+
+
+A Reforma da Previdência (EC 103/2019) alterou o sistema previdenciário, estabelecendo novas regras de transição e disposições transitórias para a concessão de aposentadorias [(BRASIL, EC 103/2019)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm).
+
+### 9.3 Reforma Tributária e Novos Impostos
+
+A Reforma Tributária, instituída pela EC 132/2023 e regulamentada pela LC 214/2025, introduz a substituição de tributos por modelos de valor agregado [(BRASIL, EC 132/2023)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm). Foram criados o Imposto sobre Bens e Serviços (IBS), de competência compartilhada entre Estados, Municípios e Distrito Federal, e a Contribuição Social sobre Bens e Serviços (CBS), de competência da União [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
+
+Esses novos tributos são regidos pelo princípio da neutralidade, visando evitar a distorção de decisões de consumo e de organização da atividade econômica [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). O IBS e a CBS incidem sobre operações com bens (móveis, imóveis, materiais ou imateriais) e serviços [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
+
+**Em termos simples:** O INSS é o seguro do trabalhador; quem é CLT tem o desconto direto no salário, enquanto autônomos e MEIs pagam boletos próprios para garantir a aposentadoria [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm). A Reforma Tributária está trocando vários impostos antigos por dois novos (IBS e CBS) para simplificar a cobrança sobre produtos e serviços [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
 
 Fontes consultadas:
-* [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm)
-* [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
-* [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
-* [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm)
-* [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm)
+* [(BRASIL, LEI 8.212/1991, 2026)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm)
+* [(BRASIL, LEI 8.213/1991, 2026)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
+* [(BRASIL, LC 123/2006, 2026)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
+* [(BRASIL, LC 150/2015, 2026)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm)
+* [(BRASIL, EC 103/2019, 2026)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm)
+* [(BRASIL, EC 132/2023, 2026)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm)
+* [(BRASIL, LC 214/2025, 2026)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)
 
 ## 10. Trabalho por plataformas digitais
 
-O trabalho mediado por plataformas digitais no Brasil abrange serviços de transporte individual de passageiros e de entrega de bens e mercadorias [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660). Esse modelo é caracterizado por assimetrias nas relações de comunicação, onde a interface do aplicativo pode limitar a interação entre a empresa e o trabalhador, gerando desigualdade de informações [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596).
+O trabalho por meio de plataformas digitais no Brasil abrange atividades de transporte de passageiros, entrega de mercadorias e prestação de serviços gerais ou profissionais [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). Em 2025, aproximadamente 2 milhões de pessoas utilizaram esses aplicativos como principal fonte de renda, o que representa cerca de 1,9% do total de ocupados no país [(IBGE, 2026g)](https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/brasil-tem-2-milhoes-de-trabalhadores-por-aplicativos-diz-ibge).
 
-No setor de transporte de passageiros, o volume de trabalhadores atingiu a marca de 1,2 milhão de pessoas no país [(IBGE, 2026e)](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47966-trabalhadores-de-transporte-de-passageiros-por-aplicativo-chegam-a-1-2-milhao-de-pessoas-no-pais). Paralelamente, a população ocupada total no Brasil apresenta crescimento constante, chegando a 102,5 milhões de pessoas em 2026 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+### 10.1 Perfil dos Trabalhadores e Tipos de Atividade
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Transporte por App</h4><ul><li>1,2 milhão de trabalhadores (transporte de passageiros por aplicativo)</li></ul></div><div class="diag-coluna"><h4>Ocupação Total Brasil</h4><ul><li>102,5 milhões de pessoas ocupadas em 2026</li></ul></div></div><figcaption><strong>Figura 29 – Volume de Trabalhadores por Categoria.</strong> <em>Fonte: [(IBGE, 2026e)](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47966-trabalhadores-de-transporte-de-passageiros-por-aplicativo-chegam-a-1-2-milhao-de-pessoas-no-pais) e [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Comparativo entre motoristas de app e a população ocupada total do país; os motoristas de app equivalem a cerca de 1,2% dos ocupados.</figcaption></figure>
+A distribuição dos trabalhadores por tipo de plataforma revela a predominância do setor de transporte e entregas [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). O perfil sociodemográfico indica a maioria masculina, com 51,2% de homens e 48,8% de mulheres [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). Quanto à escolaridade, 61,3% possuem nível médio completo ou superior incompleto [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
 
-A situação jurídica em 2026 é marcada por proposições legislativas que buscam regulamentar a atividade. O PL 05253/2026 dispõe sobre as relações de trabalho aplicáveis a quem presta serviços de transporte remunerado privado ou de coleta e entrega de mercadorias via plataformas [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660). Outra medida focada na infraestrutura é o PL 2911/2025, que estabelece a obrigatoriedade de disponibilização de pontos de apoio para trabalhadores de entrega e transporte individual [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925).
+A categoria do emprego é predominantemente de conta própria, abrangendo 77,1% dos plataformizados [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). No que tange à atividade econômica, o setor de transporte, armazenagem e correio concentra 67,3% desses trabalhadores [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
 
-<div class="tabela-legenda"><strong>Tabela 28 – Ciclo de trabalho em plataformas digitais.</strong> <em>Fonte: [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596) e [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660).</em> Etapas da prestação de serviço por aplicativos.</div>
-
-| Etapa | Descrição | Fonte |
+<div class="tabela-legenda"><strong>Tabela 28 – Distribuição de trabalhadores por tipo de aplicativo.</strong> <em>Fonte: [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em></div>
+| Tipo de Aplicativo | Volume de Trabalhadores | Percentual |
 | :--- | :--- | :--- |
-| 1 | Acesso à interface do aplicativo | [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596) |
-| 2 | Recebimento de demanda via algoritmo | [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596) |
-| 3 | Execução do serviço de transporte ou entrega | [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) |
-| 4 | Remuneração mediada pela plataforma | [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) |
+| Transporte particular de passageiros (exceto táxi) | 704 mil pessoas | 47,2% |
+| Entrega de comida e produtos | 589 mil pessoas | 39,5% |
+| Táxi | 207 mil pessoas | 13,9% |
+| Serviços gerais ou profissionais | 197 mil pessoas | 13,2% |
 
-Os direitos em discussão envolvem a proteção social e a transparência. A contribuição para a Seguridade Social e o FGTS são pontos centrais, especialmente para aqueles que operam sob regimes simplificados como o Simples Nacional e MEI [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A transparência remuneratória, embora detalhada para empresas com mais de 100 empregados na Lei 14.611/2023, serve de referência para a discussão de critérios de pagamento justos [(BRASIL, LEI 14.611/2023)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm).
 
-<div class="tabela-legenda"><strong>Tabela 29 – Impactos das Propostas Legislativas.</strong> <em>Fonte: [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) e [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660).</em></div>
-| Proposta | Beneficiados | Prejudicados/Impactados | Objetivo Principal |
-| :--- | :--- | :--- | :--- |
-| PL 2911/2025 | Trabalhadores (apoio físico) [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) | Plataformas (custo de infraestrutura) [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) | Pontos de apoio [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) |
-| PL 05253/2026 | Trabalhadores (segurança jurídica) [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) | Plataformas (novas obrigações) [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) | Regulamentação da relação [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) |
+<figure class="figura"><img src="assets/figura-28.png" alt="Figura 28 - Volume de Trabalhadores por Tipo de Plataforma"><figcaption><strong>Figura 28 – Volume de Trabalhadores por Tipo de Plataforma.</strong> <em>Fonte: [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em> O transporte particular de passageiros é a atividade plataformizada mais comum no Brasil.</figcaption></figure>
 
-A renda média mensal real do trabalho no Brasil, que engloba diversas categorias, apresentou tendência de alta, atingindo R$ 3.777,50 em 2026 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-**Em termos simples:** O trabalho por aplicativos (como Uber e iFood) cresceu muito, com mais de 1 milhão de motoristas [(IBGE, 2026e)](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47966-trabalhadores-de-transporte-de-passageiros-por-aplicativo-chegam-a-1-2-milhao-de-pessoas-no-pais). Atualmente, existem projetos de lei para criar locais de descanso para esses trabalhadores [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) e regras mais claras sobre como eles devem ser contratados e pagos [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660).
+### 10.2 Dependência e Ciclo de Trabalho
+
+Existe disparidade no grau de autonomia conforme a atividade [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). Trabalhadores de transporte e entrega apresentam maior dependência da plataforma, enquanto prestadores de serviços gerais possuem maior autonomia [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). A dependência manifesta-se no controle de valores, clientes e prazos [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
+
+<div class="tabela-legenda"><strong>Tabela 29 – Ciclo de trabalho e controle da plataforma.</strong> <em>Fonte: [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em></div>
+| Etapa do Ciclo | Controle da Plataforma (Transporte Particular) | Controle da Plataforma (Serviços Gerais) |
+| :--- | :--- | :--- |
+| 1. Definição de Valor | 97,3% determinado pelo app | 31,9% determinado pelo app |
+| 2. Atribuição de Cliente | 87,2% determinado pelo app | 35,8% determinado pelo app |
+| 3. Prazo de Execução | 67,5% determinado pelo app | 27,8% determinado pelo app |
+| 4. Forma de Pagamento | 82,9% determinado pelo app | 28,8% determinado pelo app |
+
+### 10.3 Condições Econômicas e Previdenciárias
+
+O rendimento médio mensal real habitual dos plataformizados é de R$ 1.784,00, valor inferior aos R$ 2.210,00 recebidos por trabalhadores não plataformizados [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). A jornada de trabalho dos plataformizados tende a ser mais extensa [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
+
+A proteção social é limitada, com apenas 22,3% dos trabalhadores plataformizados contribuindo para institutos de previdência, contra 39,8% dos não plataformizados [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
+
+**Em termos simples:** A maioria das pessoas que trabalham por apps no Brasil são homens que fazem transporte de passageiros ou entregas, ganhando menos que quem não usa apps e contribuindo muito pouco para a aposentadoria [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
 
 Fontes consultadas:
-* [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925)
-* [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660)
-* [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)
-* [(IBGE, 2026e)](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47966-trabalhadores-de-transporte-de-passageiros-por-aplicativo-chegam-a-1-2-milhao-de-pessoas-no-pais)
-* [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596)
-* [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
-* [(BRASIL, LEI 14.611/2023)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm)
+* [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf)
+* [(IBGE, 2026g)](https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/brasil-tem-2-milhoes-de-trabalhadores-por-aplicativos-diz-ibge)
 
 ## 11. Mudanças em tramitação no Congresso em 2026
 
-O cenário legislativo de 2026 apresenta propostas focadas na regulação de novas modalidades de trabalho e na redução da carga horária semanal [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml). As discussões concentram-se na proteção de trabalhadores de aplicativos e na alteração de escalas de descanso [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660).
+O cenário legislativo de 2026 apresenta movimentações significativas para a alteração da jornada de trabalho e a regulação de novas modalidades de contratação [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml). O Congresso Nacional processa propostas que visam a redução de carga horária, a ampliação de direitos para microempreendedores e a regulação de plataformas digitais [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas).
 
-### 11.1 Proposições em Tramitação
-
-As principais matérias em discussão no Congresso Nacional buscam mitigar assimetrias de informação e precariedade no trabalho mediado por plataformas [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596).
-
-<div class="tabela-legenda"><strong>Tabela 30 – Proposições Legislativas sobre Trabalho.</strong> <em>Fonte: [(CAMARA DOS DEPUTADOS, 2026z; CAMARA DOS DEPUTADOS, 2026a)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660).</em></div>
-| Proposição | Ementa | Situação | Impacto |
+<div class="tabela-legenda"><strong>Tabela 30 – Principais proposições legislativas sobre trabalho.</strong> <em>Fonte: [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas), [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925), [(SENADO FEDERAL, 2026g)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042).</em></div>
+| Proposição | Ementa | Situação | Apoio/Prejuízo [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) |
 | :--- | :--- | :--- | :--- |
-| PL 05253/2026 | Relações de trabalho para transporte e entrega via plataformas digitais [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) | Em tramitação [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) | Regula vínculo de motoristas e entregadores [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660) |
-| PL 2911/2025 | Obrigatoriedade de pontos de apoio para trabalhadores de plataformas [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) | Em tramitação [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) | Beneficia entregadores e motoristas privados [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) |
+| PEC Escala 6x1 | Fim da escala 6x1 e redução da jornada para 40h semanais [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) | Promulgada pelo Congresso [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais) | Apoio: Trabalhadores e Governo Lula; Prejuízo: Setores com alta dependência de escalas extensas [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) |
+| PLP 186/2026 | Aumento do teto para MEI e perdão de dívidas [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas) | Aprovada no Senado, segue para sanção [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas) | Apoio: Microempreendedores Individuais; Prejuízo: Arrecadação imediata via dívidas perdoadas [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas) |
+| PL 2911/2025 | Obrigatoriedade de pontos de apoio para trabalhadores de apps [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) | Em tramitação [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) | Apoio: Entregadores e motoristas de apps; Prejuízo: Empresas de plataformas digitais [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) |
+| REQ 00044/2026 | Audiência pública sobre regulação e segurança no trabalho por apps [(SENADO FEDERAL, 2026g)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042) | Requerimento de debate [(SENADO FEDERAL, 2026g)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042) | Apoio: Defensores da regulação do trabalho digital [(SENADO FEDERAL, 2026g)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042) |
 
-Além das proposições legislativas, há denúncias junto ao Ministério do Trabalho sobre a prática de "pejotização" e reduções salariais em instituições de ensino [(EXTRA CLASSE, 2026a)](https://www.extraclasse.org.br/movimento/2026/10/sindicatos-denunciam-ulbra-ao-ministerio-do-trabalho-por-pejotizacao-e-reducoes-salariais/).
+### 11.1 Tramitação da PEC do Fim da Escala 6x1
 
-<div class="tabela-legenda"><strong>Tabela 31 – Tramitação da PEC do Fim da Escala 6x1.</strong> <em>Fonte: [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml).</em> Processo de transição da escala 6x1 para a jornada de 40h.</div>
+A Proposta de Emenda à Constituição (PEC) percorreu etapas de votação rigorosas para alterar a estrutura constitucional da jornada de trabalho [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml).
 
-| Etapa | Ato | Observação |
+<div class="tabela-legenda"><strong>Tabela 31 – Tramitacao da PEC do Fim da Escala 6x1.</strong> <em>Fonte: [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml), [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).</em></div>
+| Etapa | Descrição | Resultado [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925) |
 | :--- | :--- | :--- |
-| 1 | Aprovação no Senado | PEC do fim da escala 6x1 e redução para 40h [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) |
-| 2 | Nova configuração | Dois dias de folga por semana [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) |
-| 3 | Implementação | Redução da jornada semanal para 40 horas [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) |
+| 1. Votação no Senado | Aprovação em dois turnos com 75 votos a favor e um contra [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) | Aprovada [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) |
+| 2. Votação na Câmara | Aprovação em dois turnos da jornada máxima de 40 horas [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais) | Aprovada [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais) |
+| 3. Promulgação | Ato final do Congresso para entrada em vigor da Emenda [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais) | Promulgada [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais) |
 
-### 11.2 Cenário Pós-Aprovação no Senado: Escala 6x1 e Jornada de 40 Horas
+### 11.2 Cenário Pós-Aprovação: Jornada e Folgas
 
-Com a aprovação da PEC no Senado, ocorre a extinção da escala 6x1, garantindo que o trabalhador tenha dois dias de folga por semana [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml). A medida reduz a jornada de trabalho de 44 horas para 40 horas semanais [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml).
+Com a promulgação da Emenda, a jornada de trabalho brasileira passa por uma transição gradual para a redução de 44 para 40 horas semanais [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).
 
 **Funcionamento da Jornada e Intervalos**
-A nova jornada estabelece o limite de 40 horas semanais [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml). Para a compensação de dias e horas, a legislação vigente prevê que o excesso de horas de um dia pode ser compensado em outro, mediante acordo escrito [(BRASIL, LC 150/2015, § 4º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm). No regime de tempo parcial, a jornada não deve exceder 30 horas semanais sem horas suplementares, ou 26 horas com possibilidade de até seis horas extras [(BRASIL, LEI 13.467/2017, art. 58-A)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+A nova regra estabelece o limite de até 8 horas diárias de trabalho [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais). A compensação de horários e a redução da jornada podem ocorrer via acordo ou convenção coletiva de trabalho [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).
 
-**Proporcionalidade Salarial e Direitos**
-O salário para regimes de jornada reduzida ou tempo parcial deve ser proporcional à jornada cumprida em relação aos empregados de tempo integral na mesma função [(BRASIL, 1943, § 1º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). As horas suplementares à jornada normal são pagas com acréscimo de 50% sobre o salário-hora normal [(BRASIL, LEI 13.467/2017, § 3º)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
+**Vigência e Prazos de Entrada em Vigor**
+A implementação ocorre em etapas [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais):
+*   **Em 2 meses:** Início imediato dos dois dias de descanso remunerado por semana e redução da carga horária para 42 horas semanais [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).
+*   **Em 14 meses:** Atingimento da jornada final de 40 horas por semana [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).
 
-**Impactos Práticos**
-*   **Para o Trabalhador:** Passa a ter direito a dois dias de descanso semanal [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml) e redução da carga horária total [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml).
-*   **Para o Empregador:** Necessidade de reorganização das escalas de trabalho para adequação ao limite de 40 horas e garantia de duas folgas [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml).
+**Proporcionalidade e Direitos**
+A mudança garante dois dias de folga remunerada, preferencialmente aos domingos, sem que haja diminuição do salário do trabalhador [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml). Durante o primeiro ano de transição, acordos coletivos podem ampliar a duração diária além de 8 horas para viabilizar a carga de 42 horas, desde que respeitados os dois dias de repouso [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).
 
-**Em termos simples:** O Senado aprovou o fim daquela escala onde a pessoa trabalha seis dias para folgar um; agora, todo trabalhador terá dois dias de folga na semana e a carga horária caiu de 44 para 40 horas [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml).
+**Em termos simples:** A escala 6x1 acabou. Agora, quem é CLT terá dois dias de folga por semana sem ganhar menos por isso [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml). A carga horária cai para 42 horas em dois meses e chega a 40 horas em pouco mais de um ano [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais).
+
+### 11.3 Atuação do STF em 2026
+
+O Supremo Tribunal Federal exerce papel decisivo na definição de vínculos empregatícios e na regulação de serviços por aplicativos [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/).
+
+**Pejotização e Processos na Primeira Instância**
+O ministro Gilmar Mendes retirou a suspensão de processos que discutem a "pejotização" — contratação de pessoa jurídica para serviços que poderiam ser empregatícios — na primeira instância e nos TRTs [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/). Na prática, isso permite que denúncias e ações trabalhistas voltem a tramitar e produzir provas nos juízos de primeiro grau e tribunais regionais [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts). A suspensão retornará apenas após o julgamento pelos TRTs, momento em que os casos aguardarão a tese vinculante final do STF [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts).
+
+**Pauta do Plenário de Outubro de 2026**
+O Plenário analisa, através do RE 1506410, a validade de lei de Minas Gerais sobre o fretamento de ônibus por aplicativos (DESTAQUES DA PAUTA DO PLENARIO EM OUTUBRO DE 2026 (APLICATIVOS E FRETAMENTO), 2026). O ponto central é a obrigatoriedade da modalidade "circuito fechado", exigindo que a lista de passageiros seja a mesma durante todo o trajeto, afetando diretamente o modelo de negócio de empresas como a Buser (DESTAQUES DA PAUTA DO PLENARIO EM OUTUBRO DE 2026 (APLICATIVOS E FRETAMENTO), 2026). [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925)
+
+**Em termos simples:** O STF liberou que processos sobre "pejotização" voltem a andar nos tribunais menores para evitar que as ações fiquem paradas por anos [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts). Além disso, o tribunal está decidindo se empresas de ônibus por app podem mudar os passageiros durante a viagem ou se devem manter a mesma lista do início ao fim (DESTAQUES DA PAUTA DO PLENARIO EM OUTUBRO DE 2026 (APLICATIVOS E FRETAMENTO), 2026).
 
 Fontes consultadas:
-* [(IMPRENSA, 2026f)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml)
-* [(CAMARA DOS DEPUTADOS, 2026z)](https://www25.senado.leg.br/web/atividade/materias/-/materia/175660)
-* [(CAMARA DOS DEPUTADOS, 2026a)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925)
-* [(REBECHI, 2026)](https://doi.org/10.1590/1982-0259.2022.e82596)
-* [(EXTRA CLASSE, 2026a)](https://www.extraclasse.org.br/movimento/2026/10/sindicatos-denunciam-ulbra-ao-ministerio-do-trabalho-por-pejotizacao-e-reducoes-salariais/)
-* [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm)
-* [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm)
-* [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
+* [(STF NOTICIAS, 2026)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/)
+* (DESTAQUES DA PAUTA DO PLENARIO EM OUTUBRO DE 2026 (APLICATIVOS E FRETAMENTO), 2026)
+* [(IMPRENSA, 2026a)](https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts)
+* [(IMPRENSA, 2026d)](https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml)
+* [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas)
+* [(CAMARA DOS DEPUTADOS, 2026w)](https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais)
+* [(CAMARA DOS DEPUTADOS, 2026b)](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925)
+* [(SENADO FEDERAL, 2026g)](https://www25.senado.leg.br/web/atividade/materias/-/materia/174042)
 
 ## 12. Riscos e como se proteger
 
-A gestão de riscos no ambiente laboral varia drasticamente conforme a modalidade de contratação, impactando a responsabilidade sobre a saúde e a segurança do trabalhador. [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho)
+A gestão de riscos no ambiente de trabalho divide-se entre a proteção da integridade física do trabalhador e a segurança jurídica da empresa. Para o empregado CLT, a Constituição Federal garante a redução dos riscos inerentes ao trabalho através de normas de saúde, higiene e segurança [(BRASIL, 1988, art. 7º, XXII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
-### 12.1 Saúde, Segurança e Equipamentos de Proteção
+### 12.1 Saúde e Segurança do Trabalho
+A empresa possui a obrigação legal de fornecer, gratuitamente, Equipamentos de Proteção Individual (EPI) adequados ao risco e em perfeito estado de conservação [(BRASIL, 1943, art. 166)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O uso desses equipamentos é obrigatório para os empregados [(BRASIL, 1943, art. 165)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-No regime CLT, a empresa detém a responsabilidade legal integral pela segurança do trabalhador. É obrigação do empregador fornecer, gratuitamente, Equipamentos de Proteção Individual (EPI) adequados ao risco e em perfeito estado de conservação [(BRASIL, 1943, art. 166)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). O uso desses equipamentos, como óculos, luvas, máscaras e capacetes, é obrigatório para o empregado [(BRASIL, 1943, art. 165)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+A legislação define que a empresa é a responsável direta pela adoção de medidas coletivas e individuais de proteção [(BRASIL, LEI 8.213/1991, art. 19, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). O descumprimento das normas de segurança e higiene do trabalho é classificado como contravenção penal, punível com multa [(BRASIL, LEI 8.213/1991, art. 19, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Além disso, o empregador deve prestar informações detalhadas sobre os riscos da operação e dos produtos manipulados [(BRASIL, LEI 8.213/1991, art. 19, § 3º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
-A legislação estabelece que a empresa deve adotar medidas coletivas e individuais de proteção à saúde [(BRASIL, LEI 8.213/1991, art. 19, § 1º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). O descumprimento das normas de segurança e higiene do trabalho é classificado como contravenção penal, punível com multa [(BRASIL, LEI 8.213/1991, art. 19, § 2º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Além disso, a Constituição Federal prevê a redução dos riscos inerentes ao trabalho por meio de normas de saúde e higiene [(BRASIL, 1988, art. 7º, XXII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+### 12.2 Riscos Jurídicos e Fraudes
+A "pejotização" ou a migração para MEI pode acarretar riscos de fraude trabalhista. O risco para a empresa reside na caracterização do vínculo empregatício, onde o empregador assume os riscos da atividade econômica e dirige a prestação pessoal de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). 
 
-Para trabalhadores em plataformas digitais, observa-se a "corrosão" da legislação protetora, resultando em condições de trabalho exaustivas e riscos à saúde [(ENGELMANN, 2026)](https://openalex.org/W7215382595).
+Para o trabalhador, a precarização é um risco latente, especialmente em plataformas digitais, onde se observa a corrosão da legislação protetora e a imposição de condições exaustivas [(ENGELMANN, 2026)](https://openalex.org/W7215382595). No âmbito civil, a autonomia patrimonial da pessoa jurídica serve para segregar riscos [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm), mas pode ser desconsiderada pelo juiz em casos de abuso da personalidade jurídica, desvio de finalidade ou confusão patrimonial [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
-<div class="tabela-legenda"><strong>Tabela 32 – Comparativo de Riscos e Proteções.</strong> <em>Fonte: [(BRASIL, 1943; BRASIL, LEI 8.213/1991; BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em></div>
-| Elemento | CLT (Empregado) | PJ/MEI (Prestador) [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho) |
+### 12.3 Fiscalização e Proteção
+A fiscalização do trabalho é exercida por Auditores-Fiscais do Trabalho [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). O Ministério do Trabalho e Emprego (MTE) disponibiliza canais para denúncias, solicitações e sugestões [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). Para microempresas e empresas de pequeno porte, a fiscalização trabalhista e de segurança deve ter natureza prioritariamente orientadora, desde que o risco seja compatível [(BRASIL, LC 123/2006, art. 55)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+
+O papel dos sindicatos inclui o acompanhamento do cumprimento das normas de segurança [(BRASIL, LEI 8.213/1991, art. 19, § 4º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Além disso, podem existir Comissões de Conciliação Prévia para tentar resolver demandas trabalhistas antes de chegarem à Justiça [(BRASIL, 1943, art. 625-D)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+
+<div class="tabela-legenda"><strong>Tabela 32 – Riscos e Proteções por Modalidade.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm); [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).</em></div>
+| Modalidade | Principais Riscos | Mecanismos de Proteção |
 | :--- | :--- | :--- |
-| Fornecimento de EPI | Obrigação gratuita da empresa [(BRASIL, 1943, art. 166)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Responsabilidade do prestador/empresa [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
-| Risco Econômico | Assumido pelo empregador [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Alocado na pessoa jurídica [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
-| Fiscalização | Foco em normas de segurança e saúde [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho) | Natureza prioritariamente orientadora [(BRASIL, LC 123/2006, art. 55)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
-| Seguro Acidente | A cargo do empregador [(BRASIL, 1988, art. 7º, XXVIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | Responsabilidade do segurado/empresa [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
+| **Trabalhador CLT** | Acidentes e doenças profissionais [(BRASIL, LEI 8.213/1991, art. 20)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Fornecimento gratuito de EPIs [(BRASIL, 1943, art. 166)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| **Empresa (Empregador)** | Condenação por vínculo ou multas [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Cumprimento de NRs e normas de higiene [(BRASIL, 1988, art. 7º, XXII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| **PJ / MEI** | Perda de direitos trabalhistas [(ENGELMANN, 2026)](https://openalex.org/W7215382595) | Segregação de riscos via autonomia patrimonial [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Riscos de Quem Atua como PJ/MEI</h4><ul><li>EPI e segurança por conta própria [(BRASIL, 1943, art. 166)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Sem seguro-acidente e sem FGTS [(BRASIL, 1988, art. 7º, XXVIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Bens pessoais respondem em caso de fraude [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)</li></ul></div><div class="diag-coluna"><h4>Proteções de Quem é Empregado CLT</h4><ul><li>EPI gratuito e obrigatório do empregador [(BRASIL, 1943, art. 166)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Seguro-acidente e responsabilidade do empregador [(BRASIL, LEI 8.213/1991, art. 19)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Fiscalização pela Auditoria-Fiscal do Trabalho [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm)</li></ul></div></div><figcaption><strong>Figura 30 – Riscos do Prestador x Proteções do Empregado.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) e [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).</em> O prestador assume os riscos que o empregado CLT tem cobertos pela lei.</figcaption></figure>
 
-### 12.2 Fiscalização e Fraude Trabalhista
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Obrigação da Empresa</h4><ul><li>Fornecimento gratuito de EPIs [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Informar riscos da operação [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Adotar medidas coletivas de proteção [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li></ul></div><div class="diag-coluna"><h4>Obrigação do Empregado</h4><ul><li>Uso obrigatório dos EPIs fornecidos [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Observar normas de higiene e segurança [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div></div><figcaption><strong>Figura 29 – Responsabilidades de Segurança e Saúde.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm); [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> A lei distribui a responsabilidade: a empresa provê os meios e o trabalhador deve utilizá-los.</figcaption></figure>
 
-A fiscalização do trabalho é exercida pelo Ministério do Trabalho e Emprego (MTE), que atua na aplicação da lei e no recebimento de denúncias [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho). Para microempresas e empresas de pequeno porte (MEI), a fiscalização trabalhista e de segurança deve ter natureza prioritariamente orientadora, desde que o risco seja compatível [(BRASIL, LC 123/2006, art. 55)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
-
-No caso de fraudes ou desvios, a Justiça do Trabalho pode ser acionada. Se houver abuso da personalidade jurídica, caracterizado por desvio de finalidade ou confusão patrimonial, o juiz pode desconsiderar a PJ para estender obrigações aos bens particulares de sócios ou administradores [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
-
-### 12.3 Papel do Sindicato e Conciliação
-
-Os sindicatos possuem papel ativo no acompanhamento do cumprimento das normas de segurança e higiene [(BRASIL, LEI 8.213/1991, art. 19, § 4º)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Além disso, podem ser instituídas Comissões de Conciliação Prévia no âmbito do sindicato ou da empresa para resolver demandas trabalhistas antes de chegarem à justiça [(BRASIL, 1943, art. 625-D)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 ### 12.4 Checklist para Migração de Modalidade
 
-Para quem deseja migrar entre CLT e PJ/MEI, deve-se observar:
-*   **De CLT para PJ:** Ciência de que a autonomia patrimonial da PJ serve para segregar riscos [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
-*   **De PJ para CLT:** Recuperação do direito ao FGTS (8% da remuneração) [(BRASIL, LEI 8.036/1990, art. 15)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm).
-*   **Segurança:** Verificação de quem proverá os EPIs e a responsabilidade por acidentes [(BRASIL, 1943, art. 166; BRASIL, LEI 8.213/1991, art. 19)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
+<div class="tabela-legenda"><strong>Tabela 33 – Passos para Migração Segura.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm); [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em></div>
+| Passo | Ação Necessária | Objetivo |
+| :--- | :--- | :--- |
+| 1 | Analisar subordinação e controle [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Evitar fraude de vínculo empregatício |
+| 2 | Verificar enquadramento no Simples/MEI [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Garantir a legalidade tributária da PJ |
+| 3 | Definir segregação patrimonial [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Proteger bens pessoais de riscos do negócio |
+| 4 | Estabelecer contrato de prestação de serviços [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Formalizar a relação civil e a autonomia |
 
-**Em termos simples:** Quem é CLT tem a empresa obrigada a dar equipamentos de segurança de graça e a pagar o seguro se houver acidente [(BRASIL, 1943, art. 166; BRASIL, 1988, art. 7º, XXVIII)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Já quem é PJ assume seus próprios riscos e custos, mas a lei pode "quebrar" a empresa para pegar os bens do dono se houver fraude [(BRASIL, LEI 10.406/2002, art. 50)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
+**Em termos simples:** Se você é CLT, a empresa tem que te dar os equipamentos de segurança de graça e você é obrigado a usar [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Se você vira PJ, perde essas proteções automáticas, mas ganha a chance de separar seu dinheiro pessoal do dinheiro da empresa para não pagar dívidas do negócio com seus próprios bens [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
 Fontes consultadas:
 * [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho)
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-* [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
 * [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
+* [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)
 * [(ENGELMANN, 2026)](https://openalex.org/W7215382595)
 * [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)
 * [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)
-* [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm)
+* [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm)
 
 ## 13. Quadro resumo e conclusões
 
-A análise das modalidades de trabalho revela estruturas distintas de risco e governança. No emprego formal, o empregador assume os riscos da atividade econômica ao admitir e dirigir a prestação de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Já no cooperativismo de trabalho, a gestão, os direitos e os deveres dos sócios são deliberados em Assembleias Gerais, com rateio de prejuízos ou sobras líquidas decidido coletivamente [(BRASIL, LEI 12.690/2012, art. 1º, § 1º e § 2º)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
+A estrutura do mercado de trabalho brasileiro apresenta modalidades distintas com diferentes níveis de proteção e custos. O emprego formal é regido pela CLT, onde o empregador assume os riscos da atividade econômica [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Já o regime de Microempreendedor Individual (MEI) oferece tratamento diferenciado no recolhimento de impostos e obrigações previdenciárias [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-Para microempresas e empresas de pequeno porte, existe um tratamento diferenciado no recolhimento de impostos e no cumprimento de obrigações trabalhistas e previdenciárias [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+<div class="tabela-legenda"><strong>Tabela 34 – Comparativo de Modalidades de Trabalho.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm), [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em></div>
+| Modalidade | Direitos Principais | Custos/Risco | Indicação de Uso | Fonte |
+| :--- | :--- | :--- | :--- | :--- |
+| Emprego CLT | Proteção legal integral [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Risco do empregador [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Vínculo estável e subordinado [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| MEI / Autônomo | Regime único de arrecadação [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Risco do próprio trabalhador [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Pequenos negócios e serviços [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Plataformas | Renda variável por demanda [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf) | Ausência de vínculo formal [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf) | Complemento de renda ou transição [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf) | [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf) |
 
-<div class="tabela-legenda"><strong>Tabela 33 – Comparativo de Modalidades de Trabalho.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm), [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).</em></div>
-| Modalidade | Direitos/Deveres | Risco | Indicação de Uso |
-| :--- | :--- | :--- | :--- |
-| Emprego Formal | Salário, férias e admissão anotados em CTPS [(BRASIL, 1943, art. 423)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Assumido pelo empregador [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Relações de subordinação e dependência [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Cooperativismo | Deliberados em Assembleia Geral [(BRASIL, LEI 12.690/2012, art. 1º)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) | Rateio de prejuízos entre sócios [(BRASIL, LEI 12.690/2012, art. 1º, § 1º)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) | Trabalho associativo e autogestão [(BRASIL, LEI 12.690/2012, art. 1º)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) |
-| MEI/Simples | Regime único de arrecadação tributária [(BRASIL, LC 123/2006, art. 1º, I)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Do empreendedor individual [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Pequenos negócios e prestadores de serviços [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+### 13.1 Cenários e Tendências até 2030
 
-### 13.1 Cenários Futuros e Tendências até 2030
+O cenário futuro é impactado por mudanças legislativas e tecnológicas. A reforma tributária, via Lei Complementar 214/2025, altera a forma de pagamento de saldos a recolher e a transferência de parcelas excedentes ao contribuinte [(BRASIL, LC 214/2025, art. 29)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). No âmbito das jornadas, a discussão sobre o fim da escala 6x1 pode alterar a dinâmica de contratação para trabalhadores domésticos e patrões [(EXTRA ONLINE, 2026b)](https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml).
 
-O mercado de trabalho apresenta forte dinamismo, com a população ocupada em crescimento [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). O emprego formal tem expandido a uma taxa média de 3,6%, superando o setor informal, que cresce 1,5% [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
+A tecnologia continua a moldar a ocupação. O teletrabalho é predominante em setores de informação, comunicação e atividades financeiras, atingindo 25,8% dos trabalhadores desse grupo [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). Em contrapartida, a modalidade é nula para trabalhadores domésticos devido à natureza da atividade [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
 
-No campo tributário, a Reforma Tributária introduz o IBS e a CBS, impactando a aquisição de bens imateriais e serviços de fornecedores no exterior [(BRASIL, LC 214/2025, art. 29)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). As plataformas digitais, mesmo residentes no exterior, são citadas no contexto da nova regulamentação tributária [(BRASIL, LC 214/2025, art. 29, IX)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
+### 13.2 Panorama Final de Indicadores
 
-Quanto à jornada, a discussão sobre o fim da escala 6x1 pode alterar a dinâmica de contratação, especialmente para empregados domésticos e seus patrões [(EXTRA ONLINE, 2026)](https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml).
+O mercado de trabalho demonstra recuperação, com a taxa de desocupação atingindo patamares historicamente baixos em 2026 [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). No entanto, a subutilização da força de trabalho permanece elevada para mulheres de cor ou raça preta ou parda [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
-Em perspectiva, a taxa de desocupação recuou de 7,4% em 2012, passando pelo pico de 13,8% em 2020, até 5,8% em 2026 [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-<figure class="figura"><img src="assets/figura-31.png" alt="Figura 31 - Taxa de Desocupação (2012-2026)"><figcaption><strong>Figura 31 – Taxa de Desocupação (2012-2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Taxa de desocupação (PNAD Contínua); pico da pandemia em 2020 e menor patamar da série em 2026.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-30.png" alt="Figura 30 - Taxa de Desocupação em Perspectiva"><figcaption><strong>Figura 30 – Taxa de Desocupação em Perspectiva.</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> A taxa de desocupação em 2026 é a menor entre os anos comparados, superando inclusive o nível de 2012.</figcaption></figure>
 
-### 13.2 Conclusões Objetivas
 
-Está estabelecido que o emprego formal garante a anotação de salário e férias na CTPS [(BRASIL, 1943, art. 423)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), enquanto o cooperativismo exige quóruns específicos para instalação de assembleias, variando de 2/3 a 20% dos sócios dependendo da convocação [(BRASIL, LEI 12.690/2012, art. 1º, § 3º)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
+A análise de rendimentos indica que a pobreza extrema recuou, com a proporção de pessoas com rendimento inferior a US$ 2,15 PPC caindo de 6,6% em 2012 para 3,5% em 2024 [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). Esse movimento é acompanhado por um aumento no nível de ocupação de idosos, que chegou a 24,4% em 2024, o maior nível da série [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
-As mudanças tributárias via IBS e CBS afetarão a apropriação de créditos para adquirentes sujeitos ao regime regular [(BRASIL, LC 214/2025, art. 29, VII)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). O setor de tecnologia e serviços digitais é um dos mais impactados pelas novas regras de importação de serviços e responsabilidade de plataformas [(BRASIL, LC 214/2025, art. 29)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm).
 
-O rendimento médio mensal real subiu de R$ 3.191,30 em 2012 para R$ 3.777,50 em 2026, alta real de cerca de 18,4% [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Proporção 2012</h4><ul><li>6,6%</li></ul></div><div class="diag-coluna"><h4>Proporção 2024</h4><ul><li>3,5%</li></ul></div></div><figcaption><strong>Figura 31 – Rendimento Domiciliar Per Capita (Extrema Pobreza).</strong> <em>Fonte: [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).</em> Houve uma redução significativa na proporção de pessoas em situação de extrema pobreza entre 2012 e 2024.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-32.png" alt="Figura 32 - Rendimento Médio Mensal Real do Trabalho Principal (2012-2026)"><figcaption><strong>Figura 32 – Rendimento Médio Mensal Real do Trabalho Principal (2012-2026).</strong> <em>Fonte: [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> Rendimento médio real do trabalho principal (PNAD Contínua); alta acumulada de cerca de 18% em termos reais.</figcaption></figure>
 
-**Em termos simples:** O emprego com carteira assinada é o mais seguro para o trabalhador, pois o patrão assume os riscos do negócio [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). Já nas cooperativas, os sócios dividem os lucros e os prejuízos [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm). Para o futuro, a reforma dos impostos vai mudar como empresas e plataformas digitais pagam tributos [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm), e há a possibilidade de a jornada de trabalho 6x1 acabar [(EXTRA ONLINE, 2026)](https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml).
+**Em termos simples:** O mercado de trabalho melhorou, com menos desemprego agora do que em 2012 ou 2020 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Enquanto a CLT oferece mais segurança, o MEI e os aplicativos são caminhos para quem quer empreender ou ganhar um extra, mas com menos garantias [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
 
 Fontes consultadas:
+* [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf)
+* [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf)
+* [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)
+* [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/)
 * [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)
-* [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm)
 * [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)
 * [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm)
-* [(IPEA, 2026)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/)
-* [(IBGE, 2026a)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)
-* [(EXTRA ONLINE, 2026)](https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml)
+* [(EXTRA ONLINE, 2026b)](https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml)
 
 ## Apêndice A - Legislação citada e o que ela muda na prática
 
-<div class="tabela-legenda"><strong>Tabela 34 – Legislacao consultada e efeitos praticos.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em></div>
+<div class="tabela-legenda"><strong>Tabela 35 – Legislacao consultada e efeitos praticos.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em></div>
 | Norma | O que regula | Quem protege ou obriga | Onde encontrar |
 | :--- | :--- | :--- | :--- |
-| CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Regras gerais de trabalho e emprego | Empregados e empregadores | [Link](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
-| Constituição Federal [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | Direitos fundamentais do trabalhador | Todos os trabalhadores | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
-| Reforma da Previdência [(BRASIL, EC 103/2019)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm) | Novas regras de aposentadoria | Segurados do INSS | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm) |
-| Reforma Tributária [(BRASIL, EC 132/2023)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm) | Mudanças nos impostos nacionais | Contribuintes e empresas | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm) |
-| Simples Nacional e MEI [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Regimes tributários para pequenas empresas | Micro e pequenas empresas | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
-| Trabalho Doméstico [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Direitos de quem trabalha em residências | Empregados domésticos | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
-| Regras Reforma Tributária [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) | Detalhes sobre IBS, CBS e Simples | Empresas e governo | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) |
-| Aprendizado Jovem [(BRASIL, LEI 10.097/2000)](https://www.planalto.gov.br/ccivil_03/leis/l10097.htm) | Formação profissional de jovens | Jovens aprendizes | [Link](https://www.planalto.gov.br/ccivil_03/leis/l10097.htm) |
-| Código Civil [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Contratos de prestação de serviço | Prestadores de serviço autônomos | [Link](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
-| Auditoria-Fiscal [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) | Fiscalização do trabalho e seguridade | Empresas e trabalhadores | [Link](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) |
-| Estágio [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) | Regras para estudantes em formação | Estagiários e instituições | [Link](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) |
-| Igualdade Racial [(BRASIL, LEI 12.288/2010)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm) | Combate ao racismo e promoção da igualdade | População negra | [Link](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm) |
-| Trabalho Portuário [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm) | Regras para trabalhadores de portos | Trabalhadores portuários avulsos | [Link](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm) |
-| Cooperativismo [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) | Organização de cooperativas de trabalho | Cooperados | [Link](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) |
-| Reforma Trabalhista [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Atualização de normas da CLT | Empregados e empregadores | [Link](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
+| CLT [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) | Regras gerais de trabalho, carteira assinada e direitos básicos | Trabalhadores e empregadores urbanos | [Link](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm) |
+| Constituição Federal [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) | Direitos fundamentais e garantias trabalhistas básicas | Todos os trabalhadores brasileiros | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
+| DAS MEI 2026 [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3) | Valores de impostos mensais do Microempreendedor Individual | MEIs | [Link](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3) |
+| Reforma da Previdência [(BRASIL, EC 103/2019)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm) | Novas regras para aposentadoria e pensões | Segurados do INSS e servidores | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm) |
+| Novo Regime Fiscal [(BRASIL, EC 126/2022)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc126.htm) | Teto de gastos públicos até 2029 | Governo Federal | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc126.htm) |
+| Reforma Tributária [(BRASIL, EC 132/2023)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm) | Mudanças na forma de cobrar impostos no Brasil | Empresas e consumidores | [Link](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm) |
+| Simples Nacional e MEI [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) | Regras para micro e pequenas empresas e MEI | Pequenos empresários | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
+| Trabalho Doméstico [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) | Direitos de quem trabalha em residências | Empregados domésticos e patrões | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) |
+| Regime Fiscal Sustentável [(BRASIL, LC 200/2023)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp200.htm) | Limites de despesas e regras do salário mínimo | Governo Federal | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp200.htm) |
+| Regras Reforma Tributária [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) | Detalhes sobre IBS, CBS e Simples Nacional | Empresas e contribuintes | [Link](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) |
+| Aprendizagem [(BRASIL, LEI 10.097/2000)](https://www.planalto.gov.br/ccivil_03/leis/l10097.htm) | Formação profissional para jovens | Jovens aprendizes e empresas | [Link](https://www.planalto.gov.br/ccivil_03/leis/l10097.htm) |
+| Código Civil [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) | Contratos de prestação de serviços (sem vínculo) | Prestadores de serviço e contratantes | [Link](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm) |
+| Auditoria-Fiscal [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) | Fiscalização do trabalho e seguridade social | Auditores e empresas | [Link](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm) |
+| Estágio [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) | Regras para estudantes em estágio | Estagiários, escolas e empresas | [Link](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm) |
+| Igualdade Racial [(BRASIL, LEI 12.288/2010)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm) | Combate ao racismo e promoção da igualdade | População negra e instituições | [Link](https://www.planalto.gov.br/ccivil_03/leis/l12288.htm) |
+| Trabalhador Portuário [(BRASIL, LEI 12.545/2011)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm) | Organização de quem trabalha em portos | Trabalhadores avulsos e sindicatos | [Link](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm) |
+| Cooperativismo [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) | Regras para cooperativas de trabalho | Cooperados e cooperativas | [Link](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm) |
+| Reforma Trabalhista [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) | Atualizações nas regras de contratação e acordos | Empregados e empregadores | [Link](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm) |
 | Prevenção ao Assédio [(BRASIL, LEI 14.457/2022)](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14457.htm) | Combate à violência e assédio no trabalho | Todos os trabalhadores | [Link](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14457.htm) |
-| Igualdade Salarial [(BRASIL, LEI 14.611/2023)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm) | Salários iguais para homens e mulheres | Mulheres e empresas | [Link](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm) |
-| Trabalho Rural [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) | Regras para quem trabalha no campo | Trabalhadores rurais | [Link](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) |
-| Trabalho Temporário [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) | Contratações por tempo determinado | Trabalhadores temporários | [Link](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) |
-| FGTS [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) | Fundo de Garantia do Tempo de Serviço | Trabalhadores com carteira assinada | [Link](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) |
-| Seguridade Social [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Organização do custeio da previdência | Contribuintes e governo | [Link](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
+| Igualdade Salarial [(BRASIL, LEI 14.611/2023)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm) | Salários iguais para homens e mulheres na mesma função | Mulheres e empresas | [Link](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm) |
+| Política Salário Mínimo [(BRASIL, LEI 14.663/2023)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm) | Cálculo do mínimo baseado no INPC e PIB | Trabalhadores brasileiros | [Link](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm) |
+| Regras BPC e Mínimo [(BRASIL, LEI 15.077/2024)](https://www12.senado.leg.br/noticias/materias/2024/12/30/sancionada-com-veto-lei-que-endurece-regras-do-bpc) | Regras para o Benefício de Prestação Continuada | Idosos e pessoas com deficiência | [Link](https://www12.senado.leg.br/noticias/materias/2024/12/30/sancionada-com-veto-lei-que-endurece-regras-do-bpc) |
+| Trabalho Rural [(BRASIL, LEI 5.889/1973)](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) | Regras específicas para quem trabalha no campo | Trabalhadores rurais e produtores | [Link](https://www.planalto.gov.br/ccivil_03/leis/l5889.htm) |
+| Trabalho Temporário [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) | Contratações por tempo determinado | Temporários e agências | [Link](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm) |
+| FGTS [(BRASIL, LEI 8.036/1990)](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) | Regras do Fundo de Garantia do Tempo de Serviço | Trabalhadores CLT | [Link](https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm) |
+| Seguridade Social [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) | Organização do financiamento da previdência | Contribuintes e governo | [Link](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
 | Benefícios Previdenciários [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) | Regras para auxílios e aposentadorias | Segurados do INSS | [Link](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm) |
-| Trabalho Voluntário [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) | Atividades sem remuneração | Voluntários e entidades | [Link](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) |
-| eSocial [(ESOCIAL, 2026)](https://www.esocial.gov.br/) | Digitalização de dados trabalhistas | Empresas e governo | [Link](https://www.esocial.gov.br/) |
+| Lucro Presumido [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm) | Forma de tributação para empresas | Pessoas jurídicas | [Link](https://planalto.gov.br/ccivil_03/leis/l9249.htm) |
+| Trabalho Voluntário [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) | Regras para quem trabalha sem remuneração | Voluntários e entidades | [Link](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm) |
 
-**Em termos simples:** Esta tabela mostra as leis que mandam no dia a dia do trabalho, desde quem limpa a casa até quem trabalha no porto ou no campo, e onde você pode ler cada uma delas [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
+**Em termos simples:** Esta tabela mostra as leis que mandam no dia a dia do trabalho, desde quem tem carteira assinada até quem é MEI ou estagiário, e onde você pode ler cada uma delas [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
 ## Referências
 
 Todas as fontes citadas neste relatório, em formato ABNT (NBR 6023):
 
-* BRASIL. Consolidacao das Leis do Trabalho (Decreto-Lei 5.452/1943). Disponível em: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm. Acesso em: 16 out. 2026.
-* BRASIL. Constituicao Federal 1988 - capitulos dos direitos trabalhistas. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 10.406/2002 - Codigo Civil (arts. 593 e seguintes: prestacao de servico). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 10.593/2002 - Auditoria-Fiscal do Trabalho e Seguridade Social. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 12.545/2011 - trabalhador portuario avulso e organizacao sindical. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 12.690/2012 - politica nacional de cooperativismo. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 13.467/2017 - reforma trabalhista. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 14.611/2023 - equalizacao salarial entre homens e mulheres. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 5.889/1973 - regulamenta o trabalho no campo. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l5889.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 6.019/1974 - trabalho temporario e empresas de trabalho temporario. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l6019.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 8.036/1990 - FGTS. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 8.212/1991 - organizacao da seguridade social. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 8.213/1991 - beneficios da previdencia social. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei 9.608/1998 - trabalho voluntario. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9608.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei Complementar 123/2006 - Simples Nacional e MEI. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei Complementar 150/2015 - regulamenta trabalho domestico (EC 72/2013). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm. Acesso em: 16 out. 2026.
-* BRASIL. Lei Complementar 214/2025 - regras da reforma tributaria (IBS, CBS, Simples). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm. Acesso em: 16 out. 2026.
-* CAMARA DOS DEPUTADOS. PL 05253/2026. Disponível em: https://www25.senado.leg.br/web/atividade/materias/-/materia/175660. Acesso em: 16 out. 2026.
-* CAMARA DOS DEPUTADOS. PL 2911/2025. Disponível em: https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925. Acesso em: 16 out. 2026.
-* CAMARA DOS DEPUTADOS. PL 3406/2026. Disponível em: https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2636199. Acesso em: 16 out. 2026.
-* CAMARA DOS DEPUTADOS. PLP 265/2026. Disponível em: https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2647294. Acesso em: 16 out. 2026.
-* CAMARA DOS DEPUTADOS. REQ 00044/2026. Disponível em: https://www25.senado.leg.br/web/atividade/materias/-/materia/174042. Acesso em: 16 out. 2026.
-* CONSULTOR JURÍDICO. Pejotização de médico com autonomia não configura fraude - Consultor Jurídico. Disponível em: https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/. Acesso em: 16 out. 2026.
-* ENGELMANN. A face oculta das plataformas digitais: Trabalhadores/as por aplicativo em condições de trabalho exaustivas e o riscos à saúde - Anais de Resumos Expandidos do Seminário Internacional de Pesquisas em Midiatização e Processos Sociais (2025). Disponível em: https://openalex.org/W7215382595. Acesso em: 16 out. 2026.
-* ESOCIAL. eSocial - sistema de declaracoes digitais trabalhistas e previdenciarias. Disponível em: https://www.esocial.gov.br/. Acesso em: 16 out. 2026.
-* EXTRA CLASSE. Sindicatos denunciam Ulbra ao Ministério do Trabalho por pejotização e reduções salariais - Extra Classe. Disponível em: https://www.extraclasse.org.br/movimento/2026/10/sindicatos-denunciam-ulbra-ao-ministerio-do-trabalho-por-pejotizacao-e-reducoes-salariais/. Acesso em: 16 out. 2026.
-* EXTRA ONLINE. Fim da escala 6x1: o que pode mudar para domésticas e patrões se a PEC for aprovada - Extra online. Disponível em: https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml. Acesso em: 16 out. 2026.
-* FONSECA. O Trabalho por Aplicativos Digitais no contexto da Quarta Revolução Industrial - Revista Direito em Debate (2022). Disponível em: https://doi.org/10.21527/2176-6622.2022.57.12136. Acesso em: 16 out. 2026.
-* IBGE. Brasil tem 2 milhões de trabalhadores por aplicativos, diz IBGE - Agência Brasil. Disponível em: https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/brasil-tem-2-milhoes-de-trabalhadores-por-aplicativos-diz-ibge. Acesso em: 16 out. 2026.
-* IBGE. IBGE - PNAD Continua: desocupacao, ocupacao e rendimento (series). Disponível em: https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html. Acesso em: 16 out. 2026.
-* IBGE. Pesquisa Nacional de Saúde (PNS) - saúde autoavaliada por situação ocupacional, renda e cor ou raça. Disponível em: https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html. Acesso em: 16 out. 2026.
-* IBGE. Trabalhadores de transporte de passageiros por aplicativo chegam a 1,2 milhão de pessoas no país - Agência de Notícias - IBGE. Disponível em: https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47966-trabalhadores-de-transporte-de-passageiros-por-aplicativo-chegam-a-1-2-milhao-de-pessoas-no-pais. Acesso em: 16 out. 2026.
-* IMPRENSA. Em vitória de Lula, Senado aprova PEC do fim da escala 6x1 e trabalhador terá dois dias de folga por semana - G1. Disponível em: https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml. Acesso em: 16 out. 2026.
-* IPEA. Ipea - Carta de Conjuntura, tema Mercado de Trabalho (rendimentos, formal e informal). Disponível em: https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/. Acesso em: 16 out. 2026.
-* KALIL. Trabalho Sob Demanda por Meio de Aplicativos - A Regulação do Trabalho via Plataformas Digitais (2020). Disponível em: https://doi.org/10.5151/9786555500295-03. Acesso em: 16 out. 2026.
-* MTE. MTE - Inspecao do Trabalho: fiscalizacao e aplicacao da lei. Disponível em: https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho. Acesso em: 16 out. 2026.
-* REBECHI. O trabalho mediado por plataformas digitais e assimetrias nas relações de comunicação - Revista Katálysis (2022). Disponível em: https://doi.org/10.1590/1982-0259.2022.e82596. Acesso em: 16 out. 2026.
-* STF NOTICIAS. STF retira suspensão de processos sobre ‘pejotização’ na primeira instância e nos TRTs - stf noticias. Disponível em: https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/. Acesso em: 16 out. 2026.
+* BRASIL. Consolidacao das Leis do Trabalho (Decreto-Lei 5.452/1943). Disponível em: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm. Acesso em: 18 out. 2026.
+* BRASIL. Constituicao Federal 1988 - capitulos dos direitos trabalhistas. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 18 out. 2026.
+* BRASIL. Emenda Constitucional 103/2019 - reforma da previdencia. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm. Acesso em: 18 out. 2026.
+* BRASIL. Emenda Constitucional 126/2022 - Novo Regime Fiscal e teto de gastos ate 2029. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc126.htm. Acesso em: 18 out. 2026.
+* BRASIL. Emenda Constitucional 132/2023 - reforma tributaria. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 10.097/2000 - aprendizado e formacao profissional do jovem. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l10097.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 10.406/2002 - Codigo Civil (arts. 593 e seguintes: prestacao de servico). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 10.593/2002 - Auditoria-Fiscal do Trabalho e Seguridade Social. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 11.788/2008 - estagio de educacao e formacao profissional. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 12.288/2010 - Estatuto da Igualdade Racial. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 12.545/2011 - trabalhador portuario avulso e organizacao sindical. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12545.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 12.690/2012 - politica nacional de cooperativismo. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 13.467/2017 - reforma trabalhista. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 14.457/2022 - medidas de prevencao a assedio e violencia no trabalho. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14457.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 14.611/2023 - equalizacao salarial entre homens e mulheres. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 14.663/2023 - politica nacional de salario minimo (INPC + PIB). Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 5.889/1973 - regulamenta o trabalho no campo. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l5889.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 6.019/1974 - trabalho temporario e empresas de trabalho temporario. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l6019.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 8.036/1990 - FGTS. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 8.212/1991 - organizacao da seguridade social. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 8.213/1991 - beneficios da previdencia social. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 9.249/1995 - tributacao da pessoa juridica (lucro presumido). Disponível em: https://planalto.gov.br/ccivil_03/leis/l9249.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei 9.608/1998 - trabalho voluntario. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9608.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei Complementar 123/2006 - Simples Nacional e MEI. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei Complementar 150/2015 - regulamenta trabalho domestico (EC 72/2013). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei Complementar 200/2023 - regime fiscal sustentavel, limites de despesa e salario minimo. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp200.htm. Acesso em: 18 out. 2026.
+* BRASIL. Lei Complementar 214/2025 - regras da reforma tributaria (IBS, CBS, Simples). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm. Acesso em: 18 out. 2026.
+* BRASIL. Receita Federal - DAS do MEI 2026 (valores janeiro). Disponível em: https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3. Acesso em: 18 out. 2026.
+* BRASIL. Senado - sancionada com veto a Lei 15.077/2024 (regras do salario minimo e BPC). Disponível em: https://www12.senado.leg.br/noticias/materias/2024/12/30/sancionada-com-veto-lei-que-endurece-regras-do-bpc. Acesso em: 18 out. 2026.
+* CAMARA DOS DEPUTADOS. Camara - Congresso promulga Emenda que acaba com escala 6x1 e estabelece jornada maxima de 40 horas. Disponível em: https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais. Acesso em: 18 out. 2026.
+* CAMARA DOS DEPUTADOS. PL 2911/2025. Disponível em: https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2525925. Acesso em: 18 out. 2026.
+* CONSULTOR JURÍDICO. Pejotização de médico com autonomia não configura fraude - Consultor Jurídico. Disponível em: https://conjur.com.br/2026-ago-12/sem-prova-de-subordinacao-pejotizacao-de-medicos-nao-configura-fraude/. Acesso em: 18 out. 2026.
+* ENGELMANN. A face oculta das plataformas digitais: Trabalhadores/as por aplicativo em condições de trabalho exaustivas e o riscos à saúde - Anais de Resumos Expandidos do Seminário Internacional de Pesquisas em Midiatização e Processos Sociais (2025). Disponível em: https://openalex.org/W7215382595. Acesso em: 18 out. 2026.
+* ESOCIAL. eSocial - sistema de declaracoes digitais trabalhistas e previdenciarias. Disponível em: https://www.esocial.gov.br/. Acesso em: 18 out. 2026.
+* EXTRA ONLINE. Fim da escala 6x1: o que pode mudar para domésticas e patrões se a PEC for aprovada - Extra online. Disponível em: https://extra.globo.com/economia/noticia/2026/10/fim-da-escala-6x1-o-que-pode-mudar-para-domesticas-e-patroes-se-a-pec-for-aprovada.ghtml. Acesso em: 18 out. 2026.
+* FONSECA. O Trabalho por Aplicativos Digitais no contexto da Quarta Revolução Industrial - Revista Direito em Debate (2022). Disponível em: https://doi.org/10.21527/2176-6622.2022.57.12136. Acesso em: 18 out. 2026.
+* IBGE. IBGE: Brasil tem 2 milhões de trabalhadores por aplicativos (agência Brasil). Disponível em: https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/brasil-tem-2-milhoes-de-trabalhadores-por-aplicativos-diz-ibge. Acesso em: 18 out. 2026.
+* IBGE. IBGE - PNAD Continua: desocupacao, ocupacao e rendimento (series). Disponível em: https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html. Acesso em: 18 out. 2026.
+* IBGE. IBGE - Sintese de Indicadores Sociais: condicoes de vida, informalidade e subutilizacao da forca de trabalho. Disponível em: https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf. Acesso em: 18 out. 2026.
+* IBGE. IBGE - Trabalho por plataformas digitais: perfil dos trabalhadores por aplicativo (sexo, idade, instrucao, cor ou raca). Disponível em: https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf. Acesso em: 18 out. 2026.
+* IBGE. Pesquisa Nacional de Saúde 2019 (PNS) - saúde autoavaliada por situação ocupacional, renda e cor ou raça. Disponível em: https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html. Acesso em: 18 out. 2026.
+* IMPRENSA. Quando começa a valer o fim da escala 6x1 (etapas até 40 horas). Disponível em: https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/14/quando-comeca-a-valer-o-fim-da-escala-6x1.ghtml. Acesso em: 18 out. 2026.
+* IMPRENSA. Senado aprova PEC do fim da escala 6x1 e envia à Câmara. Disponível em: https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml. Acesso em: 18 out. 2026.
+* IMPRENSA. STF retira suspensao de processos sobre pejotizacao na 1a instancia e nos TRTs. Disponível em: https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts. Acesso em: 18 out. 2026.
+* IPEA. Ipea - Carta de Conjuntura, tema Mercado de Trabalho (rendimentos, formal e informal). Disponível em: https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/. Acesso em: 18 out. 2026.
+* IPEA. Ipea - SERIES: formalidade, informalidade e salarios (PNAD Continua). Disponível em: https://www.ipeadata.gov.br/. Acesso em: 18 out. 2026.
+* MTE. MTE - Inspecao do Trabalho: fiscalizacao e aplicacao da lei. Disponível em: https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho. Acesso em: 18 out. 2026.
+* OLIVEIRA. Risco para depressão, ansiedade e alcoolismo entre trabalhadores informais - Revista Eletrônica de Enfermagem (2010). Disponível em: https://doi.org/10.5216/ree.v12i2.10354. Acesso em: 18 out. 2026.
+* SENADO FEDERAL. REQ 00044/2026. Disponível em: https://www25.senado.leg.br/web/atividade/materias/-/materia/174042. Acesso em: 18 out. 2026.
+* SENADO FEDERAL. Senado aprova aumento do teto para MEI e perdão de dívidas. Disponível em: https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas. Acesso em: 18 out. 2026.
+* SENADO FEDERAL. Senado - novo arcabouco fiscal (LC 200/2023) entra em vigencia. Disponível em: https://www12.senado.leg.br/noticias/materias/2023/08/31/novo-arcabouco-fiscal-entra-em-vigencia-no-brasil. Acesso em: 18 out. 2026.
+* SENADO FEDERAL. Senado - Orcamento 2026 aprova salario minimo de R$ 1.621 com limite do arcabouco fiscal. Disponível em: https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro. Acesso em: 18 out. 2026.
+* STF NOTICIAS. STF retira suspensão de processos sobre ‘pejotização’ na primeira instância e nos TRTs - stf noticias. Disponível em: https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/. Acesso em: 18 out. 2026.
 
 ## Anexo B – Graficos complementares (IBGE/PNAD/IPEA)
 
 Series historicas complementares coletadas diretamente das APIs oficiais do IBGE (SIDRA) e do Ipea (Series Temporais/Ipeadata), usadas para contextualizar formalidade, informalidade e rendimentos no mercado de trabalho brasileiro. Os dados replicam a PNAD Continua.
 
+<figure class="figura"><img src="assets/figura-31.png" alt="Figura 32 - Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 32 – Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Medias anuais das series PNADC12_ESPCC12 e PNADC12_ESPSC12.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-26.png" alt="Figura 33 - Taxa de Informalidade no Emprego Urbano (2015-2026)"><figcaption><strong>Figura 33 – Taxa de Informalidade no Emprego Urbano (2015-2026).</strong> <em>Fonte: (IPEA, Series Temporais/Ipeadata (IBGE/PNAD Continua)).</em> Media anual da serie PNADCT_TXINFORMUF, territorio Brasil.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-32.png" alt="Figura 33 - Taxa de Informalidade no Emprego Urbano (2015-2026)"><figcaption><strong>Figura 33 – Taxa de Informalidade no Emprego Urbano (2015-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Media anual da serie PNADCT_TXINFORMUF, territorio Brasil.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-28.png" alt="Figura 34 - Salario Minimo Real (2012-2026)"><figcaption><strong>Figura 34 – Salario Minimo Real (2012-2026).</strong> <em>Fonte: (IPEA, Series Temporais/Ipeadata (IBGE/PNAD Continua)).</em> Media anual da serie GAC12_SALMINRE12; valores reais.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-33.png" alt="Figura 34 - Rendimento Real Medio do Trabalho Principal: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 34 – Rendimento Real Medio do Trabalho Principal: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Medias anuais das series PNADC12_RRPHESPCC12 e PNADC12_RRPHESPSC12; valores reais.</figcaption></figure>
+
+<figure class="figura"><img src="assets/figura-34.png" alt="Figura 35 - Salario Minimo Real (2012-2026)"><figcaption><strong>Figura 35 – Salario Minimo Real (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Media anual da serie GAC12_SALMINRE12; valores reais.</figcaption></figure>

@@ -47,6 +47,17 @@ SYSTEM_PROMPT = (
     "   REGRA DOS NUMEROS EM DIAGRAMAS: nos itens de comparativo e nas tabelas, escreva "
     "numeros formatados em portugues com unidade (ex.: '1,2 milhao', 'R$ 3.777,50', "
     "'180 meses'); NAO escreva numeros crus como '1200000'.\n"
+    "   REGRA DE COBERTURA DAS SERIES: quando a fonte cobrir apenas poucos anos "
+    "(ex.: PNS 2013 e 2019, pesquisa quinquenal) ou houver anos sem dado na serie, "
+    "use nos graficos APENAS os anos existentes no contexto e explique NO TEXTO o "
+    "motivo da cobertura (periodicidade da pesquisa, edicoes disponiveis, coleta em "
+    "andamento); NUNCA invente valores, anos intermediarios ou interpolacoes.\n"
+    "   REGRA DE VALORES E PODER DE COMPRA: quando graficar salario minimo ou "
+    "rendimento medio, traga pelo menos um grafico com os valores EM REAIS (R$) do "
+    "contexto; se usar indice (ex.: 2012=100), explique a base na 'unidade' e na "
+    "'nota'. Sempre que houver inflacao (IPCA) no contexto, faca tambem a leitura "
+    "de poder de compra desses valores - NAO misture reais e indice no mesmo "
+    "grafico.\n"
     "6. Escreva TODO o texto com a acentuacao, ortografia e gramatica corretas do "
     "portugues do Brasil (secao, nao, direito, previdencia com acentos corretos). "
     "NUNCA entregue texto sem os acentos corretos."
@@ -103,9 +114,14 @@ def _access_date(date_str: str) -> str:
 
 def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text: str = "") -> str:
     if "ibge" in url.lower() or title.upper().startswith("IBGE"):
+        match_year = re.search(r"\b(19|20)\d{2}\b", title)
+        if match_year:
+            return f"IBGE, {match_year.group(0)}"
         return f"IBGE, {year}"
     if "ipea.gov.br" in url.lower() or re.match(r"^IPEA\b", title, re.IGNORECASE):
         return f"IPEA, {year}"
+    if "ebc.com.br" in url.lower():
+        return f"AGENCIA BRASIL, {year}"
     if "planalto.gov.br" in url or "gov.br" in url or "camara.leg.br" in url or "senado.leg.br" in url:
         for pattern, template in LAW_PATTERNS:
             match = pattern.search(title)
@@ -113,10 +129,14 @@ def _code_from_title(title: str, source_id: str, url: str, year: str, chunk_text
                 if "{0}" in template:
                     return f"BRASIL, {template.format(*match.groups())}"
                 return template
-        if source_id == "camara-proposicoes" or re.match(r"^(PL|PLP|PEC|PDL|PRS|REQ)\b", title):
-            return f"CAMARA DOS DEPUTADOS, {year}"
-        if source_id == "senado-materias":
+        if source_id == "senado-materias" or "senado.leg.br" in url:
             return f"SENADO FEDERAL, {year}"
+        if (
+            source_id == "camara-proposicoes"
+            or "camara.leg.br" in url
+            or re.match(r"^(PL|PLP|PEC|PDL|PRS|REQ)\b", title)
+        ):
+            return f"CAMARA DOS DEPUTADOS, {year}"
         if "esocial" in url.lower() or "esocial" in title.lower():
             return f"ESOCIAL, {year}"
         if "trabalho-e-emprego" in url or "Minist" in title or title.startswith("MTE"):
@@ -199,20 +219,57 @@ def link_citations(text: str, registry: dict[str, dict]) -> str:
     for entry in sorted(registry.values(), key=lambda e: -int(e.get("priority", 1))):
         by_norm.setdefault(_norm(entry["code"]), entry["url"])
 
-    def replace(match: re.Match) -> str:
-        inner = match.group(1).strip()
+    def link_one(inner: str) -> str:
         key = _norm(inner)
         for code_norm, url in by_norm.items():
             if key == code_norm or key.startswith(code_norm + " "):
                 return f"[({inner})]({url})"
-        return match.group(0)
+            if (
+                code_norm.startswith(key)
+                and len(code_norm) == len(key) + 1
+                and code_norm[-1].isalpha()
+            ):
+                return f"[({inner})]({url})"
+        return f"({inner})"
 
-    return re.sub(r"\(([^()]{3,80})\)", replace, text)
+    def split_label(label: str) -> str:
+        parts = [part.strip() for part in label.split(";")]
+        if len(parts) < 2:
+            return ""
+        linked = []
+        for part in parts:
+            if part.startswith("(") and part.endswith(")"):
+                part = part[1:-1].strip()
+            linked.append(link_one(part))
+        return "; ".join(linked)
+
+    pieces: list[tuple[bool, str]] = []
+    last = 0
+    for match in re.finditer(r"\[([^\]]+)\]\((https?://[^)]+)\)", text):
+        pieces.append((True, text[last : match.start()]))
+        label = match.group(1)
+        joined = split_label(label)
+        pieces.append((False, joined or match.group(0)))
+        last = match.end()
+    pieces.append((True, text[last:]))
+
+    def plain(match: re.Match) -> str:
+        inner = match.group(1).strip()
+        joined = split_label(inner)
+        if joined:
+            return joined
+        linked = link_one(inner)
+        return linked if linked != f"({inner})" else match.group(0)
+
+    return "".join(
+        re.sub(r"\(([^()]{3,80})\)", plain, piece) if is_text else piece
+        for is_text, piece in pieces
+    )
 
 
 def collect_used_sources(text: str) -> list[tuple[str, str]]:
     sources: list[tuple[str, str]] = []
-    for match in re.finditer(r"\[\(([^)]+)\)\((https?://[^)]+)\)", text):
+    for match in re.finditer(r"\[\(([^)]+)\)\]\((https?://[^)]+)\)", text):
         sources.append((match.group(1).strip(), match.group(2).strip()))
     for match in re.finditer(r"\[Fonte:\s*([^\]]+)\]\((https?://[^)]+)\)", text):
         sources.append((match.group(1).strip(), match.group(2).strip()))
@@ -259,8 +316,12 @@ def retrieve_for_section(section: dict, index: SearchIndex, settings: Settings) 
     )
     chunks = index.search_many(queries, top_k=top_k)
 
+    limit = 26 if section.get("structure") else 18
+    if len(section.get("must_include", [])) > 3:
+        limit = max(limit, 22)
     selected: list[dict] = [c for c in chunks]
     have = {(c["source_id"], c.get("chunk_index", 0)) for c in selected}
+    forced: list[dict] = []
     for source_id in section.get("must_include", []):
         found = [c for c in index.chunks if c["source_id"] == source_id]
         found.sort(key=lambda c: int(c.get("priority", 1)), reverse=True)
@@ -270,12 +331,13 @@ def retrieve_for_section(section: dict, index: SearchIndex, settings: Settings) 
             key = (c["source_id"], c.get("chunk_index", 0))
             if key in have:
                 continue
-            selected.append(c)
+            forced.append(c)
             have.add(key)
             added += 1
             if added >= quota:
                 break
-    limit = 26 if section.get("structure") else 18
+    if forced:
+        selected = selected[: max(limit - len(forced), 0)] + forced
     return selected[:limit]
 
 
@@ -354,7 +416,11 @@ def _section_prompt(
         "barra_empilhada, comparativo). Para sequencias e etapas use tabela Markdown, "
         "NAO diagramas de fluxo. No bloco use JSON com chaves: tipo, "
         "titulo, rotulos, valores, unidade, fonte, nota. Para comparativo use colunas: "
-        "[{titulo, itens:[]}].\n"
+        "[{titulo, itens:[]}] com NO MINIMO 2 colunas. Os campos 'valores' e "
+        "'series[].valores' devem conter APENAS numeros puros de JSON (ex.: 63.4, "
+        "1621, 3500.7) - NUNCA textos: converta qualquer numero formatado em "
+        "portugues ('R$ 1.621,00', '63,4%') para numero puro com ponto decimal e SEM "
+        "separador de milhar (1621, 63.4); 'rotulos' e 'colunas' sim aceitam texto.\n"
         + chart_rules_block
         + structure_block
         + "7. Termine com '**Em termos simples:**' e depois com a lista 'Fontes consultadas:' "
@@ -499,7 +565,9 @@ def validate_section(
         if spec["tipo"] == "comparativo":
             for col in spec.get("colunas", []):
                 for item in col.get("itens", []):
-                    if re.fullmatch(r"\d{4,}", str(item).strip()):
+                    raw = str(item).strip()
+                    eh_ano = bool(re.fullmatch(r"(19|20)\d{2}", raw))
+                    if re.fullmatch(r"\d{4,}", raw) and not eh_ano:
                         violations.append(
                             f"item numerico sem formatacao no comparativo {spec['titulo']!r}: "
                             f"{item!r} (escreva '1,2 milhao', '102,5 milhoes' etc.)"
@@ -525,6 +593,7 @@ def validate_section(
     modalities = _modality_queries(section)
     if modalities:
         low = text.lower()
+        low_flat = _norm(low)
         if low.count("direit") < len(modalities):
             violations.append(
                 f"bloco 'Direitos' ausente em algumas modalidades "
@@ -536,12 +605,13 @@ def validate_section(
                 f"(encontrado {low.count('dever')}x, esperado >= {len(modalities)})"
             )
         for modality in modalities:
-            head = modality.split("(")[0].strip().lower()
-            if head and head[:25] not in low:
+            head = _norm(modality.split("(")[0])
+            if head and head[:25] not in low_flat:
                 violations.append(f"modalidade ausente no texto: {modality}")
 
     in_fence = False
-    for block in _iter_blocks(body):
+    blocks = _iter_blocks(body)
+    for bidx, block in enumerate(blocks):
         first = block[2].split("\n", 1)[0].strip()
         if first.startswith("```"):
             in_fence = not in_fence
@@ -597,9 +667,38 @@ def validate_section(
                         continue
                     violations.append(f"item de lista sem citacao: {item.strip()[:80]}")
             continue
+        nxt = blocks[bidx + 1][2].lstrip() if bidx + 1 < len(blocks) else ""
+        if nxt.startswith(
+            (
+                '<figure',
+                '<div class="diagrama',
+                '<div class="tabela-legenda',
+                "![",
+                "|",
+                "- ",
+                "* ",
+                "+ ",
+            )
+        ):
+            continue
         if not _has_citation(block[2], registry):
             violations.append(f"paragrafo sem citacao: {first[:80]}")
+
+    tail = [ln.strip() for ln in body.split("\n") if ln.strip()]
+    if tail:
+        last = tail[-1]
+        if _is_incomplete_prose(last):
+            violations.append(f"texto truncado no final da secao: {last[:80]}")
     return violations
+
+
+TERMINAL_RE = re.compile(r"[.!?:;)\]\"'\u2019\u201d\u2026]$")
+
+
+def _is_incomplete_prose(line: str) -> bool:
+    if re.match(r"^(#{1,6}\s|!|\||<|\*|-|\+|\d+[.)])", line):
+        return False
+    return not TERMINAL_RE.search(line)
 
 
 def repair_section(
@@ -620,6 +719,13 @@ def repair_section(
         cleaned.append(line)
     text = "\n".join(cleaned)
     text = re.sub(r"\n{3,}", "\n\n", text)
+
+    tail_lines = text.split("\n")
+    while tail_lines and not tail_lines[-1].strip():
+        tail_lines.pop()
+    if tail_lines and _is_incomplete_prose(tail_lines[-1].strip()):
+        tail_lines.pop()
+    text = "\n".join(tail_lines)
 
     out: list[str] = []
     in_fence = False
@@ -670,7 +776,8 @@ def _render_charts(text: str, renderer: ChartRenderer) -> str:
         try:
             spec = parse_spec(match.group(1))
             return renderer.render(spec)
-        except ChartError:
+        except ChartError as exc:
+            print(f"[relatorio] grafico descartado ({exc})")
             return ""
 
     return GRAFICO_RE.sub(replace, text)
@@ -753,7 +860,7 @@ def generate_section(
     defaults = settings.outline.get("defaults", {})
     min_charts = section.get("charts", defaults.get("charts", 1))
     max_words = section.get("words", (0, defaults.get("max_words", 900)))[1]
-    factor = 3.0 if section.get("structure") else 2.4
+    factor = 3.6 if section.get("structure") else 2.4
     fallback_code = _pick_fallback_code(section, registry)
 
     text = ""
@@ -765,7 +872,7 @@ def generate_section(
         text = client.chat_with_retry(
             prompt,
             system=SYSTEM_PROMPT,
-            max_tokens=max(4200, int(max_words * factor)),
+            max_tokens=max(4800, int(max_words * factor)),
             temperature=0.2,
         )
         text = _clean_section(text, section)
@@ -827,17 +934,23 @@ def _references_section(sources: dict[str, dict]) -> str:
 
 def _cover_html(outline: dict) -> str:
     year = datetime.date.today().year
-    return (
-        '<div class="capa">'
-        f'<p class="capa-instituicao">{outline.get("institution", "")}</p>'
-        f'<p class="capa-autor">{outline.get("author", "")}</p>'
-        f'<h1 class="capa-titulo">{outline["title"]}</h1>'
-        f'<p class="capa-subtitulo">{outline.get("subtitle", "")}</p>'
-        '<div class="capa-espaco"></div>'
-        f'<p class="capa-local">{outline.get("place", "Brasil")}</p>'
-        f"<p class=\"capa-data\">{year}</p>"
-        "</div>"
-    )
+    inst = str(outline.get("institution", "")).strip()
+    genero = str(outline.get("genre", "")).strip().upper()
+    partes = ['<div class="capa">']
+    if genero:
+        partes.append(f'<p class="capa-genero">{genero}</p>')
+    if inst:
+        partes.append(f'<p class="capa-instituicao">{inst}</p>')
+    partes += [
+        f'<p class="capa-autor">{outline.get("author", "")}</p>',
+        f'<h1 class="capa-titulo">{outline["title"]}</h1>',
+        f'<p class="capa-subtitulo">{outline.get("subtitle", "")}</p>',
+        '<div class="capa-espaco"></div>',
+        f'<p class="capa-local">{outline.get("place", "Brasil")}</p>',
+        f"<p class=\"capa-data\">{year}</p>",
+        "</div>",
+    ]
+    return "".join(partes)
 
 
 def _generate_resumo(client: OllamaClient, sections: list[dict]) -> str:
@@ -917,7 +1030,18 @@ def audit_report(md_text: str, outline: dict) -> dict:
         if re.match(r"^\s*([-*+]|\d+\.)\s+", first):
             continue
         nxt = blocks[idx + 1][2].lstrip() if idx + 1 < len(blocks) else ""
-        if nxt.startswith(('<figure', '<div class="diagrama', "![", "|", "- ", "* ", "+ ")):
+        if nxt.startswith(
+            (
+                '<figure',
+                '<div class="diagrama',
+                '<div class="tabela-legenda',
+                "![",
+                "|",
+                "- ",
+                "* ",
+                "+ ",
+            )
+        ):
             continue
         if re.match(r"^\d+\.\s", nxt):
             continue
@@ -927,6 +1051,15 @@ def audit_report(md_text: str, outline: dict) -> dict:
     min_charts += int((outline.get("annex") or {}).get("charts", 0))
     stats["graficos_minimos_esperados"] = min_charts
     return stats
+
+
+PREFERRED_REPORT_STEM = "relatorio-trabalho-brasil-2026-10-16"
+
+
+def report_base_name(output_dir) -> str:
+    if (output_dir / f"{PREFERRED_REPORT_STEM}.md").exists():
+        return PREFERRED_REPORT_STEM
+    return f"relatorio-trabalho-brasil-{datetime.date.today().isoformat()}"
 
 
 def generate_report(

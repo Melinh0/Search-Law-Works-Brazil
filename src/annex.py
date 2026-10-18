@@ -9,7 +9,7 @@ from .config import Settings
 
 ANEXO_HEADING_RE = re.compile(r"^##\s+Anexo\s+B", re.MULTILINE)
 
-FONTE_IPEA = "IPEA, Series Temporais/Ipeadata (IBGE/PNAD Continua)"
+FONTE_IPEA = "IPEA, 2026"
 
 
 def _common_years(

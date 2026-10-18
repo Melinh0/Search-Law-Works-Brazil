@@ -1,7 +1,8 @@
 title: "Trabalho no Brasil 2026: Legislação, Modalidades e Tendências"
-subtitle: "Relatório objetivo sobre relações de trabalho, CLT, PJ, MEI e trabalho informal"
+subtitle: "Relações de trabalho, CLT, PJ, MEI e trabalho informal"
+genre: "Relatório"
 author: "Yago Melo da Costa"
-institution: "Universidade Estadual do Ceará - Graduando em Ciência da Computação"
+institution: ""
 place: "Fortaleza, Ceará"
 lang: pt-BR
 
@@ -21,13 +22,29 @@ defaults:
     unidade ('1,2 milhao', '102,5 milhoes', 'R$ 3.777,50'); NUNCA numeros crus
     como '1200000'. NAO repita series que ja foram graficadas em outra secao
     (taxa de desocupacao, pessoas ocupadas e rendimento medio sao da secao 1).
+    Quando a serie tiver apenas poucos anos (ex.: PNS 2013 e 2019) ou anos sem
+    dado, use nos graficos APENAS os anos existentes no contexto e explique NO
+    TEXTO a cobertura (periodicidade da pesquisa, edicoes disponiveis, coleta em
+    andamento); NUNCA invente valores ou anos intermediarios.
+    Quando graficar salario minimo ou rendimento medio, traga pelo menos um
+    grafico com os valores EM REAIS (R$) do contexto; se usar indice
+    (ex.: 2012=100), explique a base na 'unidade' e na 'nota' do grafico. Sempre
+    que houver inflacao (IPCA) no contexto, faca tambem a leitura de poder de
+    compra desses valores, em texto ou grafico proprio - NAO misture reais e
+    indice no mesmo grafico.
 
 sections:
   - id: panorama
     number: 1
     title: "Panorama do trabalho no Brasil em 2026"
     charts: 11
-    must_include: [ibge-pnad]
+    words: [800, 1100]
+    must_include: [ibge-pnad, ibge-pns, ipea-series-mercado, senado-sm-2026-orcamento, senado-arcabouco-2023]
+    extra_queries:
+      - "salário mínimo 2026 valor R$ 1.621 reajuste"
+      - "arcabouço fiscal limite salário mínimo 0,6% 2,5%"
+      - "volume de informais taxa de informalidade Brasil"
+      - "poder de compra rendimento médio inflação IPCA"
     brief: >
       Quadro geral do mercado de trabalho brasileiro em 2026. Use OBRIGATORIAMENTE
       as series reais do IBGE/PNAD Continua presentes no contexto (taxa de
@@ -39,7 +56,35 @@ sections:
       taxa de informalidade e o volume de informais divulgados pela imprensa (cite a
       fonte de cada numero). Explique o tamanho e a importancia de cada segmento
       (carteira assinada, autonomos, MEI, informal) e compare o patamar de 2026 com
-      anos anteriores (pico de 2020, queda ate 2026).
+      anos anteriores (pico de 2020, queda ate 2026). Inclua tambem a saude
+      autoavaliada da Pesquisa Nacional de Saude (PNS): percentual de saude
+      boa ou muito boa em 2013 e 2019 por situacao ocupacional (ocupada,
+      desocupada, fora da forca de trabalho), com um grafico comparando os
+      dois anos, e citando tambem as diferencas por faixa de renda e cor ou
+      raca quando presentes no contexto.
+      SOBRE A COBERTURA DA PNS (obrigatorio): explique no texto que a PNS e
+      uma pesquisa quinquenal, com edicoes de 2013 e 2019, e que a 3a edicao
+      (PNS 2026) esta em coleta em 2026; por isso a serie de saude tem apenas
+      esses dois anos - use nos graficos somente 2013 e 2019 e NAO invente
+      anos intermediarios.
+      POLITICA DE SALARIO MINIMO E ARCADOUCO FISCAL (obrigatorio): monte a
+      trajetoria de valores do salario minimo presentes no contexto (anos
+      disponiveis, ex.: 2019, 2022, 2025 e 2026) e explique as regras em
+      vigor: Lei 14.663/2023 (INPC mais crescimento do PIB), LC 200/2023 e a
+      EC 126/2022 (novo regime fiscal e teto de gastos). Cite que o salario
+      minimo de 2026 e de R$ 1.621 e que, sem o limite do arcabouco fiscal,
+      o aumento teria sido R$ 10 maior (Senado). Monte a serie de valores
+      nominais APENAS com os valores de salario minimo presentes no contexto
+      (ex.: R$ 1.045 em 2020, R$ 1.100 em 2021, R$ 1.212 em 2022, R$ 1.320
+      em 2023 e R$ 1.621 em 2026) e NAO invente valores de outros anos. FACa UM
+      GRAFICO EM REAIS (R$) comparando salario minimo real e rendimento medio
+      mensal real com e sem carteira (series Ipea do contexto, todas em R$);
+      NAO misture reais e indice no mesmo grafico e NAO transforme em indice
+      2012=100 sem explicar a base na unidade e na nota.
+      PODER DE COMPRA (obrigatorio): nesse mesmo periodo, compare o
+      crescimento do rendimento medio e do salario minimo com a inflacao
+      (IPCA) presente no contexto e explique o que isso significa para o poder
+      de compra do trabalhador ate 2026.
 
   - id: principios-constitucionais
     number: 2
@@ -59,15 +104,27 @@ sections:
     title: "CLT: estrutura, história e direitos essenciais"
     charts: 2
     must_include: [clt, constituicao-trabalho, reforma-2017]
+    extra_queries:
+      - "terceirização reforma trabalhista 2017 regras"
+      - "dispensa por acordo artigo 484-A multa 40%"
+      - "negociação sobre a lei 611-A 611-B CLT"
     brief: >
       Historico (Decreto-Lei 5.452/1943), estrutura da consolidacao, principios
       que a regem. Direitos essenciais: contrato de trabalho, jornada (8h,
       44h semanais, horas extras e adicional de 50%), intervalos, faltas,
       feriados, ferias + 1/3, 13o salario, aviso previo, rescisao e verbas
       rescisorias, FGTS, adicional noturno, periculosidade e insalubridade,
-      salario minimo. Reforma trabalhista de 2017 (Lei 13.467/2017): principais
-      mudancas (negociacao sobre a lei, terceirizacao, trabalho intermitente,
-      home office, banco de horas, acordo de compensacao, justa causa).
+      salario minimo. Reforma trabalhista de 2017 (Lei 13.467/2017) EM
+      DETALHE, com o que mudou na pratica em cada ponto: negociacao sobre a
+      lei (CLT arts. 611-A e 611-B), ampliacao da terceirizacao (regras
+      vigantes citadas nas fontes do contexto), trabalho intermitente (art. 452-A),
+      teletrabalho (arts. 75-A a 75-F), banco de horas e acordo de
+      compensacao firmados no plano individual, dispensa por acordo com multa
+      de 40% (art. 484-A), intervalo intrajornada, horas extras e regras de
+      justa causa. Explique TAMBEM por que essa reforma e apontada como fator
+      de crescimento de PJ, MEI e trabalho informal (custo e complexidade do
+      vinculo em comparacao a um DAS de MEI de valor fechado), citando as
+      fontes do contexto e conectando a analise com as secoes de modalidades.
       EC 103/2019 e regras previdenciarias aplicadas ao trabalhador.
       Como o Estado aplica a CLT: papel da Auditoria-Fiscal do Trabalho.
       JORNADA: explique com base legal a jornada normal de 8h diarias e 44h
@@ -85,7 +142,7 @@ sections:
     number: 4
     title: "Vínculo de emprego: os 4 requisitos e a subordinação algorítmica"
     charts: 0
-    must_include: [clt, codigo-civil, lc123-mei]
+    must_include: [clt, codigo-civil, lc123-mei, stf-pejotizacao-2026]
     brief: >
       Pessoa fisica, habitualidade, onerosidade, pessoalidade e subordinacao.
       Como a jurisprudencia (TST, STF) analisa cada requisito. Subordinacao
@@ -113,7 +170,8 @@ sections:
     must_include: [clt, auditoria-fiscal, mte-fiscalizacao, esocial]
     brief: >
       Modalidades regidas pela CLT e por leis trabalhistas com vinculo
-      empregaticio, detalhadas item a item. Use um grafico hbar com os
+      empregaticio, detalhadas item a item. Gere NO MINIMO 2 blocos
+      ```grafico```: um hbar com os
       limites legais de prazo em DIAS (experiencia 90 dias, trabalho
       temporario 180 dias, resposta do trabalhador intermitente em ate
       3 dias) e um grafico sobre a cota de aprendiz (5% a 15% do quadro).
@@ -143,20 +201,46 @@ sections:
       - "5) Em termos simples: explique em linguagem coloquial, em um paragrafo curto, o que esta modalidade significa na pratica para quem presta o servico e para quem contrata."
     words: [1500, 2200]
     charts: 2
-    must_include: [clt, codigo-civil, lc123-mei, auditoria-fiscal]
+    must_include: [clt, codigo-civil, lc123-mei, auditoria-fiscal, ibge-condicoes-vida]
+    extra_queries:
+      - "informais por sexo idade cor ou raça rendimento conta própria"
+      - "subutilização força de trabalho subocupados não ocupados"
+      - "saúde mental trabalhadores informais depressão"
+      - "Simples Nacional anexos I II III IV lucro presumido alíquotas ME EPP"
+      - "lucro real lucro presumido diferenças PJ tributação"
     brief: >
       Modalidades autônomas e empresariais sem vínculo empregatício,
       detalhadas item a item. Use um diagrama comparativo entre trabalho
       autonomo legitimo e vinculo encoberto (pejotizacao): caracteristicas
       de cada um, como o Estado distingue e consequencias do encobrimento.
+      TRIBUTACAO DO PJ EM SUBCATEGORIAS (obrigatorio): diferencie ME e EPP
+      no Simples Nacional (Anexos I, II, III e IV presentes no contexto,
+      faturamento e aliquotas), Simples com excesso de sublimite, lucro
+      presumido e lucro real (Lei 9.249/1995 e presuncao de renda para
+      servicos), e destaque o MEI como regime simplificado unico com DAS de
+      valor fechado. Cite limites, aliquotas e prazos exatamente como
+      aparecem no contexto.
+      TRABALHO INFORMAL DETALHADO (obrigatorio): classifique as categorias de
+      informais presentes no contexto (conta propria nao registrada,
+      empregadores ou domesticos sem registro, ajuda familiar, bicos), e para
+      cada uma traga os cortes disponiveis: sexo, idade ou faixa etaria, cor
+      ou raca, escolaridade e rendimento. Diferencie tambem a forca de
+      trabalho subutilizada (desocupados, subocupados por horas e forca de
+      trabalho potencial, definicao do IBGE presente no contexto) das pessoas
+      fora da forca de trabalho. Distinga
+      explicitamente CONTA PROPRIA informal de MEI (o MEI e formalizado, com
+      CNAE e DAS) e explique por que o informal recorre menos a planos de
+      saude e a cuidados de saude mental; quando as fontes trouxerem
+      indicadores ou escalas psicometricas de saude mental (ex.: depressao),
+      inclua-os neste topico com a citacao da fonte.
     modalities:
       - "Trabalhador autônomo (pessoa fisica, contrato de prestacao de servico, CC art. 593 e ss. e CLT art. 603)"
-      - "PJ: ME, EPP, Simples Nacional, Lucro Presumido (diferencas, obrigatoriedades, nota fiscal, contabilidade)"
+      - "PJ (ME, EPP, Simples Nacional, Lucro Presumido e Lucro Real; diferencas, obrigatoriedades, nota fiscal, contabilidade)"
       - "MEI (LC 123/2006: limite de faturamento, atividades permitidas e proibidas, DAS, limite de 1 empregado, beneficios)"
       - "Cooperado (Lei 12.690/2012, cooperativas de trabalho, quando configura fraude)"
       - "Contribuinte individual previdenciario (Lei 8.212/1991)"
       - "Trabalho voluntario (Lei 9.608/1998)"
-      - "Trabalho informal sem qualquer formalizacao"
+      - "Trabalho informal (sem qualquer formalizacao; bicos, ajuda familiar e conta propria sem contribuicao)"
       - "Servico via aplicativos/plataformas (referencia breve, detalhado na secao de plataformas)"
 
   - id: pj-vs-clt
@@ -191,14 +275,23 @@ sections:
       T1 2026 por categoria (conta propria +6%, sem carteira +9,9%, privados
       com carteira +2,8%, se presentes no contexto Ipea) e um grafico com a
       expansao de ocupados em 12 meses (formal +3,6% vs informal +1,5%).
-      Feche com um diagrama comparativo 'CLT x PJ' cobrindo direitos,
+      COMPOSICAO DE 'SEM CARTEIRA' (obrigatorio): explique que ser 'sem
+      carteira' NAO e a mesma coisa que 'conta propria' nem que MEI: dentro
+      da categoria sem carteira ha trabalhadores por conta propria informais,
+      MEIs (que tem DAS mas nao carteira assinada) e empregados sem registro,
+      alem de trabalhadores em ocupacoes typicas da informalidade. Use os
+      dados do contexto (cortes por categoria, sexo, idade, cor ou raca e
+      rendimento quando disponiveis) em um grafico ou tabela que detalhe essa
+      composicao, e explique por que a confusao entre os termos distorce a
+      leitura dos numeros de informalidade.
+      Feche com um diagrama comparativo 'CLT x PJ' cobrando direitos,
       custo para a empresa e risco trabalhista.
 
   - id: mei-e-informal
     number: 8
     title: "MEI e trabalho informal"
     charts: 2
-    must_include: [lc123-mei, inss-8212, lc-214-2025]
+    must_include: [lc123-mei, inss-8212, lc-214-2025, mei-das-2026-receita, senado-mei-plp186]
     brief: >
       O que e o MEI, limites de faturamento, atividades permitidas, DAS,
       beneficios (auxilio-doenca, aposentadoria, pensao - Lei 8.213/1991),
@@ -206,10 +299,20 @@ sections:
       e riscos. Trabalho informal: caracteristicas, quem e o trabalhador
       informal, riscos (ausencia de INSS, FGTS, sindicalizacao), como se
       proteger, programas de formalizacao (Mei+Prev, Seguro Defeso).
-      Use graficos para comparar MEI x informal x CLT e o cronograma da
-      reforma tributaria. Use tambem um diagrama comparativo 'MEI
-      formalizado x trabalho informal' (direitos, contribuicao previdenciaria
-      e riscos de cada um).
+      Cite o valor do DAS do MEI em 2026 (fonte da Receita Federal) e a
+      proposta em tramitacao no Senado que eleva o teto de faturamento e
+      perdoa dividas do MEI. TRIBUTACAO E VANTAGENS EM DETALHE (obrigatorio):
+      explique os limites e a composicao do DAS e do Simples presentes no
+      contexto (teto de faturamento do MEI e do ME/EPP, aliquotas dos Anexos
+      do Simples, INSS embutido, ISS e ICMS) e detalhe POR QUE muitos
+      trabalhadores preferem o MEI a assinar carteira ou abrir uma PJ comum
+      (custo mensal fixo e baixo, pouca burocracia, emissao de nota pelo
+      portal, autonomia de horario) e o que perdem ao abrir mao do vinculo
+      (FGTS, aviso previo, horas extras, adicional noturno, multa
+      rescisoria, estabilidade). Use graficos para comparar MEI x informal x CLT
+      e o cronograma da reforma tributaria. Use tambem um diagrama
+      comparativo 'MEI formalizado x trabalho informal' (direitos,
+      contribuicao previdenciaria e riscos de cada um).
 
   - id: previdencia-tributos
     number: 9
@@ -234,11 +337,22 @@ sections:
     number: 10
     title: "Trabalho por plataformas digitais"
     charts: 1
-    must_include: [clt, auditoria-fiscal]
+    must_include: [clt, auditoria-fiscal, ibge-plataformas-perfil, ibge-audio-app-2026]
+    extra_queries:
+      - "perfil trabalhadores por aplicativo sexo idade escolaridade cor ou raça"
+      - "motoristas entregadores aplicativo rendimento renda conta própria"
     brief: >
       Como funciona (apps de entrega, transporte, servicos). Numero de
       trabalhadores por aplicativo no Brasil (cite os dados do IBGE e da
-      imprensa coletados). Situacao juridica em 2026: proposicoes em
+      imprensa coletados). PERFIL DOS TRABALHADORES POR APLICATIVO
+      (obrigatorio): traga os cortes presentes no contexto - sexo, idade ou
+      faixa etaria, cor ou raca, escolaridade e rendimento - e detalhe os
+      tipos de trabalho por plataforma (entrega de alimentos, transporte de
+      passageiros, servicos gerais e outros citados nas fontes). Explique
+      como se distribui a participacao de homens e mulheres entre as
+      atividades quando os dados estiverem no contexto, e diferencie quem
+      atua formalizado como MEI de quem atua como conta propria informal.
+      Situacao juridica em 2026: proposicoes em
       tramitacao (PL 12/2024 e demais PLs do contexto), Convencao 193 da OIT
       (se houver referencia no contexto), medidas do MTE (transparencia de
       valores, pontos de apoio, comite interministerial). Direitos em
@@ -254,12 +368,15 @@ sections:
     number: 11
     title: "Mudanças em tramitação no Congresso em 2026"
     charts: 0
-    must_include: [camara-proposicoes, senado-materias, noticias-trabalho]
+    words: [550, 950]
+    must_include: [camara-proposicoes, senado-materias, noticias-trabalho, stf-pejotizacao-2026, stf-pauta-outubro-2026]
     extra_queries:
       - "fim da escala 6x1 como vai funcionar"
       - "PEC 6x1 escala jornada Senado aprovação"
       - "jornada 40 horas semanais projeto de lei"
       - "redução 44 horas para 40 horas trabalho"
+      - "STF pejotização suspensão processos TRTs"
+      - "STF pauta outubro 2026 aplicativo fretamento"
     brief: >
       Coleta atual de proposicoes (Camara e Senado) sobre trabalho:
       reforma trabalhista, plataformas digitais, pejotizacao, MEI,
@@ -276,6 +393,13 @@ sections:
       entrada em vigor, a proporcionalidade salarial, quem passa a ter
       direito e o que muda na pratica para trabalhador e empregador,
       citando sempre as fontes do contexto (proposicoes, imprensa).
+      OBRIATORIO TAMBEM: dedique um subtopico ao STF em 2026, cobrindo (a) a
+      retirada da suspensao de processos sobre pejotizacao na 1a instancia e
+      nos TRTs - o que isso muda na pratica para denuncias, acoes
+      trabalhistas e para empresas que usam PJ; e (b) os destaques da pauta
+      do Plenario em outubro de 2026 que envolvem trabalho por aplicativo
+      (fretamento de onibus por aplicativo) - o que esta em jogo, quem e
+      afetado e qual o desfecho ou andamento indicado nas fontes.
       Se o contexto nao trouxer detalhe de algum ponto, use os detalhes
       efetivamente presentes e aprofunde o que ha.
 

@@ -97,7 +97,7 @@ python -m src status
 
 ## Relatorio
 
-O sumario (12 secoes) fica em `config/outline.yaml` e cobre: panorama PNAD,
+O sumario (13 secoes) fica em `config/outline.yaml` e cobre: panorama PNAD,
 principios constitucionais, CLT e reforma de 2017, vinculo de emprego e
 pejotizacao, modalidades (CLT, temporario, intermitente, remoto, autônomo,
 MEI, PJ, cooperado, informal, plataformas), comparacao PJ x CLT, MEI e
@@ -105,7 +105,8 @@ informal, previdencia e reforma tributaria, plataformas digitais (PL 12/2024,
 Convencao OIT 193/2026), tramitacao 2026 no Congresso, riscos e checklist,
 quadro-resumo comparativo.
 
-Saidas em `output/relatorio-trabalho-brasil-<data>.{md,html,pdf}`.
+Saida fixa em `output/relatorio-trabalho-brasil-2026-10-16.{md,html,pdf}`:
+reexecucoes sobrescrevem o mesmo trio de arquivos (sem arquivo datado novo).
 
 Padrao do relatorio:
 

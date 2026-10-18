@@ -4,7 +4,7 @@ cache_dir: data/cache
 corpus_dir: data/corpus
 output_dir: output
 
-# priority: 3 = fonte oficial, 2 = artigo academico, 1 = imprensa (usado no ranking da busca)
+# priority: 4 = dado estatistico primario, 3 = fonte oficial, 2 = artigo academico, 1 = imprensa (usado no ranking da busca)
 sources:
   - id: clt
     name: "Consolidacao das Leis do Trabalho (Decreto-Lei 5.452/1943)"
@@ -225,6 +225,9 @@ sources:
       - "trabalho intermitente"
       - "microempreendedor individual MEI"
       - "teletrabalho trabalho remoto"
+      - "saúde mental trabalhadores informais"
+      - "depressão condições de trabalho Brasil"
+      - "trabalho por aplicativo saúde dos trabalhadores"
     tags: [artigos, doutrina, scielo, periodicos]
 
   - id: mte-noticias
@@ -290,6 +293,13 @@ sources:
     priority: 3
     tags: [dados, pnad, informalidade, desocupacao, rendimento]
 
+  - id: ibge-pns
+    name: "Pesquisa Nacional de Saúde 2019 (PNS) - saúde autoavaliada por situação ocupacional, renda e cor ou raça"
+    type: ibge_pns
+    url: "https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html"
+    priority: 3
+    tags: [saude, pns, autoavaliacao, 2019]
+
   - id: ipea-carta-mercado
     name: "Ipea - Carta de Conjuntura, tema Mercado de Trabalho (rendimentos, formal e informal)"
     type: html
@@ -306,5 +316,171 @@ sources:
   - id: ipea-series-mercado
     name: "Ipea - SERIES: formalidade, informalidade e salarios (PNAD Continua)"
     type: ipea_api
-    priority: 3
+    priority: 4
     tags: [ipea, pnad, informalidade, carteira, rendimento, salario-minimo]
+
+  - id: lei-14663-2023
+    name: "Lei 14.663/2023 - politica nacional de salario minimo (INPC + PIB)"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"
+    encoding: iso-8859-1
+    priority: 3
+    tags: [salario-minimo, inpc, politica-salarial, 2023]
+
+  - id: lei-9249-1995
+    name: "Lei 9.249/1995 - tributacao da pessoa juridica (lucro presumido)"
+    type: html
+    url: "https://planalto.gov.br/ccivil_03/leis/l9249.htm"
+    encoding: iso-8859-1
+    priority: 3
+    tags: [lucro-presumido, irpj, csll, tributacao, pessoa-juridica]
+
+  - id: mei-das-2026-receita
+    name: "Receita Federal - DAS do MEI 2026 (valores janeiro)"
+    type: html
+    url: "https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3"
+    encoding: utf-8
+    priority: 3
+    tags: [mei, das, simples-nacional, 2026, receita-federal]
+
+  - id: mei-das-2026-agbrasil
+    name: "Recolhimento do MEI sobe para R$ 81,05 em 2026 - Agência Brasil"
+    type: html
+    url: "https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/recolhimento-do-mei-sobe-para-r-8105-em-2026"
+    encoding: utf-8
+    priority: 1
+    tags: [mei, das, salario-minimo, tetos, 2026, imprensa-oficial]
+
+  - id: senado-mei-plp186
+    name: "Senado aprova aumento do teto para MEI e perdão de dívidas"
+    type: html
+    url: "https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas"
+    encoding: utf-8
+    priority: 3
+    tags: [mei, plp-186, teto, perdao-de-dividas, tramitacao, 2026]
+
+  - id: camara-sm-pl4614
+    name: "Camara - projeto traz novos limites aos ganhos do salario minimo acima da inflacao"
+    type: html
+    url: "https://www.camara.leg.br/noticias/1117057-projeto-de-lei-traz-novos-limites-aos-ganhos-do-salario-minimo-acima-da-inflacao"
+    encoding: utf-8
+    priority: 3
+    tags: [salario-minimo, pl-4614, arcabouco, 2024, tramitacao]
+
+  - id: senado-lei-15077
+    name: "Senado - sancionada com veto a Lei 15.077/2024 (regras do salario minimo e BPC)"
+    type: html
+    url: "https://www12.senado.leg.br/noticias/materias/2024/12/30/sancionada-com-veto-lei-que-endurece-regras-do-bpc"
+    encoding: utf-8
+    priority: 3
+    tags: [salario-minimo, lei-15077, bpc, veto, 2024]
+
+  - id: pns-2026-ibge
+    name: "Agencia Brasil - IBGE inicia coleta da Pesquisa Nacional de Saude 2026"
+    type: html
+    url: "https://agenciabrasil.ebc.com.br/saude/noticia/2026-07/ibge-inicia-coleta-da-pesquisa-nacional-de-saude-2026"
+    encoding: utf-8
+    priority: 3
+    tags: [pns-2026, saude, pesquisa-nacional-de-saude, ibge, 2026]
+
+  - id: pec-6x1-promulgada-camara
+    name: "Camara - Congresso promulga Emenda que acaba com escala 6x1 e estabelece jornada maxima de 40 horas"
+    type: html
+    url: "https://www.camara.leg.br/noticias/1311797-congresso-promulga-emenda-que-acaba-com-escala-6x1-e-estabelece-jornada-maxima-de-40-horas-semanais"
+    encoding: utf-8
+    priority: 3
+    tags: [ec-141, escala-6x1, jornada-40-horas, pec, 2026]
+
+  - id: pec-6x1-transicao-g1
+    name: "Quando começa a valer o fim da escala 6x1 (etapas até 40 horas)"
+    type: html
+    url: "https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/14/quando-comeca-a-valer-o-fim-da-escala-6x1.ghtml"
+    encoding: utf-8
+    priority: 1
+    tags: [escala-6x1, jornada-40-horas, transicao, voto-75-1, 2026]
+
+  - id: pec-6x1-senado-aprova-g1
+    name: "Senado aprova PEC do fim da escala 6x1 e envia à Câmara"
+    type: html
+    url: "https://g1.globo.com/politica/noticia/2026/10/14/senado-aprova-pec-do-fim-da-escala-6x1.ghtml"
+    encoding: utf-8
+    priority: 1
+    tags: [escala-6x1, pec, senado, voto-75-1, tramitacao, 2026]
+
+  - id: ibge-audio-app-2026
+    name: "IBGE: Brasil tem 2 milhões de trabalhadores por aplicativos (agência Brasil)"
+    type: html
+    url: "https://agenciabrasil.ebc.com.br/radioagencia-nacional/economia/audio/2026-09/brasil-tem-2-milhoes-de-trabalhadores-por-aplicativos-diz-ibge"
+    encoding: utf-8
+    priority: 1
+    tags: [aplicativos, plataformas, trabalhadores-por-aplicativos, ibge, 2026]
+
+  - id: senado-sm-2026-orcamento
+    name: "Senado - Orcamento 2026 aprova salario minimo de R$ 1.621 com limite do arcabouco fiscal"
+    type: html
+    url: "https://www12.senado.leg.br/radio/1/noticia/2025/12/19/congresso-nacional-aprova-o-orcamento-de-2026-com-salario-minimo-de-r-1-621-a-partir-de-janeiro"
+    encoding: utf-8
+    priority: 3
+    tags: [salario-minimo, arcabouco-fiscal, orcamento-2026, poder-de-compra, reajuste, 2026]
+
+  - id: senado-sm-historico-2022
+    name: "Senado - salario minimo de 2022 e historia da politica de valorizacao (2019-2022)"
+    type: html
+    url: "https://www12.senado.leg.br/noticias/materias/2022/01/03/passa-a-vigorar-salario-minimo-de-r-1.212"
+    encoding: utf-8
+    priority: 3
+    tags: [salario-minimo, politica-salarial, serie-historica, inpc, historia]
+
+  - id: senado-arcabouco-2023
+    name: "Senado - novo arcabouco fiscal (LC 200/2023) entra em vigencia"
+    type: html
+    url: "https://www12.senado.leg.br/noticias/materias/2023/08/31/novo-arcabouco-fiscal-entra-em-vigencia-no-brasil"
+    encoding: utf-8
+    priority: 3
+    tags: [arcabouco-fiscal, lc-200-2023, teto-de-gastos, salario-minimo, 2023]
+
+  - id: planalto-lc-200-2023
+    name: "Lei Complementar 200/2023 - regime fiscal sustentavel, limites de despesa e salario minimo"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp200.htm"
+    encoding: iso-8859-1
+    priority: 3
+    tags: [arcabouco-fiscal, lc-200-2023, teto-de-gastos, salario-minimo, legislacao]
+
+  - id: planalto-ec-126-2022
+    name: "Emenda Constitucional 126/2022 - Novo Regime Fiscal e teto de gastos ate 2029"
+    type: html
+    url: "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc126.htm"
+    encoding: iso-8859-1
+    priority: 3
+    tags: [ec-126-2022, novo-regime-fiscal, teto-de-gastos, arcabouco-fiscal, legislacao]
+
+  - id: stf-pejotizacao-2026
+    name: "STF retira suspensao de processos sobre pejotizacao na 1a instancia e nos TRTs"
+    type: html
+    url: "https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts"
+    encoding: utf-8
+    priority: 3
+    tags: [stf, pejotizacao, jurisprudencia, tribunal, processos, 2026]
+
+  - id: stf-pauta-outubro-2026
+    name: "STF - destaques da pauta do Plenario em outubro de 2026 (aplicativos e fretamento)"
+    type: html
+    url: "https://noticias.stf.jus.br/postsnoticias/confira-destaques-da-pauta-do-plenario-para-outubro/"
+    encoding: utf-8
+    priority: 3
+    tags: [stf, pauta, plenario, aplicativos, fretamento, 2026]
+
+  - id: ibge-condicoes-vida
+    name: "IBGE - Sintese de Indicadores Sociais: condicoes de vida, informalidade e subutilizacao da forca de trabalho"
+    type: pdf
+    url: "https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf"
+    priority: 4
+    tags: [ibge, informalidade, subutilizacao, conta-propria, sem-carteira, sexo, raca, idade, rendimento]
+
+  - id: ibge-plataformas-perfil
+    name: "IBGE - Trabalho por plataformas digitais: perfil dos trabalhadores por aplicativo (sexo, idade, instrucao, cor ou raca)"
+    type: pdf
+    url: "https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf"
+    priority: 4
+    tags: [ibge, aplicativos, plataformas, perfil, sexo, idade, instrucao, raca, rendimento]

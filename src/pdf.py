@@ -171,6 +171,7 @@ hr { border: none; border-top: 1px solid #999; margin: 18px 0; }
   text-align: center;
 }
 .capa p, .capa h1 { text-indent: 0; }
+.capa-genero { font-size: 13pt; margin-top: 12mm; font-weight: bold; letter-spacing: 0.15em; }
 .capa-instituicao { font-size: 12pt; margin-top: 12mm; font-weight: bold; }
 .capa-autor { font-size: 12pt; margin-top: 10mm; font-weight: bold; }
 .capa-titulo {

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import asyncio
 import threading
-from datetime import date
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -14,7 +13,7 @@ from .config import Settings
 from .llm import LLMError, OllamaClient
 from .pdf import export
 from .rag import build_index
-from .report import SYSTEM_PROMPT, audit_report, generate_report
+from .report import SYSTEM_PROMPT, audit_report, generate_report, report_base_name
 
 TEMPLATE_PATH = Path(__file__).parent / "templates" / "index.html"
 
@@ -95,7 +94,7 @@ def api_relatorio() -> dict:
                 save_corpus(settings, docs)
                 build_chunks(settings)
             md = generate_report(settings, get_client(), log=_append_log)
-            name = f"relatorio-trabalho-brasil-{date.today().isoformat()}"
+            name = report_base_name(settings.output_dir)
             md_path, extra = export(settings, md, name)
             _report_state["log"].append(f"concluido: {md_path} | {extra}")
         except Exception as exc:

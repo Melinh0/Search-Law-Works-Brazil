@@ -23,6 +23,40 @@ class ChartError(ValueError):
     pass
 
 
+def _to_float(value) -> float:
+    if isinstance(value, bool):
+        raise ValueError(f"valor nao numerico: {value!r}")
+    if isinstance(value, (int, float)):
+        return float(value)
+    text = str(value).strip()
+    text = text.replace("\u00a0", "").replace("R$", "").replace("%", "")
+    text = re.sub(r"\s+", "", text)
+    if not re.fullmatch(r"-?\d+(?:[.,]\d+)*", text):
+        raise ValueError(f"valor nao numerico: {value!r}")
+    if "," in text and "." in text:
+        if text.rfind(",") > text.rfind("."):
+            text = text.replace(".", "").replace(",", ".")
+        else:
+            text = text.replace(",", "")
+    elif "," in text:
+        text = text.replace(",", ".")
+    elif re.fullmatch(r"-?\d{1,3}(?:\.\d{3})+", text):
+        text = text.replace(".", "")
+    return float(text)
+
+
+def _diag_item(item) -> str:
+    if isinstance(item, dict):
+        label = item.get("label") or item.get("titulo") or item.get("texto") or ""
+        valor = item.get("valor", item.get("value"))
+        if label and valor is not None:
+            return f"{label}: {_fmt_item(str(valor))}"
+        if label:
+            return str(label)
+        return json.dumps(item, ensure_ascii=False)
+    return str(item)
+
+
 def parse_spec(raw: str) -> dict:
     try:
         spec = json.loads(raw.strip())
@@ -38,10 +72,20 @@ def parse_spec(raw: str) -> dict:
         raise ChartError("grafico sem titulo")
     if tipo in MATH_TYPES:
         valores = spec.get("valores")
+        series = spec.get("series")
+        if (
+            (not isinstance(valores, list) or not valores)
+            and tipo == "linha"
+            and isinstance(series, list)
+            and series
+            and isinstance(series[0], dict)
+            and series[0].get("valores")
+        ):
+            valores = series[0]["valores"]
         if not isinstance(valores, list) or not valores:
             raise ChartError("grafico quantitativo sem valores")
         try:
-            spec["valores"] = [float(v) for v in valores]
+            spec["valores"] = [_to_float(v) for v in valores]
         except (TypeError, ValueError) as exc:
             raise ChartError("valores devem ser numericos") from exc
         rotulos = spec.get("rotulos")
@@ -57,7 +101,10 @@ def parse_spec(raw: str) -> dict:
             for s in series:
                 if not isinstance(s, dict) or not s.get("nome"):
                     raise ChartError("serie invalida")
-                vals = [float(v) for v in s.get("valores", [])]
+                try:
+                    vals = [_to_float(v) for v in s.get("valores", [])]
+                except (TypeError, ValueError) as exc:
+                    raise ChartError("valores devem ser numericos") from exc
                 if not vals:
                     raise ChartError("serie sem valores")
                 clean.append({"nome": str(s["nome"]), "valores": vals})
@@ -69,7 +116,7 @@ def parse_spec(raw: str) -> dict:
         for col in colunas:
             if not isinstance(col, dict) or not col.get("titulo") or not col.get("itens"):
                 raise ChartError("coluna do comparativo invalida")
-            col["itens"] = [str(i) for i in col["itens"]]
+            col["itens"] = [_diag_item(i) for i in col["itens"]]
     spec["tipo"] = tipo
     spec["titulo"] = titulo
     fonte = str(spec.get("fonte", "")).strip()
@@ -139,6 +186,8 @@ def _br_number(value: float, _pos=None) -> str:
 
 def _fmt_item(item: str) -> str:
     text = str(item).strip()
+    if re.fullmatch(r"\d{4}", text) and 1900 <= int(text) <= 2099:
+        return text
     if re.fullmatch(r"\d{4,}", text):
         return _br_number(float(text))
     return text
@@ -206,10 +255,15 @@ class ChartRenderer:
         ylabel = _ylabel(spec.get("unidade", ""))
         if tipo in ("pizza", "donut"):
             fig, ax = plt.subplots(figsize=(7.0, 3.8))
+            total = sum(valores) or 1.0
+
+            def _autopct(pct: float) -> str:
+                return _pct_br(pct) if pct >= 8 else ""
+
             wedges, _, auto = ax.pie(
                 valores,
                 labels=None,
-                autopct=_pct_br,
+                autopct=_autopct,
                 startangle=90,
                 colors=PALETTE[: len(valores)],
                 wedgeprops={"width": 0.45} if tipo == "donut" else None,
@@ -218,11 +272,17 @@ class ChartRenderer:
             for t in auto:
                 t.set_fontsize(9.5)
                 t.set_color("#ffffff")
+            legend_labels = []
+            for rotulo, v in zip(rotulos, valores):
+                pct = v / total * 100
+                legend_labels.append(
+                    str(rotulo) if pct >= 8 else f"{rotulo} ({_pct_br(pct)})"
+                )
             ax.legend(
                 wedges,
-                [f"{r}" for r in rotulos],
+                legend_labels,
                 loc="center left",
-                bbox_to_anchor=(1.0, 0.5),
+                bbox_to_anchor=(1.02, 0.5),
                 fontsize=9.5,
                 frameon=False,
             )

@@ -16,6 +16,11 @@ from bs4 import BeautifulSoup
 
 from ..config import Settings
 
+try:
+    from pypdf import PdfReader
+except ImportError:  # pragma: no cover
+    PdfReader = None
+
 warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
 
@@ -76,6 +81,61 @@ def html_to_text(html: str) -> str:
     lines = [ln.strip() for ln in text.splitlines()]
     lines = [ln for ln in lines if ln]
     return "\n".join(lines)
+
+
+def fetch_pdf(settings: Settings, url: str, retries: int = 3) -> str:
+    if PdfReader is None:
+        raise RuntimeError("pypdf nao instalado: rode 'pip install -r requirements.txt'")
+    key = hashlib.sha1(url.encode()).hexdigest()
+    text_path = settings.cache_dir / (key + ".pdf.txt")
+    if text_path.exists():
+        return text_path.read_text(encoding="utf-8", errors="replace")
+    pdf_path = settings.cache_dir / (key + ".pdf")
+    if not pdf_path.exists():
+        last_error: Exception | None = None
+        resp = None
+        for attempt in range(retries):
+            try:
+                resp = _get(url, settings)
+                resp.raise_for_status()
+                break
+            except (requests.RequestException, ConnectionError) as exc:
+                last_error = exc
+                time.sleep(1.5 * (attempt + 1))
+        else:
+            raise ConnectionError(f"falha apos {retries} tentativas: {url}") from last_error
+        pdf_path.write_bytes(resp.content)
+        time.sleep(0.4)
+    reader = PdfReader(str(pdf_path))
+    parts: list[str] = []
+    for page in reader.pages:
+        try:
+            parts.append(page.extract_text() or "")
+        except Exception:
+            continue
+    text = "\n".join(parts)
+    text = "\n".join(ln.strip() for ln in text.splitlines() if ln.strip())
+    if len(text) > 400_000:
+        text = text[:400_000]
+    text_path.write_text(text, encoding="utf-8")
+    return text
+
+
+def collect_pdf(settings: Settings, source: dict) -> list[Document]:
+    text = fetch_pdf(settings, source["url"])
+    if len(text.strip()) < 200:
+        return []
+    return [
+        Document(
+            source_id=source["id"],
+            title=source["name"],
+            url=source["url"],
+            text=text,
+            tags=source.get("tags", []),
+            collected_at=time.strftime("%Y-%m-%d"),
+            priority=int(source.get("priority", 3)),
+        )
+    ]
 
 
 def collect_planalto_like(settings: Settings, source: dict) -> list[Document]:
@@ -458,6 +518,7 @@ IPEA_SERIES = [
     ("PNADC12_RRPHESPCC12", "Rendimento real medio habitual - empregado com carteira (R$)"),
     ("PNADC12_RRPHESPSC12", "Rendimento real medio habitual - empregado sem carteira (R$)"),
     ("GAC12_SALMINRE12", "Salario minimo real (R$)"),
+    ("PRECOS12_IPCA12", "IPCA - indice nacional de precos ao consumidor amplo"),
 ]
 
 
@@ -640,7 +701,7 @@ def collect_ipea(settings: Settings, source: dict) -> list[Document]:
         lines.append(f"Indicador: {label} [serie Ipea {code}]")
         lines.append("  Media anual (2012 em diante):")
         lines.extend(
-            f"    {ano}: {valor:.1f}"
+            f"    {ano}: {valor}"
             for ano, valor in _sample_annual(
                 [(p, str(v)) for p, v in valid if p >= "2012-01"]
             )
@@ -664,12 +725,53 @@ def collect_ipea(settings: Settings, source: dict) -> list[Document]:
     ]
 
 
+def collect_ibge_pns(settings: Settings, source: dict) -> list[Document]:
+    lines = [
+        "IBGE - Pesquisa Nacional de Saude (PNS) 2019: saude autoavaliada boa ou muito boa,",
+        "comparando 2013 e 2019. Percentual de pessoas (variavel 4738), Brasil, por grupo.",
+    ]
+    casos = (
+        (4757, "653", "por situacao ocupacional (Ocupada, Desocupada, Fora da forca de trabalho)"),
+        (4759, "652", "por faixa de renda domiciliar per capita"),
+        (4756, "86", "por cor ou raca (Branca, Preta, Parda)"),
+    )
+    tabelas = 0
+    for tabela, classificacao, desc in casos:
+        try:
+            dados = fetch_sidra_table(settings, tabela, "2013,2019", 4738, classificacao)
+        except (ConnectionError, ValueError, KeyError, IndexError):
+            continue
+        tabelas += 1
+        lines.append(f"Tabela SIDRA {tabela}: saude autoavaliada boa ou muito boa {desc}")
+        for categoria, por_ano in dados.items():
+            if categoria == "Total":
+                continue
+            v13 = por_ano.get("2013", "-")
+            v19 = por_ano.get("2019", "-")
+            lines.append(f"    {categoria}: 2013 = {v13}% | 2019 = {v19}%")
+    if not tabelas:
+        return []
+    return [
+        Document(
+            source_id=source["id"],
+            title=source["name"],
+            url=source["url"],
+            text="\n".join(lines),
+            tags=source.get("tags", []),
+            collected_at=time.strftime("%Y-%m-%d"),
+            priority=int(source.get("priority", 3)),
+        )
+    ]
+
+
 COLLECTORS = {
     "html": collect_planalto_like,
+    "pdf": collect_pdf,
     "camara_api": collect_camara,
     "senado_api": collect_senado,
     "news_rss": collect_news_rss,
     "ibge_api": collect_ibge,
+    "ibge_pns": collect_ibge_pns,
     "ipea_api": collect_ipea,
     "academic": collect_academic,
 }

@@ -9,3 +9,4 @@ rich>=13.7
 python-dotenv>=1.0
 lxml>=5.0
 matplotlib>=3.9
+pypdf>=4.0

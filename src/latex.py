@@ -308,30 +308,35 @@ def _cover_tex(outline: dict) -> str:
     ano = datetime.date.today().year
     autor = str(outline.get("author", "")).strip()
     instituicao = str(outline.get("institution", "")).strip()
+    genero = str(outline.get("genre", "")).strip().upper()
     titulo = str(outline.get("title", "")).strip()
     subtitulo = str(outline.get("subtitle", "")).strip()
     local = str(outline.get("place", "Brasil")).strip()
-    return "\n".join(
-        [
-            r"\begin{titlepage}",
-            r"\thispagestyle{empty}",
-            r"\centering",
-            r"\vspace*{12mm}",
-            rf"{{\large\bfseries {_latex_escape(instituicao)}\par}}",
-            r"\vspace{30mm}",
-            rf"{{\large\bfseries {_latex_escape(autor)}\par}}",
-            r"\vfill",
-            rf"{{\LARGE\bfseries {_latex_escape(titulo)}\par}}",
-            r"\vspace{10mm}",
-            rf"{{\large {_latex_escape(subtitulo)}\par}}",
-            r"\vfill",
-            rf"{_latex_escape(local)}\\",
-            rf"{ano}",
-            r"\vspace*{20mm}",
-            r"\end{titlepage}",
-            "",
-        ]
-    )
+    linhas = [
+        r"\begin{titlepage}",
+        r"\thispagestyle{empty}",
+        r"\centering",
+        r"\vspace*{12mm}",
+    ]
+    if genero:
+        linhas.append(rf"{{\large\bfseries {_latex_escape(genero)}\par}}")
+    if instituicao:
+        linhas.append(rf"{{\large\bfseries {_latex_escape(instituicao)}\par}}")
+    linhas += [
+        r"\vspace{30mm}",
+        rf"{{\large\bfseries {_latex_escape(autor)}\par}}",
+        r"\vfill",
+        rf"{{\LARGE\bfseries {_latex_escape(titulo)}\par}}",
+        r"\vspace{10mm}",
+        rf"{{\large {_latex_escape(subtitulo)}\par}}",
+        r"\vfill",
+        rf"{_latex_escape(local)}\\",
+        rf"{ano}",
+        r"\vspace*{20mm}",
+        r"\end{titlepage}",
+        "",
+    ]
+    return "\n".join(linhas)
 
 
 def _header_tex(outline: dict) -> str:
