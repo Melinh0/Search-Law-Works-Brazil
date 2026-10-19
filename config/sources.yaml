@@ -317,7 +317,7 @@ sources:
     name: "Ipea - SERIES: formalidade, informalidade e salarios (PNAD Continua)"
     type: ipea_api
     priority: 4
-    tags: [ipea, pnad, informalidade, carteira, rendimento, salario-minimo]
+    tags: [ipea, pnad, informalidade, carteira, rendimento, salario-minimo, genero, sexo, regioes, regional, desocupacao]
 
   - id: lei-14663-2023
     name: "Lei 14.663/2023 - politica nacional de salario minimo (INPC + PIB)"

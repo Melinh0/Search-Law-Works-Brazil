@@ -41,8 +41,8 @@ sections:
   - id: panorama
     number: 1
     title: "Panorama do trabalho no Brasil em 2026"
-    charts: 9
-    words: [1150, 1500]
+    charts: 14
+    words: [1500, 1900]
     must_include: [ibge-pnad, ibge-pns, ipea-series-mercado, senado-sm-2026-orcamento, senado-arcabouco-2023, dieese-salario-minimo-necessario, dieese-cesta-basica-set-2026]
     extra_queries:
       - "salário mínimo 2026 valor R$ 1.621 reajuste"
@@ -52,6 +52,11 @@ sections:
       - "salário mínimo necessário Dieese família quatro pessoas"
       - "cesta básica nacional custo setembro 2026 Dieese"
       - "salário mínimo nominal e necessário série histórica Dieese"
+      - "rendimento médio homens mulheres diferença PNAD"
+      - "força de trabalho participação feminina masculina por sexo"
+      - "taxa de desocupação por região Norte Nordeste Sudeste Sul Centro-Oeste"
+      - "informalidade por região Brasil PNAD"
+      - "rendimento médio por região Norte Nordeste Sudeste Sul"
     brief: >
       Quadro geral do mercado de trabalho brasileiro em 2026. Use OBRIGATORIAMENTE
       as series reais do IBGE/PNAD Continua presentes no contexto (taxa de
@@ -127,6 +132,28 @@ sections:
         R$ 1.621,00 e para o rendimento medio nominal atual alcancarem o
         salario minimo necessario de R$ 7.750,01, e que salario efetivamente
         satisfaria a cesta constitucional (o necessario DIEESE).
+        GENERO - POPULACAO QUE TRABALHA E QUANTO RECEBE (obrigatorio): analise
+        as series Ipea por sexo do contexto (PNADCT_PCT14UF_HOM/MUL,
+        PNADCT_PCTDFTUF_HOM/MUL, PNADCT_RRHPUF_HOM/MUL). Explique que as
+        mulheres sao aproximadamente metade da populacao de 14 anos ou mais,
+        mas minoria na forca de trabalho (aponte os percentuais atuais de cada
+        sexo presentes no contexto), compare o rendimento medio real mensal de
+        homens e mulheres em 2026 e no inicio da serie (2012), calcule a
+        diferenca em R$ e em % e comente a evolucao do gap ao longo dos anos
+        (os valores mensais recentes tambem estao no contexto). Gere DOIS
+        graficos novos com essas series: composicao por sexo e rendimento por
+        sexo - NAO misture essas series com as ja graficadas de desocupacao e
+        informalidade nacionais.
+        REGIOES DO PAIS (obrigatorio): compare as CINCO Grandes Regioes com as
+        series Ipea por regiao do contexto (desocupacao PNADCT_TXDSCUPUF,
+        informalidade PNADCT_TXINFORMUF e rendimento PNADCT_RRHPUF, todas com
+        Norte, Nordeste, Sudeste, Sul e Centro-Oeste). Em TEXTO, identifique
+        quem lidera e quem fecha em cada indicador, a distancia entre os
+        extremos (ex.: maior x menor taxa, Sudeste x Nordeste em rendimento) e
+        o que essas diferencas revelam sobre a desigualdade regional do
+        trabalho - use OS NUMEROS do contexto, nao qualificativos vagos.
+        Tambem comente se a hierarquia regional se mantem estavel ao longo da
+        serie 2012-2026 ou se ha mudancas de posicao.
         GRAFICOS OBRIGATORIOS DESTA SECAO (todos devem constar; cada serie em
         UM UNICO grafico): (1) taxa de desocupacao em linha 2012-2026;
         (2) pessoas ocupadas em linha 2012-2026; (3) rendimento medio mensal
@@ -136,8 +163,14 @@ sections:
         (7) salario minimo real vs rendimento medio real em R$ com e sem
         carteira; (8) salario minimo NOMINAL vs NECESSARIO do DIEESE em serie
         2012-2026; (9) rendimento medio NOMINAL vs salario NECESSARIO do
-        DIEESE em serie 2012-2026. NAO crie outros graficos nem repita series
-        ja graficadas.
+        DIEESE em serie 2012-2026; (10) composicao por sexo da populacao de
+        14 anos ou mais e da forca de trabalho (barra empilhada, ano mais
+        recente); (11) rendimento medio real mensal de homens e mulheres em
+        linha 2012-2026 (R$); (12) taxa de desocupacao das CINCO regioes em
+        linha 2012-2026; (13) taxa de informalidade das CINCO regioes em
+        linha 2012-2026; (14) rendimento medio real das CINCO regioes em
+        linha 2012-2026 (R$). NAO crie outros graficos nem repita series ja
+        graficadas.
 
   - id: principios-constitucionais
     number: 2

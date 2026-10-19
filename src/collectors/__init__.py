@@ -512,6 +512,12 @@ IPEA_API = "http://www.ipeadata.gov.br/api/odata4"
 IPEA_PUBLIC_URL = "https://www.ipeadata.gov.br/"
 
 IPEA_SERIES = [
+    ("PNADCT_PCT14UF_HOM", "Pessoas de 14 anos ou mais - homens (% do total por sexo)"),
+    ("PNADCT_PCT14UF_MUL", "Pessoas de 14 anos ou mais - mulheres (% do total por sexo)"),
+    ("PNADCT_PCTDFTUF_HOM", "Forca de trabalho - homens (% do total por sexo)"),
+    ("PNADCT_PCTDFTUF_MUL", "Forca de trabalho - mulheres (% do total por sexo)"),
+    ("PNADCT_RRHPUF_HOM", "Rendimento medio real mensal do trabalho principal - homens (R$)"),
+    ("PNADCT_RRHPUF_MUL", "Rendimento medio real mensal do trabalho principal - mulheres (R$)"),
     ("PNADC12_ESPCC12", "Empregados no setor privado com carteira assinada (mil)"),
     ("PNADC12_ESPSC12", "Empregados no setor privado sem carteira assinada (mil)"),
     ("PNADCT_TXINFORMUF", "Taxa de informalidade - Brasil (%)"),
@@ -519,6 +525,20 @@ IPEA_SERIES = [
     ("PNADC12_RRPHESPSC12", "Rendimento real medio habitual - empregado sem carteira (R$)"),
     ("GAC12_SALMINRE12", "Salario minimo real (R$)"),
     ("PRECOS12_IPCA12", "IPCA - indice nacional de precos ao consumidor amplo"),
+]
+
+REGIOES_BR = {
+    "1": "Norte",
+    "2": "Nordeste",
+    "3": "Sudeste",
+    "4": "Sul",
+    "5": "Centro-Oeste",
+}
+
+IPEA_REGIOES = [
+    ("PNADCT_TXDSCUPUF", "Taxa de desocupacao (PNAD Continua, %)"),
+    ("PNADCT_TXINFORMUF", "Taxa de informalidade (PNAD Continua, %)"),
+    ("PNADCT_RRHPUF", "Rendimento medio real mensal do trabalho principal (R$)"),
 ]
 
 
@@ -625,6 +645,24 @@ def fetch_ipea_series(settings: Settings, code: str) -> list[tuple[str, float]]:
     return out
 
 
+def fetch_ipea_series_regioes(settings: Settings, code: str) -> dict[str, list[tuple[str, float]]]:
+    data = _get_json_cached(
+        settings, f"{IPEA_API}/ValoresSerie(SERCODIGO='{code}')"
+    )
+    out: dict[str, list[tuple[str, float]]] = {}
+    for item in data.get("value", []):
+        if str(item.get("NIVNOME") or "") != "Regiões":
+            continue
+        valor = item.get("VALVALOR")
+        if valor is None:
+            continue
+        tercod = str(item.get("TERCODIGO") or "")
+        periodo = str(item.get("VALDATA") or "")[:7]
+        if tercod and len(periodo) == 7:
+            out.setdefault(tercod, []).append((periodo, float(valor)))
+    return out
+
+
 def _fmt_periodo(periodo: str) -> str:
     p = str(periodo)
     if len(p) == 4 and p.isdigit():
@@ -690,6 +728,10 @@ def collect_ipea(settings: Settings, source: dict) -> list[Document]:
         "Ipea - SERIES (Ipeadata): series do mercado de trabalho replicadas da PNAD Continua.",
         "Periodos mensais no formato 'AAAA-MM'; medias anuais no formato 'AAAA'.",
         "Formalidade: empregados com carteira vs sem carteira; taxa de informalidade; rendimentos reais.",
+        "Genero: composicao por sexo da populacao de 14 anos ou mais e da forca de trabalho,",
+        "e rendimento medio real mensal de homens e mulheres (series _HOM e _MUL).",
+        "Regioes: as series com sufixo por Grande Regiao (Norte, Nordeste, Sudeste, Sul,",
+        "Centro-Oeste) trazem desocupacao, informalidade e rendimento por regiao.",
     ]
     for code, label in IPEA_SERIES:
         try:
@@ -710,7 +752,25 @@ def collect_ipea(settings: Settings, source: dict) -> list[Document]:
         lines.extend(
             f"    {periodo}: {valor:.1f}" for periodo, valor in valid[-12:]
         )
-    if len(lines) <= 3:
+    for code, label in IPEA_REGIOES:
+        try:
+            por_regiao = fetch_ipea_series_regioes(settings, code)
+        except (ConnectionError, ValueError):
+            continue
+        for tercod in sorted(por_regiao):
+            nome = REGIOES_BR.get(tercod, tercod)
+            serie = por_regiao[tercod]
+            if not serie:
+                continue
+            lines.append(f"Indicador: {label} - Regiao {nome} [serie Ipea {code}]")
+            lines.append("  Media anual (2012 em diante):")
+            lines.extend(
+                f"    {ano}: {valor}"
+                for ano, valor in _sample_annual(
+                    [(p, str(v)) for p, v in serie if p >= "2012-01"]
+                )
+            )
+    if len(lines) <= 7:
         return []
     return [
         Document(
