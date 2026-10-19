@@ -708,6 +708,41 @@ def collect_ibge(settings: Settings, source: dict) -> list[Document]:
             f"    {_fmt_periodo(periodo)}: {valor}"
             for periodo, valor in valid[-24:]
         )
+    sidra_idade = [
+        (1641, "Populacao de 14 anos ou mais (mil pessoas)"),
+        (4090, "Ocupadas (mil pessoas)"),
+        (4092, "Desocupadas (mil pessoas)"),
+        (4094, "Fora da forca de trabalho (mil pessoas)"),
+        (4097, "Nivel de ocupacao (%)"),
+    ]
+    ultimo = "202602"
+    try:
+        pdata = _get_json_cached(
+            settings,
+            "https://servicodados.ibge.gov.br/api/v3/agregados/4094/periodos",
+        )
+        if isinstance(pdata, dict):
+            pdata = pdata.get("periodos") or []
+        ids = [str(p["id"]) for p in pdata if isinstance(p, dict) and p.get("id")]
+        if ids:
+            ultimo = ids[-1]
+    except (ConnectionError, ValueError, KeyError, TypeError):
+        pass
+    for var, label in sidra_idade:
+        try:
+            tab = fetch_sidra_table(settings, 4094, ultimo, var, "58")
+        except (ConnectionError, ValueError, KeyError):
+            continue
+        if not tab:
+            continue
+        tri, ano = ultimo[4], ultimo[:4]
+        lines.append(
+            f"Composicao da populacao por idade ({tri}o trimestre de {ano}, "
+            f"tabela SIDRA 4094): {label}"
+        )
+        for faixa, vals in tab.items():
+            periodo = sorted(vals)[-1]
+            lines.append(f"  {faixa}: {vals[periodo]}")
     if len(lines) <= 2:
         return []
     return [

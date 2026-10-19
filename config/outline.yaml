@@ -41,8 +41,8 @@ sections:
   - id: panorama
     number: 1
     title: "Panorama do trabalho no Brasil em 2026"
-    charts: 14
-    words: [1500, 1900]
+    charts: 16
+    words: [1700, 2100]
     must_include: [ibge-pnad, ibge-pns, ipea-series-mercado, senado-sm-2026-orcamento, senado-arcabouco-2023, dieese-salario-minimo-necessario, dieese-cesta-basica-set-2026]
     extra_queries:
       - "salário mínimo 2026 valor R$ 1.621 reajuste"
@@ -154,6 +154,18 @@ sections:
         trabalho - use OS NUMEROS do contexto, nao qualificativos vagos.
         Tambem comente se a hierarquia regional se mantem estavel ao longo da
         serie 2012-2026 ou se ha mudancas de posicao.
+        POPULACAO OCUPADA E NAO OCUPADA POR IDADE (obrigatorio): use a Tabela
+        SIDRA 4094 presente no contexto (2o trimestre de 2026; grupos: Total,
+        14 a 17, 18 a 24, 25 a 39, 40 a 59, 60 anos ou mais; total, ocupadas,
+        desocupadas, fora da forca de trabalho e nivel de ocupacao). Explique
+        em NUMEROS porque quase metade da populacao de 14 anos ou mais nao
+        trabalha: quantos milhoes estao ocupados e quantos nao (desocupados +
+        fora da forca), o nivel de ocupacao de cada faixa (14-17 minoria por
+        causa dos estudos, pico entre 25-39, queda forte apos os 60) e onde se
+        concentram os nao ocupados. Para os MOTIVOS use o contexto do IBGE:
+        estudos dos jovens, aposentadoria/saida da forca de trabalho entre
+        idosos e dedicacao a afazeres domesticos e cuidados (nivel de ocupacao
+        feminino cerca de 20 p.p. abaixo do masculino).
         GRAFICOS OBRIGATORIOS DESTA SECAO (todos devem constar; cada serie em
         UM UNICO grafico): (1) taxa de desocupacao em linha 2012-2026;
         (2) pessoas ocupadas em linha 2012-2026; (3) rendimento medio mensal
@@ -169,8 +181,11 @@ sections:
         linha 2012-2026 (R$); (12) taxa de desocupacao das CINCO regioes em
         linha 2012-2026; (13) taxa de informalidade das CINCO regioes em
         linha 2012-2026; (14) rendimento medio real das CINCO regioes em
-        linha 2012-2026 (R$). NAO crie outros graficos nem repita series ja
-        graficadas.
+        linha 2012-2026 (R$); (15) composicao da populacao de 14 anos ou mais
+        por condicao (ocupadas, desocupadas e fora da forca) e grupo de idade
+        (barra empilhada com o Total e as cinco faixas, em milhoes); (16)
+        nivel de ocupacao por grupo de idade (barra simples, %). NAO crie
+        outros graficos nem repita series ja graficadas.
 
   - id: principios-constitucionais
     number: 2
