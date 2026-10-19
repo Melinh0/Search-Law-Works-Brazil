@@ -47,7 +47,13 @@ def _to_float(value) -> float:
 
 def _diag_item(item) -> str:
     if isinstance(item, dict):
-        label = item.get("label") or item.get("titulo") or item.get("texto") or ""
+        label = (
+            item.get("label")
+            or item.get("titulo")
+            or item.get("texto")
+            or item.get("rotulo")
+            or ""
+        )
         valor = item.get("valor", item.get("value"))
         if label and valor is not None:
             return f"{label}: {_fmt_item(str(valor))}"
@@ -79,9 +85,13 @@ def parse_spec(raw: str) -> dict:
                     s = {"valores": s}
                 if not isinstance(s, dict):
                     raise ChartError("serie invalida")
-                nome = str(s.get("nome") or "").strip() or (
-                    titulo if len(series) == 1 else f"Serie {i + 1}"
-                )
+                nome = str(
+                    s.get("nome")
+                    or s.get("titulo")
+                    or s.get("label")
+                    or s.get("rotulo")
+                    or ""
+                ).strip() or (titulo if len(series) == 1 else f"Serie {i + 1}")
                 try:
                     vals = [_to_float(v) for v in s.get("valores", [])]
                 except (TypeError, ValueError) as exc:
@@ -109,6 +119,13 @@ def parse_spec(raw: str) -> dict:
             if len(rotulos) != len(spec["valores"]):
                 raise ChartError("rotulos e valores com tamanhos diferentes")
             spec["rotulos"] = [str(r) for r in rotulos]
+        if (
+            tipo in ("barra", "barras")
+            and isinstance(spec.get("series"), list)
+            and len(spec["series"]) > 1
+            and all(len(s["valores"]) == len(spec["rotulos"]) for s in spec["series"])
+        ):
+            tipo = "barra_agrupada"
     elif tipo == "comparativo":
         colunas = spec.get("colunas")
         if not isinstance(colunas, list) or len(colunas) < 2:
@@ -151,6 +168,10 @@ def _ylabel(unidade: str) -> str:
     text = str(unidade or "").strip()
     if not text:
         return "valor"
+    if "%" in text:
+        return "(%)"
+    if "R$" in text:
+        return "(R$)"
     if text.startswith("(") and text.endswith(")"):
         return text
     return f"({text})"
