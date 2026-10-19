@@ -6,7 +6,6 @@ O relatório "Trabalho no Brasil 2026" apresenta uma análise abrangente do merc
 
 Palavras-chave: CLT; Vínculo Empregatício; MEI; Plataformas Digitais; Direito do Trabalho.
 
-
 ## Sumário
 
 1. [Panorama do trabalho no Brasil em 2026](#1-panorama-do-trabalho-no-brasil-em-2026)
@@ -29,43 +28,31 @@ R. [Referências](#referências)
 
 O mercado de trabalho brasileiro em 2026 apresenta um cenário de resiliência, com a taxa de desocupação atingindo patamares historicamente baixos [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). A taxa de desocupação média anual em 2026 foi de 5,8%, consolidando uma trajetória de queda desde o pico de 13,8% registrado em 2020 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). Esse movimento é impulsionado pela expansão da população ocupada, que alcançou a média anual de 102,5 milhões de pessoas em 2026 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-
 <figure class="figura"><img src="assets/figura-01.png" alt="Figura 1 - Taxa de Desocupação no Brasil (2012-2026)"><figcaption><strong>Figura 1 – Taxa de Desocupação no Brasil (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> A taxa de desocupação atingiu seu pico em 2020 e caiu para o menor nível da série em 2026.</figcaption></figure>
-
 
 O volume de pessoas ocupadas demonstra crescimento sustentado, saindo de 89,3 milhões em 2012 para 102,5 milhões em 2026 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html). O crescimento recente é sustentado especialmente pelo emprego formal, com taxa de expansão de 3,6%, superando a do setor informal, que foi de 1,5% [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).
 
-
 <figure class="figura"><img src="assets/figura-02.png" alt="Figura 2 - População Ocupada no Brasil (2012-2026)"><figcaption><strong>Figura 2 – População Ocupada no Brasil (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> O número de ocupados cresceu consistentemente, superando a marca de 100 milhões a partir de 2024.</figcaption></figure>
-
 
 O rendimento médio mensal real do trabalho principal acompanhou essa tendência de alta, registrando R$ 3.777,50 em 2026, comparado a R$ 3.191,30 em 2012 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
 
-
 <figure class="figura"><img src="assets/figura-03.png" alt="Figura 3 - Rendimento Médio Mensal Real (2012-2026)"><figcaption><strong>Figura 3 – Rendimento Médio Mensal Real (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> O rendimento médio real apresenta tendência de alta, com aceleração a partir de 2023.</figcaption></figure>
-
 
 ### 1.1 Segmentação e Informalidade
 
 O mercado divide-se entre trabalhadores com carteira assinada, sem carteira (informais), autônomos e MEIs [(IPEA, 2026a)](https://www.ipeadata.gov.br/). Em 2026, o número de empregados com carteira assinada foi de 39,3 milhões [(IPEA, 2026a)](https://www.ipeadata.gov.br/). Já os empregados sem carteira somaram 13,4 milhões [(IPEA, 2026a)](https://www.ipeadata.gov.br/). A taxa de informalidade, que atingiu 40,8% em 2019, recuou para 37,3% em 2026 [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
 
-
 <figure class="figura"><img src="assets/figura-04.png" alt="Figura 4 - Taxa de Informalidade no Brasil (2015-2026)"><figcaption><strong>Figura 4 – Taxa de Informalidade no Brasil (2015-2026).</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> A informalidade atingiu seu pico em 2019 e apresenta queda gradual até 2026.</figcaption></figure>
-
 
 ### 1.2 Saúde e Condições Sociais
 
 A Pesquisa Nacional de Saúde (PNS) é realizada quinquenalmente, com edições disponíveis de 2013 e 2019, enquanto a terceira edição (PNS 2026) encontra-se em fase de coleta [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). A percepção de saúde "boa ou muito boa" é significativamente maior entre pessoas ocupadas (73,8% em 2019) do que entre aquelas fora da força de trabalho (51,3% em 2019) [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
 
-
 <figure class="figura"><img src="assets/figura-05.png" alt="Figura 5 - Saúde Autoavaliada Boa/Muito Boa por Situação Ocupacional"><figcaption><strong>Figura 5 – Saúde Autoavaliada Boa/Muito Boa por Situação Ocupacional.</strong> <em>Fonte: [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).</em> Trabalhadores ocupados mantêm a melhor percepção de saúde, enquanto quem está fora da força de trabalho tem a pior.</figcaption></figure>
-
 
 A desigualdade na saúde também é evidente por cor ou raça e renda [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). Em 2019, 71% das pessoas brancas avaliaram sua saúde como boa ou muito boa, contra 62,9% de pretos e 62,1% de pardos [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html). Na faixa de renda, quem ganha mais de 5 salários mínimos reporta 86,4% de saúde boa/muito boa, enquanto quem ganha até 1/4 do salário mínimo reporta apenas 55,5% [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).
 
-
 <figure class="figura"><img src="assets/figura-06.png" alt="Figura 6 - Saúde Autoavaliada por Cor ou Raça (2019)"><figcaption><strong>Figura 6 – Saúde Autoavaliada por Cor ou Raça (2019).</strong> <em>Fonte: [(IBGE, 2019)](https://www.ibge.gov.br/estatisticas/sociais/saude/9160-pesquisa-nacional-de-saude.html).</em> Há uma disparidade na percepção de saúde entre pessoas brancas e pretas/pardas.</figcaption></figure>
-
 
 ### 1.3 Política de Salário Mínimo e Arcabouço Fiscal
 
@@ -77,9 +64,7 @@ O salário mínimo para 2026 foi fixado em R$ 1.621,00 [(SENADO FEDERAL, 2026d)]
 
 O rendimento médio real e o salário mínimo real apresentam comportamentos distintos. Em 2026, o salário mínimo real foi de R$ 1.643,40, enquanto o rendimento real médio do empregado com carteira foi de R$ 3.395,90 e do sem carteira R$ 2.670,50 [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
 
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Categoria</h4><ul><li>Salário Mínimo Real</li><li>Com Carteira</li><li>Sem Carteira</li></ul></div><div class="diag-coluna"><h4>Valor (R$)</h4><ul><li>1643.4</li><li>3395.9</li><li>2670.5</li></ul></div></div><figcaption><strong>Figura 7 – Rendimentos Reais Médios em 2026.</strong> <em>Fonte: [(IPEA, 2026a)](https://www.ipeadata.gov.br/).</em> O rendimento de quem possui carteira assinada é mais que o dobro do salário mínimo real.</figcaption></figure>
-
 
 O crescimento dos rendimentos deve ser analisado frente ao IPCA [(IPEA, 2026a)](https://www.ipeadata.gov.br/). Quando o rendimento médio cresce acima da inflação, há ganho de poder de compra; caso contrário, ocorre perda real, mesmo com aumento nominal dos valores [(IPEA, 2026a)](https://www.ipeadata.gov.br/).
 
@@ -89,15 +74,11 @@ A análise do DIEESE utiliza a metodologia do Salário Mínimo Necessário, calc
 
 Em setembro de 2026, o salário mínimo nominal era de R$ 1.621,00, enquanto o salário mínimo necessário era de R$ 7.750,01 [(DIEESE, 2026a)](https://www.dieese.org.br/analisecestabasica/salarioMinimo.html). Isso significa que o valor pago corresponde a apenas 20,9% do necessário para a cesta constitucional [(DIEESE, 2026a)](https://www.dieese.org.br/analisecestabasica/salarioMinimo.html).
 
-
 <figure class="figura"><img src="assets/figura-08.png" alt="Figura 8 - Salário Mínimo Nominal vs. Necessário (2012-2026)"><figcaption><strong>Figura 8 – Salário Mínimo Nominal vs. Necessário (2012-2026).</strong> <em>Fonte: [(DIEESE, 2026a)](https://www.dieese.org.br/analisecestabasica/salarioMinimo.html).</em> A distância entre o salário pago e o necessário para a cesta constitucional aumentou ao longo da série.</figcaption></figure>
-
 
 Comparando o rendimento médio nominal com o necessário, a defasagem permanece crítica [(DIEESE, 2026a)](https://www.dieese.org.br/analisecestabasica/salarioMinimo.html).
 
-
 <figure class="figura"><img src="assets/figura-09.png" alt="Figura 9 - Rendimento Médio Nominal vs. Salário Necessário (2012-2026)"><figcaption><strong>Figura 9 – Rendimento Médio Nominal vs. Salário Necessário (2012-2026).</strong> <em>Fonte: [(DIEESE, 2026a)](https://www.dieese.org.br/analisecestabasica/salarioMinimo.html).</em> Mesmo o rendimento médio nominal do brasileiro não atinge metade do valor necessário para a cesta constitucional.</figcaption></figure>
-
 
 <div class="tabela-legenda"><strong>Tabela 1 – Custo da Cesta Básica de Alimentos (Setembro 2026).</strong> <em>Fonte: [(DIEESE, 2026b)](https://www.dieese.org.br/analisecestabasica/2026/202609cestabasica.pdf).</em></div>
 | Item | Valor/Indicador | Fonte |
@@ -134,9 +115,7 @@ A Constituição Federal assegura um conjunto de direitos mínimos para garantir
 
 A jornada de trabalho normal é limitada a 8 horas diárias e 44 horas semanais, permitindo-se a compensação de horários ou a redução da jornada mediante acordo ou convenção coletiva [(BRASIL, 1988, art. 7º, XIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). Além disso, é garantido o décimo terceiro salário com base na remuneração integral ou no valor da aposentadoria [(BRASIL, 1988, art. 7º, VIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).
 
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Direito</h4><ul><li>Jornada Diária Máxima</li><li>Jornada Semanal Máxima</li><li>Salário Mínimo</li><li>Remuneração Noturna</li></ul></div><div class="diag-coluna"><h4>Regra Constitucional</h4><ul><li>8 horas</li><li>44 horas</li><li>Nunca inferior ao mínimo</li><li>Superior à do diurno</li></ul></div></div><figcaption><strong>Figura 10 – Principais Direitos Sociais do Trabalhador.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> O gráfico resume as limitações de jornada e garantias remuneratórias básicas previstas no art. 7º da CF.</figcaption></figure>
-
 
 ### 2.2 Liberdade Sindical, Greve e Proteção Legal
 
@@ -157,9 +136,7 @@ O empregador é definido como a empresa que assume os riscos da atividade econô
 | Trabalhador Avulso | Vínculo Intermitente | Igualdade de direitos com o trabalhador permanente [(BRASIL, 1988, art. 7º, XXXIV)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 | Trabalhador Doméstico | Lei Complementar | Direitos previstos em incisos específicos do art. 7º e integração previdenciária [(BRASIL, 1988, art. 7º, Parágrafo único)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Aspecto</h4><ul><li>Interferência Estatal</li><li>Dissolução de Associações</li><li>Adesão Sindical</li></ul></div><div class="diag-coluna"><h4>Regra</h4><ul><li>Vedada no funcionamento</li><li>Apenas por decisão judicial</li><li>Ninguém é compelido a associar-se</li></ul></div></div><figcaption><strong>Figura 11 – Garantias de Associação e Organização.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> A Constituição protege a autonomia das organizações trabalhistas contra a intervenção do Estado.</figcaption></figure>
-
 
 **Em termos simples:** A lei brasileira protege o trabalhador porque entende que ele é a parte mais fraca na relação com o patrão [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). Isso garante coisas básicas como limite de horas por dia, salário mínimo, 13º e a liberdade de criar sindicatos ou fazer greve para lutar por melhorias [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
@@ -187,9 +164,7 @@ Para a jornada excepcional, o trabalhador pode ultrapassar as 8 horas diárias m
 | Licença-Gestante | Duração de 120 dias, sem prejuízo do emprego e salário | [(BRASIL, 1988, inciso XVIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 | Adicionais | Remuneração extra para atividades penosas, insalubres ou perigosas | [(BRASIL, 1988, inciso XXIII)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm) |
 
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Tipo de Hora</h4><ul><li>Hora Normal</li><li>Hora Extraordinária</li></ul></div><div class="diag-coluna"><h4>Valor/Adicional</h4><ul><li>100%</li><li>150%</li></ul></div></div><figcaption><strong>Figura 12 – Remuneração da Hora de Trabalho.</strong> <em>Fonte: [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm).</em> O serviço extraordinário deve ser remunerado com um adicional mínimo de 50% sobre o valor da hora normal.</figcaption></figure>
-
 
 ### 3.2 Reforma Trabalhista de 2017 (Lei 13.467/2017)
 
@@ -202,9 +177,7 @@ A Lei 13.467/2017 alterou a CLT para adequar a legislação às novas relações
 
 A flexibilização trazida pela reforma, como a ampliação da terceirização e a criação de modalidades como o trabalho intermitente, reduz a complexidade e o custo do vínculo empregatício tradicional [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm). Isso impulsiona a migração para modelos de PJ e MEI, onde o custo tributário é simplificado em comparação aos encargos da CLT [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Regra</h4><ul><li>Horas Extras Habituais</li><li>Acordo de Compensação</li></ul></div><div class="diag-coluna"><h4>Efeito Pós-Reforma 2017</h4><ul><li>Não descaracteriza o banco de horas</li><li>Mantém-se a validade do acordo</li></ul></div></div><figcaption><strong>Figura 13 – Impacto da Reforma na Compensação de Jornada.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> A reforma de 2017 garantiu que a prática habitual de horas extras não anule a validade dos acordos de compensação de jornada.</figcaption></figure>
-
 
 **Em termos simples:** A CLT é o livro de regras do trabalho no Brasil. Ela garante que você não trabalhe mais de 8 horas por dia (ou 44 por semana) sem receber extra, que tenha férias com um dinheiro a mais (1/3) e aviso prévio se for demitido [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm). A Reforma de 2017 deixou as regras mais flexíveis, permitindo que patrão e empregado combinem coisas diferentes da lei e criando contratos como o intermitente, o que acabou incentivando muita gente a trabalhar como MEI ou PJ para fugir dos custos da carteira assinada [(BRASIL, LEI 13.467/2017)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
@@ -271,7 +244,6 @@ A fiscalização é realizada pela Secretaria de Inspeção do Trabalho do MTE, 
 **Em termos simples:**
 É o emprego comum, com carteira assinada e sem data para acabar, onde o patrão manda e o funcionário recebe o salário mensal [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-
 ### 5.2 CLT tempo determinado e contrato de experiência
 
 **Como funciona na prática:**
@@ -293,7 +265,6 @@ O MTE fiscaliza a validade dos prazos através da Auditoria-Fiscal do Trabalho [
 
 **Em termos simples:**
 É o "período de teste" de até 3 meses; se o patrão não te demitir nem você sair até o 90º dia, você vira funcionário fixo [(BRASIL, LC 150/2015, art. 5º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
-
 
 ### 5.3 Trabalho intermitente
 
@@ -317,7 +288,6 @@ A Auditoria-Fiscal do Trabalho verifica se a intermitência não está sendo usa
 **Em termos simples:**
 Você tem a carteira assinada, mas só trabalha e ganha quando a empresa te chama e você aceita [(BRASIL, 1943, art. 452-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-
 ### 5.4 Trabalho em tempo parcial
 
 **Como funciona na prática:**
@@ -339,7 +309,6 @@ A fiscalização do MTE monitora se a jornada parcial não excede os limites leg
 
 **Em termos simples:**
 É o emprego de "meio período", onde você trabalha menos horas e recebe um salário menor, proporcional ao tempo gasto [(BRASIL, 1943, art. 58-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-
 
 ### 5.5 Trabalho temporário
 
@@ -363,7 +332,6 @@ A Auditoria-Fiscal do Trabalho verifica se a empresa temporária possui o capita
 **Em termos simples:**
 Você é contratado por uma agência para trabalhar em outra empresa por um tempo curto, geralmente para cobrir férias ou um pico de serviço [(BRASIL, LEI 6.019/1974, art. 2º)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).
 
-
 ### 5.6 Teletrabalho/trabalho remoto e híbrido
 
 **Como funciona na prática:**
@@ -385,7 +353,6 @@ O MTE fiscaliza a correta anotação do regime de teletrabalho na CTPS digital [
 
 **Em termos simples:**
 É o trabalho feito de casa ou de qualquer lugar usando internet, com as regras combinadas no contrato [(BRASIL, 1943, art. 75-A)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
-
 
 ### 5.7 Trabalhador avulso
 
@@ -409,7 +376,6 @@ A fiscalização ocorre através do monitoramento do órgão gestor e da Auditor
 **Em termos simples:**
 É aquele trabalhador (como o estivador do porto) que não tem um único patrão, mas é chamado por um órgão para trabalhar em várias empresas diferentes [(BRASIL, LEI 8.213/1991, art. 34)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
-
 ### 5.8 Trabalhador doméstico
 
 **Como funciona na prática:**
@@ -431,7 +397,6 @@ A gestão é feita obrigatoriamente pelo eSocial Doméstico, que unifica a folha
 
 **Em termos simples:**
 É quem trabalha na casa de alguém (faxineira, babá, motorista) com carteira assinada e direitos garantidos por lei [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
-
 
 ### 5.9 Trabalhador rural
 
@@ -455,7 +420,6 @@ A Auditoria-Fiscal do Trabalho realiza inspeções rigorosas em áreas rurais pa
 **Em termos simples:**
 É o trabalhador do campo, que tem direitos parecidos com o da cidade, mas com algumas regras específicas para a roça [(BRASIL, LEI 13.467/2017, art. 3º)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm).
 
-
 ### 5.10 Estágio
 
 **Como funciona na prática:**
@@ -477,7 +441,6 @@ A Auditoria-Fiscal do Trabalho verifica se o estágio não está sendo usado par
 
 **Em termos simples:**
 É um aprendizado prático para quem estuda; não é emprego, por isso não tem carteira assinada nem FGTS, mas tem bolsa e seguro [(BRASIL, LEI 11.788/2008)](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm).
-
 
 ### 5.11 Aprendiz
 
@@ -501,13 +464,9 @@ O MTE fiscaliza o cumprimento da cota de aprendizes através da Auditoria-Fiscal
 **Em termos simples:**
 É um emprego para jovens aprenderem uma profissão enquanto estudam, com regras rígidas de escola e tempo de contrato [(BRASIL, 1943, art. 428)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
-
 <figure class="figura"><img src="assets/figura-14.png" alt="Figura 14 - Limites Legais de Prazo em Dias"><figcaption><strong>Figura 14 – Limites Legais de Prazo em Dias.</strong> <em>Fonte: [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm) e [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm).</em> O trabalho temporário possui o maior prazo legal inicial, enquanto a resposta do intermitente é a mais célere.</figcaption></figure>
 
-
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Limite Mínimo</h4><ul><li>5% do quadro</li></ul></div><div class="diag-coluna"><h4>Limite Máximo</h4><ul><li>15% do quadro</li></ul></div></div><figcaption><strong>Figura 15 – Cota de Aprendizagem.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> A cota de aprendizes deve variar entre 5% e 15% das funções que demandem formação profissional.</figcaption></figure>
-
 
 **Em termos simples:**
 Existem várias formas de contratar: desde o emprego fixo (CLT), o teste (experiência), o temporário para picos de serviço, até o jovem aprendiz e o estagiário. Cada um tem seu prazo e seus direitos, e o governo fiscaliza tudo pelo eSocial e por fiscais do trabalho para evitar abusos [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm); [(BRASIL, LEI 6.019/1974)](https://www.planalto.gov.br/ccivil_03/leis/l6019.htm); [(BRASIL, LC 150/2015)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp150.htm).
@@ -544,7 +503,6 @@ O contratante deve respeitar a autonomia do profissional, abstendo-se de aplicar
 
 **Em termos simples:** É o profissional "freela" que trabalha por conta própria e emite nota ou recibo, sem ter patrão para mandar no seu horário [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm).
 
-
 ### 6.2 PJ (ME, EPP, Simples Nacional, Lucro Presumido e Lucro Real)
 
 **Como funciona na prática:** O prestador constitui uma pessoa jurídica para emitir notas fiscais e formalizar a prestação de serviços [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A empresa deve manter contabilidade regular e observar o regime tributário escolhido para o recolhimento de impostos [(BRASIL, LEI 9.249/1995)](https://planalto.gov.br/ccivil_03/leis/l9249.htm).
@@ -564,7 +522,6 @@ O contratante deve pagar a fatura da empresa e não pode tratar o sócio da PJ c
 **Como o Estado enxerga e age:** A Receita Federal e o Comitê Gestor do Simples Nacional fiscalizam a conformidade tributária [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm). A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) atua quando a PJ é usada apenas para evitar encargos trabalhistas, podendo declarar a nulidade do contrato civil e impor a responsabilidade solidária do tomador [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Em termos simples:** É quando o trabalhador abre uma empresa para prestar serviços a outra empresa, pagando seus próprios impostos via CNPJ [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
-
 
 ### 6.3 MEI (Microempreendedor Individual)
 
@@ -586,7 +543,6 @@ O contratante deve realizar o pagamento ao MEI e não pode exigir exclusividade 
 
 **Em termos simples:** É a forma mais barata e fácil de ter um CNPJ, pagando um valor fixo por mês para ter direitos como aposentadoria [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-
 ### 6.4 Cooperado
 
 **Como funciona na prática:** O profissional associa-se a uma cooperativa de trabalho, que intermedia a prestação de serviços para tomadores [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm). O cooperado não é empregado da cooperativa, mas seu sócio [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
@@ -606,7 +562,6 @@ O tomador do serviço deve contratar a cooperativa, e não o indivíduo isoladam
 **Como o Estado enxerga e age:** A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) fiscaliza se a cooperativa é "fake" (fraude). Se comprovado que o cooperado era, na verdade, um empregado subordinado, o vínculo é reconhecido com o tomador do serviço [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
 **Em termos simples:** É quando profissionais se unem em uma cooperativa para conseguir serviços, dividindo os lucros e as despesas [(BRASIL, LEI 12.690/2012)](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12690.htm).
-
 
 ### 6.5 Contribuinte individual previdenciário
 
@@ -628,7 +583,6 @@ O contribuinte deve manter seus pagamentos em dia para não perder a qualidade d
 
 **Em termos simples:** É o trabalhador que paga o INSS por conta própria para não ficar desamparado na velhice ou doença [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).
 
-
 ### 6.6 Trabalho voluntário
 
 **Como funciona na prática:** O indivíduo presta serviços a entidades públicas ou instituições sem fins lucrativos sem receber remuneração [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).
@@ -648,7 +602,6 @@ A entidade deve garantir que o voluntário esteja ciente de que a atividade é g
 **Como o Estado enxerga e age:** A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) verifica se o "voluntariado" não é usado para mascarar emprego remunerado [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Se houver pagamento habitual de "ajudas" que simulem salário, o vínculo é reconhecido [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:** É trabalhar de graça para ajudar uma causa ou instituição, com um papel assinado dizendo que você não quer salário [(BRASIL, LEI 9.608/1998)](https://www.planalto.gov.br/ccivil_03/leis/l9608.htm).
-
 
 ### 6.7 Trabalho informal
 
@@ -670,7 +623,6 @@ O trabalhador informal assume todos os riscos da atividade, sem qualquer rede de
 
 **Em termos simples:** É o trabalho "sem carteira", onde a pessoa faz bicos ou ajuda a família sem ter garantia de salário ou aposentadoria [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
-
 ### 6.8 Serviço via aplicativos/plataformas
 
 **Como funciona na prática:** O trabalhador utiliza uma plataforma digital para conectar-se a clientes, recebendo a remuneração via app [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). A relação é apresentada como parceria comercial [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
@@ -690,7 +642,6 @@ A plataforma deve fornecer a infraestrutura tecnológica, enquanto o trabalhador
 **Como o Estado enxerga e age:** A Auditoria-Fiscal do Trabalho (Lei 10.593/2002) analisa a natureza da subordinação [(BRASIL, LEI 10.593/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm). Decisões judiciais têm variado entre o reconhecimento do vínculo e a manutenção da autonomia [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).
 
 **Em termos simples:** É o trabalho para apps de entrega ou transporte, onde o "chefe" é um algoritmo que distribui as tarefas [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
-
 
 ### 6.9 Análise Detalhada da Informalidade e Subutilização
 
@@ -743,27 +694,17 @@ A fraude, ou "pejotização", ocorre quando a empresa utiliza a estrutura de PJ 
 
 A redução da jornada de 44 para 40 horas semanais, mantendo o salário, eleva o custo da hora trabalhada para a empresa em aproximadamente 10% [(G1, 2026l)](https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/14/quando-comeca-a-valer-o-fim-da-escala-6x1.ghtml).
 
-
 <figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>CLT</h4><ul><li>FGTS: Sim</li><li>13º Salário: Sim</li><li>Férias Remuneradas: Sim</li><li>Aviso Prévio: Sim</li><li>Horas Extras: Sim</li></ul></div><div class="diag-coluna"><h4>PJ</h4><ul><li>FGTS: Não</li><li>13º Salário: Não</li><li>Férias Remuneradas: Não</li><li>Aviso Prévio: Não</li><li>Horas Extras: Não</li></ul></div></div><figcaption><strong>Figura 18 – Comparativo de Direitos Garantidos.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> O regime CLT oferece a totalidade dos direitos trabalhistas legais, enquanto o PJ depende de negociação contratual.</figcaption></figure>
-
 
 A reforma tributária, via EC 132/2023 e LC 214/2025, institui o IBS e a CBS sob o princípio da neutralidade para evitar distorções na organização da atividade econômica [(BRASIL, EC 132/2023)](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm), [(BRASIL, LC 214/2025, art. 2º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). O regime de MEI e Microempresas continua com tratamento diferenciado e favorecido para apuração de impostos [(BRASIL, LC 123/2006, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
 A categoria "sem carteira" é heterogênea e não se confunde apenas com "conta própria" ou MEI. Ela engloba empregados sem registro, trabalhadores domésticos sem carteira, trabalhadores por conta própria que não contribuem para a previdência e trabalhadores familiares auxiliares [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
 
-
 <figure class="figura"><img src="assets/figura-19.png" alt="Figura 19 - Crescimento Real da Renda no T1 2026 por Categoria"><figcaption><strong>Figura 19 – Crescimento Real da Renda no T1 2026 por Categoria.</strong> <em>Fonte: [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> Trabalhadores informais (conta própria e sem carteira) apresentaram maior crescimento de renda que os formais no T1 2026.</figcaption></figure>
-
-
 
 <figure class="figura"><img src="assets/figura-20.png" alt="Figura 20 - Expansão de Ocupados em 12 Meses"><figcaption><strong>Figura 20 – Expansão de Ocupados em 12 Meses.</strong> <em>Fonte: [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/).</em> O crescimento de ocupações formais superou a expansão do mercado informal no período.</figcaption></figure>
 
-
 A diferença de rendimento entre categorias reflete a estabilidade e os encargos do vínculo formal. Enquanto o trabalhador CLT possui proteção previdenciária e fundos, o informal assume todo o risco da atividade [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
-
-
-<figure class="figura"><img src="assets/figura-21.png" alt="Figura 21 - Evolução do Rendimento Médio Mensal Real (2012-2026)"><figcaption><strong>Figura 21 – Evolução do Rendimento Médio Mensal Real (2012-2026).</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> A renda média real apresentou tendência de alta a partir de 2022, atingindo o pico em 2026.</figcaption></figure>
-
 
 **Em termos simples:**
 A CLT é como um "pacote completo" com seguro (FGTS), descanso pago e regras de horário, mas custa mais caro para o patrão. O PJ é um contrato entre duas empresas: o profissional ganha mais no valor bruto, mas não tem garantias se for demitido e precisa pagar seu próprio INSS [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm), [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
@@ -818,13 +759,9 @@ O MEI tem acesso a benefícios da Previdência Social, como aposentadoria por id
 
 O trabalhador informal é aquele que exerce atividade econômica sem registro, ficando desprotegido contra riscos de incapacidade ou idade avançada [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm). Programas como o Seguro Defeso protegem categorias específicas, como pescadores, permitindo a remuneração em períodos de entressafra por até 120 dias [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>MEI</h4><ul><li>{"rotulo": "Custo Mensal (INSS)", "valor": "R$ 81,05"}</li><li>{"rotulo": "Acesso a Benefícios", "valor": "Sim"}</li><li>{"rotulo": "Emissão de Nota", "valor": "Sim"}</li></ul></div><div class="diag-coluna"><h4>Informal</h4><ul><li>{"rotulo": "Custo Mensal (INSS)", "valor": "R$ 0,00"}</li><li>{"rotulo": "Acesso a Benefícios", "valor": "Não"}</li><li>{"rotulo": "Emissão de Nota", "valor": "Não"}</li></ul></div></div><figcaption><strong>Figura 21 – Comparativo de Custos e Proteção: MEI vs Informal.</strong> <em>Fonte: [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3), [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> O MEI substitui a ausência de proteção do informal por um custo fixo reduzido.</figcaption></figure>
 
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>MEI</h4><ul><li>{"rotulo": "Custo Mensal (INSS)", "valor": "R$ 81,05"}</li><li>{"rotulo": "Acesso a Benefícios", "valor": "Sim"}</li><li>{"rotulo": "Emissão de Nota", "valor": "Sim"}</li></ul></div><div class="diag-coluna"><h4>Informal</h4><ul><li>{"rotulo": "Custo Mensal (INSS)", "valor": "R$ 0,00"}</li><li>{"rotulo": "Acesso a Benefícios", "valor": "Não"}</li><li>{"rotulo": "Emissão de Nota", "valor": "Não"}</li></ul></div></div><figcaption><strong>Figura 22 – Comparativo de Custos e Proteção: MEI vs Informal.</strong> <em>Fonte: [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3), [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> O MEI substitui a ausência de proteção do informal por um custo fixo reduzido.</figcaption></figure>
-
-
-
-<figure class="figura"><img src="assets/figura-23.png" alt="Figura 23 - Evolução do Teto de Faturamento MEI"><figcaption><strong>Figura 23 – Evolução do Teto de Faturamento MEI.</strong> <em>Fonte: [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas).</em> O teto de faturamento terá um crescimento expressivo a partir de 2027 conforme o PLP 186/2026.</figcaption></figure>
-
+<figure class="figura"><img src="assets/figura-23.png" alt="Figura 22 - Evolução do Teto de Faturamento MEI"><figcaption><strong>Figura 22 – Evolução do Teto de Faturamento MEI.</strong> <em>Fonte: [(SENADO FEDERAL, 2026c)](https://www12.senado.leg.br/noticias/materias/2026/10/15/senado-aprova-aumento-do-teto-para-mei-e-perdao-de-dividas).</em> O teto de faturamento terá um crescimento expressivo a partir de 2027 conforme o PLP 186/2026.</figcaption></figure>
 
 **Em termos simples:** O MEI é um jeito barato e fácil de sair da informalidade. Você paga um valor fixo por mês (o DAS) e garante aposentadoria e auxílio-doença, mas não tem direito a FGTS ou seguro-desemprego como quem tem carteira assinada [(BRASIL, 2026a)](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3), [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
@@ -853,17 +790,13 @@ O custeio da previdência varia conforme o vínculo do trabalhador com a ativida
 | De R$ 324,46 até R$ 540,75 | 9,00% | [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
 | De R$ 540,76 até R$ 1.081,50 | 11,00% | [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm) |
 
-
-<figure class="figura"><img src="assets/figura-24.png" alt="Figura 24 - Alíquotas de Contribuição Previdenciária"><figcaption><strong>Figura 24 – Alíquotas de Contribuição Previdenciária.</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em> Trabalhadores autônomos e empresários possuem a maior alíquota de contribuição individual.</figcaption></figure>
-
+<figure class="figura"><img src="assets/figura-24.png" alt="Figura 23 - Alíquotas de Contribuição Previdenciária"><figcaption><strong>Figura 23 – Alíquotas de Contribuição Previdenciária.</strong> <em>Fonte: [(BRASIL, LEI 8.212/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm).</em> Trabalhadores autônomos e empresários possuem a maior alíquota de contribuição individual.</figcaption></figure>
 
 ### 9.2 Carência e Regras de Acesso
 
 A carência para aposentadorias por idade, tempo de serviço e especial segue uma progressão histórica de meses de contribuição exigidos, baseada no ano da entrada do requerimento [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).
 
-
-<figure class="figura"><img src="assets/figura-25.png" alt="Figura 25 - Evolução da Carência Exigida (1991-2012)"><figcaption><strong>Figura 25 – Evolução da Carência Exigida (1991-2012).</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> O patamar de carência subiu gradualmente até atingir 180 meses em 2012.</figcaption></figure>
-
+<figure class="figura"><img src="assets/figura-25.png" alt="Figura 24 - Evolução da Carência Exigida (1991-2012)"><figcaption><strong>Figura 24 – Evolução da Carência Exigida (1991-2012).</strong> <em>Fonte: [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm).</em> O patamar de carência subiu gradualmente até atingir 180 meses em 2012.</figcaption></figure>
 
 ### 9.3 Reforma Tributária e Novos Impostos
 
@@ -913,7 +846,7 @@ A proteção social é reduzida para este grupo. Apenas 22,3% dos trabalhadores 
 
 Juridicamente, a relação de emprego é definida pela empresa que assume os riscos da atividade econômica e dirige a prestação pessoal de serviço [(BRASIL, 1943, art. 2º)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm). A fiscalização dessas relações compete à Auditoria-Fiscal do Trabalho [(BRASIL, LEI 10.593/2002, art. 1º)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10593.htm).
 
-<figure class="figura"><img src="assets/figura-26.png" alt="Figura 26 - Volume de Trabalhadores por Tipo de Aplicativo"><figcaption><strong>Figura 26 – Volume de Trabalhadores por Tipo de Aplicativo.</strong> <em>Fonte: [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em> O transporte particular de passageiros é a atividade com maior volume de trabalhadores plataformizados no Brasil.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-26.png" alt="Figura 25 - Volume de Trabalhadores por Tipo de Aplicativo"><figcaption><strong>Figura 25 – Volume de Trabalhadores por Tipo de Aplicativo.</strong> <em>Fonte: [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).</em> O transporte particular de passageiros é a atividade com maior volume de trabalhadores plataformizados no Brasil.</figcaption></figure>
 
 **Em termos simples:**
 Trabalhar por aplicativo no Brasil significa, para a maioria, ser um trabalhador por conta própria com renda menor que a de quem tem emprego comum [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). Quem dirige carro ou faz entregas depende muito mais do app para definir preços e clientes do que quem presta serviços profissionais [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf). Além disso, pouquíssimos desses trabalhadores pagam a previdência para garantir aposentadoria [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
@@ -1028,9 +961,7 @@ A fiscalização é exercida pelo Ministério do Trabalho e Emprego (MTE) atrav�
 
 A comprovação de irregularidades pode ocorrer via denúncias nos canais do MTE [(MTE, 2026b)](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho) ou por meio de ações na Justiça do Trabalho, onde terceiros que conheçam os fatos podem atuar como prova, mesmo sem vínculo societário [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
 
-
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Trabalhador CLT</h4><ul><li>Risco: Acidentes de trabalho [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Proteção: Fornecimento gratuito de EPIs [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Proteção: Seguro contra acidentes [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Proteção: Normas de higiene e saúde [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div><div class="diag-coluna"><h4>Empresa/Empregador</h4><ul><li>Risco: Multas por falta de segurança [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Risco: Reintegração de empregado CIPA [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Proteção: Autonomia patrimonial da PJ [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)</li><li>Proteção: Fiscalização orientadora para ME/EPP [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)</li></ul></div></div><figcaption><strong>Figura 27 – Riscos e Proteções por Modalidade.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> Enquanto o trabalhador é protegido por normas de saúde e seguros, a empresa assume o risco econômico e a responsabilidade penal por negligência em segurança.</figcaption></figure>
-
+<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Trabalhador CLT</h4><ul><li>Risco: Acidentes de trabalho [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Proteção: Fornecimento gratuito de EPIs [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Proteção: Seguro contra acidentes [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li><li>Proteção: Normas de higiene e saúde [(BRASIL, 1988)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm)</li></ul></div><div class="diag-coluna"><h4>Empresa/Empregador</h4><ul><li>Risco: Multas por falta de segurança [(BRASIL, LEI 8.213/1991)](https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm)</li><li>Risco: Reintegração de empregado CIPA [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm)</li><li>Proteção: Autonomia patrimonial da PJ [(BRASIL, LEI 10.406/2002)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm)</li><li>Proteção: Fiscalização orientadora para ME/EPP [(BRASIL, LC 123/2006)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm)</li></ul></div></div><figcaption><strong>Figura 26 – Riscos e Proteções por Modalidade.</strong> <em>Fonte: [(BRASIL, 1943)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm).</em> Enquanto o trabalhador é protegido por normas de saúde e seguros, a empresa assume o risco econômico e a responsabilidade penal por negligência em segurança.</figcaption></figure>
 
 ### 12.4 Checklist de Migração e Proteção Jurídica
 
@@ -1070,13 +1001,6 @@ A análise das modalidades de trabalho no Brasil revela distinções claras entr
 O cenário para 2030 é influenciado pela Reforma Tributária, que introduz novos impostos como IBS e CBS [(BRASIL, LC 214/2025)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm). O impacto é sentido especialmente no MEI, que enfrenta discussões sobre novos limites de faturamento [(OMIE, 2026)](https://www.omie.com.br/blog/mudanca-mei-2026-reforma-tributaria/). A inteligência artificial e o teletrabalho já mostram penetração em setores de informação e finanças, onde 25,8% dos trabalhadores atuam remotamente [(IBGE, 2026b)](https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102035_informativo.pdf).
 
 O mercado de trabalho apresenta sinais de aquecimento, com a taxa de desocupação atingindo patamares historicamente baixos em 2026 [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html); [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/). Contudo, a subutilização da força de trabalho permanece elevada para mulheres pretas ou pardas [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf). A população idosa também expandiu sua presença no mercado, com o nível de ocupação atingindo 24,4% em 2024 [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).
-
-
-<figure class="figura"><img src="assets/figura-28.png" alt="Figura 28 - Taxa de Desocupação em Perspectiva"><figcaption><strong>Figura 28 – Taxa de Desocupação em Perspectiva.</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> A taxa de desocupação em 2026 é a menor entre os anos comparados, refletindo a recuperação pós-pandemia.</figcaption></figure>
-
-
-
-<figure class="figura"><div class="diagrama comparativo"><div class="diag-coluna"><h4>Período</h4><ul><li>2012</li><li>2026</li></ul></div><div class="diag-coluna"><h4>Valor Estimado</h4><ul><li>R$ 1.200,00</li><li>R$ 1.800,00</li></ul></div></div><figcaption><strong>Figura 29 – Rendimento Médio Mensal Real.</strong> <em>Fonte: [(IBGE, 2026d)](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).</em> O rendimento médio real apresenta crescimento nominal, porém a análise de poder de compra deve considerar a inflação do IPCA [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf).</figcaption></figure>
 
 *Nota: Os valores de rendimento acima são exemplificativos para a estrutura do gráfico, pois o contexto fornece a tendência de aumento de rendimentos reais [(IPEA, 2026b)](https://www.ipea.gov.br/cartadeconjuntura/index.php/category/mercado-de-trabalho/) e a paridade de poder de compra [(IBGE, 2026a)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf), mas não a série numérica exata de rendimento médio mensal em reais para 2012 e 2026.*
 
@@ -1198,10 +1122,8 @@ Todas as fontes citadas neste relatório, em formato ABNT (NBR 6023):
 
 Series historicas complementares coletadas diretamente das APIs oficiais do IBGE (SIDRA) e do Ipea (Series Temporais/Ipeadata), usadas para contextualizar formalidade, informalidade e rendimentos no mercado de trabalho brasileiro. Os dados replicam a PNAD Continua.
 
-<figure class="figura"><img src="assets/figura-29.png" alt="Figura 30 - Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 30 – Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Medias anuais das series PNADC12_ESPCC12 e PNADC12_ESPSC12.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-29.png" alt="Figura 27 - Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 27 – Empregados no Setor Privado: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Medias anuais das series PNADC12_ESPCC12 e PNADC12_ESPSC12.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-30.png" alt="Figura 31 - Taxa de Informalidade no Emprego Urbano (2015-2026)"><figcaption><strong>Figura 31 – Taxa de Informalidade no Emprego Urbano (2015-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Media anual da serie PNADCT_TXINFORMUF, territorio Brasil.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-31.png" alt="Figura 28 - Rendimento Real Medio do Trabalho Principal: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 28 – Rendimento Real Medio do Trabalho Principal: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Medias anuais das series PNADC12_RRPHESPCC12 e PNADC12_RRPHESPSC12; valores reais.</figcaption></figure>
 
-<figure class="figura"><img src="assets/figura-31.png" alt="Figura 32 - Rendimento Real Medio do Trabalho Principal: Com vs Sem Carteira Assinada (2012-2026)"><figcaption><strong>Figura 32 – Rendimento Real Medio do Trabalho Principal: Com vs Sem Carteira Assinada (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Medias anuais das series PNADC12_RRPHESPCC12 e PNADC12_RRPHESPSC12; valores reais.</figcaption></figure>
-
-<figure class="figura"><img src="assets/figura-32.png" alt="Figura 33 - Salario Minimo Real (2012-2026)"><figcaption><strong>Figura 33 – Salario Minimo Real (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Media anual da serie GAC12_SALMINRE12; valores reais.</figcaption></figure>
+<figure class="figura"><img src="assets/figura-32.png" alt="Figura 29 - Salario Minimo Real (2012-2026)"><figcaption><strong>Figura 29 – Salario Minimo Real (2012-2026).</strong> <em>Fonte: (IPEA, 2026).</em> Media anual da serie GAC12_SALMINRE12; valores reais.</figcaption></figure>

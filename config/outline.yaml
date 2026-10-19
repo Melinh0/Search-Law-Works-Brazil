@@ -20,8 +20,12 @@ defaults:
     (medias anuais 2012-2026), nunca um recorte curto de anos recentes. Nos
     itens de comparativo e nas tabelas, escreva numeros formatados em portugues com
     unidade ('1,2 milhao', '102,5 milhoes', 'R$ 3.777,50'); NUNCA numeros crus
-    como '1200000'. NAO repita series que ja foram graficadas em outra secao
-    (taxa de desocupacao, pessoas ocupadas e rendimento medio sao da secao 1).
+    como '1200000'. NAO repita series que ja foram graficadas em outra secao:
+    taxa de desocupacao, pessoas ocupadas, rendimento medio mensal real e
+    taxa de informalidade pertencem a secao 1 e NUNCA devem aparecer de novo
+    em outra secao - nem como serie completa, nem como recorte reduzido,
+    resumo em barras ou 'panorama' (se precisar retomar um numero, cite-o em
+    texto ou tabela, sem grafico novo).
     Quando a serie tiver apenas poucos anos (ex.: PNS 2013 e 2019) ou anos sem
     dado, use nos graficos APENAS os anos existentes no contexto e explique NO
     TEXTO a cobertura (periodicidade da pesquisa, edicoes disponiveis, coleta em
@@ -295,7 +299,7 @@ sections:
   - id: pj-vs-clt
     number: 7
     title: "PJ versus CLT: comparação objetiva"
-    charts: 4
+    charts: 3
     must_include: [clt, lc123-mei, lc-214-2025, ec-132-2023, ibge-pnad, ipea-carta-mercado]
     extra_queries:
       - "rendimento médio com carteira assinada sem carteira PNAD"
@@ -317,6 +321,9 @@ sections:
       jornada semanal media de trabalhadores COM vinculo empregaticio
       (com carteira assinada/CLT) versus SEM vinculo (sem carteira, conta
       propria, informais), citando os numeros exatos do contexto (PNAD/Ipea).
+      Esse grafico deve ser o CONTRASTE COM x SEM carteira - NAO crie aqui a
+      serie total do rendimento medio mensal (2012-2026), que ja foi
+      graficada na secao 1.
       Inclua uma analise detalhada explicando por que a diferenca existe
       (direitos, estabilidade, encargos, informalidade) e o que ela significa
       na pratica para quem escolhe entre os regimes.
@@ -506,18 +513,19 @@ sections:
   - id: quadro-resumo
     number: 13
     title: "Quadro resumo e conclusões"
-    charts: 2
+    charts: 1
     must_include: [clt, lc123-mei]
     brief: >
       Tabela consolidada comparando todas as modalidades em termos de
       direitos, deveres, custo, risco e indicacao de uso. Cenarios futuros
       ate 2030 (reforma tributaria, plataformas, inteligencia artificial no
       trabalho). Conclusoes objetivas: o que esta estabelecido, o que
-      pode mudar, quem e mais afetado pelas mudancas. Para o panorama
-      final, use barras da taxa de desocupacao em perspectiva (2012, 2020
-      e 2026) e barras do rendimento medio mensal real (2012 vs 2026, com
-      a variacao percentual), em vez de repetir as series completas da
-      secao 1. Feche com um comparativo final das modalidades.
+      pode mudar, quem e mais afetado pelas mudancas. NAO faca graficos de
+      recapitulacao de series ja graficadas na secao 1 (taxa de desocupacao,
+      informalidade, rendimento medio total) - retome esses numeros em texto
+      ou tabela. Se usar graficos, sejam apenas series NOVAS ainda nao
+      graficadas (ex.: empregados ou rendimento COM versus SEM carteira,
+      salario minimo real). Feche com um comparativo final das modalidades.
 
 appendix:
   id: legislacao-explicada
