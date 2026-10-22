@@ -183,5 +183,7 @@ cython_debug/
 data/cache/
 data/corpus/
 output/
+output/build-latex/
 __pycache__/
 *.pyc
+AGENTS.md

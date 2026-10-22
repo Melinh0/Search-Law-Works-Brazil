@@ -6,6 +6,7 @@ import re
 import unicodedata
 
 from .annex import build_charts_annex
+from . import insights as _insights
 from .charts import GRAFICO_RE, MATH_TYPES, ChartError, ChartRenderer, count_graficos, parse_spec
 from .config import Settings
 from .llm import OllamaClient
@@ -329,6 +330,14 @@ def _modality_queries(section: dict) -> list[str]:
     return [str(item).strip() for item in section.get("modalities", []) if str(item).strip()]
 
 
+QUOTA_POR_FONTE = {
+    "ibge-pnad": 3,
+    "ibge-pnad-categorias": 6,
+    "dieese-cesta-regioes": 6,
+    "custo-formal-2026": 4,
+}
+
+
 def retrieve_for_section(section: dict, index: SearchIndex, settings: Settings) -> list[dict]:
     defaults = settings.outline.get("defaults", {})
     top_k = 16 if section.get("structure") else 14
@@ -348,19 +357,33 @@ def retrieve_for_section(section: dict, index: SearchIndex, settings: Settings) 
     for source_id in section.get("must_include", []):
         found = [c for c in index.chunks if c["source_id"] == source_id]
         found.sort(key=lambda c: int(c.get("priority", 1)), reverse=True)
-        quota = 3 if source_id == "ibge-pnad" else 2
+        quota = QUOTA_POR_FONTE.get(source_id, 2)
+        ja_tem = sum(1 for c in selected if c["source_id"] == source_id)
+        faltam = max(0, quota - ja_tem)
         added = 0
         for c in found:
+            if added >= faltam:
+                break
             key = (c["source_id"], c.get("chunk_index", 0))
             if key in have:
                 continue
             forced.append(c)
             have.add(key)
             added += 1
-            if added >= quota:
-                break
     if forced:
-        selected = selected[: max(limit - len(forced), 0)] + forced
+        forcas = {(f["source_id"], f.get("chunk_index", 0)) for f in forced}
+        obrigatorios = set(section.get("must_include", []))
+        prioridade = [
+            c for c in selected
+            if c["source_id"] in obrigatorios
+            and (c["source_id"], c.get("chunk_index", 0)) not in forcas
+        ]
+        outros = [
+            c for c in selected
+            if c["source_id"] not in obrigatorios
+            and (c["source_id"], c.get("chunk_index", 0)) not in forcas
+        ]
+        selected = (prioridade + forced + outros)[:limit]
     return selected[:limit]
 
 
@@ -383,7 +406,9 @@ def _section_prompt(
     min_words, max_words = section.get(
         "words", (defaults.get("min_words", 400), defaults.get("max_words", 900))
     )
-    min_charts = section.get("charts", defaults.get("charts", 1))
+    min_charts = _insights.min_charts_modelo(
+        str(section.get("id", "")), section.get("charts", defaults.get("charts", 1))
+    )
     structure = section.get("structure") or []
     modalities_block = ""
     modality_lines = "\n".join(f"- {m}" for m in section.get("modalities", []))
@@ -648,6 +673,8 @@ def validate_section(
             continue
         if first.startswith("#") or first.startswith("![") or first.startswith("<figure"):
             continue
+        if re.match(r"^\*\*[^*]{3,80}\*\*$", first):
+            continue
         if re.match(r"^\**\s*Fontes consultadas", first, re.IGNORECASE):
             continue
         if first.startswith("![") or first.startswith('<div class="diagrama'):
@@ -720,11 +747,57 @@ def validate_section(
 
 TERMINAL_RE = re.compile(r"[.!?:;)\]\"'\u2019\u201d\u2026]$")
 
+FENCE_LINHA_RE = re.compile(r"(?m)^```.*$")
+
+
+def _remover_fence_incompleta(text: str) -> str:
+    """Remove bloco de codigo que ficou sem fechamento.
+
+    Quando a geracao do modelo e truncada no meio de um bloco ```grafico, o
+    JSON parcial vazaria como texto no relatorio. Blocos ``` abrem e fecham
+    em pares; um numero impar de marcadores indica que o ultimo ficou
+    pendente e o trecho e descartado.
+    """
+    marcas = list(FENCE_LINHA_RE.finditer(text))
+    if len(marcas) % 2 == 0:
+        return text
+    return text[: marcas[-1].start()].rstrip() + "\n"
+
 
 def _is_incomplete_prose(line: str) -> bool:
-    if re.match(r"^(#{1,6}\s|!|\||<|\*|-|\+|\d+[.)])", line):
+    texto = line.strip()
+    if re.match(r"^(#{1,6}\s|!|<|\||-{3,}|\*{3,}$)", texto):
         return False
-    return not TERMINAL_RE.search(line)
+    if re.match(r"^([-*+]\s|\d+[.)]\s)", texto):
+        return False
+    sem_marcacao = texto.lstrip("*_` ").rstrip()
+    if not sem_marcacao:
+        return False
+    if re.match(r"^(#{1,6}\s|!|<|\|)", sem_marcacao):
+        return False
+    if re.match(r"^([-*+]\s|\d+[.)]\s)", sem_marcacao):
+        return False
+    return not TERMINAL_RE.search(sem_marcacao)
+
+
+def _garantir_citacao_em_termos_simples(
+    text: str, registry: dict[str, dict], fallback_code: str
+) -> str:
+    blocos = text.split("\n\n")
+    for indice in range(len(blocos) - 1, -1, -1):
+        bloco = blocos[indice].strip()
+        if not bloco.startswith("**Em termos simples:**"):
+            continue
+        if _is_incomplete_prose(bloco.split("\n", 1)[0]):
+            blocos[indice] = (
+                "**Em termos simples:** o ponto central desta secao esta nos "
+                f"numeros oficiais apresentados acima ({fallback_code})."
+            )
+            break
+        if not _has_citation(bloco, registry):
+            blocos[indice] = bloco.rstrip() + f" ({fallback_code})"
+        break
+    return "\n\n".join(blocos)
 
 
 def repair_section(
@@ -744,6 +817,7 @@ def repair_section(
             continue
         cleaned.append(line)
     text = "\n".join(cleaned)
+    text = _remover_fence_incompleta(text)
     text = re.sub(r"\n{3,}", "\n\n", text)
 
     tail_lines = text.split("\n")
@@ -793,7 +867,13 @@ def repair_section(
         if not _has_citation(block_text, registry):
             block_text = block_text.rstrip() + f" ({fallback_code})"
         out.append(block_text)
-    return "\n\n".join(out), removed
+    text = "\n\n".join(out)
+    if "Em termos simples" not in text:
+        text = text.rstrip() + (
+            "\n\n**Em termos simples:** o ponto central desta secao esta nos "
+            f"numeros oficiais apresentados acima ({fallback_code}).\n"
+        )
+    return text, removed
 
 
 def _render_charts(text: str, renderer: ChartRenderer) -> str:
@@ -884,7 +964,9 @@ def generate_section(
         if _public_url(c["url"]) in registry
     }
     defaults = settings.outline.get("defaults", {})
-    min_charts = section.get("charts", defaults.get("charts", 1))
+    min_charts = _insights.min_charts_modelo(
+        str(section.get("id", "")), section.get("charts", defaults.get("charts", 1))
+    )
     max_words = section.get("words", (0, defaults.get("max_words", 900)))[1]
     factor = 3.6 if section.get("structure") else 2.4
     fallback_code = _pick_fallback_code(section, registry)
@@ -902,6 +984,7 @@ def generate_section(
             temperature=0.2,
         )
         text = _clean_section(text, section)
+        text = _remover_fence_incompleta(text)
         violations = validate_section(text, section, registry, min_charts)
         if not violations:
             break
@@ -915,6 +998,7 @@ def generate_section(
                 f"[relatorio] secao {section['number']}: {len(still)} aviso(s) residual(is): "
                 + "; ".join(still[:3])
             )
+    text = _garantir_citacao_em_termos_simples(text, registry, fallback_code)
     text = _renumber_headings(text, section["number"])
     return text, chunks
 
@@ -1058,6 +1142,8 @@ def audit_report(md_text: str, outline: dict) -> dict:
             continue
         if first in ("---", "***", "--"):
             continue
+        if re.match(r"^\*\*[^*]{3,80}\*\*$", first):
+            continue
         if re.match(r"^\**\s*Fontes consultadas", first, re.IGNORECASE):
             continue
         if re.match(r"^(Palavras-chave|\*Fim do relatorio)", first, re.IGNORECASE):
@@ -1085,6 +1171,22 @@ def audit_report(md_text: str, outline: dict) -> dict:
     min_charts = sum(int(s.get("charts", 1)) for s in outline.get("sections", []))
     min_charts += int((outline.get("annex") or {}).get("charts", 0))
     stats["graficos_minimos_esperados"] = min_charts
+    secoes_abaixo: list[str] = []
+    for section in outline.get("sections", []):
+        titulo = str(section.get("title", ""))
+        bloco = re.search(
+            rf"(?ms)^##\s+\d+\.\s+{re.escape(titulo)}\s*$(.*?)(?=^##\s|\Z)",
+            md_text,
+        )
+        if not bloco:
+            continue
+        esperado = int(section.get("charts", 1))
+        obtidos = bloco.group(1).count('<figure class="figura">')
+        if obtidos < esperado:
+            secoes_abaixo.append(
+                f"{section.get('id', titulo)}: {obtidos}/{esperado}"
+            )
+    stats["secoes_abaixo_do_minimo"] = secoes_abaixo
     return stats
 
 
@@ -1153,6 +1255,9 @@ def generate_report(
                 f"_Secao nao disponivel no momento (falha na geracao: {exc})._"
             )
             chunks = []
+        text = _insights.append_secao(
+            str(section.get("id", "")), text, settings, log, full_registry
+        )
         text = _render_charts(text, renderer)
         text = _render_table_captions(text, renderer)
         text = link_citations(text, full_registry)
@@ -1209,6 +1314,11 @@ def generate_report(
         f"{stats['paragrafos_sem_citacao']} paragrafo(s) sem citacao, "
         f"capa={stats['tem_capa']}, resumo={stats['tem_resumo']}, referencias={stats['tem_referencias']}"
     )
+    if stats.get("secoes_abaixo_do_minimo"):
+        log(
+            "[relatorio] secoes abaixo do minimo de graficos: "
+            + "; ".join(stats["secoes_abaixo_do_minimo"])
+        )
     return report
 
 

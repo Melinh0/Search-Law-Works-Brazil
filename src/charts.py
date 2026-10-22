@@ -195,7 +195,7 @@ def _br_number(value: float, _pos=None) -> str:
         if value == int(value):
             return f"{int(value):,}".replace(",", ".")
         inteiro, _, decimal = f"{value:,.1f}".partition(".")
-        return f"{inteiro.replace(',', '.')},{decimal.rstrip('0').rstrip('.')}"
+        return f"{inteiro.replace(',', '.')},{decimal}"
     scaled = value / div
     if abs(scaled - round(scaled)) < 0.05 and div > 1:
         scaled_txt = f"{abs(round(scaled))}"
@@ -203,6 +203,11 @@ def _br_number(value: float, _pos=None) -> str:
         scaled_txt = f"{abs(scaled):.1f}".rstrip("0").rstrip(".").replace(".", ",")
     signal = "-" if value < 0 else ""
     return f"{signal}{scaled_txt}{escala}"
+
+
+def _br_valor(value: float) -> str:
+    texto = f"{value:,.2f}"
+    return texto.replace(",", "@").replace(".", ",").replace("@", ".")
 
 
 def _fmt_item(item: str) -> str:
@@ -353,7 +358,7 @@ class ChartRenderer:
                 ax.grid(axis="y", visible=False)
                 span = max(valores) if valores else 1
                 for i, v in enumerate(valores):
-                    ax.text(v + span * 0.015, i, _br_number(v), va="center", fontsize=9.5)
+                    ax.text(v + span * 0.015, i, _br_valor(v), va="center", fontsize=9.5)
                 ax.set_xlim(0, span * 1.14)
                 ax.xaxis.set_major_formatter(FuncFormatter(_br_number))
             elif tipo == "barra_empilhada":
@@ -366,7 +371,13 @@ class ChartRenderer:
                     bottom = [b + v for b, v in zip(bottom, s["valores"])]
                 ax.set_ylabel(ylabel)
                 ax.yaxis.set_major_formatter(FuncFormatter(_br_number))
-                ax.legend(fontsize=9, frameon=False)
+                ax.legend(
+                    fontsize=9,
+                    frameon=False,
+                    loc="lower left",
+                    bbox_to_anchor=(0, 1.01),
+                    ncol=min(len(series), 3),
+                )
                 if len(rotulos) > 4 or any(len(str(r)) > 10 for r in rotulos):
                     ax.set_xticks(range(len(rotulos)))
                     ax.set_xticklabels(_wrap_labels(rotulos), fontsize=8.5)
@@ -384,14 +395,21 @@ class ChartRenderer:
                                     color=PALETTE[i % len(PALETTE)], label=s["nome"])
                     for rect, v in zip(barras, s["valores"]):
                         ax.text(rect.get_x() + rect.get_width() / 2, v + topo * 0.015,
-                                _br_number(v), ha="center", fontsize=8.5)
+                                _br_valor(v), ha="center", fontsize=8.5)
                 ax.set_xticks(eixo_x)
                 ax.set_xticklabels(_wrap_labels(rotulos, width=12), fontsize=9)
                 ax.set_ylabel(ylabel)
                 ax.yaxis.set_major_formatter(FuncFormatter(_br_number))
                 ax.set_ylim(0, topo * 1.18)
+                ax.set_xlim(-0.65, len(rotulos) - 1 + 0.65)
                 if len(series) > 1:
-                    ax.legend(fontsize=9, frameon=False)
+                    ax.legend(
+                        fontsize=9,
+                        frameon=False,
+                        loc="lower left",
+                        bbox_to_anchor=(0, 1.01),
+                        ncol=min(len(series), 3),
+                    )
             else:
                 fig, ax = plt.subplots(figsize=(7.0, 3.8))
                 ax.bar(range(len(valores)), valores, color=PALETTE[0], width=0.58)
@@ -402,8 +420,9 @@ class ChartRenderer:
                     ax.set_xticklabels(_wrap_labels(rotulos, width=16), fontsize=9)
                 top = max(valores) if valores else 1
                 ax.set_ylim(0, top * 1.15)
+                ax.set_xlim(-0.65, len(valores) - 1 + 0.65)
                 for i, v in enumerate(valores):
-                    ax.text(i, v + top * 0.02, _br_number(v), ha="center", fontsize=9.5)
+                    ax.text(i, v + top * 0.02, _br_valor(v), ha="center", fontsize=9.5)
         fig.tight_layout()
         fig.savefig(png, bbox_inches="tight", facecolor="white")
         plt.close(fig)

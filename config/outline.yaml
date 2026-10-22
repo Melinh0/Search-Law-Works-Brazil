@@ -36,6 +36,13 @@ defaults:
     que houver inflacao (IPCA) no contexto, faca tambem a leitura de poder de
     compra desses valores, em texto ou grafico proprio - NAO misture reais e
     indice no mesmo grafico.
+    Nas secoes "Informal x formal" e "Cesta basica e poder de compra nas cinco
+    Grandes Regioes" o gerador insere automaticamente graficos calculados a
+    partir das series oficiais (SIDRA 4659, SIDRA 4097, tabelas de INSS e IRRF
+    de 2026 e serie DIEESE por regiao): NAO refaca esses graficos, use outros
+    recortes das mesmas fontes. Nessas duas secoes continua proibido repetir as
+    series da secao 1 (taxa de desocupacao, pessoas ocupadas, rendimento medio
+    total e taxa de informalidade).
 
 sections:
   - id: panorama
@@ -181,10 +188,11 @@ sections:
         linha 2012-2026 (R$); (12) taxa de desocupacao das CINCO regioes em
         linha 2012-2026; (13) taxa de informalidade das CINCO regioes em
         linha 2012-2026; (14) rendimento medio real das CINCO regioes em
-        linha 2012-2026 (R$); (15) composicao da populacao de 14 anos ou mais
-        por condicao (ocupadas, desocupadas e fora da forca) e grupo de idade
-        (barra empilhada com o Total e as cinco faixas, em milhoes); (16)
-        nivel de ocupacao por grupo de idade (barra simples, %). NAO crie
+        linha 2012-2026 (R$). Os graficos (15) - composicao da populacao de 14
+        anos ou mais por condicao e grupo de idade - e (16) - nivel de ocupacao
+        por grupo de idade - sao INSERIDOS AUTOMATICAMENTE pelo gerador com os
+        dados da tabela SIDRA 4094: NAO crie esses dois graficos nem repita
+        esses numeros. Voce deve criar os 14 graficos (1) a (14). NAO crie
         outros graficos nem repita series ja graficadas.
 
   - id: principios-constitucionais
@@ -423,8 +431,158 @@ sections:
       Senado) - se nao houver pontos suficientes, apresente em tabela
       Markdown, nunca grafico de linha com menos de 4 pontos.
 
-  - id: previdencia-tributos
+  - id: informal-vs-formal
     number: 9
+    title: "Informal x formal: o que os dados oficiais dizem sobre quem ganha mais"
+    charts: 2
+    words: [1300, 1700]
+    must_include: [ibge-pnad-categorias, custo-formal-2026, ipea-series-mercado, inss-8212, inss-teto-aliquotas-2026, irrf-tabelas-2026, clt]
+    extra_queries:
+      - "rendimento médio real com carteira assinada sem carteira PNAD 2025"
+      - "conta própria com CNPJ sem CNPJ rendimento médio mensal real"
+      - "trabalhador doméstico com carteira sem carteira rendimento médio"
+      - "INSS alíquota progressiva 2026 teto contribuição empregado"
+      - "IRRF 2026 tabela alíquotas isenção redutor Lei 15.270"
+      - "FGTS 8% 13º férias 1/3 custo do emprego formal CLT"
+      - "empregador rendimento médio real PNAD categoria de emprego"
+    brief: >
+      Esta secao responde a uma afirmacao muito repetida no debate sobre
+      trabalho: "vale mais a pena trabalhar informal, porque nao se desconta
+      INSS nem imposto de renda e o dinheiro cai na mao". Use OBRIGATORIAMENTE
+      as series da fonte ibge-pnad-categorias (tabelas SIDRA 4659, com
+      rendimento medio mensal real por categoria de emprego de 2012 a 2025, e
+      4097, com a participacao de cada categoria no total de ocupados de 2012 a
+      2026) e os parametros das fontes inss-teto-aliquotas-2026,
+      irrf-tabelas-2026, inss-8212 e clt.
+      (1) QUEM GANHA MAIS (obrigatorio): com os numeros do contexto, compare o
+      rendimento medio mensal real no ano mais recente da serie e no primeiro
+      ano (2012) entre empregado do setor privado COM carteira assinada,
+      empregado do setor privado SEM carteira, conta propria, conta propria COM
+      CNPJ (atividade formalizada, como o MEI), conta propria SEM CNPJ,
+      trabalhador domestico com e sem carteira, servidor publico e empregador.
+      Diga QUANTO o empregado com carteira ganha a mais que o sem carteira, em
+      R$ e em %, e comente a evolucao do gap ao longo da serie. Mostre tambem
+      a COMPOSICAO: quantos ocupados (em %) havia em cada categoria no inicio
+      e no fim da serie, e explique que "sem carteira" nao e sinônimo de
+      "informal" (dentro dela ha empregados sem registro, conta propria
+      informal e MEIs).
+      (2) O QUE DE FATO E DESCONTADO (obrigatorio): detalhe o que sai do
+      empregado com carteira: INSS pela tabela progressiva de 2026 (7,5% ate
+      R$ 1.621,00; 9% de R$ 1.621,01 a R$ 2.902,84; 12% de R$ 2.902,85 a
+      R$ 4.354,27; 14% de R$ 4.354,28 ate o teto de R$ 8.475,55) e IRRF pelas
+      tabelas de 2026 da Receita Federal (isento ate R$ 2.428,80 e, com o
+      redutor da Lei 15.270/2025, imposto zero ate R$ 5.000,00). Mostre EM
+      NUMEROS quanto isso pesa: o valor do desconto de INSS no salario minimo,
+      em R$ 3.500,00 e em R$ 7.000,00, e o peso do IRRF acima de R$ 7.000,00.
+      IMPORTANTE: copie os valores EXATOS da fonte custo-formal-2026 (que ja
+      traz a folha calculada para varios salarios, o INSS, o IRRF e o
+      equivalente anual do formal e do informal) - NAO recalcule e NAO invente
+      nem aproxime percentuais de desconto: use os numeros da fonte como
+      estao. NAO faca tabela de descontos: o gerador insere o grafico "Para
+      onde vai o salario bruto do empregado com carteira", com a folha
+      exata. Explique que o desconto nao e perda: o INSS constroi previdencia e
+      o IRRF financia servicos publicos, e que o IRPF tambem alcanca a renda
+      de quem trabalha informal (quem declara, paga pela mesma tabela
+      progressiva).
+      (3) O QUE O INFORMAL NAO TEM (obrigatorio): liste e explique o que o
+      trabalhador informal deixa de ter por nao ter vinculo: FGTS (8%), 13o
+      salario (1/12), ferias com 1/3 (4/3 de um mes), aviso previo,
+      estabilidade, seguro-desemprego, plano de saude e previdencia propria
+      (o informal pode contribuir como contribuinte individual, porem sem
+      recolhimento automatico e sem aposentadoria por tempo de contribuicao) -
+      e a que preco ele paga a saude e a aposentadoria do proprio jeito, sem
+      cobertura collectiva. Use a fonte clt e a fonte inss-8212.
+      (4) CONCLUSAO EXPLICITA (obrigatorio): responda a pergunta central - o
+      argumento "informal paga mais" se sustenta nos dados? Apresente a conta
+      completa, sempre COM OS NUMEROS da fonte custo-formal-2026 e da fonte
+      ibge-pnad-categorias: o empregado com carteira recebe X (rendimento
+      medio real do ultimo ano da serie 4659), o sem carteira recebe Y; depois
+      dos descontos de INSS e IRRF sobram Z; somando 13o, ferias + 1/3 e
+      FGTS, o pacote anual do formal fica em W contra V do informal. Conclua
+      que os dados NAO sustentam o argumento para o trabalhador medio e
+      explique em que casos ele pode se aproximar ou inverter: autonomia com
+      alta qualificacao e renda (empregador, conta propria com CNPJ),
+      necessidade de flexibilidade, ou disposicao de trabalhar mais horas por
+      menos. Registre que a vantagem real do informal e de immediatez e
+      flexibilidade, nao de renda media.
+      TABELAS E GRAFICOS (obrigatorio): NAO faca tabela de rendimento por
+      categoria de emprego (ela e inserida automaticamente com os numeros
+      exatos de 2012 e do ultimo ano da serie) e NAO refaca os graficos de com
+      carteira x sem carteira do setor privado, de composicao das categorias,
+      de folha do empregado e de equivalente anual: esses tambem sao inseridos
+      automaticamente pelo gerador a partir das series oficiais. Crie apenas
+      DOIS graficos novos, que NAO repitam os automaticos: (a) rendimento
+      medio real da conta propria COM CNPJ x conta propria SEM CNPJ
+      (2016-2025), mostrando o efeito de formalizar a atividade; (b) rendimento
+      medio real do trabalhador domestico com carteira x sem carteira
+      (2012-2025).
+
+  - id: poder-compra-regioes
+    number: 10
+    title: "Cesta básica e poder de compra nas cinco Grandes Regiões"
+    charts: 2
+    words: [1300, 1700]
+    must_include: [dieese-cesta-regioes, dieese-salario-minimo-necessario, dieese-cesta-basica-set-2026, dieese-metodologia-smn, ipea-series-mercado]
+    extra_queries:
+      - "cesta básica média por região Norte Nordeste Sudeste Sul Centro-Oeste"
+      - "salário mínimo necessário por região Grande Região"
+      - "cesta básica capital mais cara mais barata por região"
+      - "poder de compra por região rendimento médio real"
+      - "rendimento médio real do trabalho principal por região Norte Nordeste Sudeste Sul Centro-Oeste"
+      - "cesta básica percentual do salário mínimo por região"
+    brief: >
+      Esta secao responde quanto custa viver em cada uma das cinco Grandes
+      Regioes e quanto da renda media da regiao cobre esse custo. Use
+      OBRIGATORIAMENTE a fonte dieese-cesta-regioes (cesta basica media e
+      salario minimo necessario por regiao, serie 2015-2026), a fonte
+      dieese-salario-minimo-necessario, a fonte dieese-cesta-basica-set-2026,
+      a fonte dieese-metodologia-smn e as series Ipea por regiao do contexto
+      (rendimento medio real do trabalho principal).
+      (1) COMO O CALCULO REGIONAL FOI FEITO (obrigatorio): explique que a
+      Pesquisa Nacional da Cesta Basica do DIEESE/Conab mede o custo da cesta
+      nas capitais; que a cesta media de cada regiao e a media das capitais
+      acompanhadas; e que o salario minimo necessario regional aplica a
+      metodologia do DIEESE (cesta x 3, familia de quatro pessoas, dividido
+      pela participacao de 35,71% da alimentacao na cesta, POF). Esclareca com
+      clareza que os numeros por regiao sao elaboracao propria (nao sao
+      numeros oficiais do DIEESE) e que a serie tem quebra de comparabilidade:
+      o DIEESE mudou a composicao da cesta e a lista de capitais
+      acompanhadas ao longo do periodo (17 capitais na maior parte da serie e
+      27 nos boletins mais recentes).
+      (2) QUEM PAGA MAIS (obrigatorio): com os numeros do contexto, compare as
+      cinco regioes: qual tem a cesta mais cara, qual a mais barata, quanto
+      custa o salario minimo necessario de cada uma e quantas vezes ele e o
+      salario minimo de R$ 1.621,00. Use no texto a capital mais cara e a mais
+      barata de cada regiao (dados da fonte). Explique que parte da diferenca
+      e precificacao local e nao nivel de renda, e que por isso a cesta do Sul
+      e do Sudeste e mais cara que a do Nordeste mesmo com renda maior.
+      (3) PODER DE COMPRA (obrigatorio): compare o salario minimo necessario
+      de cada regiao com o rendimento medio real do trabalho principal da
+      regiao (series Ipea por regiao do contexto) e diga EM NUMEROS quanto
+      falta, em R$ e em %, para a renda media de cada regiao alcancar o
+      salario minimo necessario dela. Conclua se o brasileiro medio consegue
+      cobrir a cesta basica da propria regiao e em quais regioes a defasagem
+      e maior.
+      (4) CAUTELAS OBRIGATORIAS: (a) para o Norte, a base fixa da serie e
+      apenas Belem (o DIEESE deixou de acompanhar Manaus na serie de 17
+      capitais), mas o boletim mais recente, com 27 capitais, traz a media
+      regional completa - apresente os dois numeros; (b) o percentual do
+      salario minimo consumido pela cesta varia por regiao e consta da fonte;
+      (c) a cesta de alimentos e so uma parte do custo de vida: moradia,
+      saude, educacao, transporte e lazer entram no salario minimo necessario
+      do DIEESE, mas nao na cesta de alimentos.
+      GRAFICOS (2, que NAO repitam os graficos automaticos desta secao): (a)
+      grafico de barras horizontais com o valor da cesta basica na capital
+      mais cara e na capital mais barata de cada regiao no mes mais recente
+      (use os numeros da fonte); (b) grafico de barras com quantas vezes o
+      salario minimo necessario de cada regiao e o salario minimo de
+      R$ 1.621,00. NAO refaca os graficos de cesta por regiao, de salario
+      minimo necessario por regiao, de renda real x necessario e de percentual
+      do salario minimo: esses sao inseridos automaticamente pelo gerador a
+      partir das series oficiais.
+
+  - id: previdencia-tributos
+    number: 11
     title: "Previdência e tributos do trabalhador"
     charts: 2
     must_include: [inss-8212, inss-8213, ec-103-2019, lc-214-2025, ec-132-2023]
@@ -443,7 +601,7 @@ sections:
        desde 2012.
 
   - id: plataformas
-    number: 10
+    number: 12
     title: "Trabalho por plataformas digitais"
     charts: 1
     must_include: [clt, auditoria-fiscal, ibge-plataformas-perfil, ibge-audio-app-2026]
@@ -474,7 +632,7 @@ sections:
       1,2% dos ocupados); NAO use numeros crus.
 
   - id: tramitacao-2026
-    number: 11
+    number: 13
     title: "Mudanças em tramitação no Congresso em 2026"
     charts: 0
     words: [950, 1350]
@@ -545,7 +703,7 @@ sections:
        efetivamente presentes e aprofunde o que ha.
 
   - id: riscos-e-direitos
-    number: 12
+    number: 14
     title: "Riscos e como se proteger"
     charts: 1
     must_include: [mte-fiscalizacao, auditoria-fiscal, clt, lei-14457]
@@ -559,7 +717,7 @@ sections:
       riscos x protecoes por modalidade.
 
   - id: quadro-resumo
-    number: 13
+    number: 15
     title: "Quadro resumo e conclusões"
     charts: 1
     must_include: [clt, lc123-mei]

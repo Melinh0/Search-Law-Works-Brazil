@@ -17,6 +17,8 @@ src/
 ├── llm.py          Cliente Ollama (cloud com rotacao de chaves + fallback local)
 ├── report.py       Relatorio secao a secao com citacao ABNT obrigatoria
 ├── charts.py       Graficos matplotlib e diagramas com legenda ABNT
+├── calculos.py     Parametros oficiais de 2026 (INSS, IRRF, FGTS, 13o, ferias)
+├── insights.py     Series deterministicas: informal x formal e poder de compra
 ├── latex.py        Exportacao MD -> PDF via Pandoc + Tectonic (padrao)
 ├── pdf.py          Fallback MD -> HTML -> PDF (Edge/Chrome headless)
 └── config.py       Carregamento de YAMLs e .env
@@ -97,13 +99,14 @@ python -m src status
 
 ## Relatorio
 
-O sumario (13 secoes) fica em `config/outline.yaml` e cobre: panorama PNAD,
+O sumario (15 secoes) fica em `config/outline.yaml` e cobre: panorama PNAD,
 principios constitucionais, CLT e reforma de 2017, vinculo de emprego e
-pejotizacao, modalidades (CLT, temporario, intermitente, remoto, autônomo,
+pejotizacao, modalidades (CLT, temporario, intermitente, remoto, autonomo,
 MEI, PJ, cooperado, informal, plataformas), comparacao PJ x CLT, MEI e
-informal, previdencia e reforma tributaria, plataformas digitais (PL 12/2024,
-Convencao OIT 193/2026), tramitacao 2026 no Congresso, riscos e checklist,
-quadro-resumo comparativo.
+informal, **informal x formal pelos dados oficiais**, **cesta basica e poder
+de compra nas cinco regioes**, previdencia e reforma tributaria, plataformas
+digitais (PL 12/2024, Convencao OIT 193/2026), tramitacao 2026 no Congresso,
+riscos e checklist, quadro-resumo comparativo.
 
 Saida fixa em `output/relatorio-trabalho-brasil-2026-10-16.{md,html,pdf}`:
 reexecucoes sobrescrevem o mesmo trio de arquivos (sem arquivo datado novo).
@@ -120,6 +123,30 @@ Padrao do relatorio:
 - Geracao com validacao mecanica (retries + reparo) e auditoria final via
   `auditar` (citacoes linkadas, frases proibidas, graficos, capa/resumo).
 
+### Secoes 1, 9 e 10: numeros deterministicos
+
+As secoes **"Informal x formal"** e **"Cesta basica e poder de compra nas cinco
+Grandes Regioes"** nao dependem do LLM para os numeros: o modulo
+`src/insights.py` le as series oficiais, aplica a metodologia de calculo
+(`src/calculos.py`: INSS progressivo de 2026, IRRF com o redutor da Lei
+15.270/2025, FGTS de 8%, 13o, ferias + 1/3) e injeta no markdown:
+
+- tabelas com os numeros exatos (rendimento por categoria de emprego em 2012 e
+  no ultimo ano da serie; teste do argumento informal x formal; cesta, salario
+  necessario e renda das cinco regioes);
+- 4 graficos por secao (rendimento e composicao por categoria; folha do
+  empregado; equivalente anual formal x informal; cesta e salario necessario
+  por regiao; renda real x necessario; percentual do salario minimo).
+
+A secao **"Panorama"** tambem recebe dois graficos deterministicos (nivel de
+ocupacao por grupo de idade e composicao da populacao por condicao e grupo de
+idade, ambos da tabela SIDRA 4094), inseridos quando o modelo nao produziu um
+equivalente.
+
+O texto do LLM usa esses numeros como fonte e os gráficos entram com nota de
+metodologia e ressalvas de comparabilidade.
+
+
 ## Fontes coletadas
 
 - Planalto: CLT, Constituicao, FGTS, Lei 6.019, Lei 13.467, LC 123 (MEI),
@@ -129,6 +156,14 @@ Padrao do relatorio:
 - API de proposicoes da Camara (palavras-chave de trabalho)
 - API de materias do Senado
 - IBGE (PNAD Continua via API de agregados: desocupacao, ocupados, rendimento)
+- IBGE SIDRA **tabela 4659** (rendimento medio real por categoria de emprego,
+  serie anual 2012-2025) e **tabela 4097** (composicao dos ocupados por
+  categoria, trimestral 2012-2026)
+- Ipea SERIES: formalidade, informalidade, renda por sexo e por Grande Regiao
+- DIEESE/Conab: Pesquisa Nacional da Cesta Basica (boletins mensais 2015-2026)
+  e salario minimo necessario
+- Receita Federal (tabelas de IRRF de 2026) e MPS/INSS (tabela de contribuicao
+  de 2026: teto de R$ 8.475,55 e aliquotas progressivas)
 - Google News RSS (URLs reais resolvidas, sem redirecionadores)
 
 Cache em `data/cache` (use `--refresh` para forcar recoleta); corpus em
