@@ -5,6 +5,7 @@ import html as html_module
 import json
 import re
 import time
+import unicodedata
 import urllib.parse
 import warnings
 import xml.etree.ElementTree as ET
@@ -18,7 +19,7 @@ from ..config import Settings
 
 try:
     from pypdf import PdfReader
-except ImportError:  # pragma: no cover
+except ImportError:
     PdfReader = None
 
 warnings.filterwarnings("ignore", message="Unverified HTTPS request")
@@ -580,6 +581,20 @@ def fetch_ibge_series(
     return [(k, v) for k, v in serie.items() if v not in (None, "...", "-")]
 
 
+def ultimo_periodo_sidra(settings: Settings, agregado: int) -> str | None:
+    data = _get_json_cached(
+        settings,
+        f"https://servicodados.ibge.gov.br/api/v3/agregados/{agregado}/periodos",
+    )
+    periodos = data.get("periodos") if isinstance(data, dict) else data
+    ids = [
+        str(p["id"])
+        for p in (periodos or [])
+        if isinstance(p, dict) and p.get("id")
+    ]
+    return ids[-1] if ids else None
+
+
 def fetch_sidra_table(
     settings: Settings,
     agregado: int,
@@ -717,15 +732,9 @@ def collect_ibge(settings: Settings, source: dict) -> list[Document]:
     ]
     ultimo = "202602"
     try:
-        pdata = _get_json_cached(
-            settings,
-            "https://servicodados.ibge.gov.br/api/v3/agregados/4094/periodos",
-        )
-        if isinstance(pdata, dict):
-            pdata = pdata.get("periodos") or []
-        ids = [str(p["id"]) for p in pdata if isinstance(p, dict) and p.get("id")]
-        if ids:
-            ultimo = ids[-1]
+        encontrado = ultimo_periodo_sidra(settings, 4094)
+        if encontrado:
+            ultimo = encontrado
     except (ConnectionError, ValueError, KeyError, TypeError):
         pass
     for var, label in sidra_idade:
@@ -859,6 +868,480 @@ def collect_ibge_pns(settings: Settings, source: dict) -> list[Document]:
     ]
 
 
+SIDRA_CATEGORIA_CLASS = "11913"
+
+REGRAS_CATEGORIA_CURTA = (
+    ("Empregado no setor privado, exclusive trabalhador doméstico - com carteira", "Privado com carteira"),
+    ("Empregado no setor privado, exclusive trabalhador doméstico - sem carteira", "Privado sem carteira"),
+    ("Empregado no setor privado, exclusive trabalhador doméstico", "Privado (sem doméstico)"),
+    ("Trabalhador doméstico - com carteira", "Doméstico com carteira"),
+    ("Trabalhador doméstico - sem carteira", "Doméstico sem carteira"),
+    ("Trabalhador doméstico", "Trabalhador doméstico"),
+    ("Empregado no setor público, exclusive militar e funcionário público estatutário - com carteira", "Servidor público civil com carteira"),
+    ("Empregado no setor público, exclusive militar e funcionário público estatutário - sem carteira", "Servidor público civil sem carteira"),
+    ("Empregado no setor público - militar e funcionário público estatutário", "Militar e estatutário"),
+    ("Empregado no setor público", "Servidor público"),
+    ("Empregador com CNPJ", "Empregador com CNPJ"),
+    ("Empregador sem CNPJ", "Empregador sem CNPJ"),
+    ("Empregador", "Empregador"),
+    ("Conta própria com CNPJ", "Conta própria com CNPJ"),
+    ("Conta própria sem CNPJ", "Conta própria sem CNPJ"),
+    ("Conta própria", "Conta própria"),
+    ("Empregado", "Empregado (todas as categorias)"),
+    ("Total", "Total"),
+)
+
+
+def categoria_curta(nome: str) -> str:
+    texto = str(nome or "").strip()
+    for prefixo, rotulo in REGRAS_CATEGORIA_CURTA:
+        if texto.startswith(prefixo):
+            return rotulo
+    return texto
+
+
+def collect_ibge_categorias(settings: Settings, source: dict) -> list[Document]:
+    lines = [
+        "IBGE - PNAD Continua Anual: rendimento medio e composicao por CATEGORIA de",
+        "emprego no trabalho principal (posicao na ocupacao e categoria do emprego).",
+        "Tabela SIDRA 4659 (anual 2012-2025) e tabela SIDRA 4097 (trimestral 2012-2026).",
+        "Rendimentos em REAIS (valores deflatorados, medias anuais).",
+        "Use os rotulos curtos de categoria; nao repita a serie total de rendimento",
+        "medio (que ja foi graficada na secao 1).",
+    ]
+    series = 0
+
+    try:
+        renda = fetch_sidra_table(
+            settings, 4659, "2012-2025", 5932, SIDRA_CATEGORIA_CLASS
+        )
+    except (ConnectionError, ValueError, KeyError, IndexError):
+        renda = {}
+    for categoria, por_ano in sorted(renda.items()):
+        rotulo = categoria_curta(categoria)
+        linhas = [
+            f"    {ano}: {valor}" for ano, valor in sorted(por_ano.items())
+        ]
+        if not linhas:
+            continue
+        series += 1
+        lines.append(
+            f"Rendimento medio mensal real - {rotulo} (R$): media anual 2012-2025"
+        )
+        lines.extend(linhas)
+
+    for var, titulo in ((4090, "Pessoas ocupadas (mil)"), (4108, "Participacao no total de ocupados (%)")):
+        try:
+            tabela = fetch_sidra_table(
+                settings, 4097, "201201-202602", var, SIDRA_CATEGORIA_CLASS
+            )
+        except (ConnectionError, ValueError, KeyError, IndexError):
+            continue
+        for categoria, por_periodo in sorted(tabela.items()):
+            rotulo = categoria_curta(categoria)
+            medias = annual_average(sorted(por_periodo.items()))
+            if not medias:
+                continue
+            series += 1
+            linhas = [f"    {ano}: {valor:.1f}" for ano, valor in medias]
+            lines.append(
+                f"{titulo} - {rotulo}: media anual dos trimestres 2012-2026"
+            )
+            lines.extend(linhas)
+
+    if not series:
+        return []
+    return [
+        Document(
+            source_id=source["id"],
+            title=source["name"],
+            url=IBGE_PUBLIC_URL,
+            text="\n".join(lines),
+            tags=source.get("tags", []),
+            collected_at=time.strftime("%Y-%m-%d"),
+            priority=int(source.get("priority", 3)),
+        )
+    ]
+
+
+DIEESE_CESTA_BASE_URL = "https://www.dieese.org.br/analisecestabasica"
+
+CAPITAIS_POR_REGIAO: dict[str, list[str]] = {
+    "Norte": [
+        "Manaus", "Belem", "Macapa", "Palmas",
+        "Boa Vista", "Porto Velho", "Rio Branco",
+    ],
+    "Nordeste": [
+        "Salvador", "Fortaleza", "Recife", "Natal", "Joao Pessoa",
+        "Maceio", "Aracaju", "Teresina", "Sao Luis",
+    ],
+    "Sudeste": ["Sao Paulo", "Rio de Janeiro", "Belo Horizonte", "Vitoria"],
+    "Sul": ["Curitiba", "Porto Alegre", "Florianopolis"],
+    "Centro-Oeste": ["Brasilia", "Goiania", "Campo Grande", "Cuiaba"],
+}
+
+REGIAO_DE_CAPITAL: dict[str, str] = {
+    capital.upper(): regiao
+    for regiao, capitais in CAPITAIS_POR_REGIAO.items()
+    for capital in capitais
+}
+
+PARTICIPACAO_ALIMENTACAO = 0.3571
+FATOR_FAMILIA = 3
+
+_LINHA_CESTA_RE = re.compile(
+    r"^(?P<cap>[A-Z][A-Z\s]{2,26}?)\s+"
+    r"(?P<cesta>\d{1,4},\d{2})\s+"
+    r"(?P<var>-?\d{1,3},\d{1,2})\s+"
+    r"(?P<pct>\d{1,3},\d{2})\s+"
+    r"(?P<horas>\d{1,3}H\d{1,2}M)"
+)
+
+_HORAS_RE = re.compile(r"(\d{1,3})\s*[hH]\s*(\d{1,2})\s*[mM]")
+_NUM_RE = re.compile(r"-?\d{1,4}(?:,\d{1,2})?")
+_DIGITO_RE = re.compile(r"\d")
+
+
+def _sem_acento(texto: str) -> str:
+    normalizado = unicodedata.normalize("NFKD", str(texto))
+    return "".join(c for c in normalizado if not unicodedata.combining(c))
+
+
+def _num_br(texto: str) -> float:
+    return float(str(texto).replace(".", "").replace(",", "."))
+
+
+def _nome_conhecido(nome: str) -> str | None:
+    limpo = _sem_acento(nome).upper()
+    limpo = re.sub(r"[^A-Z ]", " ", limpo)
+    limpo = " ".join(limpo.split())
+    if not limpo:
+        return None
+    if limpo in REGIAO_DE_CAPITAL:
+        return limpo
+    for capital in REGIAO_DE_CAPITAL:
+        if capital.endswith(" " + limpo):
+            return capital
+    return None
+
+
+def _extrair_linhas_cesta(texto: str) -> dict[str, dict]:
+    inicio = texto.find("TABELA 1")
+    if inicio < 0:
+        return {}
+    trecho = texto[inicio:inicio + 8000]
+    fim = trecho.find("Fonte:")
+    if fim > 0:
+        trecho = trecho[:fim]
+    saida: dict[str, dict] = {}
+    pendente = ""
+    for bruta in trecho.splitlines():
+        linha = bruta.strip()
+        if not linha:
+            continue
+        if not _DIGITO_RE.search(linha):
+            pendente = linha
+            continue
+        corte = _DIGITO_RE.search(linha)
+        assert corte is not None
+        cabeca = linha[: corte.start()]
+        cauda = linha[corte.start():]
+        nome = _nome_conhecido(cabeca)
+        if nome is None and pendente:
+            nome = _nome_conhecido(f"{pendente} {cabeca}")
+        if nome is None:
+            pendente = ""
+            continue
+        pendente = ""
+        horas_m = _HORAS_RE.search(cauda)
+        horas = ""
+        if horas_m:
+            horas = f"{int(horas_m.group(1)):03d}h{int(horas_m.group(2)):02d}m"
+            cauda = cauda.replace(horas_m.group(0), " ")
+        numeros = [_num_br(n) for n in _NUM_RE.findall(cauda)]
+        if len(numeros) < 4:
+            continue
+        numeros.sort(reverse=True)
+        cesta = numeros[0]
+        pct_sm = numeros[1]
+        if cesta <= 0:
+            continue
+        saida[nome] = {"cesta": cesta, "pct_sm": pct_sm, "horas": horas}
+    return saida
+
+
+def serie_cesta_basica(
+    settings: Settings, anos: list[int]
+) -> tuple[dict[str, dict[str, dict]], list[str]]:
+    agora = time.localtime()
+    ano_atual = agora.tm_year
+    mes_atual = agora.tm_mon
+    serie: dict[str, dict[str, dict]] = {}
+    for ano in anos:
+        for mes in range(1, 13):
+            if ano == ano_atual and mes > mes_atual:
+                break
+            if ano > ano_atual:
+                continue
+            url = (
+                f"{DIEESE_CESTA_BASE_URL}/{ano}/{ano}{mes:02d}cestabasica.pdf"
+            )
+            try:
+                texto = fetch_pdf(settings, url, retries=2)
+            except (ConnectionError, RuntimeError):
+                continue
+            linhas = _extrair_linhas_cesta(texto)
+            if linhas:
+                serie[f"{ano}-{mes:02d}"] = linhas
+    return serie, sorted(serie)
+
+
+def cesta_por_regiao(settings: Settings, anos: list[int]) -> dict:
+    serie, periodos = serie_cesta_basica(settings, anos)
+    if not periodos:
+        return {"periodos": [], "series": {}, "base": {}, "ultimo": {}}
+    contagem: dict[str, int] = {}
+    for _, dados in serie.items():
+        for capital in dados:
+            contagem[capital] = contagem.get(capital, 0) + 1
+    corte = max(2, int(len(periodos) * 0.9))
+    base_comum = [c for c, n in contagem.items() if n >= corte]
+    base_por_regiao: dict[str, list[str]] = {}
+    for regiao, capitais in CAPITAIS_POR_REGIAO.items():
+        base_por_regiao[regiao] = sorted(
+            c for c in capitais if c.upper() in base_comum
+        )
+
+    series: dict[str, dict[str, dict[str, float]]] = {}
+    for regiao, capitais in CAPITAIS_POR_REGIAO.items():
+        cesta_por_periodo: dict[str, float] = {}
+        sm_por_periodo: dict[str, float] = {}
+        for periodo, dados in serie.items():
+            valores = [
+                dados[c.upper()]["cesta"]
+                for c in base_por_regiao[regiao]
+                if c.upper() in dados
+            ]
+            if not valores:
+                continue
+            media = sum(valores) / len(valores)
+            cesta_por_periodo[periodo] = media
+            sm_por_periodo[periodo] = (
+                media * FATOR_FAMILIA / PARTICIPACAO_ALIMENTACAO
+            )
+        if cesta_por_periodo:
+            series[regiao] = {"cesta": cesta_por_periodo, "sm_necessario": sm_por_periodo}
+
+    ultimo_periodo = periodos[-1]
+    ultimo: dict[str, dict] = {}
+    for regiao, capitais in CAPITAIS_POR_REGIAO.items():
+        dados = serie[ultimo_periodo]
+        valores = [dados[c.upper()]["cesta"] for c in capitais if c.upper() in dados]
+        if not valores:
+            continue
+        media = sum(valores) / len(valores)
+        pcts = [dados[c.upper()]["pct_sm"] for c in capitais if c.upper() in dados]
+        horas = [
+            dados[c.upper()].get("horas", "")
+            for c in capitais
+            if c.upper() in dados
+        ]
+        ultimo[regiao] = {
+            "cesta_media": media,
+            "sm_necessario": media * FATOR_FAMILIA / PARTICIPACAO_ALIMENTACAO,
+            "capitais": len(valores),
+            "mais_cara": max(valores),
+            "mais_barata": min(valores),
+            "pct_sm": sum(pcts) / len(pcts) if pcts else 0.0,
+            "horas": horas[0] if horas else "",
+        }
+    return {
+        "periodos": periodos,
+        "series": series,
+        "base": base_por_regiao,
+        "ultimo": ultimo,
+        "ultimo_periodo": ultimo_periodo,
+    }
+
+
+def _media_anual(por_periodo: dict[str, float]) -> list[tuple[str, float]]:
+    por_ano: dict[str, list[float]] = {}
+    for periodo, valor in por_periodo.items():
+        por_ano.setdefault(periodo[:4], []).append(valor)
+    return [(ano, sum(v) / len(v)) for ano, v in sorted(por_ano.items()) if v]
+
+
+def collect_dieese_cesta_regioes(settings: Settings, source: dict) -> list[Document]:
+    from ..calculos import br
+
+    anos = [int(a) for a in (source.get("anos") or [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026])]
+    dados = cesta_por_regiao(settings, anos)
+    if not dados["periodos"]:
+        return []
+    linhas = [
+        "DIEESE/Conab - Pesquisa Nacional da Cesta Basica de Alimentos: custo medio",
+        "da cesta basica e salario minimo necessario nas CINCO Grandes Regioes do",
+        "Brasil (elaboracao propria: media das capitais da regiao a partir da",
+        "TABELA 1 dos boletins mensais do DIEESE).",
+        "Salario minimo necessario = cesta media da regiao x 3 (familia de quatro",
+        "pessoas) / 35,71% (participacao da alimentacao na cesta, POF) - mesma",
+        "metodologia do DIEESE aplicada a media regional.",
+        f"Serie: {dados['periodos'][0]} a {dados['periodos'][-1]} (mensal).",
+    ]
+    for regiao, series in dados["series"].items():
+        bases = ", ".join(dados["base"].get(regiao, []))
+        linhas.append(f"Regiao {regiao} (base fixa da serie: {bases}):")
+        linhas.append("  Cesta basica media (R$) - media anual dos meses:")
+        linhas.extend(
+            f"    {ano}: {br(valor)}" for ano, valor in _media_anual(series["cesta"])
+        )
+        linhas.append("  Salario minimo necessario da regiao (R$):")
+        linhas.extend(
+            f"    {ano}: {br(valor)}"
+            for ano, valor in _media_anual(series["sm_necessario"])
+        )
+    if dados["ultimo"]:
+        linhas.append(f"Referencia mais recente ({dados['ultimo_periodo']}), todas as capitais:")
+        for regiao, item in dados["ultimo"].items():
+            linhas.append(
+                f"  {regiao}: cesta media R$ {br(item['cesta_media'])} "
+                f"({item['capitais']} capitais) | mais cara R$ {br(item['mais_cara'])} "
+                f"| mais barata R$ {br(item['mais_barata'])} | salario minimo "
+                f"necessario R$ {br(item['sm_necessario'])}"
+            )
+    return [
+        Document(
+            source_id=source["id"],
+            title=source["name"],
+            url=source.get("url") or f"{DIEESE_CESTA_BASE_URL}/",
+            text="\n".join(linhas),
+            tags=source.get("tags", []),
+            collected_at=time.strftime("%Y-%m-%d"),
+            priority=int(source.get("priority", 3)),
+        )
+    ]
+
+
+def collect_custo_formal(settings: Settings, source: dict) -> list[Document]:
+    from ..calculos import (
+        ALIQUOTA_FGTS,
+        FAIXAS_INSS_2026,
+        FAIXAS_IRRF_2026,
+        SALARIO_MINIMO_2026,
+        TETO_INSS_2026,
+        br,
+        folha_formal,
+        folha_informal,
+        pacote_anual,
+    )
+
+    linhas = [
+        "Custo do trabalho formal em 2026 - numeros calculados sobre as tabelas",
+        "oficiais (Portaria Interministerial MPS/MF no 13/2026 para o INSS;",
+        "tabelas de tributacao de 2026 da Receita Federal para o IRRF, com o",
+        "redutor da Lei 15.270/2025; FGTS de 8% conforme a Lei 8.036/1977;",
+        "13o salario de 1/12 e ferias com 1/3 de 4/3 de um mes conforme a CLT).",
+        "Use estes valores EXATOS no texto e nas tabelas; nao recalcule.",
+        f"Salario minimo de 2026: R$ {br(SALARIO_MINIMO_2026)} | teto do INSS: "
+        f"R$ {br(TETO_INSS_2026)}.",
+        "Tabela progressiva do INSS (Portaria 13/2026):",
+    ]
+    for teto, aliquota, deduzir in FAIXAS_INSS_2026:
+        linhas.append(
+            f"  ate R$ {br(teto)}: aliquota {aliquota * 100:.1f}% "
+            f"(parcela a deduzir R$ {br(deduzir)})"
+        )
+    linhas.append("Tabela progressiva do IRRF mensal de 2026 (Receita Federal):")
+    for teto, aliquota, deduzir in FAIXAS_IRRF_2026:
+        teto_txt = "acima de R$ 4.664,68" if teto == float("inf") else br(teto)
+        linhas.append(
+            f"  base ate R$ {teto_txt}: aliquota {aliquota * 100:.1f}% "
+            f"(parcela a deduzir R$ {br(deduzir)})"
+        )
+    linhas.append(
+        "  redutor da Lei 15.270/2025: imposto zero ate R$ 5.000,00 e reducao "
+        "decrescente (R$ 978,62 - 0,133145 x renda) de R$ 5.000,01 a R$ 7.350,00."
+    )
+    linhas.append("Folha mensal do empregado com carteira (calculo oficial):")
+    for nivel in (1621.00, 2500.00, 3500.00, 5000.00, 7000.00, 12000.00):
+        folha = folha_formal(nivel)
+        linhas.append(
+            f"  salario bruto R$ {br(nivel)}: INSS R$ {br(folha['inss'])} | "
+            f"IRRF R$ {br(folha['irrf'])} | liquido R$ {br(folha['liquido'])}"
+        )
+    linhas.append(
+        f"FGTS de {ALIQUOTA_FGTS * 100:.0f}% (Lei 8.036/1977, art. 20), 13o salario "
+        "de um twelfthavo do salario, ferias com 1/3 de 4/3 de um mes e aviso previo "
+        "nao incidem sobre a renda do trabalhador informal."
+    )
+
+    try:
+        renda = fetch_sidra_table(
+            settings, 4659, "2012-2025", 5932, SIDRA_CATEGORIA_CLASS
+        )
+    except (ConnectionError, ValueError, KeyError, IndexError):
+        renda = {}
+    pontos: dict[str, dict[str, float]] = {}
+    for categoria, por_ano in renda.items():
+        rotulo = categoria_curta(categoria)
+        if rotulo == "Total":
+            continue
+        valores = {}
+        for ano, valor in por_ano.items():
+            try:
+                valores[str(ano)] = float(valor)
+            except (TypeError, ValueError):
+                continue
+        if valores:
+            pontos[rotulo] = valores
+    com_carteira = pontos.get("Privado com carteira") or {}
+    sem_carteira = pontos.get("Privado sem carteira") or {}
+    anos = sorted(set(com_carteira) & set(sem_carteira))
+    if anos:
+        ano = anos[-1]
+        folha_f = folha_formal(com_carteira[ano])
+        folha_i = folha_informal(sem_carteira[ano])
+        pacote_f = pacote_anual(folha_f, formal=True)
+        pacote_i = pacote_anual(folha_i, formal=False)
+        diferenca = com_carteira[ano] - sem_carteira[ano]
+        linhas.append(
+            f"Teste do argumento informal x formal com os rendimentos medios "
+            f"reais de {ano} (tabela SIDRA 4659):"
+        )
+        linhas.append(
+            f"  empregado com carteira: R$ {br(com_carteira[ano])}/mes | "
+            f"sem carteira: R$ {br(sem_carteira[ano])}/mes | "
+            f"diferenca R$ {br(diferenca)} "
+            f"({diferenca / sem_carteira[ano] * 100:.1f}%)"
+        )
+        linhas.append(
+            f"  com carteira: INSS R$ {br(folha_f['inss'])} | IRRF "
+            f"R$ {br(folha_f['irrf'])} | liquido R$ {br(folha_f['liquido'])} | "
+            f"equivalente anual (12 meses + 13o + ferias + 1/3 + FGTS) "
+            f"R$ {br(pacote_f['total'])}"
+        )
+        linhas.append(
+            f"  sem carteira: sem INSS retido | IRPF R$ {br(folha_i['irrf'])} | "
+            f"recebe R$ {br(folha_i['liquido'])} | equivalente anual "
+            f"(12 meses, sem 13o, sem ferias e sem FGTS) R$ {br(pacote_i['total'])}"
+        )
+        linhas.append(
+            "  o trabalhador sem carteira ganha menos e, mesmo sem os descontos, "
+            "nao recebe 13o, ferias + 1/3 nem FGTS."
+        )
+    return [
+        Document(
+            source_id=source["id"],
+            title=source["name"],
+            url=source.get("url") or "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026",
+            text="\n".join(linhas),
+            tags=source.get("tags", []),
+            collected_at=time.strftime("%Y-%m-%d"),
+            priority=int(source.get("priority", 3)),
+        )
+    ]
+
+
 COLLECTORS = {
     "html": collect_planalto_like,
     "pdf": collect_pdf,
@@ -869,6 +1352,9 @@ COLLECTORS = {
     "ibge_pns": collect_ibge_pns,
     "ipea_api": collect_ipea,
     "academic": collect_academic,
+    "ibge_categorias": collect_ibge_categorias,
+    "dieese_cesta_regioes": collect_dieese_cesta_regioes,
+    "custo_formal": collect_custo_formal,
 }
 
 

@@ -4,7 +4,6 @@ cache_dir: data/cache
 corpus_dir: data/corpus
 output_dir: output
 
-# priority: 4 = dado estatistico primario, 3 = fonte oficial, 2 = artigo academico, 1 = imprensa (usado no ranking da busca)
 sources:
   - id: clt
     name: "Consolidacao das Leis do Trabalho (Decreto-Lei 5.452/1943)"
@@ -507,6 +506,44 @@ sources:
     encoding: utf-8
     priority: 3
     tags: [dieese, metodologia, salario-necessario, cesta-basica, pouf, lazer, constitucional]
+
+  - id: dieese-cesta-regioes
+    name: "DIEESE/Conab - Pesquisa Nacional da Cesta Basica: cesta media e salario minimo necessario nas cinco Grandes Regioes (serie mensal 2015-2026)"
+    type: dieese_cesta_regioes
+    url: "https://www.dieese.org.br/analisecestabasica/"
+    anos: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    priority: 4
+    tags: [dieese, cesta-basica, regioes, poder-de-compra, salario-necessario, serie-historica, 2026]
+
+  - id: ibge-pnad-categorias
+    name: "IBGE - PNAD Continua Anual: rendimento medio e composicao por categoria de emprego (com e sem carteira, conta propria, empregador, servidor publico) - tabelas SIDRA 4659 e 4097"
+    type: ibge_categorias
+    priority: 4
+    tags: [ibge, pnad, categoria-emprego, carteira, sem-carteira, conta-propria, empregador, servidor-publico, rendimento, composicao, serie-historica]
+
+  - id: inss-teto-aliquotas-2026
+    name: "INSS 2026 - teto de R$ 8.475,55 e tabela progressiva de contribuicao do empregado (7,5% a 14%, Portaria Interministerial MPS/MF 13/2026)"
+    type: news_rss
+    priority: 3
+    queries:
+      - "teto INSS 2026 8.475,55 tabela de contribuição alíquotas empregado"
+      - "Portaria Interministerial MPS/MF 13/2026 tabela contribuição INSS 2026"
+    tags: [inss, previdencia, aliquotas, teto, salario-de-contribuicao, 2026, custo-formal]
+
+  - id: irrf-tabelas-2026
+    name: "Receita Federal - tabelas de tributacao do Imposto de Renda 2026 (faixas mensais, aliquotas de 7,5% a 27,5% e redutor da Lei 15.270/2025)"
+    type: html
+    url: "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026"
+    encoding: utf-8
+    priority: 4
+    tags: [irrf, imposto-de-renda, aliquotas, faixas, 2026, custo-formal, salario-liquido]
+
+  - id: custo-formal-2026
+    name: "Calculo oficial da folha do empregado em 2026 (INSS progressivo, IRRF com redutor, FGTS, 13o e ferias) e do teste do argumento informal x formal sobre os rendimentos medios da PNAD Continua"
+    type: custo_formal
+    url: "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026"
+    priority: 4
+    tags: [custo-formal, inss, irrf, fgts, decimo, ferias, informal, formal, folha, 2026, teste-argumento]
 
   - id: camara-proposicoes-flex
     name: "Camara dos Deputados - proposicoes sobre flexibilizacao e regulamentacao do trabalho (estatuto do autonomo, convencao 193, terceirizacao, intervalos)"
